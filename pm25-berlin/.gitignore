@@ -1,30 +1,26 @@
+# ---- Environment ----
 .venv/
-__pycache__/
-*.pyc
-*.pyo
-*.DS_Store
 .env
-.env.*
-.ipynb_checkpoints/
-.cache/
-logs/
-artifacts/
+.env.local
+.env.development
+.env.production
+!.env.example
 
-# Local data and model artifacts — DO NOT PUSH
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pkl
+
+# ---- Data & artifacts ----
 data/
 models/
 cache/
 artifacts/
 logs/
 
-# Environment and virtualenv
-.env
-.venv/
+# ---- Notebooks ----
+.ipynb_checkpoints/
 
-# Environment files
-.env
-.env.local
-.env.development
-.env.production
-# allow the template
-!.env.example
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
