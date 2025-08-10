@@ -50,3 +50,27 @@ Produce PM2.5 forecasts for Berlin that outperform public benchmarks (e.g., CAMS
 
 ---
 **Last updated:** YYYY-MM-DD
+
+
+### Baseline Bias-Correction Benchmark (planned for Stage 1)
+We will implement a simple, transparent **per-pollutant rolling bias-correction** as an initial benchmark for Berlin and Munich.
+
+**Purpose:**  
+- Establish a reliable baseline against which all future models will be evaluated.  
+- Provide early accuracy gains (expected 10–25 % MAE reduction for PM₂.₅) with minimal complexity.  
+
+**Method:**  
+- Apply rolling mean bias correction (window ≈ 21 days) per pollutant.  
+- Optional scale adjustment via linear regression (obs ≈ a + b × forecast).  
+- Simple regime split on wind speed (< 2 m/s vs ≥ 2 m/s).  
+- Enforce physical constraints (≥ 0; PM₂.₅ ≤ PM₁₀).  
+- Recompute AQI from corrected pollutant values.  
+
+**Evaluation metrics:**  
+- MAE, RMSE, bias per pollutant.  
+- AQI band accuracy and threshold-crossing skill.  
+
+**Acceptance criteria:**  
+- PM₂.₅ MAE reduced by ≥ 10 % vs raw forecast over recent 30-day window.  
+- Bias within ± 1 µg/m³.  
+- AQI categorical accuracy improved by ≥ 5 pp.
