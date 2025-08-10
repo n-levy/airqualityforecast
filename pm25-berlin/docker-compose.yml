@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  placeholder:
+    image: alpine:3.20
+    command: ["sh", "-c", "sleep infinity"]
+    env_file:
+      - .env
+    volumes:
+      - ${DATA_ROOT}:${DATA_ROOT}
+      - ${MODELS_ROOT}:${MODELS_ROOT}
+      - ${CACHE_ROOT}:${CACHE_ROOT}
+      - ${ARTIFACTS_ROOT}:${ARTIFACTS_ROOT}
+      - ${LOGS_ROOT}:${LOGS_ROOT}
+    # This service is a placeholder for future components (e.g., training, API).
+    # In CI, images will be built and replace this stub.
