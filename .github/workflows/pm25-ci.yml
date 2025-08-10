@@ -32,10 +32,19 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
-      - name: Create .env from example
+      -  - name: Create .env from example
         run: cp .env.example .env
 
       - name: Stage 0 smoke test
         run: |
           source .venv/bin/activate
-          python scripts/print_env.py
+          python scripts/print_env.py > env_output.txt
+          cat env_output.txt
+          if ! grep -q "DATA_ROOT:" env_output.txt || grep -q "DATA_ROOT: None" env_output.txt; then
+            echo "ERROR: DATA_ROOT is missing or None in .env"
+            exit 1
+          fi
+          if ! grep -q "MODELS_ROOT:" env_output.txt || grep -q "MODELS_ROOT: None" env_output.txt; then
+            echo "ERROR: MODELS_ROOT is missing or None in .env"
+            exit 1
+          fi
