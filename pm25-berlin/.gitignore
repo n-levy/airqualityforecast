@@ -9,3 +9,14 @@ __pycache__/
 .cache/
 logs/
 artifacts/
+
+# Local data and model artifacts — DO NOT PUSH
+data/
+models/
+cache/
+artifacts/
+logs/
+
+# Environment and virtualenv
+.env
+.venv/
