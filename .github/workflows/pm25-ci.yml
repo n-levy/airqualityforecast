@@ -1,4 +1,4 @@
-name: pm25-berlin CI
+﻿name: pm25-berlin CI
 
 on:
   push:
@@ -32,19 +32,24 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
-      -  - name: Create .env from example
+      - name: Create .env from example
         run: cp .env.example .env
 
-      - name: Stage 0 smoke test
+      - name: Stage 0 smoke test (Python)
         run: |
           source .venv/bin/activate
-          python scripts/print_env.py > env_output.txt
-          cat env_output.txt
-          if ! grep -q "DATA_ROOT:" env_output.txt || grep -q "DATA_ROOT: None" env_output.txt; then
-            echo "ERROR: DATA_ROOT is missing or None in .env"
-            exit 1
-          fi
-          if ! grep -q "MODELS_ROOT:" env_output.txt || grep -q "MODELS_ROOT: None" env_output.txt; then
-            echo "ERROR: MODELS_ROOT is missing or None in .env"
-            exit 1
-          fi
+          python - <<'PY'
+          import os, sys
+          from pm25_forecast import env  # loads .env
+          keys = ["DATA_ROOT", "MODELS_ROOT"]
+          missing = []
+          for k in keys:
+            v = os.getenv(k)
+            print(f"{k}: {v}")
+            if not v or v.strip().lower() in {"", "none", "null"}:
+              missing.append(k)
+          if missing:
+            print("ERROR: Missing or empty:", ", ".join(missing))
+            sys.exit(1)
+          print("Smoke test OK.")
+          PY
