@@ -2,36 +2,36 @@
 _Designed for ~1 hour per task, minimal coding experience, gradual MLOps learning_
 
 ## A) Orientation & Project Fundamentals (6 hrs)
-1) Read the repo map  
+1) Read the repo map [✅ Completed]  
 Goal: Understand folders you’ll touch first (apps/etl, features, train, infer, verify, publish; config/*; tests/*).  
 Deliverable: A short written summary (10 bullets) of what each folder does.
 
-2) Read the Product & Non‑Functional targets  
+2) Read the Product & Non‑Functional targets [✅ Completed]  
 Goal: Know success criteria, dashboard outputs, and performance/SLA targets.  
 Deliverable: A checklist of PRD success metrics and NFR targets.
 
-3) Read modeling ADR  
+3) Read modeling ADR [✅ Completed]  
 Goal: Why a global combiner + optional per‑city bias; pollutants; AQI computation approach.  
 Deliverable: One‑page notes with “what/why/how” of the combiner model.
 
-4) Read evaluation ADR  
+4) Read evaluation ADR [✅ Completed]  
 Goal: Understand κ (quadratic), category accuracy, threshold hits/false alarms, MAE per pollutant.  
 Deliverable: A table explaining when to use each metric and what it teaches.
 
-5) Read storage & scheduler ADRs  
+5) Read storage & scheduler ADRs [✅ Completed]  
 Goal: Know Parquet via fsspec; local vs cloud paths; cron locally, cloud jobs later.  
 Deliverable: Diagram showing data flow file:// → (later) s3:// and how jobs run.
 
-6) Read GEFS‑Aerosol ADR  
+6) Read GEFS‑Aerosol ADR [✅ Completed]  
 Goal: Understand why we add GEFS, adapter location, schema/tests/scheduling.  
 Deliverable: Bullet plan of GEFS tasks to integrate alongside CAMS/Aurora.
 
 ## B) Environment & Tooling (6 hrs)
-7) Create a clean Python env (no admin rights)  
+7) Create a clean Python env (no admin rights) [✅ Completed]  
 Goal: Set up `pyenv` or `venv` and activate it; confirm `python -m pip list`.  
 Deliverable: Commands + version notes saved in `docs/SETUP.md`.
 
-8) Install project dependencies from `pyproject.toml`  
+8) Install project dependencies from `pyproject.toml` [✅ Completed]  
 Goal: Install minimum working set; record any issues.  
 Deliverable: `pip install -e .` (or equivalent) succeeds; `python -c "import pandas"` works.
 
@@ -39,15 +39,15 @@ Deliverable: `pip install -e .` (or equivalent) succeeds; `python -c "import pan
 Goal: Read the `Makefile` and run non‑destructive targets (e.g., `make help`).  
 Deliverable: Screenshot/log + 3 notes on what each target will eventually do.
 
-10) Configure `.env` from example  
+10) Configure `.env` from example [✅ Completed]  
 Goal: Copy `config/env/.env.example` → `.env` and set DATA_ROOT/MODELS_ROOT.  
 Deliverable: Working `.env` with local `file://` paths.
 
-11) Create local data/model directories  
+11) Create local data/model directories [✅ Completed]  
 Goal: Create `data/` and `models/` folders, confirm gitignored.  
 Deliverable: Terminal log + a note on why artifacts stay out of git.
 
-12) Sanity check: tiny script reads/writes Parquet via fsspec  
+12) Sanity check: tiny script reads/writes Parquet via fsspec  [✅ Completed]  
 Goal: Prove your env can round‑trip a small dataframe to `file://`.  
 Deliverable: `data/smoke/test.parquet` present; code snippet saved to `tests/unit/test_io_smoke.py`.
 
