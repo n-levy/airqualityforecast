@@ -4,3 +4,7 @@ cd "G:\My Drive\sync\airqualitycast\Git_repo\pm25"
 
 # Stage, commit and push changes
 git add -A; git commit -m "Update project"; git push
+
+# Check if Git is up to date both locally and online
+git status
+
