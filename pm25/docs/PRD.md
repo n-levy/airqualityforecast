@@ -43,8 +43,8 @@ Produce PM2.5 forecasts for Berlin, Hamburg and Munich that outperform public be
 
 ## 8. Roadmap (order updated)
 1. **Stage 1** (Berlin, Hamburg, Munich, PM2.5)
-2. **Stage 2 – Expansion & Cloud Migration** (add cities; migrate to low-cost cloud; target <€10/month)
-3. **Stage 3 – Per-Pollutant AQI** (add PM10, O₃, NO₂; compute AQI; track dominant pollutant)
+2. **Stage 2 – Per-Pollutant AQI** (add PM10, O₃, NO₂; compute AQI; track dominant pollutant)
+3. **Stage 3 – Cloud Migration** (migrate to low-cost cloud; target <€10/month)
 4. Monetization
 
 ### Baseline Bias-Correction Benchmark (planned for Stage 1)

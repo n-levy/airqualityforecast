@@ -24,16 +24,15 @@ Produce city-level AQI forecasts for Germany that outperform public benchmark fo
      - Observations
      - Accuracy metrics (MAE, bias, category accuracy, κw, exceedance rates) over selectable periods.
 
-2. Stage 2 – Expansion & Cloud Migration
-   - Add cities beyond Berlin/Munich/Hamburg.
-   - Migrate to low-cost cloud execution (scheduled containers, object storage).
-   - Keep running costs below €10/month.
-
-3. Stage 3 – Per-pollutant AQI
+2. Stage 2 – Per-pollutant AQI
    - Extend to PM₁₀, O₃, and NO₂.
    - Train separate global + bias-corrected models per pollutant.
    - Compute AQI from predicted concentrations using standard breakpoints.
    - Track dominant pollutant for each AQI forecast.
+
+3. Stage 3 – Cloud Migration
+   - Migrate to low-cost cloud execution (scheduled containers, object storage).
+   - Keep running costs below €10/month.
 
 ## Key Requirements
 - Transparency: Verification against open, authoritative data.
