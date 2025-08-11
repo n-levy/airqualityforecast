@@ -48,8 +48,3 @@ To improve accuracy and portability to other countries, we will add **NOAA GEFS-
 - ADR-003 Scheduler
 - ADR-004 Modeling
 - ADR-005 Evaluation
-
----
-**Plain English Summary:**
-This decision record explains what choice was made, why it was made, and its impact on the project.
-It is intended to help both technical and non-technical contributors understand the reasoning.

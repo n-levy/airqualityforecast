@@ -15,8 +15,3 @@ Consequences:
 2. Modular design allows phased rollout: Stage 1 PM₂.₅ only, Phase 2 add O₃ and NO₂, Phase 3 add PM₁₀.
 3. Can extend to additional pollutants without re-engineering the pipeline.
 
-
----
-**Plain English Summary:**
-This decision record explains what choice was made, why it was made, and its impact on the project.
-It is intended to help both technical and non-technical contributors understand the reasoning.

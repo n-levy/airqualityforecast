@@ -25,6 +25,3 @@
 ## Cost
 - Local Stage 1: zero cloud costs.
 - Cloud target: <€10/month at Stage 1 scale.
-
----
-**Last updated:** YYYY-MM-DD

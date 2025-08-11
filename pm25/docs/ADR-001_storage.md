@@ -16,11 +16,4 @@ We will use **Apache Parquet** files stored via **fsspec** paths.
 - Columnar storage for efficient analytics.
 - Supports partitioning by city, date, and data type.
 
----
-**Last updated:** YYYY-MM-DD
 
-
----
-**Plain English Summary:**
-This decision record explains what choice was made, why it was made, and its impact on the project.
-It is intended to help both technical and non-technical contributors understand the reasoning.

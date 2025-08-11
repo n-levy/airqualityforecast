@@ -73,7 +73,3 @@ We will implement a simple, transparent **per-pollutant rolling bias-correction*
 - AQI categorical accuracy improved by ≥ 5 pp.
 
 For metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
-
-For metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
-
-For metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
