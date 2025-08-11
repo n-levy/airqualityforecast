@@ -41,12 +41,11 @@ Produce PM2.5 forecasts for Berlin, Hamburg and Munich that outperform public be
 - **Model drift:** Regular retraining.
 - **Cloud migration delays:** Build with fsspec paths and container-ready code.
 
-## 8. Roadmap
-1. Stage 1 (Berlin, Hamburg, Munich, PM2.5)
-2. Add cities
-3. Add AQI components
-4. Cloud deployment
-5. Monetization
+## 8. Roadmap (order updated)
+1. **Stage 1** (Berlin, Hamburg, Munich, PM2.5)
+2. **Stage 2 – Expansion & Cloud Migration** (add cities; migrate to low-cost cloud; target <€10/month)
+3. **Stage 3 – Per-Pollutant AQI** (add PM10, O₃, NO₂; compute AQI; track dominant pollutant)
+4. Monetization
 
 ### Baseline Bias-Correction Benchmark (planned for Stage 1)
 We will implement a simple, transparent **per-pollutant rolling bias-correction** as an initial benchmark for Berlin, Hamburg and Munich.
@@ -57,7 +56,6 @@ We will implement a simple, transparent **per-pollutant rolling bias-correction*
 
 **Method:**  
 - Apply rolling mean bias correction (window ≈ 21 days) per pollutant.  
-- Add 
 - Optional scale adjustment via linear regression (obs ≈ a + b × forecast).  
 - Simple regime split on wind speed (< 2 m/s vs ≥ 2 m/s).  
 - Enforce physical constraints (≥ 0; PM₂.₅ ≤ PM₁₀).  

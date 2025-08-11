@@ -13,7 +13,7 @@
 Produce city-level AQI forecasts for Germany that outperform public benchmark forecasts such as CAMS and Aurora, using a simple, maintainable modeling approach.
 
 ## Roadmap Vision
-1. Stage 1 – Multi-city PM₂.₅ Stage 1
+1. Stage 1 – Multi-city PM₂.₅
    - Forecast PM₂.₅ concentrations for the top 3 German cities (Berlin, Munich, Hamburg).
    - Combine CAMS, Aurora and NOAA GEFS-Aerosol predictions in a global model with optional per-city bias correction.
    - Display live and historical comparisons:
@@ -24,9 +24,10 @@ Produce city-level AQI forecasts for Germany that outperform public benchmark fo
      - Observations
      - Accuracy metrics (MAE, bias, category accuracy, κw, exceedance rates) over selectable periods.
 
-2. Stage 2 – Cloud Migration
-   - Move from local-hosted to cloud-based production.
-   - Keep running costs below €10/month
+2. Stage 2 – Expansion & Cloud Migration
+   - Add cities beyond Berlin/Munich/Hamburg.
+   - Migrate to low-cost cloud execution (scheduled containers, object storage).
+   - Keep running costs below €10/month.
 
 3. Stage 3 – Per-pollutant AQI
    - Extend to PM₁₀, O₃, and NO₂.
@@ -61,5 +62,4 @@ Produce city-level AQI forecasts for Germany that outperform public benchmark fo
 - Architecture must allow switching from file:// to s3:// or similar without code changes.
 
 ---
-
 For scope and stages see `ROADMAP.md`; for metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.

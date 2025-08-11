@@ -10,8 +10,8 @@ Features: Calendar features, lag features (see FEATURES.md)
 Bias Correction: Applied to all cities in model
 Outputs: Forecasts, verification, dashboard
 
-## Stage 2 – Per-Pollutant AQI
-Extend to PM₁₀, O₃, NO₂; compute AQI; track dominant pollutant.
+## Stage 2 – Expansion & Cloud Migration
+Add cities; migrate to cloud (scheduled containers, object storage); target <€10/month.
 
-## Stage 3 – Expansion & Cloud Migration
-Add cities; migrate to cloud; target <€10/month.
+## Stage 3 – Per-Pollutant AQI
+Extend to PM₁₀, O₃, NO₂; compute AQI; track dominant pollutant.
