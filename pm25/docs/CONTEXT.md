@@ -63,7 +63,3 @@ Produce city-level AQI forecasts for Germany that outperform public benchmark fo
 ---
 
 For scope and stages see `ROADMAP.md`; for metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
-
-For scope and stages see `ROADMAP.md`; for metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
-
-For scope and stages see `ROADMAP.md`; for metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
