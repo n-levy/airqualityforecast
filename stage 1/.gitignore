@@ -1,0 +1,28 @@
+# ---- Environment ----
+.venv/
+.env
+.env.local
+.env.development
+.env.production
+!.env.example
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pkl
+
+# ---- Data & artifacts ----
+data/
+models/
+cache/
+artifacts/
+logs/
+
+# ---- Notebooks ----
+.ipynb_checkpoints/
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+
+*.egg-info/
