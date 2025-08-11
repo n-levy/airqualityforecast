@@ -15,7 +15,7 @@ pm25/
 │  ├─ schemas/            # json schemas for raw/curated/features
 │  └─ env/
 │     └─ .env.example     # 12-factor config (DATA_ROOT, MODELS_ROOT, etc.)
-├─ data/                  # local Parquet during MVP (gitignored)
+├─ data/                  # local Parquet during Stage 1 (gitignored)
 ├─ models/                # model registry: artifacts + metadata (gitignored)
 ├─ docs/
 │  ├─ CONTEXT.md

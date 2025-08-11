@@ -3,7 +3,7 @@
 ## Performance & Accuracy
 - Predictions ready within 3 minutes of data availability.
 - Verification results updated within 90 minutes of observation availability.
-- Day-ahead MAE reduced by ≥15% vs. benchmark.
+- Day-ahead MAE reduced by ≥15% vs. CAMS benchmark.
 
 ## Reliability
 - ≥99% pipeline success rate per month.
@@ -23,8 +23,8 @@
 - Use least-privilege access for cloud resources.
 
 ## Cost
-- Local MVP: zero cloud costs.
-- Cloud target: <€10/month at MVP scale.
+- Local Stage 1: zero cloud costs.
+- Cloud target: <€10/month at Stage 1 scale.
 
 ---
 **Last updated:** YYYY-MM-DD

@@ -1,0 +1,88 @@
+# GitHub Repository Setup Summary – PM₂.₅ Forecasting Project
+
+## Repository Name & Structure
+- **Main repo:** `airqualitycast`
+- **Sub-project folder:** `pm25` (originally `pm25-berlin`, renamed for multi-city scope)
+- **Main package:** `pm25/src/pm25_forecast`  
+- **Docs folder:** `pm25/docs` — contains `CONTEXT.md`, `PRD.md`, `NFRs.md`, ADRs, and Stage summaries.
+
+## Branching & Workflow
+- **Default branch:** `main`
+- **Branch strategy:** Simple mainline with feature branches (optional). All commits pushed to `main` must pass CI.
+- **Tagging:** Stage completions tagged (`stage-0`, `stage-1`, …) for historical reference.
+
+## Continuous Integration (CI)
+- **Service:** GitHub Actions
+- **Workflow file:** `.github/workflows/pm25-ci.yml`
+- **Triggers:** Runs on `push` and `pull_request` for paths under `pm25/**`.
+- **Stage 0 Smoke Test:**
+  1. Create and activate a virtual environment.
+  2. Install dependencies.
+  3. Load `.env` file.
+  4. Check critical env vars (`DATA_ROOT`, `MODELS_ROOT`).
+  5. Import `pm25_forecast` package.
+  6. Output `"Smoke test OK."` if all checks pass.
+
+## Environment & Configuration
+- **Local-first config:**  
+  - `.env.example` (template, versioned)  
+  - `.env` (local, git-ignored) — contains absolute paths for `DATA_ROOT`, `MODELS_ROOT`, `CACHE_ROOT`, etc.
+- **Python version:** `3.11`
+- **Dependency management:** `pip` + `requirements.txt`  
+  - Editable install: `pip install -e .`  
+  - Local venv: `.venv` in project root.
+- **Makefile targets:**
+  - `bootstrap` — create venv, install dependencies, copy `.env.example → .env` (for Linux/CI; PowerShell uses manual commands).
+- **Docker:** `docker-compose.yml` skeleton prepared for future containerization.
+
+## Git Hygiene
+- **`.gitignore`** excludes:
+  - `.env`
+  - Data/model/cache/artifact/log directories
+  - Build metadata (`*.egg-info/`)
+- **`.gitattributes`** enforces LF line endings for cross-platform consistency.
+- **No secrets in repo** — all sensitive/local config stored only in `.env`.
+
+## Local Development Workflow
+1. **Clone repo**:
+   ```powershell
+   git clone https://github.com/<username>/airqualitycast.git
+   cd airqualitycast/pm25
+   ```
+2. **Create venv & install**:
+   ```powershell
+   python -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install --upgrade pip
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   .\.venv\Scripts\python.exe -m pip install -e .
+   ```
+3. **Set up `.env`**:
+   - Copy `.env.example` to `.env`
+   - Adjust paths for your machine.
+4. **Run local smoke test**:
+   ```powershell
+   .\.venv\Scripts\python.exe scripts\smoke_test.py
+   ```
+   Expect `"Smoke test OK."`
+
+## Push Changes to GitHub
+- Stage all changes:
+  ```powershell
+  git add -A
+  ```
+- Commit:
+  ```powershell
+  git commit -m "Your commit message"
+  ```
+- Push:
+  ```powershell
+  git push
+  ```
+- Optional helper: `push.ps1` script in repo root automates detect → commit → push.
+
+## Known Windows Notes
+- **PowerShell Execution Policy**: Some commands (`Activate.ps1`) may be blocked; easiest workaround is to call the venv’s `python.exe` directly.
+- **Path changes after folder rename**: If project folder is renamed, recreate `.venv` to avoid stale paths in pip executables.
+
+---
+**Last updated:** Stage 0 completion (multi-city rename applied).

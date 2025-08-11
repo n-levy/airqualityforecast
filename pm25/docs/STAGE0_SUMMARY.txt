@@ -1,0 +1,79 @@
+# Stage 0 Summary – PM₂.₅ Forecasting Project (Berlin)
+
+## Purpose of Stage 0
+Stage 0 established the foundational scaffold for the air quality forecasting project.
+The goal was to ensure that all subsequent development is reproducible, testable, documented, and automation-ready before any modeling work begins.
+
+This stage followed MLOps best practices:
+- Define the problem and constraints up-front.
+- Create a consistent, version-controlled project structure.
+- Automate environment setup and validation.
+- Prepare documentation to guide both engineering and product decisions.
+
+## Key Deliverables
+
+### 1. Repository Scaffold & Folder Structure
+- Created the Stage 0 repo tree (`REPO_TREE_STAGE0.md`) with clear separation of concerns:
+  - `apps/` – ETL, feature building, training, inference, verification, publishing.
+  - `config/` – City configs, schemas, environment templates.
+  - `data/`, `models/` – Git-ignored storage for local Parquet datasets & model artifacts.
+  - `docs/` – Context, requirements, PRD, ADRs.
+  - `infra/` – Future cloud IaC stubs.
+  - `tests/` – Unit, contract, and evaluation test folders.
+  - `web/` – Static dashboard output target.
+  - Root files – `Makefile`, `docker-compose.yml`, `.gitignore`, `.gitattributes`, `pyproject.toml`.
+
+### 2. Documentation
+Placed in `docs/` for versioning and discoverability:
+
+- `CONTEXT.md` – Why the project exists, learning goals, constraints, roadmap vision.
+- `PRD.md` – Product Requirements Document:
+  - Stage 1 scope (Berlin, PM₂.₅), benchmarks, UI features, success criteria.
+  - Planned Stage 1 baseline bias-correction benchmark.
+- `NFRs.md` – Non-Functional Requirements:
+  - Performance, reliability, scalability, transparency, security, cost targets.
+- ADRs (Architecture Decision Records):
+  - `ADR-001_storage.md` – Use Apache Parquet + `fsspec` paths for local/cloud parity.
+  - `ADR-002_model_family.md` – Gradient-boosted trees (XGBoost) for bias-correcting downscaler.
+  - `ADR-003_scheduler.md` – Local cron/manual → cloud-scheduled containers.
+  - `ADR-004_modeling.md` – Global combiner model per pollutant + optional per-city bias correction.
+  - `ADR-005_evaluation.md` – Metrics: weighted κ, category accuracy, hit/false alarm rates, MAE per pollutant.
+  - `ADR-006_gefs_aerosol_integration.txt` – Plan to add NOAA GEFS-Aerosol as a third forecast provider (proposed).
+
+### 3. Environment & Configuration
+- `.env.example` – Template for all required env vars (`DATA_ROOT`, `MODELS_ROOT`, etc.).
+- `.env` (local only, git-ignored) – User-specific values.
+- Bootstrap automation:
+  - `make bootstrap` target to create venv, install dependencies, and copy `.env.example → .env`.
+  - `docker-compose.yml` skeleton for future containerization.
+- `.gitattributes` – Enforce LF endings for cross-platform consistency.
+
+### 4. Continuous Integration (CI)
+- GitHub Actions workflow (`.github/workflows/pm25-ci.yml`):
+  - Stage 0 smoke test: Install dependencies, load `.env`, check `DATA_ROOT` and `MODELS_ROOT`, verify package import.
+  - Runs automatically on every push and pull request to `main`.
+
+### 5. Local Smoke Test
+- `scripts/smoke_test.py` – Local equivalent of the CI Stage 0 smoke test to confirm environment correctness before committing.
+
+## Why Stage 0 Matters in MLOps
+- Reproducibility – Identical results locally and in CI.
+- Testability – Even before modeling, we ensure the project runs end-to-end in a minimal form.
+- Automation – CI catches environment/config issues immediately.
+- Documentation as code – Architecture and requirements are versioned alongside code, preventing “spec drift.”
+- Extensibility – Scaffold anticipates multi-city, multi-pollutant expansion with minimal code changes.
+
+## Stage 0 Exit Criteria (Achieved)
+- ✅ Repo scaffold matches `REPO_TREE_STAGE0.md`.
+- ✅ Docs complete in `docs/`.
+- ✅ `.env` templating works locally and in CI.
+- ✅ CI workflow passes “Stage 0 smoke test.”
+- ✅ Local smoke test prints `"Smoke test OK."`.
+
+## Next Step – Stage 1
+Implement baseline forecasts (raw, persistence, climatology) and the planned bias-correction benchmark from `PRD.md`, with metric tracking per `ADR-005_evaluation.md`.
+
+
+Next: Stage 1 expands the project to Berlin, Munich, and Hamburg.
+
+Stage 1 will forecast for Berlin, Munich, and Hamburg in parallel.

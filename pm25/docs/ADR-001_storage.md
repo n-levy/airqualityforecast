@@ -8,7 +8,7 @@ We need to store raw, curated, and feature data in a way that is efficient, clou
 
 ## Decision
 We will use **Apache Parquet** files stored via **fsspec** paths.
-- Local MVP: `file://` paths in user directory.
+- Local Stage 1: `file://` paths in user directory.
 - Cloud: `s3://` paths with the same interface.
 
 ## Consequences
@@ -18,3 +18,9 @@ We will use **Apache Parquet** files stored via **fsspec** paths.
 
 ---
 **Last updated:** YYYY-MM-DD
+
+
+---
+**Plain English Summary:**
+This decision record explains what choice was made, why it was made, and its impact on the project.
+It is intended to help both technical and non-technical contributors understand the reasoning.

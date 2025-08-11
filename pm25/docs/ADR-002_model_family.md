@@ -17,3 +17,9 @@ We will use **gradient-boosted trees** (XGBoost) as a bias-correcting downscaler
 
 ---
 **Last updated:** YYYY-MM-DD
+
+
+---
+**Plain English Summary:**
+This decision record explains what choice was made, why it was made, and its impact on the project.
+It is intended to help both technical and non-technical contributors understand the reasoning.

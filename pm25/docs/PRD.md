@@ -4,23 +4,23 @@
 See `CONTEXT.md` for the full rationale, goals, and constraints.
 
 ## 2. Purpose
-Produce PM2.5 forecasts for Berlin that outperform public benchmarks (e.g., CAMS) in measurable, transparent ways, with a public dashboard showing forecasts, actuals, and accuracy comparisons.
+Produce PM2.5 forecasts for Berlin, Hamburg and Munich that outperform public benchmarks (e.g., CAMS) in measurable, transparent ways, with a public dashboard showing forecasts, actuals, and accuracy comparisons.
 
-## 3. Scope (MVP – v1.1)
-- **Location:** Berlin
+## 3. Scope (Stage 1)
+- **Location:** Berlin, Hamburg, Munich
 - **Metric:** PM2.5
-- **Benchmarks:** CAMS forecasts, other public sources if available
+- **Benchmarks:** CAMS forecasts, Aurora, NOAA GEFS-Aerosol
 - **Outputs:**
   - Our predictions
   - Benchmark predictions
   - Actual PM2.5
-  - Accuracy metrics (MAE, bias, SMAPE, exceedance F1)
+  - Accuracy metrics (κw, category accuracy, hit/false alarms, MAE per pollutant)
 - **UI:**
   - Static dashboard
   - User controls for lead time, date range, and metric selection
   - Downloadable CSV/JSON
 
-## 4. Out of Scope (MVP)
+## 4. Out of Scope (Stage 1)
 - Other cities
 - Other AQI components (PM10, O₃, NO₂)
 - Live API
@@ -42,18 +42,14 @@ Produce PM2.5 forecasts for Berlin that outperform public benchmarks (e.g., CAMS
 - **Cloud migration delays:** Build with fsspec paths and container-ready code.
 
 ## 8. Roadmap
-1. MVP (Berlin, PM2.5)
+1. Stage 1 (Berlin, Hamburg, Munich, PM2.5)
 2. Add cities
 3. Add AQI components
 4. Cloud deployment
 5. Monetization
 
----
-**Last updated:** YYYY-MM-DD
-
-
 ### Baseline Bias-Correction Benchmark (planned for Stage 1)
-We will implement a simple, transparent **per-pollutant rolling bias-correction** as an initial benchmark for Berlin and Munich.
+We will implement a simple, transparent **per-pollutant rolling bias-correction** as an initial benchmark for Berlin, Hamburg and Munich.
 
 **Purpose:**  
 - Establish a reliable baseline against which all future models will be evaluated.  
@@ -61,6 +57,7 @@ We will implement a simple, transparent **per-pollutant rolling bias-correction*
 
 **Method:**  
 - Apply rolling mean bias correction (window ≈ 21 days) per pollutant.  
+- Add 
 - Optional scale adjustment via linear regression (obs ≈ a + b × forecast).  
 - Simple regime split on wind speed (< 2 m/s vs ≥ 2 m/s).  
 - Enforce physical constraints (≥ 0; PM₂.₅ ≤ PM₁₀).  
@@ -74,3 +71,9 @@ We will implement a simple, transparent **per-pollutant rolling bias-correction*
 - PM₂.₅ MAE reduced by ≥ 10 % vs raw forecast over recent 30-day window.  
 - Bias within ± 1 µg/m³.  
 - AQI categorical accuracy improved by ≥ 5 pp.
+
+For metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
+
+For metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
+
+For metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.
