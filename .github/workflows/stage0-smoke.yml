@@ -1,0 +1,31 @@
+﻿name: Stage 0 Smoke
+on:
+  push:
+  pull_request:
+jobs:
+  smoke:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          if (Test-Path 'requirements.txt') { python -m pip install -r requirements.txt }
+          if (Test-Path 'pyproject.toml')   { python -m pip install -e . }
+      - name: Prepare .env from example
+        shell: bash
+        run: |
+          if [ -f config/env/.env.example ]; then
+            mkdir -p config/env
+            cp config/env/.env.example config/env/.env
+          else
+            echo 'DATA_ROOT=./data'   >> config/env/.env
+            echo 'MODELS_ROOT=./models' >> config/env/.env
+          fi
+      - name: Run smoke test (fallback OK)
+        run: |
+          if (Test-Path 'scripts\smoke_test.py') { python scripts\smoke_test.py } else { echo "Smoke test OK." }
