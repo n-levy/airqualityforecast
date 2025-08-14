@@ -1,0 +1,117 @@
+﻿WINDOWS DEV ENV SETUP — PYTHON 3.11 (NO ADMIN), VENV, AND WHEELS
+================================================================
+
+Audience
+--------
+New contributors on Windows without admin rights.
+
+Goal
+----
+Provide a reproducible, admin-free Python 3.11 x64 environment that reliably installs numpy/pandas from wheels, avoiding compiler toolchains and cloud-sync lockups.
+
+Summary (TL;DR)
+---------------
+1) Use the official Windows **embeddable** CPython 3.11 x64 under your user folder.
+2) Add `import site` to `python311._pth` (no BOM) so packages work.
+3) Bootstrap **pip**, then install **virtualenv**.
+4) Create the project virtual environment **outside cloud-synced folders**: `C:\aqf311\.venv`.
+5) Use that venv to install dependencies *from wheels*, then run the project.
+
+Why this approach?
+------------------
+- Admin installs are blocked by IT.
+- pandas/numpy wheels exist for **Python 3.11 x64** (no Visual Studio needed).
+- Google Drive/OneDrive can lock files mid-install; putting the venv in `C:\aqf311\.venv` avoids that.
+- This is repeatable on fresh laptops.
+
+Step-by-step (one command at a time)
+------------------------------------
+
+A) Get the embeddable Python 3.11 x64 under your user profile
+-------------------------------------------------------------
+- Download in a browser:
+  • https://www.python.org/ftp/python/3.11.9/python-3.11.9-embed-amd64.zip
+  • https://bootstrap.pypa.io/get-pip.py
+
+- Unzip the Python ZIP to:  C:\Users\<you>\Apps\python311-embed
+  (You should now see `python.exe`, `python311.dll`, `python311._pth`, etc.)
+
+- Open `C:\Users\<you>\Apps\python311-embed\python311._pth` and make it EXACTLY:
+    python311.zip
+    .
+    import site
+  (Ensure no hidden BOM at the start; save as plain UTF-8 or ASCII.)
+
+- Quick check:
+    C:\Users\<you>\Apps\python311-embed\python.exe -V
+  Expected: Python 3.11.9
+
+B) Add pip and virtualenv
+-------------------------
+- Install pip into this embedded Python:
+    C:\Users\<you>\Apps\python311-embed\python.exe C:\Users\<you>\AppData\Local\Temp\get-pip.py
+
+- Verify:
+    C:\Users\<you>\Apps\python311-embed\python.exe -m pip -V
+
+- Install virtualenv:
+    C:\Users\<you>\Apps\python311-embed\python.exe -m pip install --upgrade pip setuptools wheel
+    C:\Users\<you>\Apps\python311-embed\python.exe -m pip install virtualenv
+
+C) Create the project venv OUTSIDE cloud-sync
+---------------------------------------------
+- Create:    C:\aqf311\.venv
+- Command:
+    C:\Users\<you>\Apps\python311-embed\python.exe -m virtualenv C:\aqf311\.venv
+
+- Verify Python & arch:
+    C:\aqf311\.venv\Scripts\python.exe -c "import sys,struct,platform; print(sys.version); print(struct.calcsize('P')*8, platform.machine())"
+  Expected: 3.11.x and "64 AMD64"
+
+D) Install dependencies (wheels first), from the project repo
+------------------------------------------------------------
+- Use a short local TEMP/cache to avoid Drive locks:
+    mkdir C:\Temp\pip-cache 2>NUL
+    set TEMP=C:\Temp
+    set TMP=C:\Temp
+    set PIP_CACHE_DIR=C:\Temp\pip-cache
+
+- Install core tooling and heavy wheels:
+    C:\aqf311\.venv\Scripts\python.exe -m pip install --upgrade pip setuptools wheel
+    C:\aqf311\.venv\Scripts\python.exe -m pip install --only-binary=:all: numpy
+    C:\aqf311\.venv\Scripts\python.exe -m pip install --only-binary=:all: pandas
+
+- Install the rest (without re-resolving numpy/pandas):
+    C:\aqf311\.venv\Scripts\python.exe -m pip install -r "G:\My Drive\sync\air quality forecast\Git_repo\requirements.txt" --no-deps
+
+- Final check:
+    C:\aqf311\.venv\Scripts\python.exe -c "import pandas as pd,numpy as np; print('pandas', pd.__version__, '| numpy', np.__version__)"
+
+Daily usage
+-----------
+- From the repo root:
+    "G:\My Drive\sync\air quality forecast\Git_repo"> C:\aqf311\.venv\Scripts\python.exe scripts\smoke_test.py
+  Or create a helper script once:
+    # repo\scripts\py.ps1
+    & "C:\aqf311\.venv\Scripts\python.exe" $args
+
+Notes & troubleshooting
+-----------------------
+- If pip errors with `[Errno 2] No such file or directory` while installing in a synced folder, make sure your venv is in `C:\aqf311\.venv` and TEMP is `C:\Temp`.
+- If pip can’t reach wheels due to a corporate mirror, temporarily force the public index:
+    ...\python.exe -m pip install --index-url https://pypi.org/simple --timeout 120 --retries 3 numpy pandas
+- If `venv` is missing in the embedded build, use `virtualenv` (as above).
+- If you ever need to reset, delete `C:\aqf311\.venv` and redo section C/D.
+
+Maintenance
+-----------
+- Upgrade tools:
+    C:\aqf311\.venv\Scripts\python.exe -m pip install --upgrade pip setuptools wheel
+- Update deps:
+    C:\aqf311\.venv\Scripts\python.exe -m pip install -r requirements.txt
+- Remove env:
+    rmdir /s /q C:\aqf311\.venv
+
+Appendix: Why not Python 3.14?
+------------------------------
+- At the time of writing, pandas wheels for 3.14 weren’t available, which forces source builds on Windows and requires Visual Studio Build Tools. Our setup locks to 3.11 to ensure wheels-only installs.
