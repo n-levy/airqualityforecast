@@ -1,10 +1,13 @@
 # ---- Environment ----
 .venv/
+.venv*/
 .env
 .env.local
 .env.development
 .env.production
 !.env.example
+config/env/.env
+
 
 # ---- Python ----
 __pycache__/
