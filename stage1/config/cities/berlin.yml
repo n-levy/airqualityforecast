@@ -1,0 +1,10 @@
+city_code: berlin
+name: Berlin
+timezone: Europe/Berlin
+providers: [cams, aurora, gefs_aerosol]
+bounds: {lat_min: 52.3, lat_max: 52.7, lon_min: 13.1, lon_max: 13.7}
+stations:
+  - id: de_be_urban_1
+    name: Urban Station 1
+    lat: 52.5200
+    lon: 13.4050

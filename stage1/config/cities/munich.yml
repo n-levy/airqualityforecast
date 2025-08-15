@@ -1,0 +1,10 @@
+city_code: munich
+name: Munich
+timezone: Europe/Berlin
+providers: [cams, aurora, gefs_aerosol]
+bounds: {lat_min: 48.0, lat_max: 48.3, lon_min: 11.4, lon_max: 11.8}
+stations:
+  - id: de_by_urban_1
+    name: Urban Station 1
+    lat: 48.1351
+    lon: 11.5820
