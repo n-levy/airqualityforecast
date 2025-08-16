@@ -1,0 +1,13 @@
+﻿[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stage1-forecast"
+version = "0.1.0"
+description = "Air quality forecast – Stage 1 scaffold"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["stage1/src"]
