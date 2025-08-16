@@ -1,7 +1,8 @@
 name: Berlin
+slug: berlin
 timezone: Europe/Berlin
 providers: [cams, aurora, gefs_aerosol]
-holidays_calendar: DE-BE
+holidays_calendar: DE-BE   # Berlin state
 bounds:
   lat_min: 52.3
   lat_max: 52.7

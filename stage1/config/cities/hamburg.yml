@@ -1,10 +1,13 @@
-city_code: hamburg
 name: Hamburg
+slug: hamburg
 timezone: Europe/Berlin
 providers: [cams, aurora, gefs_aerosol]
-bounds: {lat_min: 53.3, lat_max: 53.8, lon_min: 9.7, lon_max: 10.3}
+holidays_calendar: DE-HH   # Hamburg city-state
+bounds:
+  lat_min: 53.3
+  lat_max: 53.7
+  lon_min: 9.7
+  lon_max: 10.3
 stations:
-  - id: de_hh_urban_1
-    name: Urban Station 1
-    lat: 53.5511
-    lon: 9.9937
+  - id: de_hh_001
+    name: Urban background (example)
