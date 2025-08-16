@@ -1,43 +1,36 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "City configuration",
   "type": "object",
-  "required": ["city_code", "name", "timezone", "providers", "bounds", "stations"],
+  "required": ["name", "timezone", "providers", "bounds"],
   "properties": {
-    "city_code": { "type": "string", "minLength": 1 },
-    "name": { "type": "string", "minLength": 1 },
-    "timezone": { "type": "string", "minLength": 1 },
+    "name": {"type": "string"},
+    "timezone": {"type": "string"},
     "providers": {
       "type": "array",
-      "items": { "type": "string", "enum": ["cams", "aurora", "gefs_aerosol"] },
-      "minItems": 1
+      "items": {"type": "string", "enum": ["cams", "aurora", "gefs_aerosol"]}
     },
+    "holidays_calendar": {"type": "string"},
     "bounds": {
       "type": "object",
-      "required": ["lat_min","lat_max","lon_min","lon_max"],
+      "required": ["lat_min", "lat_max", "lon_min", "lon_max"],
       "properties": {
-        "lat_min": { "type": "number" },
-        "lat_max": { "type": "number" },
-        "lon_min": { "type": "number" },
-        "lon_max": { "type": "number" }
-      },
-      "additionalProperties": false
+        "lat_min": {"type": "number"},
+        "lat_max": {"type": "number"},
+        "lon_min": {"type": "number"},
+        "lon_max": {"type": "number"}
+      }
     },
     "stations": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id","name","lat","lon"],
+        "required": ["id", "name"],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "lat": { "type": "number" },
-          "lon": { "type": "number" }
-        },
-        "additionalProperties": false
-      },
-      "minItems": 1
+          "id": {"type": "string"},
+          "name": {"type": "string"}
+        }
+      }
     }
   },
-  "additionalProperties": false
+  "additionalProperties": true
 }

@@ -1,55 +1,52 @@
-﻿"""
-Validate city configuration files against config/schemas/cities.json.
+﻿#!/usr/bin/env python
+import sys, json, pathlib
+import yaml  # pip install pyyaml
+from jsonschema import validate  # pip install jsonschema
 
-Usage:
-  C:\aqf311\.venv\Scripts\python.exe apps\tools\validate_cities.py
-  C:\aqf311\.venv\Scripts\python.exe apps\tools\validate_cities.py --cities-dir config/cities --schema config/schemas/cities.json
-"""
-from __future__ import annotations
-import argparse, json, sys
-from pathlib import Path
-import yaml
-from jsonschema import Draft202012Validator
+HERE = pathlib.Path(__file__).resolve()
 
-def main() -> int:
-    ap = argparse.ArgumentParser(description="Validate city configs.")
-    ap.add_argument("--cities-dir", default="config/cities")
-    ap.add_argument("--schema", default="config/schemas/cities.json")
-    args = ap.parse_args()
+def find_stage1_root(start: pathlib.Path) -> pathlib.Path | None:
+    """
+    Walk up to find either:
+      - <root>/config/schemas
+      - <root>/stage1/config/schemas
+    Return the root that has a 'config/schemas' under it (stage1 root).
+    """
+    for p in [start, *start.parents]:
+        # case A: already inside stage1 (preferred)
+        if (p / "config" / "schemas").exists():
+            return p
+        # case B: repo root contains 'stage1'
+        if (p / "stage1" / "config" / "schemas").exists():
+            return p / "stage1"
+    return None
 
-    cities_dir = Path(args.cities_dir)
-    schema_path = Path(args.schema)
+ROOT = find_stage1_root(HERE)
+if ROOT is None:
+    print("ERROR: Could not locate stage1 root. "
+          "Ensure you have a 'config/schemas' folder under stage1.")
+    sys.exit(2)
 
-    if not cities_dir.is_dir():
-        print(f"ERROR: cities dir not found: {cities_dir}", file=sys.stderr); return 2
-    if not schema_path.is_file():
-        print(f"ERROR: schema not found: {schema_path}", file=sys.stderr); return 2
+schema_path = ROOT / "config" / "schemas" / "cities.json"
+cities_dir  = ROOT / "config" / "cities"
 
-    schema = json.loads(schema_path.read_text(encoding="utf-8-sig"))
-    validator = Draft202012Validator(schema)
+if not schema_path.exists():
+    print(f"ERROR: Schema file not found: {schema_path}")
+    sys.exit(2)
+if not cities_dir.exists():
+    print(f"ERROR: Cities folder not found: {cities_dir}")
+    sys.exit(2)
 
-    ymls = sorted(cities_dir.glob("*.yml"))
-    if not ymls:
-        print(f"WARNING: no .yml files found in {cities_dir}"); return 0
+schema = json.loads(schema_path.read_text(encoding="utf-8"))
 
-    ok = fail = 0
-    for y in ymls:
-        try:
-            data = yaml.safe_load(y.read_text(encoding="utf-8-sig"))
-            errors = sorted(validator.iter_errors(data), key=lambda e: e.path)
-            if errors:
-                print(f"FAIL: {y.name}")
-                for e in errors:
-                    loc = ".".join([str(p) for p in e.path]) or "<root>"
-                    print(f"  - {loc}: {e.message}")
-                fail += 1
-            else:
-                print(f"OK:   {y.name}"); ok += 1
-        except Exception as ex:
-            print(f"ERROR: {y.name}: {ex}", file=sys.stderr); fail += 1
-    print(f"Summary: {ok} OK, {fail} fail")
-    return 1 if fail else 0
+ok = True
+for yml in sorted(cities_dir.glob("*.yml")):
+    data = yaml.safe_load(yml.read_text(encoding="utf-8"))
+    try:
+        validate(instance=data, schema=schema)
+        print(f"[OK] {yml.name}")
+    except Exception as e:
+        ok = False
+        print(f"[FAIL] {yml.name}: {e}")
 
-if __name__ == "__main__":
-    raise SystemExit(main())
-
+sys.exit(0 if ok else 1)
