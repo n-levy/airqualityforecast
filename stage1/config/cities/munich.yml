@@ -1,0 +1,7 @@
+city: Munich
+timezone: Europe/Berlin
+stations:
+  - id: de_by_001
+    name: Munich-Center
+holidays: de
+tiles: munich/*

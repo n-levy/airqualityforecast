@@ -1,0 +1,16 @@
+city: Berlin
+timezone: Europe/Berlin
+stations:
+  - id: de_be_001
+    name: Berlin-Center
+holidays: de
+tiles: berlin/*
+weather:
+  - id: de_be_001
+    name: Berlin-Center
+    latitude: 52.5200
+    longitude: 13.4050
+    timezone: Europe/Berlin
+    source: openweathermap
+    units: metric
+    update_interval: 3600

@@ -201,3 +201,148 @@ notepad .env  # Update DATA_ROOT, MODELS_ROOT, CACHE_ROOT paths
 ---
 
 **Last updated:** 2025-08-14
+
+
+ENVIRONMENT_SETUP_SUMMARY.txt
+================================
+
+Purpose
+-------
+Canonical reference describing **where everything lives** on your Windows machine,
+**how to run** the Stage 1 project reliably, and **what to avoid**. Written for both
+humans and LLMs. Keep this file in the repo docs.
+
+------------------------------------------------------------
+A. CURRENT LOCATIONS (Windows)
+------------------------------------------------------------
+1) GitHub repository (source of truth)
+   - Path: G:\My Drive\sync\air quality forecast\Git_repo
+   - Stage 1 subproject: G:\My Drive\sync\air quality forecast\Git_repo\stage1
+   - You COMMIT & PUSH from here.
+
+2) Python environment (only venv)
+   - Path: C:\aqf311\.venv
+   - Created with Python 3.11 (embeddable) + virtualenv (no admin rights).
+
+3) Runtime mirror for execution (recommended)
+   - Path: C:\aqf311\repo\stage1
+   - Why: avoids Google Drive/OneDrive file-locks during installs & runs.
+
+4) Local storage (not in git)
+   - DATA_ROOT  : C:\aqf311\data
+   - MODELS_ROOT: C:\aqf311\models
+   - CACHE_ROOT : C:\aqf311\.cache
+   - Optional pip cache: C:\Temp\pip-cache
+
+5) Key files and folders inside stage1
+   - src\stage1_forecast\env.py  ← robust .env loader
+   - scripts\smoke_test.py       ← prints DATA_ROOT / MODELS_ROOT, then “Smoke test OK.”
+   - apps\tools\validate_cities.py, generate_cli_reference.py
+   - config\cities\*.yml, config\schemas\*.json
+   - config\env\.env.example (template only, no secrets)
+
+------------------------------------------------------------
+B. HOW THE .ENV IS FOUND
+------------------------------------------------------------
+The loader searches in this order:
+  1) <repo_root>\.env
+  2) <repo_root>\config\env\.env
+  3) First .env found by python-dotenv walking up from the current directory
+It prints which file it loaded, then echoes the key paths.
+
+Rule of thumb:
+- Keep a REAL .env only in the tree you actually run from (usually C:\aqf311\repo\stage1).
+- Keep ONLY the template in git: stage1\config\env\.env.example
+
+------------------------------------------------------------
+C. TWO WAYS TO RUN
+------------------------------------------------------------
+Recommended (Mirror-and-Run)
+1) Edit & commit on G:
+   cd "G:\My Drive\sync\air quality forecast\Git_repo\stage1"
+   git add -A
+   git commit -m "stage1: <change>"
+   git push
+2) Mirror to C: (no git on C:):
+   robocopy "G:\My Drive\sync\air quality forecast\Git_repo\stage1" "C:\aqf311\repo\stage1" /MIR /XD .git .venv __pycache__ /XF *.pyc
+3) Run:
+   cd "C:\aqf311\repo\stage1"
+   C:\aqf311\.venv\Scripts\python.exe scripts\smoke_test.py
+
+Direct-from-Repo (no mirror)
+- Use a tiny runner that injects src/ via PYTHONPATH so you don’t need editable installs in G:
+  .\scripts\py.ps1 .\scripts\smoke_test.py
+
+------------------------------------------------------------
+D. QUICK VERIFICATION COMMANDS
+------------------------------------------------------------
+# Show active Python (should be C:\aqf311\.venv\...)
+C:\aqf311\.venv\Scripts\python.exe -c "import sys; print(sys.executable)"
+
+# Prove .env is discovered
+C:\aqf311\.venv\Scripts\python.exe -c "import os; from dotenv import find_dotenv,load_dotenv; p=find_dotenv(usecwd=True); print('found:', p); load_dotenv(p); print('DATA_ROOT=', os.getenv('DATA_ROOT'))"
+
+# Full smoke test
+cd "C:\aqf311\repo\stage1"
+C:\aqf311\.venv\Scripts\python.exe .\scripts\smoke_test.py
+
+------------------------------------------------------------
+E. DO / DON’T
+------------------------------------------------------------
+DO
+- Use ONE venv: C:\aqf311\.venv
+- Keep .env out of git; keep a template at stage1\config\env\.env.example
+- Run from C: mirror for reliability; commit from G: repo
+- Use Windows PowerShell commands one-per-line
+
+DON’T
+- Don’t keep any .venv inside G:\…\Git_repo (Drive locks & bloat)
+- Don’t commit .env or any data/models to git
+- Don’t rely on editable installs in G:\… (use mirror or PYTHONPATH runner)
+
+------------------------------------------------------------
+F. CLEANUP OF REDUNDANT ENVIRONMENTS
+------------------------------------------------------------
+If you see a venv under G:\…\Git_repo (e.g., .venv, .venv311), remove it:
+  Remove-Item -LiteralPath "G:\My Drive\sync\air quality forecast\Git_repo\stage1\.venv" -Recurse -Force
+
+Ensure .gitignore prevents future accidents:
+  # local virtual envs
+  .venv/
+  .venv*/
+  # local env files
+  .env
+  config/env/.env
+
+------------------------------------------------------------
+G. COMMON TROUBLESHOOTING
+------------------------------------------------------------
+Problem: pip upgrade/install fails with “[Errno 2]” or file-in-use
+Fix    : Don’t install in G:. Use C:\aqf311\.venv and run from C:\aqf311\repo\stage1
+
+Problem: Smoke test shows DATA_ROOT=None / MODELS_ROOT=None
+Fix    : Ensure there is a .env in the tree you are running from (e.g., C:\aqf311\repo\stage1\.env);
+         verify with the quick ‘find_dotenv’ command above.
+
+Problem: Import errors for stage1_forecast
+Fix    : Ensure src\stage1_forecast\ exists with __init__.py and env.py; if running from G:, use scripts\py.ps1.
+
+------------------------------------------------------------
+H. APPENDIX: ONE-TIME SETUP (No Admin)
+------------------------------------------------------------
+1) Install Python 3.11 (embeddable) under C:\Users\<you>\Apps\python311-embed; enable 'import site' in python311._pth
+2) Bootstrap pip & virtualenv:
+   C:\Users\<you>\Apps\python311-embed\python.exe C:\path\to\get-pip.py
+   C:\Users\<you>\Apps\python311-embed\python.exe -m pip install virtualenv
+3) Create venv:
+   C:\Users\<you>\Apps\python311-embed\python.exe -m virtualenv C:\aqf311\.venv
+4) Install project deps from the repo (run from stage1):
+   C:\aqf311\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   C:\aqf311\.venv\Scripts\python.exe -m pip install -e .
+5) Create .env (never commit):
+   copy config\env\.env.example → .env
+   set DATA_ROOT, MODELS_ROOT, CACHE_ROOT to C:\aqf311\…
+
+------------------------------------------------------------
+END
+------------------------------------------------------------
