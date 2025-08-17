@@ -10,42 +10,61 @@ Deliverable: A short written summary (10 bullets) of what each folder does.
 Goal: Know success criteria, dashboard outputs, and performance/SLA targets.  
 Deliverable: A checklist of PRD success metrics and NFR targets.
 
-3) Read modeling ADR [✅ Completed]  
+3) Read ADRs [✅ Completed]  
 Goal: Why a global combiner + optional per‑city bias; pollutants; AQI computation approach.  
 Deliverable: One‑page notes with “what/why/how” of the combiner model.
 
-4) Read evaluation ADR [✅ Completed]  
-Goal: Understand κ (quadratic), category accuracy, threshold hits/false alarms, MAE per pollutant.  
-Deliverable: A table explaining when to use each metric and what it teaches.
-
-5) Read storage & scheduler ADRs [✅ Completed]  
-Goal: Know Parquet via fsspec; local vs cloud paths; cron locally, cloud jobs later.  
-Deliverable: Diagram showing data flow file:// → (later) s3:// and how jobs run.
-
-6) Read GEFS‑Aerosol ADR [✅ Completed]  
-Goal: Understand why we add GEFS, adapter location, schema/tests/scheduling.  
-Deliverable: Bullet plan of GEFS tasks to integrate alongside CAMS/Aurora.
-
-## B) Environment & Tooling (6 hrs)
-7) Create a clean Python env (no admin rights) [✅ Completed]  
+4) Create a clean Python env (no admin rights) [✅ Completed]  
 Goal: Set up `pyenv` or `venv` and activate it; confirm `python -m pip list`.  
 Deliverable: Commands + version notes saved in `docs/SETUP.md`.
 
-8) Install project dependencies from `pyproject.toml` [✅ Completed]  
+5) Install project dependencies from `pyproject.toml` [✅ Completed]  
 Goal: Install minimum working set; record any issues.  
 Deliverable: `pip install -e .` (or equivalent) succeeds; `python -c "import pandas"` works.
 
-9) Make targets dry run  [✅ Completed] 
+6) Make targets dry run  [✅ Completed] 
 Goal: Read the `Makefile` and run non‑destructive targets (e.g., `make help`).  
 Deliverable: Screenshot/log + 3 notes on what each target will eventually do.
 
-10) Configure `.env` from example [✅ Completed]  
+7) Configure `.env` from example [✅ Completed]  
 Goal: Copy `config/env/.env.example` → `.env` and set DATA_ROOT/MODELS_ROOT.  
 Deliverable: Working `.env` with local `file://` paths.
 
-11) Create local data/model directories [✅ Completed]  
+8) Create local data/model directories [✅ Completed]  
 Goal: Create `data/` and `models/` folders, confirm gitignored.  
 Deliverable: Terminal log + a note on why artifacts stay out of git.
+
+9) – UBA Observations (Ground Truth)
+Inputs: UBA API / CSV downloads (Germany PM₂.₅ hourly obs).
+Outputs: ${DATA_ROOT}/curated/obs/<city>/pm25.parquet
+Why first? All models + verification need ground truth.
+
+Steps:
+Hit UBA endpoint (CSV/JSON API).
+Normalize columns → valid_time (UTC), value.
+Filter for Berlin/Munich/Hamburg stations (config in config/cities/*.yml).
+Write Parquet partitioned by city/date.
+
+10) MT08 – CAMS Forecasts
+Inputs: CAMS forecast download (grib/netcdf/CSV via CDS API or FTP).
+Outputs: ${DATA_ROOT}/curated/providers/cams/<city>/pm25.parquet
+Why second? CAMS is the main European benchmark.
+Steps:
+Request CAMS PM₂.₅ forecast fields (global grid).
+Interpolate/extract grid point near each city.
+Normalize → timestamp_issue, valid_time, lead_time_h, value.
+Write Parquet partitioned by city/issue_time.
+
+11) NOAA GEFS-Aerosol Forecasts
+Inputs: NOAA GEFS-Aerosol files (grib2 via FTP/HTTPS).
+Outputs: ${DATA_ROOT}/curated/providers/gefs/<city>/pm25.parquet
+Why third? Adds diversity; runs 6-hourly.
+Steps:
+Download nearest GEFS aerosol member forecast.
+Extract PM₂.₅ at each city’s lat/lon (config).
+Normalize → timestamp_issue, valid_time, lead_time_h, value.
+Write Parquet partitioned by city/issue_time.
+## B) Environment & Tooling (6 hrs)
 
 12) Sanity check: tiny script reads/writes Parquet via fsspec  
 Goal: Prove your env can round‑trip a small dataframe to `file://`.  
