@@ -3,5 +3,7 @@ timezone: Europe/Berlin
 stations:
   - id: de_by_001
     name: Munich-Center
+    latitude: 48.137
+    longitude: 11.575
 holidays: de
 tiles: munich/*

@@ -3,13 +3,7 @@ timezone: Europe/Berlin
 stations:
   - id: de_hh_001
     name: Hamburg-Center
+    latitude: 53.5511
+    longitude: 9.9937
 holidays: de
 tiles: hamburg/*
-weather:
-  - id: de_hh_001
-    name: Hamburg-Center
-    type: city
-    timezone: Europe/Berlin
-    coordinates:
-      latitude: 53.5511
-      longitude: 9.9937
