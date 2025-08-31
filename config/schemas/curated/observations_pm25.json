@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Curated PM2.5 city-hour dataset (array of records)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "city",
+      "valid_time",
+      "value",
+      "unit"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "city": {
+        "type": "string"
+      },
+      "valid_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "value": {
+        "type": "number"
+      },
+      "unit": {
+        "type": "string"
+      }
+    }
+  }
+}
