@@ -1,9 +1,12 @@
 city: Hamburg
 timezone: Europe/Berlin
 stations:
-  - id: de_hh_001
+  - id: hh_001
     name: Hamburg-Center
     latitude: 53.5511
     longitude: 9.9937
+  - id: hh_002
+    name: Hamburg-North
+    latitude: 53.58
+    longitude: 10.00
 holidays: de
-tiles: hamburg/*

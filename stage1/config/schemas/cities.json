@@ -12,11 +12,12 @@
         "required": ["id","name"],
         "properties": {
           "id":   {"type": "string"},
-          "name": {"type": "string"}
+          "name": {"type": "string"},
+          "latitude": {"type": "number"},
+          "longitude": {"type": "number"}
         }
       }
     },
-    "holidays": {"type": "string"},
-    "tiles": {"type": "string"}
+    "holidays": {"type": "string"}
   }
 }

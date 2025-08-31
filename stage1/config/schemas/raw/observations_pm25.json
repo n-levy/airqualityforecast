@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "UBA PM2.5 raw hourly",
+  "title": "Raw PM2.5 hourly",
   "type": "object",
   "required": ["station_id", "ts", "value", "unit"],
   "properties": {

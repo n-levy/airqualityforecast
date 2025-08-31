@@ -1,13 +1,14 @@
-﻿"""
+"""
 Validate city configuration files against config/schemas/cities.json.
 
-Usage:
+Usage (Windows PowerShell):
   C:\aqf311\.venv\Scripts\python.exe apps\tools\validate_cities.py
-  C:\aqf311\.venv\Scripts\python.exe apps\tools\validate_cities.py --cities-dir config/cities --schema config/schemas/cities.json
+  C:\aqf311\.venv\Scripts\python.exe apps\tools\validate_cities.py --cities-dir config\cities --schema config\schemas\cities.json
 """
 from __future__ import annotations
 import argparse, json, sys
 from pathlib import Path
+
 import yaml
 from jsonschema import Draft202012Validator
 
@@ -17,23 +18,12 @@ def main() -> int:
     ap.add_argument("--schema", default="config/schemas/cities.json")
     args = ap.parse_args()
 
-    cities_dir = Path(args.cities_dir)
-    schema_path = Path(args.schema)
-
-    if not cities_dir.is_dir():
-        print(f"ERROR: cities dir not found: {cities_dir}", file=sys.stderr); return 2
-    if not schema_path.is_file():
-        print(f"ERROR: schema not found: {schema_path}", file=sys.stderr); return 2
-
-    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    schema = json.loads(Path(args.schema).read_text(encoding="utf-8"))
     validator = Draft202012Validator(schema)
 
-    ymls = sorted(cities_dir.glob("*.yml"))
-    if not ymls:
-        print(f"WARNING: no .yml files found in {cities_dir}"); return 0
-
-    ok = fail = 0
-    for y in ymls:
+    cities_dir = Path(args.cities_dir)
+    ok = 0; fail = 0
+    for y in sorted(cities_dir.glob("*.yml")):
         try:
             data = yaml.safe_load(y.read_text(encoding="utf-8"))
             errors = sorted(validator.iter_errors(data), key=lambda e: e.path)
