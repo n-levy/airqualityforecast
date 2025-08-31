@@ -12,7 +12,7 @@ def load_obs(city:str) -> pd.DataFrame:
 def build_features(df: pd.DataFrame) -> pd.DataFrame:
     df = df.sort_values('valid_time').copy()
     df['valid_time'] = pd.to_datetime(df['valid_time'], utc=True)
-    idx = pd.date_range(df['valid_time'].min(), df['valid_time'].max(), freq='H', tz='UTC')
+    idx = pd.date_range(df['valid_time'].min(), df['valid_time'].max(), freq='h', tz='UTC')
     s = df.set_index('valid_time')['value'].reindex(idx).interpolate(limit=3).ffill().bfill()
     feat = pd.DataFrame({'valid_time': idx, 'y': s.values})
     for k in [1,2,3,6,12,24,48]:

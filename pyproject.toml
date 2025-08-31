@@ -1,4 +1,4 @@
-﻿[build-system]
+[build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
@@ -11,3 +11,9 @@ requires-python = ">=3.11"
 
 [tool.setuptools.packages.find]
 where = ["stage1/src"]
+
+[tool.pytest.ini_options]
+# (optional, but keeps pytest happy & explicit)
+addopts = "-q"
+pythonpath = ["stage1/src"]
+testpaths = ["stage1/tests"]
