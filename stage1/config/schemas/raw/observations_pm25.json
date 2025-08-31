@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UBA PM2.5 raw hourly",
+  "type": "object",
+  "required": ["station_id", "ts", "value", "unit"],
+  "properties": {
+    "station_id": { "type": "string" },
+    "ts":        { "type": "string", "format": "date-time" },
+    "value":     { "type": "number" },
+    "unit":      { "type": "string" }
+  },
+  "additionalProperties": true
+}

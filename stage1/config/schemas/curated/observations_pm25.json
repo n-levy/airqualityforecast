@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Curated PM2.5 hourly per city",
+  "type": "object",
+  "required": ["city", "valid_time", "value", "unit"],
+  "properties": {
+    "city":       { "type": "string" },
+    "valid_time": { "type": "string", "format": "date-time" },
+    "value":      { "type": "number" },
+    "unit":       { "type": "string" }
+  },
+  "additionalProperties": false
+}
