@@ -1,0 +1,107 @@
+# Stage 2 – Data Pipeline Documentation
+
+## Section 1 – For Humans (Project Owner)
+
+### Purpose
+Stage 2 builds on Stage 1 by creating a complete ETL (Extract, Transform, Load) pipeline for air quality data.  
+It fetches raw observations from the OpenAQ v3 API, validates them, cleans them, and produces a ready-to-use dataset for forecasting models.
+
+### Workflow
+Stage 2 is orchestrated through the PowerShell script `run_stage2.ps1`.  
+It sequentially runs three Python scripts:
+
+1. **fetch_data.py**  
+   - Connects to the OpenAQ v3 API.  
+   - Targets Germany (iso=DE) and cities: Berlin, Munich (München), Hamburg.  
+   - Pollutants: PM2.5, PM10, NO2, O3.  
+   - Caps to 1 sensor per city/parameter group (for speed).  
+   - Caps history to max 365 days.  
+   - Saves raw CSV files in `data/raw/`.
+
+2. **validate_data.py**  
+   - Validates the raw CSV schema and content.  
+   - Required columns: city, date, at least one pollutant.  
+   - Ensures date parsing.  
+   - Coerces strings to numeric.  
+   - Handles negative pollutant values as warnings (not fatal).  
+   - Writes validated CSV to `data/interim/`.  
+   - Writes warnings to `logs/validation_soft_warnings.csv`.
+
+3. **process_data.py**  
+   - Cleans and standardizes validated data.  
+   - Clamps negatives to 0.  
+   - Clips humidity values to [0,1].  
+   - Imputes small gaps per city with forward/backward fill.  
+   - Clips outliers conservatively using quantiles.  
+   - Produces `data/processed/clean_air_quality.parquet`.  
+   - Writes a data health summary to `logs/processing_summary_*.txt` and `.csv`.  
+   - Summary includes row counts, date range, per-city coverage, pollutant stats, and number of negatives corrected.
+
+### Inputs
+- **Config**: `config/data_sources.yaml` (defines provider, parameters, days_back, etc.).  
+- **Secrets**: `.env` file at repo root, containing `OPENAQ_API_KEY`.  
+- **Environment**: Virtual environment `.venv_stage2` with dependencies installed.
+
+### Outputs
+- **Raw**: `data/raw/*.csv` (direct API downloads).  
+- **Interim**: `data/interim/validated_air_quality.csv`.  
+- **Processed**: `data/processed/clean_air_quality.parquet`.  
+- **Logs**: `logs/*.log`, `logs/validation_soft_warnings.csv`, `logs/processing_summary_*.txt`, `logs/processing_summary_*.csv`.
+
+### How to Run
+1. Ensure `.venv_stage2` is installed (run `setup_stage2.ps1` once).  
+2. Ensure `.env` contains your API key:  
+   ```
+   OPENAQ_API_KEY=your_api_key_here
+   ```
+3. Run the full pipeline:  
+   ```powershell
+   cd C:\aqf311\Git_repo\stage_2
+   .\run_stage2.ps1
+   ```
+4. Inspect outputs in `data/processed/` and summaries in `logs/`.
+
+---
+
+## Section 2 – For ChatGPT (Future Conversations)
+
+### Overview
+- Stage 2 = ETL pipeline (no modeling).  
+- Provider: OpenAQ v3 API.  
+- Pollutants: pm25, pm10, no2, o3.  
+- Cities: Berlin, München (Munich), Hamburg.  
+- Config-driven: `config/data_sources.yaml`.  
+- Secrets in `.env`.  
+- Logs and outputs saved in structured directories.
+
+### File Responsibilities
+- **run_stage2.ps1** – Orchestrates pipeline, runs fetch → validate → process, writes log.  
+- **fetch_data.py** – API client.  
+  - Uses `/v3/locations` to discover sensors.  
+  - Normalizes city names (e.g., Munich ↔ München).  
+  - Caps sensors per city/parameter to 1.  
+  - Uses `/v3/sensors/{id}/days` with datetime_from/to.  
+  - Caps `days_back` at 365.  
+  - Saves raw CSV.  
+- **validate_data.py** – Schema and numeric checks.  
+  - Hard errors: missing columns, bad dates, non-numeric values.  
+  - Soft warnings: negatives, humidity out of bounds.  
+  - Always writes validated CSV.  
+- **process_data.py** – Cleans and summarizes.  
+  - Clamps negatives.  
+  - Clips humidity.  
+  - Imputes small gaps.  
+  - Clips outliers.  
+  - Writes parquet + summary.  
+- **common.py** – Shared utilities: logging, dir setup, dotenv loading.
+
+### Environment
+- Python 3.11 virtual env `.venv_stage2`.  
+- Dependencies: pandas, requests, tqdm, PyYAML, pyarrow, python-dotenv.  
+- Run via PowerShell only.  
+
+### Outputs
+- Final model input: `data/processed/clean_air_quality.parquet`.  
+- Summary metrics in logs help verify data quality quickly.
+
+---
