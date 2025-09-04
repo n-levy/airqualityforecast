@@ -1,0 +1,61 @@
+# Project Status & Stage 3 Guidance
+
+## ✅ Stage 0 – Scaffold
+- Repo structure created with `apps/`, `config/`, `data/`, `models/`, `docs/`, etc.
+- `.env` template and CI smoke test implemented.
+- ADRs and NFRs written.
+- Purpose: ensure reproducibility and automation before modeling.
+
+## ✅ Stage 1 – Baseline Benchmarks
+- Defined three baseline forecasts to beat:
+  1. **CAMS** – global, daily.
+  2. **Aurora** – regional, daily.
+  3. **NOAA GEFS-Aerosol** – global, 6-hourly.
+- Outlined features (calendar, lag) and metrics (Cohen’s κ, category accuracy, MAE).
+- Repo ready for benchmark ingestion ETLs.
+
+## ✅ Stage 2 – OpenAQ ETL & Processing
+- End-to-end pipeline implemented:
+  - Fetch → Validate → Process scripts.
+  - Fetch pulls **OpenAQ v3 daily aggregates** (PM₂.₅, PM₁₀, NO₂, O₃).
+  - Validation clamps negatives and logs warnings.
+  - Processing outputs clean `.parquet` dataset.
+- Works across **Berlin, Hamburg, Munich**, capped at 1 year of history, 1 sensor per city/parameter.
+- Logs are ASCII-only to avoid mojibake.
+- `run_stage2.ps1` orchestrates the whole pipeline with progress indicators.
+
+## 🚧 Stage 3 – Benchmark ETLs (New Work)
+Purpose: fetch small comparable slices from benchmark providers (CAMS, Aurora, NOAA GEFS-Aerosol) so our forecasts can be evaluated directly against theirs.
+
+### What the Stage 3 Folder Contains
+- `config/` with minimal example YAML configs for CAMS, Aurora, NOAA GEFS-Aerosol.
+- `scripts/` with ETL stubs (`fetch_cams.py`, `fetch_aurora.py`, `fetch_noaa_gefs.py`) designed to pull just a few days of data (fast tests).
+- `setup_stage3.ps1` – creates `.venv_stage3`, installs requirements, copies `.env.example`.
+- `run_cams.ps1`, `run_aurora.ps1`, `run_noaa.ps1` – run each ETL individually.
+- `run_all_benchmarks.ps1` – runs all three sequentially.
+- `README_STAGE3.txt` – human-readable instructions.
+
+### PowerShell Usage
+1. **Setup**  
+   ```powershell
+   cd C:\aqf311\Git_repo\stage_3
+   .\setup_stage3.ps1
+   ```
+
+2. **Run each ETL individually**  
+   ```powershell
+   .\run_cams.ps1
+   .\run_aurora.ps1
+   .\run_noaa.ps1
+   ```
+
+3. **Run all three together**  
+   ```powershell
+   .\run_all_benchmarks.ps1
+   ```
+
+### Outputs
+- Raw CSVs stored in `data/raw/benchmarks/`.
+- Interim validated files in `data/interim/benchmarks/`.
+- Processed `.parquet` files in `data/processed/benchmarks/`.
+- Logs in `logs/`.

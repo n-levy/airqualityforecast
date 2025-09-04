@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File .\etl_cams.ps1

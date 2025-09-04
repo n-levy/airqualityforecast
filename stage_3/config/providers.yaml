@@ -1,0 +1,19 @@
+providers:
+  cams:
+    options:
+      mode: sample
+      sample_file: cams_sample.csv
+      cities: ["Berlin", "Hamburg", "München"]
+  aurora:
+    options:
+      mode: sample
+      sample_file: aurora_sample.csv
+      cities: ["Berlin", "Hamburg", "München"]
+  noaa_gefs_aerosol:
+    options:
+      mode: sample
+      sample_file: noaa_gefs_aerosol_sample.csv
+      cities: ["Berlin", "Hamburg", "München"]
+
+paths:
+  samples_dir: "data/samples"

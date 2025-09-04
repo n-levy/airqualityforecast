@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File .\run_all_providers.ps1
