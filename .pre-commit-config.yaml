@@ -1,42 +1,33 @@
-﻿# .pre-commit-config.yaml
-repos:
-  - repo: https://github.com/psf/black
-    rev: 24.8.0
-    hooks:
-      - id: black
-        name: black (python formatter)
-        language_version: python3.11
-        # Only run on Stage 1 and top-level Python code
-        files: ^(stage1/|scripts/|src/|tests/|pyproject\.toml)$
-        # Be explicit about exclusions too
-        exclude: ^stage_3/|^web/public/|^stage_3/scripts/Peek-Parquet\.py$
+﻿repos:
+- repo: https://github.com/psf/black
+  rev: 25.1.0
+  hooks:
+  - id: black
+    language_version: python3.11
+    exclude: ^(stage_3/|web/public/|stage_3/scripts/Peek-Parquet\.ps1)$
 
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
-    hooks:
-      - id: isort
-        name: isort (imports sorter)
-        language_version: python3.11
-        args: ["--profile", "black"]
-        files: ^(stage1/|scripts/|src/|tests/)  # keep same scope as black
-        exclude: ^stage_3/|^web/public/|^stage_3/scripts/Peek-Parquet\.py$
+- repo: https://github.com/pycqa/isort
+  rev: 6.0.1
+  hooks:
+  - id: isort
+    language_version: python3.11
+    args: ["--profile","black"]
+    exclude: ^(stage_3/|web/public/)
 
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.1.1
-    hooks:
-      - id: flake8
-        name: flake8 (style checker)
-        language_version: python3.11
-        args: ["--max-line-length=100"]
-        files: ^(stage1/|scripts/|src/|tests/)
-        exclude: ^stage_3/|^web/public/|^stage_3/scripts/Peek-Parquet\.py$
+- repo: https://github.com/pycqa/flake8
+  rev: 7.3.0
+  hooks:
+  - id: flake8
+    language_version: python3.11
+    args: ["--max-line-length=100"]
+    exclude: ^(stage_3/|web/public/)
 
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
-    hooks:
-      - id: check-yaml
-      - id: end-of-file-fixer
-        files: ^(stage1/|scripts/|src/|tests/|\.pre-commit-config\.yaml)$
-      - id: trailing-whitespace
-        files: ^(stage1/|scripts/|src/|tests/|\.pre-commit-config\.yaml)$
-      - id: detect-private-key
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+  - id: check-yaml
+  - id: end-of-file-fixer
+    exclude: ^(stage_3/|web/public/)
+  - id: trailing-whitespace
+    exclude: ^(stage_3/|web/public/)
+  - id: detect-private-key

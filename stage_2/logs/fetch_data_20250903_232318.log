@@ -1,5 +1,0 @@
-2025-09-04 01:23:18,273 | INFO | fetch_data | Active source: openaq_de (provider: openaq)
-2025-09-04 01:23:18,273 | INFO | fetch_data | Discovering sensors via /v3/locations (iso=DE, cities=['Berlin', 'Munich', 'Hamburg', 'München'], parameters=['pm25', 'pm10', 'no2', 'o3'])
-2025-09-04 01:23:21,134 | INFO | fetch_data | Discovered 111 matching sensors.
-2025-09-04 01:23:21,134 | INFO | fetch_data | Capped sensors per (city,parameter): kept 12, dropped 99 (max=1).
-2025-09-04 01:24:30,657 | INFO | fetch_data | Wrote OpenAQ v3 raw CSV: C:\aqf311\Git_repo\stage_2\data\raw\raw_air_quality_openaq_20250903T232430Z.csv (rows=8235)

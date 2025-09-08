@@ -1,4 +1,0 @@
-2025-09-04 00:57:25,620 | INFO | validate_data | Validating raw file: C:\aqf311\Git_repo\stage_2\data\raw\raw_air_quality_openaq_20250903T225249Z.csv
-2025-09-04 00:57:25,637 | WARNING | validate_data | pm25 has 2 negative values (will be clamped to 0 in processing). | pm10 has 2 negative values (will be clamped to 0 in processing). | no2 has 2 negative values (will be clamped to 0 in processing). | o3 has 188 negative values (will be clamped to 0 in processing).
-2025-09-04 00:57:25,637 | WARNING | validate_data | Sample rows with issues saved to: C:\aqf311\Git_repo\stage_2\logs\validation_soft_warnings.csv
-2025-09-04 00:57:25,653 | INFO | validate_data | Validation passed (with 4 warnings). Wrote: C:\aqf311\Git_repo\stage_2\data\interim\validated_air_quality.csv

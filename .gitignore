@@ -49,3 +49,18 @@ config/env/.env
 config/env/.env
 
 
+
+# Python build/cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Local env files
+.env
+config/env/.env
+
+# Data & logs (by stage)
+stage_2/data/
+stage_2/logs/
+stage_3/data/
+stage_3/logs/

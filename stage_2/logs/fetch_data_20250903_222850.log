@@ -1,6 +1,0 @@
-2025-09-04 00:28:50,921 | INFO | fetch_data | Active source: openaq_de (provider: openaq)
-2025-09-04 00:28:50,922 | INFO | fetch_data | Discovering sensors via /v3/locations (iso=DE, cities=['Berlin', 'Munich', 'Hamburg'], parameters=['pm25', 'pm10', 'no2', 'o3'])
-2025-09-04 00:28:54,554 | INFO | fetch_data | Discovered 93 matching sensors.
-2025-09-04 00:28:54,554 | INFO | fetch_data | Capped sensors per (city,parameter): kept 32, dropped 61 (max=4).
-2025-09-04 00:30:25,255 | ERROR | fetch_data | /v3/sensors/11992/days failed (HTTP 500): {"message":"Internal Server Error"}
-2025-09-04 00:31:28,947 | INFO | fetch_data | Wrote OpenAQ v3 raw CSV: C:\aqf311\Git_repo\stage_2\data\raw\raw_air_quality_openaq_20250903T223128Z.csv (rows=5447)

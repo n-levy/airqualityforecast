@@ -1,3 +1,0 @@
-2025-09-04 00:19:14,742 | INFO | fetch_data | Active source: openaq_de (provider: openaq)
-2025-09-04 00:19:14,742 | INFO | fetch_data | Discovering sensors via /v3/locations (iso=DE, cities=['Berlin', 'Munich', 'Hamburg'], parameters=['pm25', 'pm10', 'no2', 'o3'])
-2025-09-04 00:19:18,213 | INFO | fetch_data | Discovered 93 matching sensors.
