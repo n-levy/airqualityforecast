@@ -1,1 +1,2 @@
-powershell -ExecutionPolicy Bypass -File .\etl_noaa_gefs_aerosol.ps1
+# run_noaa.ps1
+powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\etl_noaa_gefs_aerosol.ps1"

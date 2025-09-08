@@ -1,0 +1,26 @@
+2025-09-04 00:13:08,742 | INFO | fetch_data | Active source: openaq_de (provider: openaq)
+2025-09-04 00:13:08,742 | INFO | fetch_data | Fetching OpenAQ 2025-08-27T22:13:08Z → 2025-09-03T22:13:08Z (UTC) for cities=['Berlin', 'Munich', 'Hamburg'], params=['pm25', 'pm10', 'no2', 'o3']
+2025-09-04 00:13:08,742 | INFO | fetch_data | City=Berlin parameter=pm25
+2025-09-04 00:13:09,149 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,168 | INFO | fetch_data | City=Berlin parameter=pm10
+2025-09-04 00:13:09,196 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,217 | INFO | fetch_data | City=Berlin parameter=no2
+2025-09-04 00:13:09,257 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,257 | INFO | fetch_data | City=Berlin parameter=o3
+2025-09-04 00:13:09,289 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,289 | INFO | fetch_data | City=Munich parameter=pm25
+2025-09-04 00:13:09,328 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,331 | INFO | fetch_data | City=Munich parameter=pm10
+2025-09-04 00:13:09,368 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,368 | INFO | fetch_data | City=Munich parameter=no2
+2025-09-04 00:13:09,402 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,402 | INFO | fetch_data | City=Munich parameter=o3
+2025-09-04 00:13:09,416 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,416 | INFO | fetch_data | City=Hamburg parameter=pm25
+2025-09-04 00:13:09,478 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,494 | INFO | fetch_data | City=Hamburg parameter=pm10
+2025-09-04 00:13:09,527 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,527 | INFO | fetch_data | City=Hamburg parameter=no2
+2025-09-04 00:13:09,573 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}
+2025-09-04 00:13:09,573 | INFO | fetch_data | City=Hamburg parameter=o3
+2025-09-04 00:13:09,615 | ERROR | fetch_data | HTTP 410: {"message": "Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints."}

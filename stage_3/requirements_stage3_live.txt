@@ -1,0 +1,8 @@
+pandas
+pyarrow
+requests
+python-dateutil
+cdsapi
+xarray
+netCDF4
+numpy

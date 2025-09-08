@@ -1,4 +1,4 @@
-* text=auto eol=lf
+﻿* text=auto eol=lf
 *.ps1 text eol=lf
 *.sh  text eol=lf
 *.py  text eol=lf
@@ -8,3 +8,4 @@
 *.json text eol=lf
 *.csv text eol=lf
 Makefile text eol=lf
+

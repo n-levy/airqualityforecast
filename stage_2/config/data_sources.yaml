@@ -1,0 +1,33 @@
+﻿# Data sources configuration for Stage 2 (OpenAQ v3)
+
+active_source: "openaq_de"
+
+sources:
+  openaq_de:
+    provider: "openaq"
+    options:
+      base_url: "https://api.openaq.org/v3"
+      api_key: ""          # leave empty; set OPENAQ_API_KEY in env instead
+      iso: "DE"            # restrict discovery to Germany
+      parameters:
+        - pm25
+        - pm10
+        - no2
+        - o3
+      cities:
+        - Berlin
+        - Munich
+        - Hamburg
+        - München
+      days_back: 365         # start small while testing (you can increase later)
+      aggregate: "daily"
+
+      # NEW throttles / safety
+      max_sensors_per_city_param: 1   # hard cap to avoid huge pulls
+      request_timeout_s: 30           # per-request timeout
+      sensor_max_pages: 30            # max days pages per sensor (safety)
+
+  local_sample:
+    provider: "csv_local"
+    options:
+      path: "./data/raw/sample_air_quality.csv"

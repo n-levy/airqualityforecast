@@ -1,0 +1,49 @@
+﻿name: Stage 3 CI
+
+on:
+  push:
+    paths:
+      - "stage_3/**"
+      - ".github/workflows/stage3-ci.yml"
+  pull_request:
+    paths:
+      - "stage_3/**"
+
+jobs:
+  stage3:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: stage_3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas pyyaml pyarrow pytest
+
+      - name: Run ETLs (sample mode)
+        run: |
+          pwsh -File .\etl_cams.ps1
+          pwsh -File .\etl_aurora.ps1
+          pwsh -File .\etl_noaa_gefs_aerosol.ps1
+
+      - name: Smoke test
+        run: pwsh -File .\tests\test_smoke.ps1
+
+      - name: Validate all providers
+        run: pwsh -File .\tests\test_validate.ps1
+
+      - name: Unit tests (normalize)
+        env:
+          PYTHONPATH: ${{ github.workspace }}\stage_3\scripts
+        run: python -m pytest -q .\tests\test_normalize_providers.py

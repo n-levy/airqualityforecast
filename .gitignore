@@ -1,31 +1,51 @@
-# ---- Environment ----
-.venv/
-.venv*/
-.env
-.env.local
-.env.development
-.env.production
-!.env.example
-config/env/.env
-
-
-# ---- Python ----
+﻿# python
 __pycache__/
-*.py[cod]
-*.pkl
-
-# ---- Data & artifacts ----
-data/
-models/
-cache/
-artifacts/
-logs/
-
-# ---- Notebooks ----
+*.pyc
 .ipynb_checkpoints/
 
-# ---- OS junk ----
+# data & logs (only keep samples and tiny fixtures)
+data/*/
+!stage_3/data/samples/**
+logs/**
+
+# OS junk
 .DS_Store
 Thumbs.db
 
+stage_3/.venv_stage3/
+stage_3/logs/
+stage_3/data/providers_raw/
+stage_3/data/providers_processed/
+__pycache__/
+*.pyc
+
+.env
+config/env/.env
+
+# local env files
+.env
+config/env/.env
+
+# local virtual envs
+.venv/
+.venv*/
+
+# data/models/cache (never in git)
+data/
+models/
+.cache/
+artifacts/
+logs/
+
+# build/cache
 *.egg-info/
+__pycache__/
+*.pyc
+
+.env
+config/env/.env
+
+.env
+config/env/.env
+
+

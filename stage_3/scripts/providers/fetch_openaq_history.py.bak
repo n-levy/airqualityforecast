@@ -1,0 +1,29 @@
+import os, sys, argparse, pandas as pd, requests
+def load_config(p):
+    import yaml; return yaml.safe_load(open(p,"r",encoding="utf-8"))
+def fetch_city(tok, city, start, end):
+    base="https://api.openaq.org/v3/measurements"; pols=["pm25","pm10"]; rows=[]
+    for pol in pols:
+        page=1
+        while True:
+            params={"city":city,"parameter":pol,"date_from":start+"T00:00:00Z","date_to":end+"T23:59:59Z","limit":1000,"page":page,"sort":"desc"}
+            h={"X-API-Key":tok} if tok else {}
+            r=requests.get(base, params=params, headers=h, timeout=60)
+            if r.status_code!=200: raise RuntimeError(f"OpenAQ {r.status_code}: {r.text[:160]}")
+            js=r.json(); res=js.get("results",[])
+            if not res: break
+            for it in res:
+                rows.append({"city":city,"pollutant":pol,"utc_datetime":pd.to_datetime(it["date"]["utc"], utc=True).tz_convert("UTC").tz_localize(None),"obs_value":it.get("value")})
+            page+=1; if page>50: break
+    if not rows: return pd.DataFrame(columns=["city","pollutant","utc_datetime","obs_value"])
+    df=pd.DataFrame(rows); return df.groupby(["city","pollutant","utc_datetime"], as_index=False)["obs_value"].mean()
+def main(cfgp):
+    cfg=load_config(cfgp); paths=cfg["paths"]
+    proc="stage_3/"+paths["processed_dir"] if not paths["processed_dir"].startswith("stage_3") else paths["processed_dir"]
+    os.makedirs(proc, exist_ok=True)
+    tok=os.environ.get("OPENAQ_API_KEY",""); cities=[c["name"] for c in cfg["cities"]]; start=cfg["openaq"]["start"]; end=cfg["openaq"]["end"]
+    frames=[fetch_city(tok,c,start,end) for c in cities]; out=pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+    if out.empty: print("No OpenAQ rows."); sys.exit(3)
+    out["source_obs"]="OpenAQ"; op=os.path.join(proc,"openaq_hourly.parquet"); out.to_parquet(op, index=False); print("Wrote",op,len(out))
+if __name__=="__main__":
+    ap=argparse.ArgumentParser(); ap.add_argument("--config", required=True); a=ap.parse_args(); main(a.config)

@@ -1,0 +1,42 @@
+Air Quality Forecast — Stage 3 Summary
+Date: 2025-09-04 22:32:19
+
+What we accomplished in Stage 3 (Sample Mode):
+- Implemented ETLs for three providers (CAMS, Aurora, NOAA GEFS-Aerosol) that read local sample CSVs.
+- Normalized outputs to a shared schema: [city, date, pm25, pm10, no2, o3].
+- Wrote both raw CSVs and processed Parquet files per provider.
+- Added utilities:
+  • validate_provider.py (schema + basic sanity validation)
+  • Peek-Parquet.ps1 (quick head preview for Parquet on Windows PowerShell 5.1+)
+  • merge_providers.py (creates all_providers.parquet + sample CSV)
+- Created smoke/validation/unit tests:
+  • tests/test_smoke.ps1
+  • tests/test_validate.ps1
+  • tests/test_normalize_providers.py
+- Fixed Windows-specific issues (PowerShell profile guard, PS 5.1 ternary, explicit datetime parsing).
+- Pre-commit hooks prepared for formatting/linting (black/isort/flake8) and CI-ready structure.
+- End-to-end runs are deterministic and green (sample mode).
+
+Key Outputs (as of last successful run):
+- data/providers_raw/{cams,aurora,noaa_gefs_aerosol}_raw.csv
+- data/providers_processed/{cams,aurora,noaa_gefs_aerosol}_forecast.parquet
+- data/providers_processed/all_providers.parquet  (18 rows in our sample: 3 providers × 3 cities × 2 dates)
+- data/providers_processed/all_providers_sample.csv
+
+Important Notes:
+- Stage 3 intentionally runs in SAMPLE MODE — inputs come from data/samples/*.csv.
+- Identical samples can make providers look identical; we added a sample generator to create realistic provider-specific variation.
+- CI should continue to run in sample mode for reliability and determinism.
+
+NEXT STEP (Stage 4):
+Download real data from each provider.
+- Add/complete live config in config/providers.yaml (mode: live, base_url/endpoint, timeouts).
+- Implement lightweight fetchers (requests) per provider, with retries/backoff and timeouts.
+- Load raw payloads to data/providers_raw with timestamps for replayability.
+- Map provider responses to the shared schema and write processed Parquet (optionally partitioned by date/provider).
+- Manage secrets via environment variables (e.g., setx CAM_API_KEY, etc.).
+- Keep CI in sample mode; run live mode locally or in a scheduled job with credentials.
+- Add integration tests and tolerance checks for provider divergence.
+
+Conclusion:
+Stage 3 is complete and healthy in sample mode. The next step is to enable LIVE MODE and download real data from each provider.

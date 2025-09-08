@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "required_columns": ["city", "date", "pm25", "pm10", "no2", "o3"],
+  "dtypes": {
+    "city": "string",
+    "date": "datetime64[ns]",
+    "pm25": "float",
+    "pm10": "float",
+    "no2": "float",
+    "o3": "float"
+  },
+  "non_negative": ["pm25", "pm10", "no2", "o3"]
+}

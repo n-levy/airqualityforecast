@@ -1,19 +1,58 @@
-providers:
-  cams:
-    options:
-      mode: sample
-      sample_file: cams_sample.csv
-      cities: ["Berlin", "Hamburg", "München"]
-  aurora:
-    options:
-      mode: sample
-      sample_file: aurora_sample.csv
-      cities: ["Berlin", "Hamburg", "München"]
-  noaa_gefs_aerosol:
-    options:
-      mode: sample
-      sample_file: noaa_gefs_aerosol_sample.csv
-      cities: ["Berlin", "Hamburg", "München"]
+# config/providers.yaml
+cities:
+  - name: Berlin
+    lat: 52.52
+    lon: 13.405
+  - name: Hamburg
+    lat: 53.55
+    lon: 9.993
+  - name: Munich
+    lat: 48.137
+    lon: 11.575
 
 paths:
-  samples_dir: "data/samples"
+  raw_dir: "data/providers_raw"
+  processed_dir: "data/providers_processed"
+
+logging:
+  level: INFO
+  file: "logs/providers.log"
+
+# -----------------------------
+# CAMS – Europe (surface PM)
+# -----------------------------
+cams_history:
+  dataset: "cams-europe-air-quality-forecasts"
+  variables: ["pm25","pm10"]
+  times: ["00:00"]              # forecast reference time(s) to pull historically
+  lead_hours: [0,1,2,3,4,5,6]   # extend later as needed
+  area_halfwidth_km: 15
+  date_start: "2025-07-01"
+  date_end:   "2025-07-07"
+  model: "ensemble"
+  output_file: "cams_hourly_history.parquet"
+
+cams_realtime:
+  dataset: "cams-europe-air-quality-forecasts"
+  variables: ["pm25","pm10"]
+  times: ["00:00"]              # today's issue time(s)
+  lead_hours: [0,1,2,3,4,5,6]
+  area_halfwidth_km: 15
+  backfill_days: 0              # fetch today only; set to 1..2 if you want safety backfill
+  model: "ensemble"
+  output_file: "cams_hourly_live.parquet"
+
+# -----------------------------
+# OpenAQ observations — history only (no realtime)
+# -----------------------------
+
+openaq_history:
+  enabled: true
+  output_file: openaq_hourly_history.parquet
+  parameters: [pm25, pm10]
+  radius_m: 15000
+  max_locations: 15   # your preferred default
+  date_from: "2025-07-01T00:00:00Z"
+  date_to:   "2025-07-07T23:59:59Z"
+  # optionally:
+  # api_key_file: "C:/aqf311/secrets/openaq.key"

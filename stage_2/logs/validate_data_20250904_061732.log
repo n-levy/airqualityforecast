@@ -1,0 +1,4 @@
+2025-09-04 08:17:32,789 | INFO | validate_data | Validating raw file: C:\aqf311\Git_repo\stage_2\data\raw\raw_air_quality_openaq_20250904T061719Z.csv
+2025-09-04 08:17:32,805 | WARNING | validate_data | o3 has 277 negative values (will be clamped to 0 in processing).
+2025-09-04 08:17:32,805 | WARNING | validate_data | Sample rows with issues saved to: C:\aqf311\Git_repo\stage_2\logs\validation_soft_warnings.csv
+2025-09-04 08:17:32,809 | INFO | validate_data | Validation passed (with 1 warnings). Wrote: C:\aqf311\Git_repo\stage_2\data\interim\validated_air_quality.csv

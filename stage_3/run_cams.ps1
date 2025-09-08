@@ -1,1 +1,2 @@
-powershell -ExecutionPolicy Bypass -File .\etl_cams.ps1
+# run_cams.ps1
+powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\etl_cams.ps1"

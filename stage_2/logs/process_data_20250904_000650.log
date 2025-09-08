@@ -1,0 +1,15 @@
+2025-09-04 02:06:50,601 | INFO | process_data | === Stage 2 Processing Summary ===
+Rows: 3
+Date range: 2025-09-02 → 2025-09-02
+
+Rows per city:
+  - Berlin: 1
+  - Hamburg: 1
+  - München: 1
+
+Pollutant coverage and stats:
+  - pm25: coverage=100.00% | negatives_clamped=0 | min/med/max=4.392939999999999/5.86/5.98974
+  - pm10: coverage=100.00% | negatives_clamped=0 | min/med/max=10.6016/11.4/12.0986
+  - no2: coverage=100.00% | negatives_clamped=0 | min/med/max=10.811200000000001/16.4/25.481800000000003
+  - o3: coverage=100.00% | negatives_clamped=0 | min/med/max=37.4034/39.1/44.9882
+2025-09-04 02:06:50,601 | INFO | process_data | Processed dataset written: C:\aqf311\Git_repo\stage_2\data\processed\clean_air_quality.parquet

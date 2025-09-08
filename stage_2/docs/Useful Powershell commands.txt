@@ -1,0 +1,11 @@
+cd to stage 2: cd "cd C:\aqf311\Git_repo\stage_2"
+
+run all of stage 2: .\run_stage2.ps1
+
+fetch the data: .\.venv_stage2\Scripts\python.exe .\scripts\fetch_data.py --config .\config\data_sources.yaml
+
+validate the data: .\.venv_stage2\Scripts\python.exe .\scripts\validate_data.py --config .\config\data_sources.yaml
+
+process the data: .\.venv_stage2\Scripts\python.exe .\scripts\process_data.py --config .\config\data_sources.yaml
+
+
