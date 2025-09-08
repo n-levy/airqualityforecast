@@ -1,88 +1,75 @@
-# GitHub Repository Setup Summary – PM₂.₅ Forecasting Project
+GITHUB SETUP REFERENCE – Air Quality Forecast Project
+=====================================================
 
-## Repository Name & Structure
-- **Main repo:** `air quality forecast`
-- **Sub-project folder:** `stage1` (originally `stage1`, renamed for multi-city scope)
-- **Main package:** `stage1/src/stage1_forecast`  
-- **Docs folder:** `stage1/docs` — contains `CONTEXT.md`, `PRD.md`, `NFRs.md`, ADRs, and Stage summaries.
+Location
+--------
+- Local repo:   C:\aqf311\Git_repo
+- Remote repo:  https://github.com/n-levy/airqualityforecast.git
+- Branch:       main
+- Upstream:     origin/main
 
-## Branching & Workflow
-- **Default branch:** `main`
-- **Branch strategy:** Simple mainline with feature branches (optional). All commits pushed to `main` must pass CI.
-- **Tagging:** Stage completions tagged (`stage-0`, `stage-1`, …) for historical reference.
+Virtual Environment
+-------------------
+- Path: C:\aqf311\.venv
+- Python: 3.11 (embeddable, wheels-only install)
+- Dependencies installed via requirements.txt
+- Single venv for all stages (1, 2, 3)
 
-## Continuous Integration (CI)
-- **Service:** GitHub Actions
-- **Workflow file:** `.github/workflows/stage1-ci.yml`
-- **Triggers:** Runs on `push` and `pull_request` for paths under `stage1/**`.
-- **Stage 0 Smoke Test:**
-  1. Create and activate a virtual environment.
-  2. Install dependencies.
-  3. Load `.env` file.
-  4. Check critical env vars (`DATA_ROOT`, `MODELS_ROOT`).
-  5. Import `stage1_forecast` package.
-  6. Output `"Smoke test OK."` if all checks pass.
+Environment Variables
+---------------------
+- Local .env path: config\env\.env (git-ignored)
+- Template in repo: config\env\.env.example (safe to commit)
+- Example values:
+  DATA_ROOT=C:\aqf311\data
+  MODELS_ROOT=C:\aqf311\models
+  CACHE_ROOT=C:\aqf311\.cache
 
-## Environment & Configuration
-- **Local-first config:**  
-  - `.env.example` (template, versioned)  
-  - `.env` (local, git-ignored) — contains absolute paths for `DATA_ROOT`, `MODELS_ROOT`, `CACHE_ROOT`, etc.
-- **Python version:** `3.11`
-- **Dependency management:** `pip` + `requirements.txt`  
-  - Editable install: `pip install -e .`  
-  - Local venv: `.venv` in project root.
-- **Makefile targets:**
-  - `bootstrap` — create venv, install dependencies, copy `.env.example → .env` (for Linux/CI; PowerShell uses manual commands).
-- **Docker:** `docker-compose.yml` skeleton prepared for future containerization.
+Git Hygiene
+-----------
+- .gitignore excludes:
+  .venv/, *.pyc, __pycache__/
+  data/, models/, logs/
+  .env, config/env/.env
+- .gitattributes enforces LF endings and UTF-8 encoding
+- Pycache and local data/logs untracked
 
-## Git Hygiene
-- **`.gitignore`** excludes:
-  - `.env`
-  - Data/model/cache/artifact/log directories
-  - Build metadata (`*.egg-info/`)
-- **`.gitattributes`** enforces LF line endings for cross-platform consistency.
-- **No secrets in repo** — all sensitive/local config stored only in `.env`.
+Pre-commit Hooks
+----------------
+- Installed in repo: .git\hooks\pre-commit
+- Tools used: black, isort, flake8, end-of-file-fixer, trailing-whitespace, detect-private-key
+- Scope: Stage 1 only (stage_3 excluded for now)
+- Command to run manually:
+  C:\aqf311\.venv\Scripts\python.exe -m pre_commit run --all-files
 
-## Local Development Workflow
-1. **Clone repo**:
-   ```powershell
-   git clone https://github.com/<username>/air quality forecast.git
-   cd "air quality forecast/stage1"
-   ```
-2. **Create venv & install**:
-   ```powershell
-   python -m venv .venv
-   .\.venv\Scripts\python.exe -m pip install --upgrade pip
-   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-   .\.venv\Scripts\python.exe -m pip install -e .
-   ```
-3. **Set up `.env`**:
-   - Copy `.env.example` to `.env`
-   - Adjust paths for your machine.
-4. **Run local smoke test**:
-   ```powershell
-   .\.venv\Scripts\python.exe scripts\smoke_test.py
-   ```
-   Expect `"Smoke test OK."`
+Helper Scripts
+--------------
+- scripts\py.ps1: Wrapper to run Python with stage_1 on PYTHONPATH
+  Example usage:
+    .\scripts\py.ps1 stage_1\scripts\smoke_test.py
 
-## Push Changes to GitHub
-- Stage all changes:
-  ```powershell
-  git add -A
-  ```
-- Commit:
-  ```powershell
-  git commit -m "Your commit message"
-  ```
-- Push:
-  ```powershell
-  git push
-  ```
-- Optional helper: `push.ps1` script in repo root automates detect → commit → push.
+Daily Workflow
+--------------
+1. Edit code in C:\aqf311\Git_repo
+2. Stage + commit + push:
+   git add -A
+   git commit -m "Message"
+   git push
+3. Run smoke test to confirm environment:
+   .\scripts\py.ps1 stage_1\scripts\smoke_test.py
 
-## Known Windows Notes
-- **PowerShell Execution Policy**: Some commands (`Activate.ps1`) may be blocked; easiest workaround is to call the venv’s `python.exe` directly.
-- **Path changes after folder rename**: If project folder is renamed, recreate `.venv` to avoid stale paths in pip executables.
+Verification
+------------
+- git status → working tree clean
+- git remote -v → origin https://github.com/n-levy/airqualityforecast.git
+- git rev-parse --abbrev-ref --symbolic-full-name @{u} → origin/main
+- Smoke test prints:
+  [smoke] Python: 3.11.x
+  [smoke] DATA_ROOT  : C:\aqf311\data
+  [smoke] MODELS_ROOT: C:\aqf311\models
+  [smoke] CACHE_ROOT : C:\aqf311\.cache
 
----
-**Last updated:** Stage 0 completion (multi-city rename applied).
+Notes
+-----
+- Only one venv is needed for the entire repo.
+- Never commit .env, data, or models.
+- Stage 3 code is currently excluded from linting until stabilized.
