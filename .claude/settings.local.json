@@ -23,7 +23,8 @@
       "WebFetch(domain:www.airnow.gov)",
       "WebFetch(domain:purple-air.com)",
       "WebFetch(domain:discomap.eea.europa.eu)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "ask": []
