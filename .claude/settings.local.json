@@ -9,7 +9,19 @@
       "Bash(cat:*)",
       "Bash(pip:*)",
       "Bash(git reset:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebSearch",
+      "WebFetch(domain:openweathermap.org)",
+      "WebFetch(domain:aqicn.org)",
+      "WebFetch(domain:waqi.info)",
+      "WebFetch(domain:docs.airnowapi.org)",
+      "WebFetch(domain:app.cpcbccr.com)",
+      "WebFetch(domain:www.iqair.com)",
+      "WebFetch(domain:opendata.paris.fr)",
+      "WebFetch(domain:www.eea.europa.eu)",
+      "WebFetch(domain:airqualityegg.wickeddevice.com)",
+      "WebFetch(domain:www.airnow.gov)",
+      "WebFetch(domain:purple-air.com)"
     ],
     "deny": [],
     "ask": []
