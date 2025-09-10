@@ -33,12 +33,6 @@ def tweak_for_provider(df: pd.DataFrame, provider: str) -> pd.DataFrame:
         out["no2"] *= 1.00
         out["o3"] *= 1.00
         noise = rng.normal(0.0, 0.05, size=len(out))  # μg/m³-ish minor noise
-    elif provider == "aurora":
-        out["pm25"] *= 0.97
-        out["pm10"] *= 0.98
-        out["no2"] *= 0.99
-        out["o3"] *= 1.01
-        noise = rng.normal(+0.10, 0.05, size=len(out))
     elif provider == "noaa_gefs_aerosol":
         out["pm25"] *= 1.03
         out["pm10"] *= 1.02
@@ -64,7 +58,6 @@ def write_provider(provider: str, filename: str):
 
 def main():
     write_provider("cams", "cams_sample.csv")
-    write_provider("aurora", "aurora_sample.csv")
     write_provider("noaa_gefs_aerosol", "noaa_gefs_aerosol_sample.csv")
 
 

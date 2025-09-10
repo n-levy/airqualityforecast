@@ -34,7 +34,6 @@ jobs:
       - name: Run ETLs (sample mode)
         run: |
           pwsh -File .\etl_cams.ps1
-          pwsh -File .\etl_aurora.ps1
           pwsh -File .\etl_noaa_gefs_aerosol.ps1
 
       - name: Smoke test

@@ -6,8 +6,6 @@ $ErrorActionPreference = "Stop"
 Write-Host "=== Stage 3: Running CAMS ==="
 powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\etl_cams.ps1"
 
-Write-Host "=== Stage 3: Running Aurora ==="
-powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\etl_aurora.ps1"
 
 Write-Host "=== Stage 3: Running NOAA GEFS-Aerosol ==="
 powershell -ExecutionPolicy Bypass -File "$PSScriptRoot\etl_noaa_gefs_aerosol.ps1"

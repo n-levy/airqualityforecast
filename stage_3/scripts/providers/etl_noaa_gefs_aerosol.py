@@ -48,11 +48,9 @@ def etl_provider(config_path: Path) -> None:
         cfg = yaml.safe_load(fh)
 
     sample_csv = _resolve_sample_csv(cfg, PROVIDER)
-    out_raw = Path(cfg["paths"]["providers_raw"]) / f"{PROVIDER}_raw.csv"
-    out_parquet = (
-        Path(cfg["paths"]["providers_processed"]) / f"{PROVIDER}_forecast.parquet"
-    )
-    cities = list(cfg.get("cities", []))
+    out_raw = Path(cfg["paths"]["raw_dir"]) / f"{PROVIDER}_raw.csv"
+    out_parquet = Path(cfg["paths"]["processed_dir"]) / f"{PROVIDER}_forecast.parquet"
+    cities = [city["name"] for city in cfg.get("cities", [])]
 
     log.info("[noaa_gefs_aerosol] Reading sample CSV: %s", sample_csv)
     df = pd.read_csv(sample_csv)

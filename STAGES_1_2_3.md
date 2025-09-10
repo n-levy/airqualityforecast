@@ -11,13 +11,13 @@
 - PowerShell orchestration with progress bar and ASCII logs.
 - Output: data/processed/clean_air_quality.parquet
 
-## Stage 3 — External Forecast Benchmarks (CAMS, Aurora, NOAA GEFS-Aerosol)
-- Three provider ETLs producing schema identical to Stage 2 (city, date, pm25, pm10, no2, o3).
+## Stage 3 — External Forecast Benchmarks (CAMS, NOAA GEFS-Aerosol)
+- Two provider ETLs producing schema identical to Stage 2 (city, date, pm25, pm10, no2, o3).
 - Default to sample mode for fast runs; switchable to live mode later.
 - PowerShell one-liners:
   - Setup (shared): .\setup_stage3.ps1
-  - Per-provider setup shortcuts: .\setup_cams.ps1, .\setup_aurora.ps1, .\setup_noaa_gefs_aerosol.ps1
-  - Run one: .\etl_cams.ps1 (and aurora/noaa variants)
+  - Per-provider setup shortcuts: .\setup_cams.ps1, .\setup_noaa_gefs_aerosol.ps1
+  - Run one: .\etl_cams.ps1 (and noaa variants)
   - Run all: .\run_all_providers.ps1
 - Outputs:
   - data/providers_raw/raw_{provider}_*.csv

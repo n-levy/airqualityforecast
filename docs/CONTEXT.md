@@ -10,16 +10,15 @@
 - This is a solo, hobby project; operational simplicity and low cost are priorities.
 
 ## Core Objective
-Produce city-level AQI forecasts for Germany that outperform public benchmark forecasts such as CAMS and Aurora, using a simple, maintainable modeling approach.
+Produce city-level AQI forecasts for Germany that outperform public benchmark forecasts such as CAMS and NOAA GEFS-Aerosol, using a simple, maintainable modeling approach.
 
 ## Roadmap Vision
 1. Stage 1 – Multi-city PM₂.₅
    - Forecast PM₂.₅ concentrations for the top 3 German cities (Berlin, Munich, Hamburg).
-   - Combine CAMS, Aurora and NOAA GEFS-Aerosol predictions in a global model with optional per-city bias correction.
+   - Combine CAMS and NOAA GEFS-Aerosol predictions in a global model with optional per-city bias correction.
    - Display live and historical comparisons:
      - My forecasts
      - CAMS
-     - Aurora
      - NOAA GEFS-Aerosol
      - Observations
      - Accuracy metrics (MAE, bias, category accuracy, κw, exceedance rates) over selectable periods.
@@ -36,7 +35,7 @@ Produce city-level AQI forecasts for Germany that outperform public benchmark fo
 
 ## Key Requirements
 - Transparency: Verification against open, authoritative data.
-- Accuracy Benchmarking: Side-by-side comparison with CAMS, Aurora and NOAA GEFS-Aerosol.
+- Accuracy Benchmarking: Side-by-side comparison with CAMS and NOAA GEFS-Aerosol.
 - Config-driven Design: New cities/pollutants added via config files, no code rewrite.
 - Operational Simplicity: Minimal manual steps; light compute requirements.
 - Low Cost: Target <€10/month after migration.
@@ -45,12 +44,12 @@ Produce city-level AQI forecasts for Germany that outperform public benchmark fo
 
 ## Stage 1 Definition (v1.1)
 - Scope: PM₂.₅ forecasts for 3 major German cities.
-- Inputs: CAMS PM₂.₅, Aurora PM₂.₅, calendar features, lag features from observations and provider forecasts.
+- Inputs: CAMS PM₂.₅, NOAA GEFS-Aerosol PM₂.₅, calendar features, lag features from observations and provider forecasts.
 - Model: Global Ridge or XGBoost (depth=3) + optional per-city bias correction.
 - Evaluation: MAE, bias, κw, category accuracy, exceedance hit/false alarm rates.
 - Hosting: Local machine; output pushed to static dashboard.
 - UI: Select city, lead time, and metric; view historical trends; download datasets.
-- Database: Historical forecasts of the model, forecasts of the three benchmarks, and actuals, per city, hourly. 
+- Database: Historical forecasts of the model, forecasts of the three benchmarks, and actuals, per city, hourly.
 
 ## Technical Constraints
 - No admin rights on development machine; all tooling must run in user space.

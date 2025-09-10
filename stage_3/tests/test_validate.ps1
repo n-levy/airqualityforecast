@@ -15,7 +15,6 @@ if (Test-Path $PyStage2) {
 
 $files = @(
   "data\providers_processed\cams_forecast.parquet",
-  "data\providers_processed\aurora_forecast.parquet",
   "data\providers_processed\noaa_gefs_aerosol_forecast.parquet"
 )
 

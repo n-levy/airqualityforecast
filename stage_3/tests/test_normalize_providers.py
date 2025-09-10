@@ -6,7 +6,6 @@ import pandas as pd
 # Load each ETL module directly to access normalize()
 mods = {
     "cams": "scripts.providers.etl_cams",
-    "aurora": "scripts.providers.etl_aurora",
     "noaa": "scripts.providers.etl_noaa_gefs_aerosol",
 }
 

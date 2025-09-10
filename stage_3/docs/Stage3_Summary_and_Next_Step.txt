@@ -2,7 +2,7 @@ Air Quality Forecast — Stage 3 Summary
 Date: 2025-09-04 22:32:19
 
 What we accomplished in Stage 3 (Sample Mode):
-- Implemented ETLs for three providers (CAMS, Aurora, NOAA GEFS-Aerosol) that read local sample CSVs.
+- Implemented ETLs for two providers (CAMS, NOAA GEFS-Aerosol) that read local sample CSVs.
 - Normalized outputs to a shared schema: [city, date, pm25, pm10, no2, o3].
 - Wrote both raw CSVs and processed Parquet files per provider.
 - Added utilities:
@@ -18,9 +18,9 @@ What we accomplished in Stage 3 (Sample Mode):
 - End-to-end runs are deterministic and green (sample mode).
 
 Key Outputs (as of last successful run):
-- data/providers_raw/{cams,aurora,noaa_gefs_aerosol}_raw.csv
-- data/providers_processed/{cams,aurora,noaa_gefs_aerosol}_forecast.parquet
-- data/providers_processed/all_providers.parquet  (18 rows in our sample: 3 providers × 3 cities × 2 dates)
+- data/providers_raw/{cams,noaa_gefs_aerosol}_raw.csv
+- data/providers_processed/{cams,noaa_gefs_aerosol}_forecast.parquet
+- data/providers_processed/all_providers.parquet  (12 rows in our sample: 2 providers × 3 cities × 2 dates)
 - data/providers_processed/all_providers_sample.csv
 
 Important Notes:

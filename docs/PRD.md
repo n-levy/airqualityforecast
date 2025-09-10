@@ -9,7 +9,7 @@ Produce PM2.5 forecasts for Berlin, Hamburg and Munich that outperform public be
 ## 3. Scope (Stage 1)
 - **Location:** Berlin, Hamburg, Munich
 - **Metric:** PM2.5
-- **Benchmarks:** CAMS forecasts, Aurora, NOAA GEFS-Aerosol
+- **Benchmarks:** CAMS forecasts, NOAA GEFS-Aerosol
 - **Outputs:**
   - Our predictions
   - Benchmark predictions
@@ -50,24 +50,24 @@ Produce PM2.5 forecasts for Berlin, Hamburg and Munich that outperform public be
 ### Baseline Bias-Correction Benchmark (planned for Stage 1)
 We will implement a simple, transparent **per-pollutant rolling bias-correction** as an initial benchmark for Berlin, Hamburg and Munich.
 
-**Purpose:**  
-- Establish a reliable baseline against which all future models will be evaluated.  
-- Provide early accuracy gains (expected 10–25 % MAE reduction for PM₂.₅) with minimal complexity.  
+**Purpose:**
+- Establish a reliable baseline against which all future models will be evaluated.
+- Provide early accuracy gains (expected 10–25 % MAE reduction for PM₂.₅) with minimal complexity.
 
-**Method:**  
-- Apply rolling mean bias correction (window ≈ 21 days) per pollutant.  
-- Optional scale adjustment via linear regression (obs ≈ a + b × forecast).  
-- Simple regime split on wind speed (< 2 m/s vs ≥ 2 m/s).  
-- Enforce physical constraints (≥ 0; PM₂.₅ ≤ PM₁₀).  
-- Recompute AQI from corrected pollutant values.  
+**Method:**
+- Apply rolling mean bias correction (window ≈ 21 days) per pollutant.
+- Optional scale adjustment via linear regression (obs ≈ a + b × forecast).
+- Simple regime split on wind speed (< 2 m/s vs ≥ 2 m/s).
+- Enforce physical constraints (≥ 0; PM₂.₅ ≤ PM₁₀).
+- Recompute AQI from corrected pollutant values.
 
-**Evaluation metrics:**  
-- MAE, RMSE, bias per pollutant.  
-- AQI band accuracy and threshold-crossing skill.  
+**Evaluation metrics:**
+- MAE, RMSE, bias per pollutant.
+- AQI band accuracy and threshold-crossing skill.
 
-**Acceptance criteria:**  
-- PM₂.₅ MAE reduced by ≥ 10 % vs raw forecast over recent 30-day window.  
-- Bias within ± 1 µg/m³.  
+**Acceptance criteria:**
+- PM₂.₅ MAE reduced by ≥ 10 % vs raw forecast over recent 30-day window.
+- Bias within ± 1 µg/m³.
 - AQI categorical accuracy improved by ≥ 5 pp.
 
 For metrics see `EVAL_METRICS.md`; for features see `FEATURES.md`; for providers see `PROVIDERS.md`.

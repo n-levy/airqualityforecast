@@ -4,10 +4,10 @@ Stage 0 – Scaffold
 
 Purpose: Set up reproducible, documented, automation-ready foundation.
 
-Stage 1 – Multi-City PM₂.₅ (Berlin, Munich, Hamburg) with CAMS, Aurora, and NOAA GEFS-Aerosol integration
+Stage 1 – Multi-City PM₂.₅ (Berlin, Munich, Hamburg) with CAMS and NOAA GEFS-Aerosol integration
 
 Cities: Berlin, Munich, Hamburg
-Providers: CAMS, Aurora, NOAA GEFS-Aerosol
+Providers: CAMS, NOAA GEFS-Aerosol
 Features: Calendar features, lag features (see FEATURES.md)
 Bias Correction: Applied to all cities in model
 Outputs: Forecasts, verification, dashboard
@@ -23,6 +23,3 @@ Extend to PM₁₀, O₃, NO₂; compute AQI; track dominant pollutant.
 Stage 3 – Expansion \& Cloud Migration
 
 Migrate to cloud (scheduled containers, object storage); target <€10/month.
-
-
-

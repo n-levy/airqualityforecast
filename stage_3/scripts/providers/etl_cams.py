@@ -1,4 +1,4 @@
-# stage_3/scripts/providers/etl_aurora.py
+# stage_3/scripts/providers/etl_cams.py
 from __future__ import annotations
 
 import argparse
@@ -13,8 +13,8 @@ import yaml
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 from utils.dates import parse_date_iso  # noqa: E402
 
-PROVIDER = "aurora"
-log = logging.getLogger("etl_aurora")
+PROVIDER = "cams"
+log = logging.getLogger("etl_cams")
 
 
 def _resolve_sample_csv(cfg: dict, provider: str) -> Path:
@@ -48,28 +48,26 @@ def etl_provider(config_path: Path) -> None:
         cfg = yaml.safe_load(fh)
 
     sample_csv = _resolve_sample_csv(cfg, PROVIDER)
-    out_raw = Path(cfg["paths"]["providers_raw"]) / f"{PROVIDER}_raw.csv"
-    out_parquet = (
-        Path(cfg["paths"]["providers_processed"]) / f"{PROVIDER}_forecast.parquet"
-    )
-    cities = list(cfg.get("cities", []))
+    out_raw = Path(cfg["paths"]["raw_dir"]) / f"{PROVIDER}_raw.csv"
+    out_parquet = Path(cfg["paths"]["processed_dir"]) / f"{PROVIDER}_forecast.parquet"
+    cities = [city["name"] for city in cfg.get("cities", [])]
 
-    log.info("[aurora] Reading sample CSV: %s", sample_csv)
+    log.info("[cams] Reading sample CSV: %s", sample_csv)
     df = pd.read_csv(sample_csv)
 
     if cities:
-        log.info("[aurora] Filtering to cities: %s", cities)
+        log.info("[cams] Filtering to cities: %s", cities)
         df = df[df["city"].isin(cities)].copy()
 
     out_raw.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(out_raw, index=False)
-    log.info("[aurora] Wrote raw CSV: %s (rows=%d)", out_raw, len(df))
+    log.info("[cams] Wrote raw CSV: %s (rows=%d)", out_raw, len(df))
 
     df_norm = normalize(df)
 
     out_parquet.parent.mkdir(parents=True, exist_ok=True)
     df_norm.to_parquet(out_parquet, index=False)
-    log.info("[aurora] Wrote processed parquet: %s", out_parquet)
+    log.info("[cams] Wrote processed parquet: %s", out_parquet)
 
 
 def main() -> None:
@@ -87,5 +85,5 @@ if __name__ == "__main__":
     try:
         main()
     except Exception:
-        log.exception("ETL AURORA failed")
+        log.exception("ETL CAMS failed")
         raise

@@ -1,5 +1,5 @@
 
-# Stage 3: External Forecast Benchmarks (CAMS, Aurora, NOAA GEFS-Aerosol)
+# Stage 3: External Forecast Benchmarks (CAMS, NOAA GEFS-Aerosol)
 
 Produces **comparable daily city-level** tables for {pm25, pm10, no2, o3}:
 ```
@@ -17,15 +17,13 @@ powershell -ExecutionPolicy Bypass -File .\setup_stage3.ps1
 
 # Alternative (per provider setups – all call the same setup script)
 powershell -ExecutionPolicy Bypass -File .\setup_cams.ps1
-powershell -ExecutionPolicy Bypass -File .\setup_aurora.ps1
 powershell -ExecutionPolicy Bypass -File .\setup_noaa_gefs_aerosol.ps1
 
 # 2) Run each ETL
 powershell -ExecutionPolicy Bypass -File .\etl_cams.ps1
-powershell -ExecutionPolicy Bypass -File .\etl_aurora.ps1
 powershell -ExecutionPolicy Bypass -File .\etl_noaa_gefs_aerosol.ps1
 
-# 3) Run all three
+# 3) Run all two
 powershell -ExecutionPolicy Bypass -File .\run_all_providers.ps1
 ```
 

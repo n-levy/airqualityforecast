@@ -5,10 +5,6 @@
 - Frequency: Daily
 - Variables: PM₂.₅, PM₁₀, O₃, NO₂
 
-## Aurora
-- Scope: Regional forecasts
-- Frequency: Daily
-- Variables: PM₂.₅, PM₁₀, O₃, NO₂
 
 ## NOAA GEFS-Aerosol
 - Scope: Global

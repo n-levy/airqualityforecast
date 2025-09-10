@@ -30,7 +30,6 @@ def main() -> int:
 
     files = {
         "cams": out_dir / "cams_forecast.parquet",
-        "aurora": out_dir / "aurora_forecast.parquet",
         "noaa_gefs_aerosol": out_dir / "noaa_gefs_aerosol_forecast.parquet",
     }
 
