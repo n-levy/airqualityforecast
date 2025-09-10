@@ -82,7 +82,7 @@ class QuickForecastingEvaluator:
                 "expected_performance": 0.78,
             },
             "gradient_boosting_enhanced": {
-                "type": "primary", 
+                "type": "primary",
                 "expected_performance": 0.84,
             },
             "simple_average_ensemble": {
