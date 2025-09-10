@@ -22,7 +22,8 @@
       "WebFetch(domain:airqualityegg.wickeddevice.com)",
       "WebFetch(domain:www.airnow.gov)",
       "WebFetch(domain:purple-air.com)",
-      "WebFetch(domain:discomap.eea.europa.eu)"
+      "WebFetch(domain:discomap.eea.europa.eu)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []
