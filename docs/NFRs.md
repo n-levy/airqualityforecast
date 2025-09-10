@@ -1,27 +1,37 @@
-# Non-Functional Requirements (NFRs) – PM2.5 Forecasting Project
+# Non-Functional Requirements (NFRs) – Global Air Quality Forecasting System
 
 ## Performance & Accuracy
-- Predictions ready within 3 minutes of data availability.
-- Verification results updated within 90 minutes of observation availability.
-- Day-ahead MAE reduced by ≥15% vs. CAMS benchmark.
+- **Global Scale**: Forecasts ready within 5 minutes for all 100 cities simultaneously
+- **Health Warnings**: Critical health alerts generated within 2 minutes of data availability
+- **Accuracy Target**: >90% health warning recall, >10% MAE improvement vs. regional benchmarks
+- **Update Frequency**: Real-time data collection and processing for all continental sources
 
 ## Reliability
-- ≥99% pipeline success rate per month.
-- Automated retries on transient failures.
+- **System Uptime**: ≥99% availability across all 5 continental data collection systems
+- **Data Quality**: ≥95% successful data collection from public APIs per month
+- **Failover**: Automated fallback to satellite/backup data sources
+- **Error Handling**: Comprehensive retry mechanisms with exponential backoff
 
 ## Scalability
-- Architecture supports adding cities and pollutants without redesign.
-- Able to scale to cloud deployment with minimal config changes.
+- **Current Capacity**: 100 cities across 5 continents with 11 AQI standards
+- **Expansion Ready**: Architecture supports scaling to 500+ cities without redesign
+- **Continental Balance**: Equal performance across Europe, North America, Asia, Africa, South America
+- **Multi-Standard**: Support for additional regional AQI standards as needed
 
 ## Transparency
-- Publish raw and processed data outputs for verification.
-- Document methodology and evaluation metrics.
+- **Public Data Only**: Zero dependency on personal API keys or proprietary data
+- **Open Methodology**: Complete documentation of all 11 AQI calculation methods
+- **Benchmark Comparison**: Public validation against regional standard forecasting systems
+- **Health Focus**: Clear documentation of health warning thresholds and sensitivity analysis
 
-## Security
-- No personal data collected.
-- Store secrets in environment variables.
-- Use least-privilege access for cloud resources.
+## Security & Compliance
+- **No Authentication**: System operates entirely on public APIs and open data
+- **Data Privacy**: No personal data collection across any continental system
+- **API Compliance**: Respectful usage of all public APIs within terms of service
+- **Attribution**: Proper credit for all government and research data sources
 
-## Cost
-- Local Stage 1: zero cloud costs.
-- Cloud target: <€10/month at Stage 1 scale.
+## Cost Efficiency
+- **Current Stage**: Zero API costs (public sources only)
+- **Production Target**: <€50/month for full 100-city global deployment
+- **Scalability**: Cost-linear scaling for additional cities and regions
+- **Resource Optimization**: Distributed processing and intelligent caching
