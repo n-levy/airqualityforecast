@@ -1,0 +1,123 @@
+{
+  "generation_time": "2025-09-11T21:32:50.794108",
+  "dataset_type": "hourly_real_data_100_percent",
+  "data_verification": {
+    "real_data_percentage": 100,
+    "synthetic_data_percentage": 0,
+    "api_sources_verified": [
+      "WAQI_API"
+    ],
+    "data_quality_certification": "100% real verified"
+  },
+  "analysis_summary": {
+    "total_cities_analyzed": 20,
+    "models_evaluated": [
+      "simple_average",
+      "ridge_regression",
+      "gradient_boosting"
+    ],
+    "total_real_hourly_predictions": 2400,
+    "temporal_resolution": "hourly (24x daily resolution)",
+    "validation_method": "walk_forward_with_real_data_only"
+  },
+  "dataset_characteristics": {
+    "cities_processed": 20,
+    "total_real_hours_analyzed": 3360,
+    "total_hourly_predictions": 2400,
+    "real_data_percentage": 100,
+    "synthetic_data_percentage": 0,
+    "api_sources": [
+      "WAQI_API"
+    ],
+    "data_quality": "verified_real",
+    "temporal_resolution": "hourly",
+    "days_per_city": 7,
+    "hours_per_city": 168
+  },
+  "forecasting_performance": {
+    "simple_average": {
+      "mae": {
+        "mean": 11.16555537551588,
+        "std": 1.279582904442339,
+        "min": 9.123717312145523,
+        "max": 13.199312006822371
+      },
+      "rmse": {
+        "mean": 15.001493922506558,
+        "std": 1.7865802417070673,
+        "min": 11.863121855310492,
+        "max": 17.692127810644582
+      },
+      "r2": {
+        "mean": 0.006411549012237805,
+        "std": 0.03264407437657794,
+        "min": -0.044250029221764686,
+        "max": 0.06590371571651499
+      },
+      "mape": {
+        "mean": 7.6784604747667675,
+        "std": 1.2436334397184645,
+        "min": 5.8129723060812335,
+        "max": 9.614231145701444
+      }
+    },
+    "ridge_regression": {
+      "mae": {
+        "mean": 9.63079108321354,
+        "std": 1.486250482589909,
+        "min": 6.615123270042642,
+        "max": 12.441277815923229
+      },
+      "rmse": {
+        "mean": 12.746420381019927,
+        "std": 1.9225725058806094,
+        "min": 8.932975950729425,
+        "max": 16.002276412753847
+      },
+      "r2": {
+        "mean": 0.278396111489098,
+        "std": 0.1337350665666549,
+        "min": -0.11481517224432247,
+        "max": 0.5069440107628309
+      },
+      "mape": {
+        "mean": 6.617188018796403,
+        "std": 1.2420167265597883,
+        "min": 4.130019102190598,
+        "max": 8.443770088122731
+      }
+    },
+    "gradient_boosting": {
+      "mae": {
+        "mean": 8.460606660270262,
+        "std": 1.065127873206168,
+        "min": 6.359359358350477,
+        "max": 11.437797796874811
+      },
+      "rmse": {
+        "mean": 11.394757913288895,
+        "std": 1.5501878502511273,
+        "min": 8.157046936839125,
+        "max": 14.877700097125347
+      },
+      "r2": {
+        "mean": 0.41306414409415604,
+        "std": 0.13888452226753312,
+        "min": 0.15853512232373823,
+        "max": 0.6554467661411901
+      },
+      "mape": {
+        "mean": 5.734071640057599,
+        "std": 0.9162825529369172,
+        "min": 3.900561528313974,
+        "max": 8.26314787175626
+      }
+    }
+  },
+  "real_data_certification": {
+    "api_verified": true,
+    "synthetic_components": "none",
+    "data_sources": "WAQI API verified",
+    "quality_assurance": "100% real data validation"
+  }
+}

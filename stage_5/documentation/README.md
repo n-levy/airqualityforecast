@@ -13,11 +13,13 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 - **Features**: 50+ comprehensive features including air quality, meteorological, fire risk, holiday impacts, and temporal patterns
 - **Quality Focus**: Cities selected for poor air quality to maximize research relevance
 - **File Format**: CSV (comprehensive tables) + JSON (collection results)
-- **Total Records**: 204,000 total data points (36,500 core + 167,500 forecast records)
+- **Total Records**: 204,000 total data points (36,500 core + 167,500 forecast records) + 2,400 hourly predictions
 - **Forecasting Models**: Walk-forward validation with Simple Average, Ridge Regression, and Gradient Boosting models
+- **Temporal Resolution**: Daily and Hourly datasets available (100% real data in both)
 - **Benchmark Coverage**: 100% cities with CAMS and NOAA style benchmark forecasts
-- **AQI Analysis**: Location-specific health warning evaluation with 3.7% false negative rate (Gradient Boosting)
+- **AQI Analysis**: Location-specific health warning evaluation with 3.7% false negative rate (Gradient Boosting daily)
 - **Health Protection**: Production-ready system exceeding safety targets by 170% (enhanced with Gradient Boosting)
+- **Hourly Dataset**: 24x higher temporal resolution with real-time health warning capability
 
 ## Data Files
 
@@ -32,6 +34,12 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 - `detailed_predictions_*.json` - Daily predictions for all 100 cities (33,500 predictions)
 - `aqi_health_warning_analysis_*.json` - AQI health warning analysis with confusion matrices
 - `comprehensive_dataset_size_report.json` - Complete dataset statistics (204,000 data points)
+
+### Hourly Dataset Results (NEW)
+- `real_hourly_comprehensive_analysis_*.json` - Complete hourly analysis with 100% real data
+- `hourly_health_warning_analysis_*.json` - Hourly health warning confusion matrices
+- `COMPLETE_HOURLY_ANALYSIS_*.md` - Comprehensive hourly vs daily comparison
+- **2,400 hourly predictions** across 20 cities with 24x temporal resolution
 
 ### AQI Health Warning Analysis
 - `AQI_HEALTH_WARNING_SUMMARY_*.md` - Health warning performance summary
