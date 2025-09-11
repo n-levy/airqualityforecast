@@ -20,12 +20,9 @@ A comprehensive air quality forecasting system that combines multiple forecast m
 
 ### Dataset Overview
 
-#### Existing Datasets
-- **German 3-City Dataset**: 5+ years hourly data (149,547 records)
-  - Spatial Coverage: Berlin, Hamburg, Munich
-  - Features: 82 comprehensive features
-- **Global 10-City Dataset**: 5 years daily data (18K+ records)
-  - Spatial Coverage: 10 global cities across continents
+#### Legacy Datasets (Deprecated)
+- ~~German 3-City Dataset~~ - Removed in favor of comprehensive 100-city dataset
+- ~~Global 10-City Dataset~~ - Superseded by enhanced 100-city global dataset
 
 #### Stage 5: Enhanced Global Worst Air Quality Dataset (ALL PHASES COMPLETE ✅)
 - **Spatial Coverage**: 100 cities with worst air quality globally (20 per continent) ✅ COMPLETE
@@ -188,8 +185,8 @@ print(standards_dist)
 ## Key Scripts
 
 ### Enhanced Data Generation
-- `stage_3/scripts/generate_5year_hourly_dataset.py`: Creates comprehensive 5-year synthetic dataset
-- `stage_3/scripts/create_forecast_comparison_dataset.py`: Generates forecast comparison data
+- ~~stage_3 scripts~~ - Legacy dataset generation (removed)
+- Primary dataset: Stage 5 Enhanced Global 100-City Dataset
 - `stage_5/scripts/expanded_worst_air_quality_collector.py`: 100 worst air quality cities collector
 - `stage_5/scripts/enhanced_features_processor.py`: Fire + Holiday features integration
 - `stage_5/scripts/comprehensive_tables_generator.py`: Analysis-ready CSV tables generation
@@ -209,11 +206,7 @@ print(standards_dist)
 
 ### Generate Enhanced Datasets
 ```bash
-# German 3-city dataset
-cd stage_3
-python scripts/generate_5year_hourly_dataset.py
-
-# Enhanced Global Worst Air Quality Dataset (100 cities)
+# Enhanced Global Worst Air Quality Dataset (100 cities) - PRIMARY DATASET
 cd stage_5/scripts
 python expanded_worst_air_quality_collector.py     # Collect 100 worst cities
 python enhanced_features_processor.py              # Add fire + holiday features
@@ -242,7 +235,7 @@ The project evolved through multiple stages:
 5. **Stage 5**: Global 100-city dataset collection using public APIs
 
 ### Key Milestones
-- **Stage 3**: Production-ready ensemble pipeline with German 3-city dataset
+- **Stage 3**: ~~Legacy dataset development~~ - Superseded by Stage 5
 - **Stage 4**: Comprehensive model validation showing 25-45% improvements
 - **Stage 5 Phase 1**: Infrastructure setup and API connectivity testing ✅
 - **Stage 5 Phase 2**: Enhanced data collection for 100 worst air quality cities ✅
