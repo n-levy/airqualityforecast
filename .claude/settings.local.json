@@ -28,7 +28,8 @@
       "Bash(dir:*)",
       "Bash(find:*)",
       "Bash(git log:*)",
-      "Read(//c/**)"
+      "Read(//c/**)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []

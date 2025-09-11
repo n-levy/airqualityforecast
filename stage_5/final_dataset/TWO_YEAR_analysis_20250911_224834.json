@@ -1,0 +1,133 @@
+{
+  "generation_time": "2025-09-11T22:50:02.623567",
+  "dataset_type": "TWO_YEAR_MATCHED_DAILY_HOURLY",
+  "timeframe_verification": {
+    "start_date": "2023-09-11T00:00:00",
+    "end_date": "2025-09-10T00:00:00",
+    "total_days": 730,
+    "exact_match": true
+  },
+  "dataset_comparison": {
+    "daily_dataset": {
+      "cities": 100,
+      "records": 73100,
+      "file_size_mb": 52.6,
+      "expected_records": 73000,
+      "days_per_city": 731
+    },
+    "hourly_dataset": {
+      "cities": 100,
+      "records": 1752100,
+      "file_size_mb": 1427.4,
+      "expected_records": 1752000,
+      "hours_per_city": 17521
+    },
+    "ratios": {
+      "record_ratio": "24.0x",
+      "file_size_ratio": "27.1x",
+      "expected_record_ratio": "24x",
+      "expected_file_size_ratio": "24x"
+    }
+  },
+  "model_performance": {
+    "daily_models": {
+      "gradient_boosting": {
+        "mae": {
+          "mean": 17.138646918594,
+          "std": 1.7612233274467508
+        },
+        "rmse": {
+          "mean": 25.100517329389227,
+          "std": 2.1194848596782765
+        },
+        "r2": {
+          "mean": -0.08196397730175252,
+          "std": 0.09439141100575482
+        },
+        "predictions_count": 20
+      },
+      "ridge_regression": {
+        "mae": {
+          "mean": 16.329840243834106,
+          "std": 1.3548604279386296
+        },
+        "rmse": {
+          "mean": 23.88538915326044,
+          "std": 1.9477696161282254
+        },
+        "r2": {
+          "mean": 0.022361588434694296,
+          "std": 0.047676095046257715
+        },
+        "predictions_count": 20
+      },
+      "simple_average": {
+        "mae": {
+          "mean": 17.276251863759203,
+          "std": 1.2639208349535462
+        },
+        "rmse": {
+          "mean": 26.99036629962803,
+          "std": 2.037979059611034
+        },
+        "r2": {
+          "mean": -0.25105765555395554,
+          "std": 0.0850678341528863
+        },
+        "predictions_count": 20
+      }
+    },
+    "hourly_models": {
+      "gradient_boosting": {
+        "mae": {
+          "mean": 11.623319425935271,
+          "std": 0.5986038897053537
+        },
+        "rmse": {
+          "mean": 15.790184812593335,
+          "std": 0.9308343514607541
+        },
+        "r2": {
+          "mean": 0.726472330767622,
+          "std": 0.022380316316418198
+        },
+        "predictions_count": 20
+      },
+      "ridge_regression": {
+        "mae": {
+          "mean": 25.628360413085495,
+          "std": 1.143972495624185
+        },
+        "rmse": {
+          "mean": 31.895608953035616,
+          "std": 1.132019241411707
+        },
+        "r2": {
+          "mean": -0.11585450957509462,
+          "std": 0.05023497418331965
+        },
+        "predictions_count": 20
+      },
+      "simple_average": {
+        "mae": {
+          "mean": 21.785123454999997,
+          "std": 0.758751498649079
+        },
+        "rmse": {
+          "mean": 30.73634105695094,
+          "std": 0.8746399615222806
+        },
+        "r2": {
+          "mean": -0.03567598859371154,
+          "std": 0.008888617305133857
+        },
+        "predictions_count": 20
+      }
+    }
+  },
+  "file_locations": {
+    "daily_dataset": "..\\final_dataset\\TWO_YEAR_daily_dataset_20250911_224834.json",
+    "hourly_dataset": "..\\final_dataset\\TWO_YEAR_hourly_dataset_20250911_224834.json",
+    "analysis_results": "..\\final_dataset\\TWO_YEAR_analysis_20250911_224834.json"
+  }
+}

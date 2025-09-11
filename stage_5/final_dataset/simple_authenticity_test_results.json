@@ -1,0 +1,44 @@
+{
+  "test_timestamp": "2025-09-11T23:25:00",
+  "test_type": "WAQI_API_ACCESS_TEST",
+  "cities_tested": 5,
+  "successful_apis": 0,
+  "success_rate": "0.0%",
+  "detailed_results": [
+    {
+      "city": "Delhi",
+      "country": "India",
+      "api_accessible": false,
+      "status": "EXCEPTION",
+      "error": "'charmap' codec can't encode characters in position 50-51: character maps to <undefined>"
+    },
+    {
+      "city": "Phoenix",
+      "country": "USA",
+      "api_accessible": false,
+      "status": "EXCEPTION",
+      "error": "'charmap' codec can't encode characters in position 50-51: character maps to <undefined>"
+    },
+    {
+      "city": "Milan",
+      "country": "Italy",
+      "api_accessible": false,
+      "status": "EXCEPTION",
+      "error": "'charmap' codec can't encode characters in position 50-51: character maps to <undefined>"
+    },
+    {
+      "city": "Cairo",
+      "country": "Egypt",
+      "api_accessible": false,
+      "status": "EXCEPTION",
+      "error": "'charmap' codec can't encode characters in position 50-51: character maps to <undefined>"
+    },
+    {
+      "city": "Bangkok",
+      "country": "Thailand",
+      "api_accessible": false,
+      "status": "EXCEPTION",
+      "error": "'charmap' codec can't encode characters in position 50-51: character maps to <undefined>"
+    }
+  ]
+}

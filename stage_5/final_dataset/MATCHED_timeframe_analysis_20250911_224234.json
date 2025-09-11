@@ -1,0 +1,76 @@
+{
+  "generation_time": "2025-09-11T22:43:19.666245",
+  "dataset_type": "MATCHED_TIMEFRAME_HOURLY",
+  "timeframe_verification": {
+    "start_date": "2024-01-31T00:00:00",
+    "end_date": "2024-12-30T23:00:00",
+    "total_days": 335,
+    "matches_daily_dataset": true
+  },
+  "dataset_characteristics": {
+    "cities_processed": 100,
+    "total_hourly_records": 804000,
+    "hours_per_city": 8040,
+    "actual_file_size_mb": 665.8,
+    "expected_ratio_vs_daily": "24x (hourly vs daily for same timeframe)"
+  },
+  "size_comparison": {
+    "daily_dataset_records": 33500,
+    "hourly_dataset_records": 804000,
+    "record_ratio": "24.0x",
+    "daily_file_size_mb": 14,
+    "hourly_file_size_mb": 665.8,
+    "file_size_ratio": "47.6x"
+  },
+  "model_performance_sample": {
+    "gradient_boosting": {
+      "mae": {
+        "mean": 12.129070488143647,
+        "std": 0.5099239598866254
+      },
+      "rmse": {
+        "mean": 16.47796253642089,
+        "std": 0.8264346529842577
+      },
+      "r2": {
+        "mean": 0.7294157302655929,
+        "std": 0.02761317909053636
+      },
+      "total_predictions": 10000
+    },
+    "ridge_regression": {
+      "mae": {
+        "mean": 12.842066720006235,
+        "std": 0.5997721156752556
+      },
+      "rmse": {
+        "mean": 16.321521558221168,
+        "std": 0.6924616979289325
+      },
+      "r2": {
+        "mean": 0.7345848926051963,
+        "std": 0.02481233252520477
+      },
+      "total_predictions": 10000
+    },
+    "simple_average": {
+      "mae": {
+        "mean": 25.64630784,
+        "std": 1.1363254441707085
+      },
+      "rmse": {
+        "mean": 35.861118393276,
+        "std": 0.8093427885894864
+      },
+      "r2": {
+        "mean": -0.2778833923910994,
+        "std": 0.030182529723131752
+      },
+      "total_predictions": 10000
+    }
+  },
+  "file_locations": {
+    "hourly_dataset": "..\\final_dataset\\MATCHED_timeframe_hourly_dataset_20250911_224234.json",
+    "analysis_results": "..\\final_dataset\\MATCHED_timeframe_analysis_20250911_224234.json"
+  }
+}
