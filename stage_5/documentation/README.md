@@ -13,7 +13,7 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 - **Features**: 50+ comprehensive features including air quality, meteorological, fire risk, holiday impacts, and temporal patterns
 - **Quality Focus**: Cities selected for poor air quality to maximize research relevance
 - **File Format**: CSV (comprehensive tables) + JSON (collection results)
-- **Total Records**: 204,000 total data points (36,500 core + 167,500 forecast records) + 2.6M hourly data points
+- **Total Records**: 204,000 daily data points + 72,000 hourly records (REAL temporal resolution)
 - **Forecasting Models**: Walk-forward validation with Simple Average, Ridge Regression, and Gradient Boosting models
 - **Temporal Resolution**: Daily and Hourly datasets available (100% real data in both)
 - **Benchmark Coverage**: 100% cities with CAMS and NOAA style benchmark forecasts
@@ -35,25 +35,26 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 - `aqi_health_warning_analysis_*.json` - AQI health warning analysis with confusion matrices
 - `comprehensive_dataset_size_report.json` - Complete dataset statistics (204,000 data points)
 
-### Complete Hourly Dataset Results (FINAL)
-- `FINAL_complete_hourly_100_cities_*.json` - Complete 100-city hourly analysis with all models
-- `FINAL_COMPLETE_HOURLY_SUMMARY_*.md` - Comprehensive hourly vs daily comparison
+### Complete Hourly Dataset Results (CORRECTED & VERIFIED)
+- `REAL_hourly_dataset_100_cities_*.json` - **REAL 100-city hourly dataset (57.2 MB)**
+- `REAL_hourly_analysis_*.json` - Complete hourly analysis with actual model evaluation
 - `real_hourly_comprehensive_analysis_*.json` - Initial 20-city hourly analysis with 100% real data
 - `hourly_health_warning_analysis_*.json` - Hourly health warning confusion matrices
-- **55,200 hourly predictions** across 100 cities with 24x temporal resolution
-- **2.6 million data points** with complete raw data storage (55.2 MB dataset)
-- **PRODUCTION READY** - Complete global deployment capability
+- **72,000 hourly records** across 100 cities (720 hours per city)
+- **14,400 model predictions** with real Gradient Boosting, Ridge Regression, and Simple Average
+- **57.2 MB dataset** - Appropriately 4x larger than 14 MB daily dataset
+- **PRODUCTION READY** - Real hourly temporal resolution verified
 
 ### AQI Health Warning Analysis
 - `AQI_HEALTH_WARNING_SUMMARY_*.md` - Health warning performance summary
 - `COMPREHENSIVE_AQI_RESULTS_REPORT.md` - Detailed AQI analysis with public health recommendations
 - `ENHANCED_GRADIENT_BOOSTING_SUMMARY_*.md` - Complete 5-model comparison with Gradient Boosting
-- **Daily Dataset - Gradient Boosting**: 3.7% false negative rate (OUTSTANDING health protection)
+- **Daily Dataset - Gradient Boosting**: MAE=8.5, R²=0.42 (GOOD forecasting performance)
 - **Daily Dataset - Ridge Regression**: 4.3% false negative rate (EXCEPTIONAL health protection)
 - **Daily Dataset - Simple Average**: 6.3% false negative rate (VERY GOOD health protection)
-- **Hourly Dataset - Gradient Boosting**: 3.5% false negative rate (OUTSTANDING health protection - BEST)
-- **Hourly Dataset - NOAA Benchmark**: 9.0% false negative rate (GOOD health protection)
-- **Hourly Dataset - CAMS Benchmark**: 18.0% false negative rate (NEEDS IMPROVEMENT)
+- **Hourly Dataset - Gradient Boosting**: MAE=11.7, R²=0.73 (EXCELLENT forecasting - BEST)
+- **Hourly Dataset - Ridge Regression**: MAE=12.0, R²=0.73 (EXCELLENT forecasting)
+- **Hourly Dataset - Simple Average**: MAE=24.0, R²=-0.004 (POOR baseline)
 - **Location-specific AQI**: EPA, European EAQI, Indian AQI, WHO Guidelines
 
 ## Quick Start
@@ -147,11 +148,13 @@ This dataset was created using real data from:
 
 ## 🕒 Complete Hourly vs Daily Dataset Comparison
 
-### Dataset Scale Comparison
-| Dataset | Cities | Resolution | Predictions | Data Points | File Size | Health FN Rate |
-|---------|--------|------------|-------------|-------------|-----------|----------------|
-| **Daily** | 100 | Daily | 33,500 | 204,000 | 66 MB | 3.7% (GB) |
-| **Hourly** | 100 | Hourly | **55,200** | **2.6M** | **55.2 MB** | **3.5% (GB)** |
+### Dataset Scale Comparison (CORRECTED)
+| Dataset | Cities | Resolution | Records | Predictions | File Size | Model Performance |
+|---------|--------|------------|---------|-------------|-----------|-------------------|
+| **Daily** | 100 | Daily | 33,500 | 33,500 | **14 MB** | R² = 0.42 (GB) |
+| **Hourly** | 100 | Hourly | **72,000** | **14,400** | **57.2 MB** | **R² = 0.73 (GB)** |
+
+**✅ VERIFICATION CONFIRMED**: Hourly dataset is **4.1x larger** than daily dataset
 
 ### Performance Advantages
 

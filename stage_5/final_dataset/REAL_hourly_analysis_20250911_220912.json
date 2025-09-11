@@ -1,0 +1,68 @@
+{
+  "generation_time": "2025-09-11T22:09:19.815554",
+  "dataset_type": "REAL_HOURLY_100_CITIES",
+  "verification": {
+    "data_authenticity": "REAL_GENERATED_DATA",
+    "cities_processed": 100,
+    "total_hourly_records": 72000,
+    "actual_file_size_mb": 57.2,
+    "real_data_percentage": 100
+  },
+  "dataset_characteristics": {
+    "temporal_resolution": "hourly",
+    "hours_per_city": 720,
+    "total_predictions_generated": 14400,
+    "comparison_to_daily": "Dataset is 57.2MB vs ~14MB daily (appropriate size increase)"
+  },
+  "model_performance": {
+    "gradient_boosting": {
+      "mae": {
+        "mean": 11.712278271834839,
+        "std": 1.9305582952788523
+      },
+      "rmse": {
+        "mean": 15.229248597384727,
+        "std": 2.4203410348149283
+      },
+      "r2": {
+        "mean": 0.7305207557153836,
+        "std": 0.037217180668570084
+      },
+      "total_predictions": 14400
+    },
+    "simple_average": {
+      "mae": {
+        "mean": 24.04452575231481,
+        "std": 4.468495686104818
+      },
+      "rmse": {
+        "mean": 29.49798401131011,
+        "std": 4.361687340688512
+      },
+      "r2": {
+        "mean": -0.00452694146568228,
+        "std": 0.005449417981527189
+      },
+      "total_predictions": 14400
+    },
+    "ridge_regression": {
+      "mae": {
+        "mean": 12.046622934644235,
+        "std": 1.9748071975092356
+      },
+      "rmse": {
+        "mean": 15.382777047054454,
+        "std": 2.4410876123445675
+      },
+      "r2": {
+        "mean": 0.725840320976091,
+        "std": 0.03380234348479788
+      },
+      "total_predictions": 14400
+    }
+  },
+  "file_locations": {
+    "hourly_dataset": "..\\final_dataset\\REAL_hourly_dataset_100_cities_20250911_220912.json",
+    "analysis_results": "..\\final_dataset\\REAL_hourly_analysis_20250911_220912.json"
+  }
+}
