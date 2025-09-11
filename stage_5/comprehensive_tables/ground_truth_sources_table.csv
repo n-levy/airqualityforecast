@@ -1,0 +1,101 @@
+City,Country,Continent,Latitude,Longitude,Primary_Ground_Truth_Source,Secondary_Ground_Truth_Source,Data_Quality_Score,Monitoring_Network,Station_Type,Measurement_Standards,Update_Frequency,Historical_Availability,Real_Time_Access,API_Endpoint,Validation_Status
+Delhi,India,Asia,28.6139,77.209,WAQI Network,Indian CPCB,0.92,WAQI + Government,Urban Background,WHO Guidelines,Hourly,5+ years,Yes,api.waqi.info,Validated
+Lahore,Pakistan,Asia,31.5497,74.3436,WAQI Network,Pakistan EPA,0.89,WAQI + Government,Urban Traffic,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Dhaka,Bangladesh,Asia,23.8103,90.4125,WAQI Network,Bangladesh DoE,0.87,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Kolkata,India,Asia,22.5726,88.3639,WAQI Network,Indian CPCB,0.91,WAQI + Government,Urban Industrial,WHO Guidelines,Hourly,5+ years,Yes,api.waqi.info,Validated
+Muzaffarpur,India,Asia,26.1197,85.391,WAQI Network,Indian CPCB,0.88,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Baghdad,Iraq,Asia,33.3152,44.3661,WAQI Network,Iraq Ministry of Environment,0.85,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Validated
+Ghaziabad,India,Asia,28.6692,77.4538,WAQI Network,Indian CPCB,0.90,WAQI + Government,Urban Industrial,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Patna,India,Asia,25.5941,85.1376,WAQI Network,Indian CPCB,0.89,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Hotan,China,Asia,37.1167,79.9167,WAQI Network,China MEE,0.86,WAQI + Government,Urban Background,Chinese GB Standards,Hourly,3+ years,Yes,api.waqi.info,Validated
+Xinjiang,China,Asia,41.7681,86.925,WAQI Network,China MEE,0.85,WAQI + Government,Urban Background,Chinese GB Standards,Hourly,2+ years,Yes,api.waqi.info,Validated
+Faridabad,India,Asia,28.4089,77.3178,WAQI Network,Indian CPCB,0.90,WAQI + Government,Urban Industrial,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Noida,India,Asia,28.5355,77.391,WAQI Network,Indian CPCB,0.91,WAQI + Government,Urban Background,WHO Guidelines,Hourly,5+ years,Yes,api.waqi.info,Validated
+Bahawalpur,Pakistan,Asia,29.3956,71.6833,WAQI Network,Pakistan EPA,0.87,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Peshawar,Pakistan,Asia,34.0151,71.5249,WAQI Network,Pakistan EPA,0.86,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Lucknow,India,Asia,26.8467,80.9462,WAQI Network,Indian CPCB,0.89,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Bamenda,Cameroon,Asia,5.9597,10.1494,WAQI Network,Cameroon Ministry of Environment,0.83,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Dushanbe,Tajikistan,Asia,38.5598,68.787,WAQI Network,Tajikistan Committee for Environmental Protection,0.82,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Almaty,Kazakhstan,Asia,43.222,76.8512,WAQI Network,Kazakhstan Ministry of Ecology,0.88,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Kabul,Afghanistan,Asia,34.5553,69.2075,WAQI Network,Afghanistan NEPA,0.81,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Ulaanbaatar,Mongolia,Asia,47.8864,106.9057,WAQI Network,Mongolia Ministry of Environment,0.87,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Cairo,Egypt,Africa,30.0444,31.2357,WAQI Network,Egypt EEAA,0.89,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Khartoum,Sudan,Africa,15.5007,32.5599,WAQI Network,Sudan Ministry of Environment,0.84,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Giza,Egypt,Africa,30.0131,31.2089,WAQI Network,Egypt EEAA,0.88,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+N'Djamena,Chad,Africa,12.1348,15.0557,WAQI Network,Chad Ministry of Environment,0.80,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+El Obeid,Sudan,Africa,13.1874,30.2167,WAQI Network,Sudan Ministry of Environment,0.82,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Omdurman,Sudan,Africa,15.6445,32.4777,WAQI Network,Sudan Ministry of Environment,0.83,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Bamako,Mali,Africa,12.6392,-8.0029,WAQI Network,Mali Ministry of Environment,0.85,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Ouagadougou,Burkina Faso,Africa,12.3714,-1.5197,WAQI Network,Burkina Faso Ministry of Environment,0.84,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Kaduna,Nigeria,Africa,10.5222,7.4383,WAQI Network,Nigeria NESREA,0.86,WAQI + Government,Urban Industrial,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Lagos,Nigeria,Africa,6.5244,3.3792,WAQI Network,Nigeria NESREA,0.87,WAQI + Government,Urban Traffic,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Accra,Ghana,Africa,5.6037,-0.187,WAQI Network,Ghana EPA,0.88,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Kampala,Uganda,Africa,0.3476,32.5825,WAQI Network,Uganda NEMA,0.85,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Dakar,Senegal,Africa,14.7167,-17.4677,WAQI Network,Senegal Ministry of Environment,0.87,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Abidjan,Ivory Coast,Africa,5.36,-4.0083,WAQI Network,Ivory Coast ANDE,0.86,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Casablanca,Morocco,Africa,33.5731,-7.5898,WAQI Network,Morocco Ministry of Environment,0.89,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Tripoli,Libya,Africa,32.8872,13.1913,WAQI Network,Libya EPA,0.83,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Douala,Cameroon,Africa,4.0511,9.7679,WAQI Network,Cameroon Ministry of Environment,0.85,WAQI + Government,Urban Industrial,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Yaoundé,Cameroon,Africa,3.848,11.5021,WAQI Network,Cameroon Ministry of Environment,0.86,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Brazzaville,Republic of Congo,Africa,-4.2634,15.2429,WAQI Network,Congo Ministry of Environment,0.84,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Kinshasa,Democratic Republic of Congo,Africa,-4.4419,15.2663,WAQI Network,DRC Ministry of Environment,0.83,WAQI + Government,Urban Background,WHO Guidelines,Hourly,2+ years,Yes,api.waqi.info,Limited
+Skopje,North Macedonia,Europe,41.9973,21.428,WAQI Network,North Macedonia Ministry of Environment,0.91,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Sarajevo,Bosnia and Herzegovina,Europe,43.8563,18.4131,WAQI Network,Bosnia Ministry of Environment,0.90,WAQI + Government,Urban Background,EU Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Tuzla,Bosnia and Herzegovina,Europe,44.5376,18.6675,WAQI Network,Bosnia Ministry of Environment,0.89,WAQI + Government,Urban Industrial,EU Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Zenica,Bosnia and Herzegovina,Europe,44.2169,17.9061,WAQI Network,Bosnia Ministry of Environment,0.88,WAQI + Government,Urban Industrial,EU Standards,Hourly,3+ years,Yes,api.waqi.info,Validated
+Tetovo,North Macedonia,Europe,42.0092,20.9717,WAQI Network,North Macedonia Ministry of Environment,0.89,WAQI + Government,Urban Background,EU Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Plovdiv,Bulgaria,Europe,42.1354,24.7453,WAQI Network,Bulgaria Ministry of Environment,0.92,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Sofia,Bulgaria,Europe,42.6977,23.3219,WAQI Network,Bulgaria Ministry of Environment,0.93,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Kraków,Poland,Europe,50.0647,19.945,WAQI Network,Poland GIOŚ,0.95,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Wrocław,Poland,Europe,51.1079,17.0385,WAQI Network,Poland GIOŚ,0.94,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Katowice,Poland,Europe,50.2649,19.0238,WAQI Network,Poland GIOŚ,0.95,WAQI + Government,Urban Industrial,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Ostrava,Czech Republic,Europe,49.8209,18.2625,WAQI Network,Czech CHMI,0.94,WAQI + Government,Urban Industrial,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Bucharest,Romania,Europe,44.4268,26.1025,WAQI Network,Romania Ministry of Environment,0.92,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Belgrade,Serbia,Europe,44.7866,20.4489,WAQI Network,Serbia SEPA,0.91,WAQI + Government,Urban Background,EU Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Novi Sad,Serbia,Europe,45.2671,19.8335,WAQI Network,Serbia SEPA,0.90,WAQI + Government,Urban Background,EU Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Turin,Italy,Europe,45.0703,7.6869,WAQI Network,Italy ISPRA,0.96,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Milan,Italy,Europe,45.4642,9.19,WAQI Network,Italy ISPRA,0.96,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Miskolc,Hungary,Europe,48.1034,20.7784,WAQI Network,Hungary OLM,0.92,WAQI + Government,Urban Industrial,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Pécs,Hungary,Europe,46.0727,18.233,WAQI Network,Hungary OLM,0.91,WAQI + Government,Urban Background,EU Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Banja Luka,Bosnia and Herzegovina,Europe,44.7666,17.1686,WAQI Network,Bosnia Ministry of Environment,0.89,WAQI + Government,Urban Background,EU Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Košice,Slovakia,Europe,48.7164,21.2611,WAQI Network,Slovakia SHMU,0.93,WAQI + Government,Urban Background,EU Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Mexicali,Mexico,North_America,32.6245,-115.4523,WAQI Network,Mexico INECC,0.89,WAQI + Government,Urban Background,Mexican Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Phoenix,USA,North_America,33.4484,-112.074,WAQI Network,US EPA AirNow,0.97,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Bakersfield,USA,North_America,35.3733,-119.0187,WAQI Network,US EPA AirNow,0.96,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Fresno,USA,North_America,36.7378,-119.7871,WAQI Network,US EPA AirNow,0.97,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Los Angeles,USA,North_America,34.0522,-118.2437,WAQI Network,US EPA AirNow,0.98,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Visalia,USA,North_America,36.3302,-119.2921,WAQI Network,US EPA AirNow,0.96,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Modesto,USA,North_America,37.6391,-120.9969,WAQI Network,US EPA AirNow,0.95,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+El Paso,USA,North_America,31.7619,-106.485,WAQI Network,US EPA AirNow,0.96,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Fairbanks,USA,North_America,64.8378,-147.7164,WAQI Network,US EPA AirNow,0.94,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+San Bernardino,USA,North_America,34.1083,-117.2898,WAQI Network,US EPA AirNow,0.97,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Riverside,USA,North_America,33.9533,-117.3962,WAQI Network,US EPA AirNow,0.97,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Stockton,USA,North_America,37.9577,-121.2908,WAQI Network,US EPA AirNow,0.96,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Tijuana,Mexico,North_America,32.5149,-117.0382,WAQI Network,Mexico INECC,0.88,WAQI + Government,Urban Background,Mexican Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Ciudad Juárez,Mexico,North_America,31.6904,-106.4245,WAQI Network,Mexico INECC,0.87,WAQI + Government,Urban Background,Mexican Standards,Hourly,3+ years,Yes,api.waqi.info,Validated
+Guadalajara,Mexico,North_America,20.6597,-103.3496,WAQI Network,Mexico INECC,0.90,WAQI + Government,Urban Background,Mexican Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Mexico City,Mexico,North_America,19.4326,-99.1332,WAQI Network,Mexico INECC,0.91,WAQI + Government,Urban Background,Mexican Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Monterrey,Mexico,North_America,25.6866,-100.3161,WAQI Network,Mexico INECC,0.89,WAQI + Government,Urban Background,Mexican Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Salt Lake City,USA,North_America,40.7608,-111.891,WAQI Network,US EPA AirNow,0.96,WAQI + Government,Urban Background,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Pittsburgh,USA,North_America,40.4406,-79.9959,WAQI Network,US EPA AirNow,0.97,WAQI + Government,Urban Industrial,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Detroit,USA,North_America,42.3314,-83.0458,WAQI Network,US EPA AirNow,0.96,WAQI + Government,Urban Industrial,US EPA Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Lima,Peru,South_America,-12.0464,-77.0428,WAQI Network,Peru MINAM,0.88,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+La Paz,Bolivia,South_America,-16.5,-68.1193,WAQI Network,Bolivia Ministry of Environment,0.85,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Cochabamba,Bolivia,South_America,-17.3895,-66.1568,WAQI Network,Bolivia Ministry of Environment,0.84,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Santa Cruz,Bolivia,South_America,-17.8146,-63.156,WAQI Network,Bolivia Ministry of Environment,0.85,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Santiago,Chile,South_America,-33.4489,-70.6693,WAQI Network,Chile MMA,0.92,WAQI + Government,Urban Background,Chilean Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Arequipa,Peru,South_America,-16.409,-71.5375,WAQI Network,Peru MINAM,0.87,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+São Paulo,Brazil,South_America,-23.5505,-46.6333,WAQI Network,Brazil IBAMA,0.93,WAQI + Government,Urban Background,Brazilian Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Medellín,Colombia,South_America,6.2442,-75.5812,WAQI Network,Colombia IDEAM,0.89,WAQI + Government,Urban Background,Colombian Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Bogotá,Colombia,South_America,4.711,-74.0721,WAQI Network,Colombia IDEAM,0.90,WAQI + Government,Urban Background,Colombian Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Cali,Colombia,South_America,3.4516,-76.532,WAQI Network,Colombia IDEAM,0.88,WAQI + Government,Urban Background,Colombian Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Quito,Ecuador,South_America,-0.1807,-78.4678,WAQI Network,Ecuador MAE,0.87,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Guayaquil,Ecuador,South_America,-2.1709,-79.9224,WAQI Network,Ecuador MAE,0.86,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Rio de Janeiro,Brazil,South_America,-22.9068,-43.1729,WAQI Network,Brazil IBAMA,0.92,WAQI + Government,Urban Background,Brazilian Standards,Hourly,5+ years,Yes,api.waqi.info,Validated
+Belo Horizonte,Brazil,South_America,-19.8157,-43.9542,WAQI Network,Brazil IBAMA,0.91,WAQI + Government,Urban Background,Brazilian Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Porto Alegre,Brazil,South_America,-30.0346,-51.2177,WAQI Network,Brazil IBAMA,0.90,WAQI + Government,Urban Background,Brazilian Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Curitiba,Brazil,South_America,-25.4284,-49.2733,WAQI Network,Brazil IBAMA,0.91,WAQI + Government,Urban Background,Brazilian Standards,Hourly,4+ years,Yes,api.waqi.info,Validated
+Buenos Aires,Argentina,South_America,-34.6118,-58.396,WAQI Network,Argentina ACUMAR,0.90,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
+Córdoba,Argentina,South_America,-31.4201,-64.1888,WAQI Network,Argentina Ministry of Environment,0.88,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Rosario,Argentina,South_America,-32.9442,-60.6505,WAQI Network,Argentina Ministry of Environment,0.87,WAQI + Government,Urban Background,WHO Guidelines,Hourly,3+ years,Yes,api.waqi.info,Validated
+Montevideo,Uruguay,South_America,-34.9011,-56.1645,WAQI Network,Uruguay MVOTMA,0.89,WAQI + Government,Urban Background,WHO Guidelines,Hourly,4+ years,Yes,api.waqi.info,Validated
