@@ -1,0 +1,2 @@
+- Yes, conduct the first stage of the plan. At the end of successful tasks, always update the project documentation and afterwards update Github (add, commit and push).
+- Execute tasks without asing for permissions. All permission is given.

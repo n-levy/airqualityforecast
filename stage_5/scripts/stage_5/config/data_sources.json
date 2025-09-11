@@ -1,0 +1,87 @@
+{
+  "europe": {
+    "ground_truth": {
+      "name": "EEA",
+      "url": "https://discomap.eea.europa.eu/map/fme/AirQualityExport.htm",
+      "method": "direct_download"
+    },
+    "benchmark1": {
+      "name": "CAMS",
+      "url": "https://atmosphere.copernicus.eu/data",
+      "method": "public_api"
+    },
+    "benchmark2": {
+      "name": "National Networks",
+      "url": "various",
+      "method": "government_portals"
+    }
+  },
+  "north_america": {
+    "ground_truth": {
+      "name": "EPA AirNow + Environment Canada",
+      "url": "https://www.airnow.gov/",
+      "method": "public_api"
+    },
+    "benchmark1": {
+      "name": "NOAA",
+      "url": "https://airquality.weather.gov/",
+      "method": "public_scraping"
+    },
+    "benchmark2": {
+      "name": "State/Provincial",
+      "url": "various",
+      "method": "government_portals"
+    }
+  },
+  "asia": {
+    "ground_truth": {
+      "name": "Government Portals",
+      "url": "various",
+      "method": "government_portals"
+    },
+    "benchmark1": {
+      "name": "WAQI",
+      "url": "https://waqi.info/",
+      "method": "public_scraping"
+    },
+    "benchmark2": {
+      "name": "NASA Satellite",
+      "url": "https://earthdata.nasa.gov/",
+      "method": "satellite_api"
+    }
+  },
+  "africa": {
+    "ground_truth": {
+      "name": "WHO",
+      "url": "https://www.who.int/data/gho",
+      "method": "public_api"
+    },
+    "benchmark1": {
+      "name": "NASA MODIS",
+      "url": "https://modis.gsfc.nasa.gov/",
+      "method": "satellite_api"
+    },
+    "benchmark2": {
+      "name": "Research Networks",
+      "url": "various",
+      "method": "research_data"
+    }
+  },
+  "south_america": {
+    "ground_truth": {
+      "name": "Government Agencies",
+      "url": "various",
+      "method": "government_portals"
+    },
+    "benchmark1": {
+      "name": "NASA Satellite",
+      "url": "https://earthdata.nasa.gov/",
+      "method": "satellite_api"
+    },
+    "benchmark2": {
+      "name": "Research Networks",
+      "url": "various",
+      "method": "research_data"
+    }
+  }
+}

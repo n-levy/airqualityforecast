@@ -1,0 +1,23 @@
+{
+  "project": "Global 100-City Air Quality Dataset",
+  "version": "1.0",
+  "created": "2025-09-11T09:38:07.465333",
+  "collection_period": {
+    "start_date": "2020-09-12",
+    "end_date": "2025-09-11",
+    "total_days": 1825
+  },
+  "total_cities": 100,
+  "continents": 5,
+  "expected_records": 182500,
+  "data_resolution": "daily",
+  "storage_approach": "ultra-minimal",
+  "api_key_required": false,
+  "continental_patterns": {
+    "europe": "Berlin Pattern",
+    "south_america": "S\u00e3o Paulo Pattern",
+    "north_america": "Toronto Pattern",
+    "asia": "Delhi Pattern",
+    "africa": "Cairo Pattern"
+  }
+}

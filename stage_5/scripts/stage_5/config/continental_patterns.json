@@ -1,0 +1,52 @@
+{
+  "europe": {
+    "pattern_name": "Berlin Pattern",
+    "success_rate": 0.85,
+    "data_sources": {
+      "ground_truth": "EEA (European Environment Agency)",
+      "benchmark1": "CAMS (Copernicus Atmosphere Monitoring)",
+      "benchmark2": "National monitoring networks"
+    },
+    "aqi_standard": "European EAQI"
+  },
+  "south_america": {
+    "pattern_name": "São Paulo Pattern",
+    "success_rate": 0.85,
+    "data_sources": {
+      "ground_truth": "Government agencies",
+      "benchmark1": "NASA satellite estimates",
+      "benchmark2": "Regional research networks"
+    },
+    "aqi_standard": "EPA adaptations, Chilean ICA"
+  },
+  "north_america": {
+    "pattern_name": "Toronto Pattern",
+    "success_rate": 0.7,
+    "data_sources": {
+      "ground_truth": "EPA AirNow + Environment Canada",
+      "benchmark1": "NOAA air quality forecasts",
+      "benchmark2": "State/provincial networks"
+    },
+    "aqi_standard": "US EPA, Canadian AQHI, Mexican IMECA"
+  },
+  "asia": {
+    "pattern_name": "Delhi Pattern",
+    "success_rate": 0.5,
+    "data_sources": {
+      "ground_truth": "National environmental agencies",
+      "benchmark1": "WAQI aggregated data",
+      "benchmark2": "NASA satellite estimates"
+    },
+    "aqi_standard": "Indian, Chinese, Thai, Local standards"
+  },
+  "africa": {
+    "pattern_name": "Cairo Pattern",
+    "success_rate": 0.55,
+    "data_sources": {
+      "ground_truth": "WHO Global Health Observatory",
+      "benchmark1": "NASA MODIS satellite data",
+      "benchmark2": "Research networks (INDAAF)"
+    },
+    "aqi_standard": "WHO Guidelines"
+  }
+}

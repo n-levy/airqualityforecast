@@ -1,0 +1,712 @@
+{
+  "asia": [
+    {
+      "name": "Delhi",
+      "country": "India",
+      "lat": 28.6139,
+      "lon": 77.209,
+      "aqi_standard": "Indian"
+    },
+    {
+      "name": "Lahore",
+      "country": "Pakistan",
+      "lat": 31.5497,
+      "lon": 74.3436,
+      "aqi_standard": "Pakistani"
+    },
+    {
+      "name": "Beijing",
+      "country": "China",
+      "lat": 39.9042,
+      "lon": 116.4074,
+      "aqi_standard": "Chinese"
+    },
+    {
+      "name": "Dhaka",
+      "country": "Bangladesh",
+      "lat": 23.8103,
+      "lon": 90.4125,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Mumbai",
+      "country": "India",
+      "lat": 19.076,
+      "lon": 72.8777,
+      "aqi_standard": "Indian"
+    },
+    {
+      "name": "Karachi",
+      "country": "Pakistan",
+      "lat": 24.8607,
+      "lon": 67.0011,
+      "aqi_standard": "Pakistani"
+    },
+    {
+      "name": "Shanghai",
+      "country": "China",
+      "lat": 31.2304,
+      "lon": 121.4737,
+      "aqi_standard": "Chinese"
+    },
+    {
+      "name": "Kolkata",
+      "country": "India",
+      "lat": 22.5726,
+      "lon": 88.3639,
+      "aqi_standard": "Indian"
+    },
+    {
+      "name": "Bangkok",
+      "country": "Thailand",
+      "lat": 13.7563,
+      "lon": 100.5018,
+      "aqi_standard": "Thai"
+    },
+    {
+      "name": "Jakarta",
+      "country": "Indonesia",
+      "lat": -6.2088,
+      "lon": 106.8456,
+      "aqi_standard": "Indonesian"
+    },
+    {
+      "name": "Manila",
+      "country": "Philippines",
+      "lat": 14.5995,
+      "lon": 120.9842,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Ho Chi Minh City",
+      "country": "Vietnam",
+      "lat": 10.8231,
+      "lon": 106.6297,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Hanoi",
+      "country": "Vietnam",
+      "lat": 21.0285,
+      "lon": 105.8542,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Seoul",
+      "country": "South Korea",
+      "lat": 37.5665,
+      "lon": 126.978,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Taipei",
+      "country": "Taiwan",
+      "lat": 25.033,
+      "lon": 121.5654,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Ulaanbaatar",
+      "country": "Mongolia",
+      "lat": 47.8864,
+      "lon": 106.9057,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Almaty",
+      "country": "Kazakhstan",
+      "lat": 43.222,
+      "lon": 76.8512,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Tashkent",
+      "country": "Uzbekistan",
+      "lat": 41.2995,
+      "lon": 69.2401,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Tehran",
+      "country": "Iran",
+      "lat": 35.6892,
+      "lon": 51.389,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Kabul",
+      "country": "Afghanistan",
+      "lat": 34.5553,
+      "lon": 69.2075,
+      "aqi_standard": "EPA"
+    }
+  ],
+  "europe": [
+    {
+      "name": "Skopje",
+      "country": "North Macedonia",
+      "lat": 41.9973,
+      "lon": 21.428,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Sarajevo",
+      "country": "Bosnia and Herzegovina",
+      "lat": 43.8563,
+      "lon": 18.4131,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Sofia",
+      "country": "Bulgaria",
+      "lat": 42.6977,
+      "lon": 23.3219,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Plovdiv",
+      "country": "Bulgaria",
+      "lat": 42.1354,
+      "lon": 24.7453,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Bucharest",
+      "country": "Romania",
+      "lat": 44.4268,
+      "lon": 26.1025,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Belgrade",
+      "country": "Serbia",
+      "lat": 44.7866,
+      "lon": 20.4489,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Warsaw",
+      "country": "Poland",
+      "lat": 52.2297,
+      "lon": 21.0122,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Krakow",
+      "country": "Poland",
+      "lat": 50.0647,
+      "lon": 19.945,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Prague",
+      "country": "Czech Republic",
+      "lat": 50.0755,
+      "lon": 14.4378,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Budapest",
+      "country": "Hungary",
+      "lat": 47.4979,
+      "lon": 19.0402,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Milan",
+      "country": "Italy",
+      "lat": 45.4642,
+      "lon": 9.19,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Turin",
+      "country": "Italy",
+      "lat": 45.0703,
+      "lon": 7.6869,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Naples",
+      "country": "Italy",
+      "lat": 40.8518,
+      "lon": 14.2681,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Athens",
+      "country": "Greece",
+      "lat": 37.9755,
+      "lon": 23.7348,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Madrid",
+      "country": "Spain",
+      "lat": 40.4168,
+      "lon": -3.7038,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Barcelona",
+      "country": "Spain",
+      "lat": 41.3851,
+      "lon": 2.1734,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Paris",
+      "country": "France",
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "London",
+      "country": "UK",
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Berlin",
+      "country": "Germany",
+      "lat": 52.52,
+      "lon": 13.405,
+      "aqi_standard": "European EAQI"
+    },
+    {
+      "name": "Amsterdam",
+      "country": "Netherlands",
+      "lat": 52.3676,
+      "lon": 4.9041,
+      "aqi_standard": "European EAQI"
+    }
+  ],
+  "north_america": [
+    {
+      "name": "Mexicali",
+      "country": "Mexico",
+      "lat": 32.6519,
+      "lon": -115.4683,
+      "aqi_standard": "Mexican IMECA"
+    },
+    {
+      "name": "Mexico City",
+      "country": "Mexico",
+      "lat": 19.4326,
+      "lon": -99.1332,
+      "aqi_standard": "Mexican IMECA"
+    },
+    {
+      "name": "Guadalajara",
+      "country": "Mexico",
+      "lat": 20.6597,
+      "lon": -103.3496,
+      "aqi_standard": "Mexican IMECA"
+    },
+    {
+      "name": "Tijuana",
+      "country": "Mexico",
+      "lat": 32.5149,
+      "lon": -117.0382,
+      "aqi_standard": "Mexican IMECA"
+    },
+    {
+      "name": "Monterrey",
+      "country": "Mexico",
+      "lat": 25.6866,
+      "lon": -100.3161,
+      "aqi_standard": "Mexican IMECA"
+    },
+    {
+      "name": "Los Angeles",
+      "country": "USA",
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Fresno",
+      "country": "USA",
+      "lat": 36.7378,
+      "lon": -119.7871,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Phoenix",
+      "country": "USA",
+      "lat": 33.4484,
+      "lon": -112.074,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Houston",
+      "country": "USA",
+      "lat": 29.7604,
+      "lon": -95.3698,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "New York",
+      "country": "USA",
+      "lat": 40.7128,
+      "lon": -74.006,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Chicago",
+      "country": "USA",
+      "lat": 41.8781,
+      "lon": -87.6298,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Denver",
+      "country": "USA",
+      "lat": 39.7392,
+      "lon": -104.9903,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Detroit",
+      "country": "USA",
+      "lat": 42.3314,
+      "lon": -83.0458,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Atlanta",
+      "country": "USA",
+      "lat": 33.749,
+      "lon": -84.388,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Philadelphia",
+      "country": "USA",
+      "lat": 39.9526,
+      "lon": -75.1652,
+      "aqi_standard": "US EPA"
+    },
+    {
+      "name": "Toronto",
+      "country": "Canada",
+      "lat": 43.6532,
+      "lon": -79.3832,
+      "aqi_standard": "Canadian AQHI"
+    },
+    {
+      "name": "Montreal",
+      "country": "Canada",
+      "lat": 45.5017,
+      "lon": -73.5673,
+      "aqi_standard": "Canadian AQHI"
+    },
+    {
+      "name": "Vancouver",
+      "country": "Canada",
+      "lat": 49.2827,
+      "lon": -123.1207,
+      "aqi_standard": "Canadian AQHI"
+    },
+    {
+      "name": "Calgary",
+      "country": "Canada",
+      "lat": 51.0447,
+      "lon": -114.0719,
+      "aqi_standard": "Canadian AQHI"
+    },
+    {
+      "name": "Ottawa",
+      "country": "Canada",
+      "lat": 45.4215,
+      "lon": -75.6972,
+      "aqi_standard": "Canadian AQHI"
+    }
+  ],
+  "africa": [
+    {
+      "name": "N'Djamena",
+      "country": "Chad",
+      "lat": 12.1348,
+      "lon": 15.0557,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Cairo",
+      "country": "Egypt",
+      "lat": 30.0444,
+      "lon": 31.2357,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Lagos",
+      "country": "Nigeria",
+      "lat": 6.5244,
+      "lon": 3.3792,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Accra",
+      "country": "Ghana",
+      "lat": 5.6037,
+      "lon": -0.187,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Khartoum",
+      "country": "Sudan",
+      "lat": 15.5007,
+      "lon": 32.5599,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Kampala",
+      "country": "Uganda",
+      "lat": 0.3476,
+      "lon": 32.5825,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Nairobi",
+      "country": "Kenya",
+      "lat": -1.2921,
+      "lon": 36.8219,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Abidjan",
+      "country": "Côte d'Ivoire",
+      "lat": 5.36,
+      "lon": -4.0083,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Bamako",
+      "country": "Mali",
+      "lat": 12.6392,
+      "lon": -8.0029,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Ouagadougou",
+      "country": "Burkina Faso",
+      "lat": 12.3714,
+      "lon": -1.5197,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Dakar",
+      "country": "Senegal",
+      "lat": 14.7167,
+      "lon": -17.4677,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Kinshasa",
+      "country": "DR Congo",
+      "lat": -4.4419,
+      "lon": 15.2663,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Casablanca",
+      "country": "Morocco",
+      "lat": 33.5731,
+      "lon": -7.5898,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Johannesburg",
+      "country": "South Africa",
+      "lat": -26.2041,
+      "lon": 28.0473,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Addis Ababa",
+      "country": "Ethiopia",
+      "lat": 9.145,
+      "lon": 40.4897,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Dar es Salaam",
+      "country": "Tanzania",
+      "lat": -6.7924,
+      "lon": 39.2083,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Algiers",
+      "country": "Algeria",
+      "lat": 36.7538,
+      "lon": 3.0588,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Tunis",
+      "country": "Tunisia",
+      "lat": 36.8065,
+      "lon": 10.1815,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Maputo",
+      "country": "Mozambique",
+      "lat": -25.9692,
+      "lon": 32.5732,
+      "aqi_standard": "WHO"
+    },
+    {
+      "name": "Cape Town",
+      "country": "South Africa",
+      "lat": -33.9249,
+      "lon": 18.4241,
+      "aqi_standard": "WHO"
+    }
+  ],
+  "south_america": [
+    {
+      "name": "Lima",
+      "country": "Peru",
+      "lat": -12.0464,
+      "lon": -77.0428,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Santiago",
+      "country": "Chile",
+      "lat": -33.4489,
+      "lon": -70.6693,
+      "aqi_standard": "Chilean ICA"
+    },
+    {
+      "name": "São Paulo",
+      "country": "Brazil",
+      "lat": -23.5505,
+      "lon": -46.6333,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Rio de Janeiro",
+      "country": "Brazil",
+      "lat": -22.9068,
+      "lon": -43.1729,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Bogotá",
+      "country": "Colombia",
+      "lat": 4.711,
+      "lon": -74.0721,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "La Paz",
+      "country": "Bolivia",
+      "lat": -16.5,
+      "lon": -68.1193,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Medellín",
+      "country": "Colombia",
+      "lat": 6.2442,
+      "lon": -75.5812,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Buenos Aires",
+      "country": "Argentina",
+      "lat": -34.6118,
+      "lon": -58.396,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Quito",
+      "country": "Ecuador",
+      "lat": -0.1807,
+      "lon": -78.4678,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Caracas",
+      "country": "Venezuela",
+      "lat": 10.4806,
+      "lon": -66.9036,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Belo Horizonte",
+      "country": "Brazil",
+      "lat": -19.8157,
+      "lon": -43.9542,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Brasília",
+      "country": "Brazil",
+      "lat": -15.8267,
+      "lon": -47.9218,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Porto Alegre",
+      "country": "Brazil",
+      "lat": -30.0346,
+      "lon": -51.2177,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Montevideo",
+      "country": "Uruguay",
+      "lat": -34.9011,
+      "lon": -56.1645,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Asunción",
+      "country": "Paraguay",
+      "lat": -25.2637,
+      "lon": -57.5759,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Córdoba",
+      "country": "Argentina",
+      "lat": -31.4201,
+      "lon": -64.1888,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Valparaíso",
+      "country": "Chile",
+      "lat": -33.0472,
+      "lon": -71.6127,
+      "aqi_standard": "Chilean ICA"
+    },
+    {
+      "name": "Cali",
+      "country": "Colombia",
+      "lat": 3.4516,
+      "lon": -76.532,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Curitiba",
+      "country": "Brazil",
+      "lat": -25.4284,
+      "lon": -49.2733,
+      "aqi_standard": "EPA"
+    },
+    {
+      "name": "Fortaleza",
+      "country": "Brazil",
+      "lat": -3.7172,
+      "lon": -38.5434,
+      "aqi_standard": "EPA"
+    }
+  ]
+}
