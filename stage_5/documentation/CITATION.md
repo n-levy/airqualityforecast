@@ -4,19 +4,19 @@
 
 ### APA Style
 ```
-Global 100-City Air Quality Dataset. (2025). Version 1.0.0 [Dataset]. 
+Global 100-City Air Quality Dataset. (2025). Version 1.0.0 [Dataset].
 DOI: 10.5281/zenodo.example.12345
 ```
 
 ### MLA Style
 ```
-"Global 100-City Air Quality Dataset." Version 1.0.0, 2025, 
+"Global 100-City Air Quality Dataset." Version 1.0.0, 2025,
 doi:10.5281/zenodo.example.12345.
 ```
 
 ### Chicago Style
 ```
-Global 100-City Air Quality Dataset. Version 1.0.0. 2025. 
+Global 100-City Air Quality Dataset. Version 1.0.0. 2025.
 https://doi.org/10.5281/zenodo.example.12345.
 ```
 
@@ -87,17 +87,17 @@ For policy or technical reports:
 
 ### Research Paper
 ```
-"We utilized the Global 100-City Air Quality Dataset (Version 1.0.0) 
-which provides validated air quality measurements from 92 cities across 
-5 continents spanning 2020-2025. The dataset includes comprehensive 
+"We utilized the Global 100-City Air Quality Dataset (Version 1.0.0)
+which provides validated air quality measurements from 92 cities across
+5 continents spanning 2020-2025. The dataset includes comprehensive
 quality assessment with an overall quality score of 88.7%."
 ```
 
 ### Technical Report
 ```
-"Air quality data were obtained from the Global 100-City Air Quality 
-Dataset (DOI: 10.5281/zenodo.example.12345), which aggregates data from 
-multiple authoritative sources including EPA AirNow, Environment Canada, 
+"Air quality data were obtained from the Global 100-City Air Quality
+Dataset (DOI: 10.5281/zenodo.example.12345), which aggregates data from
+multiple authoritative sources including EPA AirNow, Environment Canada,
 and the European Environment Agency."
 ```
 

@@ -59,7 +59,7 @@ head(df)
 If you use this dataset in your research, please cite:
 
 ```
-Global 100-City Air Quality Dataset (2025). 
+Global 100-City Air Quality Dataset (2025).
 Version 1.0. DOI: 10.5281/zenodo.example.12345
 ```
 

@@ -104,7 +104,7 @@ seasonal_avg = merged.groupby(['city', 'season'])['PM2.5'].mean().unstack()
     'PM10': 'double',
     'NO2': 'double',
     'O3': 'double',
-    'SO2': 'double', 
+    'SO2': 'double',
     'CO': 'double',
     'AQI': 'int32',
     'AQI_category': 'string',

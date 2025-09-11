@@ -24,8 +24,9 @@ import zipfile
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
 # Configure logging
 logging.basicConfig(
@@ -41,7 +42,7 @@ log = logging.getLogger(__name__)
 
 class Phase4DatasetAssembler:
     """Phase 4 implementation for dataset assembly and final delivery."""
-    
+
     def __init__(self):
         """Initialize Phase 4 dataset assembler."""
         self.phase4_results = {
@@ -50,155 +51,215 @@ class Phase4DatasetAssembler:
             "steps_completed": [],
             "assembly_results": {},
             "overall_summary": {},
-            "status": "in_progress"
+            "status": "in_progress",
         }
-        
+
         # Load Phase 3 results
         self._load_phase3_results()
-        
+
         # Output directories
         self.output_dir = Path("stage_5/final_dataset")
         self.docs_dir = Path("stage_5/documentation")
         self.validation_dir = Path("stage_5/validation")
-        
+
         # Create directories
         for directory in [self.output_dir, self.docs_dir, self.validation_dir]:
             directory.mkdir(parents=True, exist_ok=True)
-        
+
         log.info("Phase 4 Dataset Assembler initialized")
-    
+
     def _load_phase3_results(self):
         """Load Phase 3 processing results."""
         try:
             phase3_path = Path("stage_5/logs/phase3_data_processing_results.json")
-            with open(phase3_path, 'r') as f:
+            with open(phase3_path, "r") as f:
                 self.phase3_data = json.load(f)
-            
+
             log.info("Phase 3 results loaded successfully")
-            
+
         except FileNotFoundError:
             log.error("Phase 3 results not found. Run Phase 3 first.")
             raise
-    
+
     def execute_phase4(self) -> Dict[str, Any]:
         """
         Execute complete Phase 4: Dataset Assembly (Steps 13-16).
-        
+
         Returns:
             Complete Phase 4 results
         """
         log.info("=== STARTING PHASE 4: DATASET ASSEMBLY ===")
-        
+
         try:
             # Step 13: Final dataset packaging and format optimization
             self._execute_step13_dataset_packaging()
-            
+
             # Step 14: Comprehensive metadata and documentation generation
             self._execute_step14_metadata_documentation()
-            
+
             # Step 15: Dataset validation and quality assurance testing
             self._execute_step15_validation_testing()
-            
+
             # Step 16: Final delivery preparation and project completion
             self._execute_step16_final_delivery()
-            
+
             # Generate comprehensive summary
             self._generate_phase4_summary()
-            
+
             # Save results
             self._save_phase4_results()
-            
+
             # Update project progress
             self._update_project_progress()
-            
+
             log.info("=== PHASE 4 COMPLETED ===")
             self._print_phase4_summary()
-            
+
         except Exception as e:
             log.error(f"Phase 4 execution failed: {str(e)}")
             self.phase4_results["status"] = "failed"
             self.phase4_results["error"] = str(e)
             raise
-        
+
         return self.phase4_results
-    
+
     def _execute_step13_dataset_packaging(self):
         """Step 13: Final dataset packaging and format optimization."""
         log.info("=== STEP 13: DATASET PACKAGING ===")
-        
+
         step_results = {
             "step": 13,
             "name": "Final Dataset Packaging and Format Optimization",
             "timestamp": datetime.now().isoformat(),
             "packaging_results": {},
             "format_optimization": {},
-            "file_structure": {}
+            "file_structure": {},
         }
-        
+
         # Load Phase 3 summary for dataset metrics
         phase3_summary = self.phase3_data["overall_summary"]
         final_dataset_metrics = phase3_summary["final_dataset_metrics"]
-        
+
         # Create main dataset files (simulated)
         dataset_files = {
             "air_quality_data.parquet": {
                 "description": "Main air quality measurements",
                 "format": "Apache Parquet",
-                "size_mb": round(final_dataset_metrics["estimated_size_gb"] * 1024 * 0.4, 2),
+                "size_mb": round(
+                    final_dataset_metrics["estimated_size_gb"] * 1024 * 0.4, 2
+                ),
                 "records": final_dataset_metrics["total_records"],
-                "columns": ["city", "date", "PM2.5", "PM10", "NO2", "O3", "SO2", "CO", "AQI", "AQI_category"]
+                "columns": [
+                    "city",
+                    "date",
+                    "PM2.5",
+                    "PM10",
+                    "NO2",
+                    "O3",
+                    "SO2",
+                    "CO",
+                    "AQI",
+                    "AQI_category",
+                ],
             },
             "meteorological_data.parquet": {
                 "description": "Meteorological features and weather data",
-                "format": "Apache Parquet", 
-                "size_mb": round(final_dataset_metrics["estimated_size_gb"] * 1024 * 0.25, 2),
+                "format": "Apache Parquet",
+                "size_mb": round(
+                    final_dataset_metrics["estimated_size_gb"] * 1024 * 0.25, 2
+                ),
                 "records": final_dataset_metrics["total_records"],
-                "columns": ["city", "date", "temperature", "humidity", "pressure", "wind_speed", "wind_direction", "precipitation"]
+                "columns": [
+                    "city",
+                    "date",
+                    "temperature",
+                    "humidity",
+                    "pressure",
+                    "wind_speed",
+                    "wind_direction",
+                    "precipitation",
+                ],
             },
             "temporal_features.parquet": {
                 "description": "Engineered temporal features",
                 "format": "Apache Parquet",
-                "size_mb": round(final_dataset_metrics["estimated_size_gb"] * 1024 * 0.15, 2),
+                "size_mb": round(
+                    final_dataset_metrics["estimated_size_gb"] * 1024 * 0.15, 2
+                ),
                 "records": final_dataset_metrics["total_records"],
-                "columns": ["city", "date", "hour_of_day", "day_of_week", "month", "season", "is_weekend", "is_holiday"]
+                "columns": [
+                    "city",
+                    "date",
+                    "hour_of_day",
+                    "day_of_week",
+                    "month",
+                    "season",
+                    "is_weekend",
+                    "is_holiday",
+                ],
             },
             "spatial_features.parquet": {
                 "description": "Spatial and geographic features",
                 "format": "Apache Parquet",
-                "size_mb": round(final_dataset_metrics["estimated_size_gb"] * 1024 * 0.1, 2),
+                "size_mb": round(
+                    final_dataset_metrics["estimated_size_gb"] * 1024 * 0.1, 2
+                ),
                 "records": 92,  # One record per city
-                "columns": ["city", "latitude", "longitude", "elevation", "population_density", "urban_area_index"]
+                "columns": [
+                    "city",
+                    "latitude",
+                    "longitude",
+                    "elevation",
+                    "population_density",
+                    "urban_area_index",
+                ],
             },
             "forecast_data.parquet": {
                 "description": "Integrated forecast data",
                 "format": "Apache Parquet",
-                "size_mb": round(final_dataset_metrics["estimated_size_gb"] * 1024 * 0.1, 2),
-                "records": phase3_summary["forecast_integration_metrics"]["total_forecasts_integrated"],
-                "columns": ["city", "date", "forecast_horizon", "forecast_PM2.5", "forecast_PM10", "forecast_NO2", "forecast_O3"]
-            }
+                "size_mb": round(
+                    final_dataset_metrics["estimated_size_gb"] * 1024 * 0.1, 2
+                ),
+                "records": phase3_summary["forecast_integration_metrics"][
+                    "total_forecasts_integrated"
+                ],
+                "columns": [
+                    "city",
+                    "date",
+                    "forecast_horizon",
+                    "forecast_PM2.5",
+                    "forecast_PM10",
+                    "forecast_NO2",
+                    "forecast_O3",
+                ],
+            },
         }
-        
+
         # Create compressed archives
         archive_formats = {
             "global_100city_dataset.zip": {
                 "format": "ZIP",
                 "compression": "deflate",
                 "compression_ratio": 0.35,
-                "estimated_size_mb": round(sum(f["size_mb"] for f in dataset_files.values()) * 0.35, 2)
+                "estimated_size_mb": round(
+                    sum(f["size_mb"] for f in dataset_files.values()) * 0.35, 2
+                ),
             },
             "global_100city_dataset.tar.gz": {
-                "format": "TAR.GZ", 
+                "format": "TAR.GZ",
                 "compression": "gzip",
                 "compression_ratio": 0.30,
-                "estimated_size_mb": round(sum(f["size_mb"] for f in dataset_files.values()) * 0.30, 2)
-            }
+                "estimated_size_mb": round(
+                    sum(f["size_mb"] for f in dataset_files.values()) * 0.30, 2
+                ),
+            },
         }
-        
+
         # Simulate file creation
         total_uncompressed_size = 0
         for filename, file_info in dataset_files.items():
             file_path = self.output_dir / filename
-            
+
             # Create placeholder file with metadata
             placeholder_data = {
                 "filename": filename,
@@ -208,15 +269,15 @@ class Phase4DatasetAssembler:
                 "columns": file_info["columns"],
                 "size_mb": file_info["size_mb"],
                 "created": datetime.now().isoformat(),
-                "note": "This is a placeholder file for the actual dataset"
+                "note": "This is a placeholder file for the actual dataset",
             }
-            
-            with open(file_path.with_suffix('.json'), 'w') as f:
+
+            with open(file_path.with_suffix(".json"), "w") as f:
                 json.dump(placeholder_data, f, indent=2)
-            
+
             total_uncompressed_size += file_info["size_mb"]
             log.info(f"Created dataset file: {filename} ({file_info['size_mb']} MB)")
-        
+
         # File structure summary
         step_results["file_structure"] = {
             "main_files": len(dataset_files),
@@ -226,10 +287,10 @@ class Phase4DatasetAssembler:
                 "stage_5/final_dataset/": "Main dataset files",
                 "stage_5/documentation/": "Documentation and metadata",
                 "stage_5/validation/": "Validation reports and tests",
-                "stage_5/logs/": "Processing logs and intermediate results"
-            }
+                "stage_5/logs/": "Processing logs and intermediate results",
+            },
         }
-        
+
         # Format optimization results
         step_results["format_optimization"] = {
             "primary_format": "Apache Parquet",
@@ -237,15 +298,15 @@ class Phase4DatasetAssembler:
                 "columnar_storage": "Efficient queries and compression",
                 "schema_evolution": "Future-proof data structure",
                 "cross_platform": "Compatible with Python, R, Spark, etc.",
-                "compression": "Built-in compression algorithms"
+                "compression": "Built-in compression algorithms",
             },
             "compression_achieved": {
                 "original_size_gb": final_dataset_metrics["estimated_size_gb"],
                 "compressed_size_gb": final_dataset_metrics["compressed_size_gb"],
-                "compression_ratio": 0.3  # From Phase 3 processing results
-            }
+                "compression_ratio": 0.3,  # From Phase 3 processing results
+            },
         }
-        
+
         # Packaging results
         step_results["packaging_results"] = {
             "dataset_files": dataset_files,
@@ -253,31 +314,35 @@ class Phase4DatasetAssembler:
             "total_files_created": len(dataset_files),
             "packaging_success_rate": 1.0,
             "file_integrity_checks": "passed",
-            "format_validation": "passed"
+            "format_validation": "passed",
         }
-        
+
         step_results["status"] = "completed"
         self.phase4_results["assembly_results"]["step13"] = step_results
-        self.phase4_results["steps_completed"].append("Step 13: Final Dataset Packaging and Format Optimization")
-        
-        log.info(f"Step 13 completed: {len(dataset_files)} dataset files packaged ({total_uncompressed_size:.1f} MB)")
-    
+        self.phase4_results["steps_completed"].append(
+            "Step 13: Final Dataset Packaging and Format Optimization"
+        )
+
+        log.info(
+            f"Step 13 completed: {len(dataset_files)} dataset files packaged ({total_uncompressed_size:.1f} MB)"
+        )
+
     def _execute_step14_metadata_documentation(self):
         """Step 14: Comprehensive metadata and documentation generation."""
         log.info("=== STEP 14: METADATA & DOCUMENTATION ===")
-        
+
         step_results = {
             "step": 14,
             "name": "Comprehensive Metadata and Documentation Generation",
             "timestamp": datetime.now().isoformat(),
             "metadata_files": {},
             "documentation_files": {},
-            "standards_compliance": {}
+            "standards_compliance": {},
         }
-        
+
         # Generate comprehensive dataset metadata
         dataset_metadata = self._generate_dataset_metadata()
-        
+
         # Create documentation files
         documentation_files = {
             "README.md": self._generate_readme(),
@@ -287,81 +352,84 @@ class Phase4DatasetAssembler:
             "API_REFERENCE.md": self._generate_api_reference(),
             "CITATION.md": self._generate_citation_guide(),
             "LICENSE.txt": self._generate_license(),
-            "CHANGELOG.md": self._generate_changelog()
+            "CHANGELOG.md": self._generate_changelog(),
         }
-        
+
         # Save documentation files
         docs_created = 0
         for filename, content in documentation_files.items():
             doc_path = self.docs_dir / filename
-            with open(doc_path, 'w', encoding='utf-8') as f:
+            with open(doc_path, "w", encoding="utf-8") as f:
                 f.write(content)
             docs_created += 1
             log.info(f"Created documentation: {filename}")
-        
+
         # Save metadata
         metadata_path = self.output_dir / "dataset_metadata.json"
-        with open(metadata_path, 'w') as f:
+        with open(metadata_path, "w") as f:
             json.dump(dataset_metadata, f, indent=2)
-        
+
         # Standards compliance
         step_results["standards_compliance"] = {
             "FAIR_principles": {
                 "findable": "Dataset includes comprehensive metadata and DOI",
                 "accessible": "Available through standard protocols",
                 "interoperable": "Uses standard formats (Parquet, JSON)",
-                "reusable": "Includes license and provenance information"
+                "reusable": "Includes license and provenance information",
             },
             "dublin_core": "Metadata includes all required Dublin Core elements",
             "iso_standards": "Follows ISO 19115 for geographic metadata",
-            "data_management": "Includes data management plan and retention policy"
+            "data_management": "Includes data management plan and retention policy",
         }
-        
+
         step_results["metadata_files"] = {
             "dataset_metadata.json": {
                 "description": "Complete dataset metadata in JSON format",
                 "standard": "Custom schema with Dublin Core elements",
-                "size_kb": round(len(json.dumps(dataset_metadata)) / 1024, 2)
+                "size_kb": round(len(json.dumps(dataset_metadata)) / 1024, 2),
             }
         }
-        
+
         step_results["documentation_files"] = {
             filename: {
                 "description": f"Generated {filename.split('.')[0].replace('_', ' ').title()}",
-                "format": filename.split('.')[1].upper(),
-                "size_kb": round(len(content) / 1024, 2)
+                "format": filename.split(".")[1].upper(),
+                "size_kb": round(len(content) / 1024, 2),
             }
             for filename, content in documentation_files.items()
         }
-        
+
         step_results["documentation_metrics"] = {
             "total_files_created": docs_created + 1,  # +1 for metadata
             "total_documentation_size_kb": sum(
                 doc["size_kb"] for doc in step_results["documentation_files"].values()
-            ) + step_results["metadata_files"]["dataset_metadata.json"]["size_kb"],
+            )
+            + step_results["metadata_files"]["dataset_metadata.json"]["size_kb"],
             "completeness_score": 1.0,
-            "quality_score": 0.95
+            "quality_score": 0.95,
         }
-        
+
         step_results["status"] = "completed"
         self.phase4_results["assembly_results"]["step14"] = step_results
-        self.phase4_results["steps_completed"].append("Step 14: Comprehensive Metadata and Documentation Generation")
-        
+        self.phase4_results["steps_completed"].append(
+            "Step 14: Comprehensive Metadata and Documentation Generation"
+        )
+
         log.info(f"Step 14 completed: {docs_created + 1} documentation files created")
-    
+
     def _execute_step15_validation_testing(self):
         """Step 15: Dataset validation and quality assurance testing."""
         log.info("=== STEP 15: VALIDATION & TESTING ===")
-        
+
         step_results = {
             "step": 15,
             "name": "Dataset Validation and Quality Assurance Testing",
             "timestamp": datetime.now().isoformat(),
             "validation_tests": {},
             "quality_metrics": {},
-            "test_results": {}
+            "test_results": {},
         }
-        
+
         # Define validation tests
         validation_tests = {
             "data_integrity": {
@@ -373,8 +441,8 @@ class Phase4DatasetAssembler:
                     "missing_values": "< 2%",
                     "duplicate_records": "< 0.1%",
                     "format_consistency": "100%",
-                    "timestamp_validity": "99.8%"
-                }
+                    "timestamp_validity": "99.8%",
+                },
             },
             "schema_validation": {
                 "test_name": "Schema Validation",
@@ -385,8 +453,8 @@ class Phase4DatasetAssembler:
                     "column_types": "All correct",
                     "required_fields": "All present",
                     "constraint_violations": "None",
-                    "schema_evolution": "Compatible"
-                }
+                    "schema_evolution": "Compatible",
+                },
             },
             "geographic_validation": {
                 "test_name": "Geographic Validation",
@@ -397,8 +465,8 @@ class Phase4DatasetAssembler:
                     "coordinate_range": "All within valid bounds",
                     "city_location_accuracy": "97.8%",
                     "spatial_consistency": "Passed",
-                    "timezone_alignment": "Verified"
-                }
+                    "timezone_alignment": "Verified",
+                },
             },
             "temporal_validation": {
                 "test_name": "Temporal Validation",
@@ -409,8 +477,8 @@ class Phase4DatasetAssembler:
                     "date_range_coverage": "95.2%",
                     "temporal_gaps": "< 5%",
                     "seasonality_patterns": "Verified",
-                    "timezone_consistency": "Passed"
-                }
+                    "timezone_consistency": "Passed",
+                },
             },
             "aqi_validation": {
                 "test_name": "AQI Calculation Validation",
@@ -421,8 +489,8 @@ class Phase4DatasetAssembler:
                     "calculation_accuracy": "93.3%",
                     "standards_compliance": "7/7 standards validated",
                     "breakpoint_validation": "Passed",
-                    "category_assignment": "Correct"
-                }
+                    "category_assignment": "Correct",
+                },
             },
             "feature_validation": {
                 "test_name": "Feature Engineering Validation",
@@ -433,8 +501,8 @@ class Phase4DatasetAssembler:
                     "feature_completeness": "90.0%",
                     "transformation_accuracy": "Verified",
                     "correlation_analysis": "Expected patterns found",
-                    "outlier_detection": "Flagged appropriately"
-                }
+                    "outlier_detection": "Flagged appropriately",
+                },
             },
             "forecast_validation": {
                 "test_name": "Forecast Integration Validation",
@@ -445,191 +513,259 @@ class Phase4DatasetAssembler:
                     "integration_completeness": "74.6%",
                     "forecast_accuracy": "Within expected ranges",
                     "horizon_consistency": "Validated",
-                    "source_attribution": "Complete"
-                }
-            }
+                    "source_attribution": "Complete",
+                },
+            },
         }
-        
+
         # Performance and scalability tests
         performance_tests = {
             "load_time": {
                 "test": "Dataset loading performance",
                 "result": "< 5 seconds for full dataset",
-                "status": "passed"
+                "status": "passed",
             },
             "query_performance": {
                 "test": "Query response time",
                 "result": "< 100ms for standard queries",
-                "status": "passed"
+                "status": "passed",
             },
             "memory_usage": {
                 "test": "Memory efficiency",
                 "result": "< 2GB RAM for full dataset",
-                "status": "passed"
+                "status": "passed",
             },
             "file_size_optimization": {
                 "test": "Storage efficiency",
                 "result": "70% compression achieved",
-                "status": "passed"
-            }
+                "status": "passed",
+            },
         }
-        
+
         # Statistical validation
         statistical_tests = {
             "distribution_analysis": {
                 "test": "Data distribution patterns",
                 "result": "Expected distributions confirmed",
                 "status": "passed",
-                "confidence": 0.95
+                "confidence": 0.95,
             },
             "correlation_analysis": {
                 "test": "Feature correlation validation",
                 "result": "Expected correlations found",
                 "status": "passed",
-                "confidence": 0.92
+                "confidence": 0.92,
             },
             "seasonal_patterns": {
                 "test": "Seasonal pattern detection",
                 "result": "Clear seasonal patterns identified",
                 "status": "passed",
-                "confidence": 0.88
+                "confidence": 0.88,
             },
             "outlier_analysis": {
                 "test": "Outlier detection and handling",
                 "result": "Outliers properly flagged and documented",
                 "status": "passed",
-                "confidence": 0.91
-            }
+                "confidence": 0.91,
+            },
         }
-        
+
         # Calculate overall validation score
         validation_scores = [test["score"] for test in validation_tests.values()]
         overall_validation_score = np.mean(validation_scores)
-        
+
         # Create validation report
         validation_report = {
             "validation_summary": {
                 "total_tests": len(validation_tests),
-                "tests_passed": sum(1 for test in validation_tests.values() if test["status"] == "passed"),
+                "tests_passed": sum(
+                    1
+                    for test in validation_tests.values()
+                    if test["status"] == "passed"
+                ),
                 "overall_score": round(overall_validation_score, 3),
-                "validation_status": "passed" if overall_validation_score >= 0.8 else "failed"
+                "validation_status": (
+                    "passed" if overall_validation_score >= 0.8 else "failed"
+                ),
             },
             "test_categories": {
-                "data_quality": len([t for t in validation_tests.values() if "integrity" in t["test_name"].lower() or "schema" in t["test_name"].lower()]),
-                "domain_specific": len([t for t in validation_tests.values() if "aqi" in t["test_name"].lower() or "geographic" in t["test_name"].lower()]),
-                "technical": len([t for t in validation_tests.values() if "feature" in t["test_name"].lower() or "forecast" in t["test_name"].lower()])
+                "data_quality": len(
+                    [
+                        t
+                        for t in validation_tests.values()
+                        if "integrity" in t["test_name"].lower()
+                        or "schema" in t["test_name"].lower()
+                    ]
+                ),
+                "domain_specific": len(
+                    [
+                        t
+                        for t in validation_tests.values()
+                        if "aqi" in t["test_name"].lower()
+                        or "geographic" in t["test_name"].lower()
+                    ]
+                ),
+                "technical": len(
+                    [
+                        t
+                        for t in validation_tests.values()
+                        if "feature" in t["test_name"].lower()
+                        or "forecast" in t["test_name"].lower()
+                    ]
+                ),
             },
             "recommendations": [
                 "Dataset meets production quality standards",
                 "Minor improvements possible in forecast integration completeness",
                 "Consider additional validation for edge cases in temporal coverage",
-                "All critical validation tests passed successfully"
-            ]
+                "All critical validation tests passed successfully",
+            ],
         }
-        
+
         # Save validation report
         validation_report_path = self.validation_dir / "validation_report.json"
-        with open(validation_report_path, 'w') as f:
-            json.dump({
-                "validation_tests": validation_tests,
-                "performance_tests": performance_tests,
-                "statistical_tests": statistical_tests,
-                "validation_report": validation_report
-            }, f, indent=2)
-        
+        with open(validation_report_path, "w") as f:
+            json.dump(
+                {
+                    "validation_tests": validation_tests,
+                    "performance_tests": performance_tests,
+                    "statistical_tests": statistical_tests,
+                    "validation_report": validation_report,
+                },
+                f,
+                indent=2,
+            )
+
         step_results["validation_tests"] = validation_tests
         step_results["quality_metrics"] = {
             "overall_validation_score": overall_validation_score,
-            "data_quality_score": np.mean([validation_tests["data_integrity"]["score"], validation_tests["schema_validation"]["score"]]),
-            "domain_accuracy_score": np.mean([validation_tests["aqi_validation"]["score"], validation_tests["geographic_validation"]["score"]]),
-            "technical_quality_score": np.mean([validation_tests["feature_validation"]["score"], validation_tests["forecast_validation"]["score"]])
+            "data_quality_score": np.mean(
+                [
+                    validation_tests["data_integrity"]["score"],
+                    validation_tests["schema_validation"]["score"],
+                ]
+            ),
+            "domain_accuracy_score": np.mean(
+                [
+                    validation_tests["aqi_validation"]["score"],
+                    validation_tests["geographic_validation"]["score"],
+                ]
+            ),
+            "technical_quality_score": np.mean(
+                [
+                    validation_tests["feature_validation"]["score"],
+                    validation_tests["forecast_validation"]["score"],
+                ]
+            ),
         }
-        
+
         step_results["test_results"] = {
             "validation_report": validation_report,
             "performance_tests": performance_tests,
             "statistical_tests": statistical_tests,
-            "test_artifacts_created": 1  # validation_report.json
+            "test_artifacts_created": 1,  # validation_report.json
         }
-        
+
         step_results["status"] = "completed"
         self.phase4_results["assembly_results"]["step15"] = step_results
-        self.phase4_results["steps_completed"].append("Step 15: Dataset Validation and Quality Assurance Testing")
-        
-        log.info(f"Step 15 completed: {len(validation_tests)} validation tests passed (score: {overall_validation_score:.3f})")
-    
+        self.phase4_results["steps_completed"].append(
+            "Step 15: Dataset Validation and Quality Assurance Testing"
+        )
+
+        log.info(
+            f"Step 15 completed: {len(validation_tests)} validation tests passed (score: {overall_validation_score:.3f})"
+        )
+
     def _execute_step16_final_delivery(self):
         """Step 16: Final delivery preparation and project completion."""
         log.info("=== STEP 16: FINAL DELIVERY PREPARATION ===")
-        
+
         step_results = {
             "step": 16,
             "name": "Final Delivery Preparation and Project Completion",
             "timestamp": datetime.now().isoformat(),
             "delivery_package": {},
             "distribution_formats": {},
-            "project_completion": {}
+            "project_completion": {},
         }
-        
+
         # Create final delivery package
         delivery_contents = {
             "datasets": {
                 "location": "stage_5/final_dataset/",
                 "files": [
                     "air_quality_data.parquet",
-                    "meteorological_data.parquet", 
+                    "meteorological_data.parquet",
                     "temporal_features.parquet",
                     "spatial_features.parquet",
                     "forecast_data.parquet",
-                    "dataset_metadata.json"
+                    "dataset_metadata.json",
                 ],
-                "size_mb": self.phase4_results["assembly_results"]["step13"]["file_structure"]["total_uncompressed_size_mb"]
+                "size_mb": self.phase4_results["assembly_results"]["step13"][
+                    "file_structure"
+                ]["total_uncompressed_size_mb"],
             },
             "documentation": {
                 "location": "stage_5/documentation/",
-                "files": list(self.phase4_results["assembly_results"]["step14"]["documentation_files"].keys()) + ["dataset_metadata.json"],
-                "size_kb": self.phase4_results["assembly_results"]["step14"]["documentation_metrics"]["total_documentation_size_kb"]
+                "files": list(
+                    self.phase4_results["assembly_results"]["step14"][
+                        "documentation_files"
+                    ].keys()
+                )
+                + ["dataset_metadata.json"],
+                "size_kb": self.phase4_results["assembly_results"]["step14"][
+                    "documentation_metrics"
+                ]["total_documentation_size_kb"],
             },
             "validation": {
                 "location": "stage_5/validation/",
                 "files": ["validation_report.json"],
-                "size_kb": 15.2
+                "size_kb": 15.2,
             },
             "logs": {
                 "location": "stage_5/logs/",
                 "files": [
                     "phase1_infrastructure_results.json",
-                    "phase2_full_simulation_results.json", 
+                    "phase2_full_simulation_results.json",
                     "phase3_data_processing_results.json",
                     "phase4_dataset_assembly_results.json",
-                    "collection_progress.json"
+                    "collection_progress.json",
                 ],
-                "size_kb": 125.6
-            }
+                "size_kb": 125.6,
+            },
         }
-        
+
         # Create distribution formats
         distribution_formats = {
             "research_package": {
                 "target_audience": "Academic researchers and data scientists",
-                "contents": ["All datasets", "Full documentation", "Validation reports", "Processing logs"],
+                "contents": [
+                    "All datasets",
+                    "Full documentation",
+                    "Validation reports",
+                    "Processing logs",
+                ],
                 "format": "ZIP archive with structured directories",
-                "estimated_size_mb": 45.2
+                "estimated_size_mb": 45.2,
             },
             "production_package": {
                 "target_audience": "Production systems and applications",
-                "contents": ["Optimized datasets", "API documentation", "Schema definitions"],
+                "contents": [
+                    "Optimized datasets",
+                    "API documentation",
+                    "Schema definitions",
+                ],
                 "format": "Parquet files with JSON metadata",
-                "estimated_size_mb": 32.1
+                "estimated_size_mb": 32.1,
             },
             "analysis_package": {
                 "target_audience": "Data analysts and visualization tools",
                 "contents": ["CSV exports", "Summary statistics", "Data dictionary"],
                 "format": "CSV files with comprehensive documentation",
-                "estimated_size_mb": 28.7
-            }
+                "estimated_size_mb": 28.7,
+            },
         }
-        
+
         # Project completion metrics
         project_completion = {
             "total_steps_completed": 16,
@@ -637,11 +773,17 @@ class Phase4DatasetAssembler:
             "overall_success_rate": 0.92,
             "final_dataset_statistics": {
                 "cities": 92,
-                "records": self.phase3_data["overall_summary"]["final_dataset_metrics"]["total_records"],
-                "features_per_record": self.phase3_data["overall_summary"]["final_dataset_metrics"]["features_per_record"],
+                "records": self.phase3_data["overall_summary"]["final_dataset_metrics"][
+                    "total_records"
+                ],
+                "features_per_record": self.phase3_data["overall_summary"][
+                    "final_dataset_metrics"
+                ]["features_per_record"],
                 "time_period": "2020-09-12 to 2025-09-11 (5 years)",
                 "geographic_coverage": "5 continents, 100 target cities (92 successful)",
-                "data_quality_score": self.phase3_data["overall_summary"]["final_dataset_metrics"]["overall_quality_score"]
+                "data_quality_score": self.phase3_data["overall_summary"][
+                    "final_dataset_metrics"
+                ]["overall_quality_score"],
             },
             "key_achievements": [
                 "Successfully collected data from 92/100 target cities (92% success rate)",
@@ -651,50 +793,56 @@ class Phase4DatasetAssembler:
                 "Integrated 390,822+ forecasts from multiple sources",
                 "Achieved 98.6% data retention rate through quality processing",
                 "Generated comprehensive documentation and metadata",
-                "Validated dataset with 93.3% overall quality score"
+                "Validated dataset with 93.3% overall quality score",
             ],
             "technical_specifications": {
                 "primary_format": "Apache Parquet",
                 "compression_ratio": 0.30,
                 "storage_optimization": "70% reduction from raw data",
                 "query_performance": "Sub-second response times",
-                "cross_platform_compatibility": "Python, R, Spark, SQL"
-            }
+                "cross_platform_compatibility": "Python, R, Spark, SQL",
+            },
         }
-        
+
         # Generate final project summary
         project_summary = self._generate_final_project_summary()
-        
+
         # Save final project summary
         summary_path = self.output_dir / "PROJECT_SUMMARY.json"
-        with open(summary_path, 'w') as f:
+        with open(summary_path, "w") as f:
             json.dump(project_summary, f, indent=2)
-        
+
         step_results["delivery_package"] = delivery_contents
         step_results["distribution_formats"] = distribution_formats
         step_results["project_completion"] = project_completion
         step_results["final_artifacts"] = {
-            "total_files": sum(len(section["files"]) for section in delivery_contents.values()),
+            "total_files": sum(
+                len(section["files"]) for section in delivery_contents.values()
+            ),
             "total_size_mb": (
-                delivery_contents["datasets"]["size_mb"] + 
-                delivery_contents["documentation"]["size_kb"] / 1024 + 
-                delivery_contents["validation"]["size_kb"] / 1024 +
-                delivery_contents["logs"]["size_kb"] / 1024
+                delivery_contents["datasets"]["size_mb"]
+                + delivery_contents["documentation"]["size_kb"] / 1024
+                + delivery_contents["validation"]["size_kb"] / 1024
+                + delivery_contents["logs"]["size_kb"] / 1024
             ),
             "distribution_ready": True,
-            "quality_assured": True
+            "quality_assured": True,
         }
-        
+
         step_results["status"] = "completed"
         self.phase4_results["assembly_results"]["step16"] = step_results
-        self.phase4_results["steps_completed"].append("Step 16: Final Delivery Preparation and Project Completion")
-        
-        log.info("Step 16 completed: Final delivery package prepared and project completed")
-    
+        self.phase4_results["steps_completed"].append(
+            "Step 16: Final Delivery Preparation and Project Completion"
+        )
+
+        log.info(
+            "Step 16 completed: Final delivery package prepared and project completed"
+        )
+
     def _generate_dataset_metadata(self) -> Dict[str, Any]:
         """Generate comprehensive dataset metadata."""
         phase3_summary = self.phase3_data["overall_summary"]
-        
+
         return {
             "dataset_info": {
                 "title": "Global 100-City Air Quality Dataset",
@@ -704,14 +852,22 @@ class Phase4DatasetAssembler:
                 "last_updated": datetime.now().isoformat(),
                 "doi": "10.5281/zenodo.example.12345",
                 "license": "CC BY 4.0",
-                "keywords": ["air quality", "pollution", "AQI", "meteorology", "global", "time series", "forecasting"]
+                "keywords": [
+                    "air quality",
+                    "pollution",
+                    "AQI",
+                    "meteorology",
+                    "global",
+                    "time series",
+                    "forecasting",
+                ],
             },
             "coverage": {
                 "temporal": {
                     "start_date": "2020-09-12",
                     "end_date": "2025-09-11",
                     "duration_years": 5,
-                    "frequency": "daily"
+                    "frequency": "daily",
                 },
                 "spatial": {
                     "cities": 92,
@@ -722,35 +878,74 @@ class Phase4DatasetAssembler:
                         "north": 67.85,
                         "south": -33.92,
                         "east": 126.98,
-                        "west": -123.12
-                    }
-                }
+                        "west": -123.12,
+                    },
+                },
             },
             "data_structure": {
                 "records": phase3_summary["final_dataset_metrics"]["total_records"],
-                "features": int(phase3_summary["final_dataset_metrics"]["features_per_record"]),
+                "features": int(
+                    phase3_summary["final_dataset_metrics"]["features_per_record"]
+                ),
                 "file_format": "Apache Parquet",
                 "compression": "snappy",
-                "estimated_size_gb": phase3_summary["final_dataset_metrics"]["estimated_size_gb"],
-                "compressed_size_gb": phase3_summary["final_dataset_metrics"]["compressed_size_gb"]
+                "estimated_size_gb": phase3_summary["final_dataset_metrics"][
+                    "estimated_size_gb"
+                ],
+                "compressed_size_gb": phase3_summary["final_dataset_metrics"][
+                    "compressed_size_gb"
+                ],
             },
             "quality_metrics": {
-                "overall_quality_score": phase3_summary["final_dataset_metrics"]["overall_quality_score"],
-                "data_completeness": phase3_summary["final_dataset_metrics"]["data_completeness"],
-                "validation_score": 0.933
+                "overall_quality_score": phase3_summary["final_dataset_metrics"][
+                    "overall_quality_score"
+                ],
+                "data_completeness": phase3_summary["final_dataset_metrics"][
+                    "data_completeness"
+                ],
+                "validation_score": 0.933,
             },
             "data_sources": {
-                "ground_truth_sources": ["EPA AirNow", "Environment Canada", "EEA", "Government Portals", "WHO"],
-                "benchmark_sources": ["NOAA", "CAMS", "NASA Satellite", "WAQI", "Research Networks"],
-                "meteorological_sources": ["OpenWeatherMap", "NOAA Climate Data", "NASA MERRA-2", "ECMWF"]
+                "ground_truth_sources": [
+                    "EPA AirNow",
+                    "Environment Canada",
+                    "EEA",
+                    "Government Portals",
+                    "WHO",
+                ],
+                "benchmark_sources": [
+                    "NOAA",
+                    "CAMS",
+                    "NASA Satellite",
+                    "WAQI",
+                    "Research Networks",
+                ],
+                "meteorological_sources": [
+                    "OpenWeatherMap",
+                    "NOAA Climate Data",
+                    "NASA MERRA-2",
+                    "ECMWF",
+                ],
             },
             "standards": {
-                "aqi_standards": ["US EPA", "European EAQI", "Canadian AQHI", "Chinese AQI", "Indian AQI", "WHO Guidelines", "Chilean ICA"],
+                "aqi_standards": [
+                    "US EPA",
+                    "European EAQI",
+                    "Canadian AQHI",
+                    "Chinese AQI",
+                    "Indian AQI",
+                    "WHO Guidelines",
+                    "Chilean ICA",
+                ],
                 "data_standards": ["ISO 19115", "Dublin Core", "FAIR Principles"],
-                "quality_standards": ["Data quality validation", "Statistical validation", "Domain validation"]
-            }
+                "quality_standards": [
+                    "Data quality validation",
+                    "Statistical validation",
+                    "Domain validation",
+                ],
+            },
         }
-    
+
     def _generate_readme(self) -> str:
         """Generate comprehensive README file."""
         return """# Global 100-City Air Quality Dataset
@@ -814,7 +1009,7 @@ head(df)
 If you use this dataset in your research, please cite:
 
 ```
-Global 100-City Air Quality Dataset (2025). 
+Global 100-City Air Quality Dataset (2025).
 Version 1.0. DOI: 10.5281/zenodo.example.12345
 ```
 
@@ -830,7 +1025,7 @@ For questions, issues, or contributions, please see the documentation in the `do
 
 This dataset was created using data from multiple sources including EPA AirNow, Environment Canada, European Environment Agency, NASA satellite data, and various national monitoring networks.
 """
-    
+
     def _generate_data_dictionary(self) -> str:
         """Generate data dictionary documentation."""
         return """# Data Dictionary
@@ -916,7 +1111,7 @@ Missing values are represented as `null` in Parquet files. The dataset has been 
 - **Strings**: UTF-8 encoded
 - **Booleans**: True/False values
 """
-    
+
     def _generate_methodology_doc(self) -> str:
         """Generate methodology documentation."""
         return """# Data Collection and Processing Methodology
@@ -1025,11 +1220,11 @@ This document describes the methodology used to collect, process, and validate t
 - WHO Air Quality Guidelines
 - NASA Earth Science Data Documentation
 """
-    
+
     def _generate_quality_report(self) -> str:
         """Generate quality assessment report."""
         phase3_summary = self.phase3_data["overall_summary"]
-        
+
         return f"""# Data Quality Assessment Report
 
 ## Executive Summary
@@ -1085,7 +1280,7 @@ The Global 100-City Air Quality Dataset has undergone comprehensive quality asse
 
 ### Data Integrity Validation
 - **Missing Values**: < 2% (Excellent)
-- **Duplicate Records**: < 0.1% (Excellent)  
+- **Duplicate Records**: < 0.1% (Excellent)
 - **Format Consistency**: 100% (Perfect)
 - **Timestamp Validity**: 99.8% (Excellent)
 
@@ -1131,7 +1326,7 @@ The Global 100-City Air Quality Dataset meets high-quality standards for researc
 
 **Quality Status**: ✅ **APPROVED FOR PRODUCTION USE**
 """
-    
+
     def _generate_api_reference(self) -> str:
         """Generate API reference documentation."""
         return """# API Reference and Usage Guide
@@ -1240,7 +1435,7 @@ seasonal_avg = merged.groupby(['city', 'season'])['PM2.5'].mean().unstack()
     'PM10': 'double',
     'NO2': 'double',
     'O3': 'double',
-    'SO2': 'double', 
+    'SO2': 'double',
     'CO': 'double',
     'AQI': 'int32',
     'AQI_category': 'string',
@@ -1344,7 +1539,7 @@ for city in air_quality['city'].unique():
 
 For technical support or questions about the API, please refer to the documentation or create an issue in the project repository.
 """
-    
+
     def _generate_citation_guide(self) -> str:
         """Generate citation guide."""
         return """# Citation Guide
@@ -1353,19 +1548,19 @@ For technical support or questions about the API, please refer to the documentat
 
 ### APA Style
 ```
-Global 100-City Air Quality Dataset. (2025). Version 1.0.0 [Dataset]. 
+Global 100-City Air Quality Dataset. (2025). Version 1.0.0 [Dataset].
 DOI: 10.5281/zenodo.example.12345
 ```
 
 ### MLA Style
 ```
-"Global 100-City Air Quality Dataset." Version 1.0.0, 2025, 
+"Global 100-City Air Quality Dataset." Version 1.0.0, 2025,
 doi:10.5281/zenodo.example.12345.
 ```
 
 ### Chicago Style
 ```
-Global 100-City Air Quality Dataset. Version 1.0.0. 2025. 
+Global 100-City Air Quality Dataset. Version 1.0.0. 2025.
 https://doi.org/10.5281/zenodo.example.12345.
 ```
 
@@ -1436,17 +1631,17 @@ For policy or technical reports:
 
 ### Research Paper
 ```
-"We utilized the Global 100-City Air Quality Dataset (Version 1.0.0) 
-which provides validated air quality measurements from 92 cities across 
-5 continents spanning 2020-2025. The dataset includes comprehensive 
+"We utilized the Global 100-City Air Quality Dataset (Version 1.0.0)
+which provides validated air quality measurements from 92 cities across
+5 continents spanning 2020-2025. The dataset includes comprehensive
 quality assessment with an overall quality score of 88.7%."
 ```
 
 ### Technical Report
 ```
-"Air quality data were obtained from the Global 100-City Air Quality 
-Dataset (DOI: 10.5281/zenodo.example.12345), which aggregates data from 
-multiple authoritative sources including EPA AirNow, Environment Canada, 
+"Air quality data were obtained from the Global 100-City Air Quality
+Dataset (DOI: 10.5281/zenodo.example.12345), which aggregates data from
+multiple authoritative sources including EPA AirNow, Environment Canada,
 and the European Environment Agency."
 ```
 
@@ -1471,7 +1666,7 @@ For collaborative research using this dataset:
 
 For citation questions or clarifications, please contact the dataset maintainers.
 """
-    
+
     def _generate_license(self) -> str:
         """Generate license file."""
         return """Creative Commons Attribution 4.0 International Public License
@@ -1490,7 +1685,7 @@ c. Copyright and Similar Rights means copyright and/or similar rights closely re
 
 CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS.
 """
-    
+
     def _generate_changelog(self) -> str:
         """Generate changelog documentation."""
         return """# Changelog
@@ -1532,7 +1727,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Geographic Coverage
 - **Europe**: 20 cities (Berlin Pattern)
-- **Asia**: 20 cities (Delhi Pattern)  
+- **Asia**: 20 cities (Delhi Pattern)
 - **North America**: 20 cities (Toronto Pattern)
 - **South America**: 20 cities (São Paulo Pattern)
 - **Africa**: 20 cities (Cairo Pattern)
@@ -1587,11 +1782,11 @@ For questions about specific versions or to request features for future releases
 - Migration paths will be provided for major version changes
 - Deprecated features will have 1-year advance notice
 """
-    
+
     def _generate_final_project_summary(self) -> Dict[str, Any]:
         """Generate comprehensive final project summary."""
         phase3_summary = self.phase3_data["overall_summary"]
-        
+
         return {
             "project_overview": {
                 "name": "Global 100-City Air Quality Dataset Collection",
@@ -1600,202 +1795,280 @@ For questions about specific versions or to request features for future releases
                 "total_phases": 4,
                 "total_steps": 16,
                 "project_status": "completed",
-                "overall_success_rate": 0.92
+                "overall_success_rate": 0.92,
             },
             "dataset_summary": {
                 "target_cities": 100,
                 "successful_cities": 92,
                 "city_success_rate": 0.92,
-                "total_records": phase3_summary["final_dataset_metrics"]["total_records"],
+                "total_records": phase3_summary["final_dataset_metrics"][
+                    "total_records"
+                ],
                 "time_period_years": 5,
-                "data_quality_score": phase3_summary["final_dataset_metrics"]["overall_quality_score"],
-                "estimated_size_gb": phase3_summary["final_dataset_metrics"]["estimated_size_gb"],
-                "compressed_size_gb": phase3_summary["final_dataset_metrics"]["compressed_size_gb"]
+                "data_quality_score": phase3_summary["final_dataset_metrics"][
+                    "overall_quality_score"
+                ],
+                "estimated_size_gb": phase3_summary["final_dataset_metrics"][
+                    "estimated_size_gb"
+                ],
+                "compressed_size_gb": phase3_summary["final_dataset_metrics"][
+                    "compressed_size_gb"
+                ],
             },
             "technical_achievements": {
-                "aqi_standards_implemented": phase3_summary["aqi_processing_metrics"]["aqi_standards_used"],
-                "features_engineered": phase3_summary["feature_engineering_metrics"]["total_features_created"],
-                "forecasts_integrated": phase3_summary["forecast_integration_metrics"]["total_forecasts_integrated"],
-                "data_retention_rate": phase3_summary["data_processing_metrics"]["data_retention_rate"],
-                "processing_success_rate": phase3_summary["processing_success_rate"]
+                "aqi_standards_implemented": phase3_summary["aqi_processing_metrics"][
+                    "aqi_standards_used"
+                ],
+                "features_engineered": phase3_summary["feature_engineering_metrics"][
+                    "total_features_created"
+                ],
+                "forecasts_integrated": phase3_summary["forecast_integration_metrics"][
+                    "total_forecasts_integrated"
+                ],
+                "data_retention_rate": phase3_summary["data_processing_metrics"][
+                    "data_retention_rate"
+                ],
+                "processing_success_rate": phase3_summary["processing_success_rate"],
             },
             "geographic_coverage": {
                 "continents": 5,
                 "continental_breakdown": {
                     "Europe": "20 cities (Berlin Pattern)",
-                    "Asia": "20 cities (Delhi Pattern)", 
+                    "Asia": "20 cities (Delhi Pattern)",
                     "North America": "20 cities (Toronto Pattern)",
                     "South America": "20 cities (São Paulo Pattern)",
-                    "Africa": "20 cities (Cairo Pattern)"
-                }
+                    "Africa": "20 cities (Cairo Pattern)",
+                },
             },
             "data_sources": {
                 "ground_truth_sources": 5,
                 "benchmark_sources": 10,
                 "meteorological_sources": 4,
-                "forecast_sources": phase3_summary["forecast_integration_metrics"]["forecast_sources"]
+                "forecast_sources": phase3_summary["forecast_integration_metrics"][
+                    "forecast_sources"
+                ],
             },
             "deliverables": {
                 "dataset_files": 5,
                 "documentation_files": 8,
                 "validation_reports": 1,
                 "metadata_files": 1,
-                "processing_logs": 5
+                "processing_logs": 5,
             },
             "project_timeline": {
                 "phase1_infrastructure": "Infrastructure setup and validation",
                 "phase2_collection": "Continental data collection (92/100 cities)",
                 "phase3_processing": "Data processing and quality validation",
-                "phase4_assembly": "Final dataset assembly and documentation"
-            }
+                "phase4_assembly": "Final dataset assembly and documentation",
+            },
         }
-    
+
     def _generate_phase4_summary(self):
         """Generate comprehensive Phase 4 summary."""
         assembly_results = self.phase4_results["assembly_results"]
-        
+
         # Extract key metrics from each step
         step13 = assembly_results["step13"]
         step14 = assembly_results["step14"]
         step15 = assembly_results["step15"]
         step16 = assembly_results["step16"]
-        
+
         self.phase4_results["overall_summary"] = {
             "execution_mode": "final_assembly",
             "total_steps_completed": len(self.phase4_results["steps_completed"]),
             "assembly_success_rate": 1.0,
             "packaging_results": {
-                "dataset_files_created": step13["packaging_results"]["total_files_created"],
+                "dataset_files_created": step13["packaging_results"][
+                    "total_files_created"
+                ],
                 "total_size_mb": step13["file_structure"]["total_uncompressed_size_mb"],
-                "compression_achieved": step13["format_optimization"]["compression_achieved"]["compression_ratio"],
-                "packaging_success_rate": step13["packaging_results"]["packaging_success_rate"]
+                "compression_achieved": step13["format_optimization"][
+                    "compression_achieved"
+                ]["compression_ratio"],
+                "packaging_success_rate": step13["packaging_results"][
+                    "packaging_success_rate"
+                ],
             },
             "documentation_results": {
-                "documentation_files": step14["documentation_metrics"]["total_files_created"],
-                "documentation_size_kb": step14["documentation_metrics"]["total_documentation_size_kb"],
-                "completeness_score": step14["documentation_metrics"]["completeness_score"],
-                "quality_score": step14["documentation_metrics"]["quality_score"]
+                "documentation_files": step14["documentation_metrics"][
+                    "total_files_created"
+                ],
+                "documentation_size_kb": step14["documentation_metrics"][
+                    "total_documentation_size_kb"
+                ],
+                "completeness_score": step14["documentation_metrics"][
+                    "completeness_score"
+                ],
+                "quality_score": step14["documentation_metrics"]["quality_score"],
             },
             "validation_results": {
                 "validation_tests_run": len(step15["validation_tests"]),
-                "tests_passed": step15["test_results"]["validation_report"]["validation_summary"]["tests_passed"],
-                "overall_validation_score": step15["quality_metrics"]["overall_validation_score"],
-                "validation_status": step15["test_results"]["validation_report"]["validation_summary"]["validation_status"]
+                "tests_passed": step15["test_results"]["validation_report"][
+                    "validation_summary"
+                ]["tests_passed"],
+                "overall_validation_score": step15["quality_metrics"][
+                    "overall_validation_score"
+                ],
+                "validation_status": step15["test_results"]["validation_report"][
+                    "validation_summary"
+                ]["validation_status"],
             },
             "delivery_results": {
                 "delivery_packages": len(step16["distribution_formats"]),
                 "total_artifacts": step16["final_artifacts"]["total_files"],
                 "final_size_mb": step16["final_artifacts"]["total_size_mb"],
                 "distribution_ready": step16["final_artifacts"]["distribution_ready"],
-                "quality_assured": step16["final_artifacts"]["quality_assured"]
+                "quality_assured": step16["final_artifacts"]["quality_assured"],
             },
             "project_completion": {
-                "overall_success_rate": step16["project_completion"]["overall_success_rate"],
-                "cities_successful": step16["project_completion"]["final_dataset_statistics"]["cities"],
-                "final_records": step16["project_completion"]["final_dataset_statistics"]["records"],
-                "data_quality_score": step16["project_completion"]["final_dataset_statistics"]["data_quality_score"],
-                "deliverables_complete": True
+                "overall_success_rate": step16["project_completion"][
+                    "overall_success_rate"
+                ],
+                "cities_successful": step16["project_completion"][
+                    "final_dataset_statistics"
+                ]["cities"],
+                "final_records": step16["project_completion"][
+                    "final_dataset_statistics"
+                ]["records"],
+                "data_quality_score": step16["project_completion"][
+                    "final_dataset_statistics"
+                ]["data_quality_score"],
+                "deliverables_complete": True,
             },
             "processing_duration_minutes": round(
-                (datetime.now() - datetime.fromisoformat(self.phase4_results["start_time"])).total_seconds() / 60, 2
+                (
+                    datetime.now()
+                    - datetime.fromisoformat(self.phase4_results["start_time"])
+                ).total_seconds()
+                / 60,
+                2,
             ),
-            "completion_time": datetime.now().isoformat()
+            "completion_time": datetime.now().isoformat(),
         }
-        
+
         self.phase4_results["status"] = "success"
-    
+
     def _save_phase4_results(self):
         """Save comprehensive Phase 4 results."""
         results_path = Path("stage_5/logs/phase4_dataset_assembly_results.json")
         results_path.parent.mkdir(parents=True, exist_ok=True)
-        
-        with open(results_path, 'w') as f:
+
+        with open(results_path, "w") as f:
             json.dump(self.phase4_results, f, indent=2)
-        
+
         log.info(f"Phase 4 results saved to: {results_path}")
-    
+
     def _update_project_progress(self):
         """Update overall project progress."""
         progress_path = Path("stage_5/logs/collection_progress.json")
         try:
-            with open(progress_path, 'r') as f:
+            with open(progress_path, "r") as f:
                 progress = json.load(f)
         except FileNotFoundError:
             progress = {}
-        
+
         # Update with Phase 4 completion
         completed_steps = progress.get("completed_steps", []) + [
-            step for step in self.phase4_results["steps_completed"] 
+            step
+            for step in self.phase4_results["steps_completed"]
             if step not in progress.get("completed_steps", [])
         ]
-        
-        progress.update({
-            "phase": "Phase 4: Dataset Assembly - COMPLETED",
-            "current_step": 16,
-            "completed_steps": completed_steps,
-            "phase4_summary": self.phase4_results["overall_summary"],
-            "project_status": "COMPLETED",
-            "final_completion": True,
-            "last_updated": datetime.now().isoformat()
-        })
-        
-        with open(progress_path, 'w') as f:
+
+        progress.update(
+            {
+                "phase": "Phase 4: Dataset Assembly - COMPLETED",
+                "current_step": 16,
+                "completed_steps": completed_steps,
+                "phase4_summary": self.phase4_results["overall_summary"],
+                "project_status": "COMPLETED",
+                "final_completion": True,
+                "last_updated": datetime.now().isoformat(),
+            }
+        )
+
+        with open(progress_path, "w") as f:
             json.dump(progress, f, indent=2)
-        
+
         log.info("Project progress updated - Phase 4 and entire project completed")
-    
+
     def _print_phase4_summary(self):
         """Print comprehensive Phase 4 summary."""
         summary = self.phase4_results["overall_summary"]
-        
-        log.info("\n" + "="*60)
+
+        log.info("\n" + "=" * 60)
         log.info("PHASE 4 DATASET ASSEMBLY COMPLETED")
-        log.info("="*60)
+        log.info("=" * 60)
         log.info(f"Overall Status: {self.phase4_results['status'].upper()}")
         log.info(f"Assembly Success Rate: {summary['assembly_success_rate']:.1%}")
         log.info("")
         log.info("PACKAGING RESULTS:")
-        log.info(f"  Dataset Files: {summary['packaging_results']['dataset_files_created']}")
-        log.info(f"  Total Size: {summary['packaging_results']['total_size_mb']:.1f} MB")
-        log.info(f"  Compression: {summary['packaging_results']['compression_achieved']:.1%}")
+        log.info(
+            f"  Dataset Files: {summary['packaging_results']['dataset_files_created']}"
+        )
+        log.info(
+            f"  Total Size: {summary['packaging_results']['total_size_mb']:.1f} MB"
+        )
+        log.info(
+            f"  Compression: {summary['packaging_results']['compression_achieved']:.1%}"
+        )
         log.info("")
         log.info("DOCUMENTATION:")
-        log.info(f"  Files Created: {summary['documentation_results']['documentation_files']}")
-        log.info(f"  Documentation Size: {summary['documentation_results']['documentation_size_kb']:.1f} KB")
-        log.info(f"  Quality Score: {summary['documentation_results']['quality_score']:.1%}")
+        log.info(
+            f"  Files Created: {summary['documentation_results']['documentation_files']}"
+        )
+        log.info(
+            f"  Documentation Size: {summary['documentation_results']['documentation_size_kb']:.1f} KB"
+        )
+        log.info(
+            f"  Quality Score: {summary['documentation_results']['quality_score']:.1%}"
+        )
         log.info("")
         log.info("VALIDATION:")
-        log.info(f"  Tests Run: {summary['validation_results']['validation_tests_run']}")
+        log.info(
+            f"  Tests Run: {summary['validation_results']['validation_tests_run']}"
+        )
         log.info(f"  Tests Passed: {summary['validation_results']['tests_passed']}")
-        log.info(f"  Validation Score: {summary['validation_results']['overall_validation_score']:.1%}")
+        log.info(
+            f"  Validation Score: {summary['validation_results']['overall_validation_score']:.1%}"
+        )
         log.info("")
         log.info("FINAL DELIVERY:")
-        log.info(f"  Distribution Packages: {summary['delivery_results']['delivery_packages']}")
+        log.info(
+            f"  Distribution Packages: {summary['delivery_results']['delivery_packages']}"
+        )
         log.info(f"  Total Artifacts: {summary['delivery_results']['total_artifacts']}")
         log.info(f"  Final Size: {summary['delivery_results']['final_size_mb']:.1f} MB")
         log.info("")
         log.info("PROJECT COMPLETION:")
-        log.info(f"  Cities Successful: {summary['project_completion']['cities_successful']}/100")
+        log.info(
+            f"  Cities Successful: {summary['project_completion']['cities_successful']}/100"
+        )
         log.info(f"  Final Records: {summary['project_completion']['final_records']:,}")
-        log.info(f"  Data Quality: {summary['project_completion']['data_quality_score']:.1%}")
-        log.info(f"  Overall Success: {summary['project_completion']['overall_success_rate']:.1%}")
+        log.info(
+            f"  Data Quality: {summary['project_completion']['data_quality_score']:.1%}"
+        )
+        log.info(
+            f"  Overall Success: {summary['project_completion']['overall_success_rate']:.1%}"
+        )
         log.info("")
-        log.info(f"Processing Duration: {summary['processing_duration_minutes']} minutes")
-        log.info("="*60)
+        log.info(
+            f"Processing Duration: {summary['processing_duration_minutes']} minutes"
+        )
+        log.info("=" * 60)
         log.info("🎉 GLOBAL 100-CITY DATASET PROJECT COMPLETED SUCCESSFULLY! 🎉")
-        log.info("="*60)
+        log.info("=" * 60)
 
 
 def main():
     """Main execution for Phase 4."""
     log.info("Starting Phase 4: Dataset Assembly")
-    
+
     try:
         assembler = Phase4DatasetAssembler()
         results = assembler.execute_phase4()
-        
+
         return results
-        
+
     except Exception as e:
         log.error(f"Phase 4 execution failed: {str(e)}")
         raise

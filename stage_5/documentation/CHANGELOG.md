@@ -37,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Geographic Coverage
 - **Europe**: 20 cities (Berlin Pattern)
-- **Asia**: 20 cities (Delhi Pattern)  
+- **Asia**: 20 cities (Delhi Pattern)
 - **North America**: 20 cities (Toronto Pattern)
 - **South America**: 20 cities (São Paulo Pattern)
 - **Africa**: 20 cities (Cairo Pattern)

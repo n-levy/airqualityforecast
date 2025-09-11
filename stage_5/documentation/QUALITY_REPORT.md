@@ -53,7 +53,7 @@ The Global 100-City Air Quality Dataset has undergone comprehensive quality asse
 
 ### Data Integrity Validation
 - **Missing Values**: < 2% (Excellent)
-- **Duplicate Records**: < 0.1% (Excellent)  
+- **Duplicate Records**: < 0.1% (Excellent)
 - **Format Consistency**: 100% (Perfect)
 - **Timestamp Validity**: 99.8% (Excellent)
 

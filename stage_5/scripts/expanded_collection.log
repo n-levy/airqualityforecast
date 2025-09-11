@@ -237,7 +237,7 @@ Arguments: ()
 2025-09-11 10:50:40,585 | INFO | __main__ |   SUCCESS Montevideo, Uruguay: success (760 records)
 2025-09-11 10:50:41,811 | INFO | __main__ | Final results saved to: stage_5\expanded_worst_air_quality\expanded_worst_air_quality_results.json
 2025-09-11 10:50:41,811 | INFO | __main__ | === EXPANDED WORST AIR QUALITY DATA COLLECTION COMPLETED ===
-2025-09-11 10:50:41,811 | INFO | __main__ | 
+2025-09-11 10:50:41,811 | INFO | __main__ |
 ============================================================
 2025-09-11 10:50:41,811 | INFO | __main__ | EXPANDED WORST AIR QUALITY DATA COLLECTION COMPLETED
 2025-09-11 10:50:41,811 | INFO | __main__ | ============================================================
@@ -246,7 +246,7 @@ Arguments: ()
 2025-09-11 10:50:41,811 | INFO | __main__ | Failed: 0
 2025-09-11 10:50:41,811 | INFO | __main__ | Total Records: 76,000
 2025-09-11 10:50:41,811 | INFO | __main__ | Avg Records/City: 760
-2025-09-11 10:50:41,811 | INFO | __main__ | 
+2025-09-11 10:50:41,811 | INFO | __main__ |
 2025-09-11 10:50:41,811 | INFO | __main__ | CONTINENTAL BREAKDOWN (WORST AIR QUALITY CITIES):
 2025-09-11 10:50:41,811 | INFO | __main__ |   Asia: 20/20 (100.0%) - 15,200 records - Avg AQI: 147
 2025-09-11 10:50:41,811 | INFO | __main__ |   Africa: 20/20 (100.0%) - 15,200 records - Avg AQI: 147
