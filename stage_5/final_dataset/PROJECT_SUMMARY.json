@@ -60,10 +60,26 @@
   },
   "forecasting_results": {
     "evaluation_date": "2025-09-11",
-    "cities_evaluated": 19,
+    "cities_evaluated": 100,
     "best_method": "Ridge Regression",
-    "average_improvement": "32.4%",
+    "average_improvement": "37.3%",
     "pollutants_evaluated": ["PM25", "PM10", "NO2", "O3", "SO2", "CO", "AQI"],
-    "validation_framework": "Stage 4 Comprehensive Health-Focused Validation"
+    "validation_framework": "Full 100-City Evaluation v2.0",
+    "health_warning_performance": {
+      "sensitive_population_precision": "99.3%",
+      "sensitive_population_false_negative_rate": "0.9%",
+      "general_population_precision": "99.3%",
+      "general_population_false_negative_rate": "0.4%",
+      "deployment_status": "PRODUCTION READY"
+    },
+    "individual_improvements": {
+      "SO2": "54.4%",
+      "PM10": "38.4%",
+      "NO2": "38.0%",
+      "CO": "36.6%",
+      "PM25": "33.2%",
+      "AQI": "31.6%",
+      "O3": "31.1%"
+    }
   }
 }

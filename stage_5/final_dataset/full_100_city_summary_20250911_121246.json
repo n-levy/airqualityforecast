@@ -1,0 +1,969 @@
+{
+  "evaluation_metadata": {
+    "evaluation_date": "2025-09-11T12:12:46.418156",
+    "cities_evaluated": 100,
+    "framework_version": "Full 100-City Evaluation v2.0",
+    "continents_covered": 5,
+    "pollutants_analyzed": 6,
+    "methods_compared": 4
+  },
+  "overall_performance": {
+    "PM25": {
+      "simple_avg": {
+        "mean_MAE": 3.2095674718611464,
+        "std_MAE": 1.4960484178400602,
+        "mean_R2": 0.12510954484794237,
+        "cities_evaluated": 100
+      },
+      "ridge": {
+        "mean_MAE": 2.6525266437723793,
+        "std_MAE": 1.2407325767032413,
+        "mean_R2": 0.4225440277819709,
+        "cities_evaluated": 100
+      },
+      "cams": {
+        "mean_MAE": 3.9713935161871934,
+        "std_MAE": 1.7869686458116596,
+        "mean_R2": -0.4240735057334749,
+        "cities_evaluated": 100
+      },
+      "noaa": {
+        "mean_MAE": 4.923108709234164,
+        "std_MAE": 2.325894717487003,
+        "mean_R2": -1.0645497490098235,
+        "cities_evaluated": 100
+      }
+    },
+    "PM10": {
+      "simple_avg": {
+        "mean_MAE": 4.04133537082231,
+        "std_MAE": 1.9599966341587554,
+        "mean_R2": -0.27438014039244896,
+        "cities_evaluated": 100
+      },
+      "ridge": {
+        "mean_MAE": 3.1722261424192286,
+        "std_MAE": 1.5226232585542991,
+        "mean_R2": 0.2855799773154415,
+        "cities_evaluated": 100
+      },
+      "cams": {
+        "mean_MAE": 5.153649004874734,
+        "std_MAE": 2.5777966785472737,
+        "mean_R2": -1.06722303595382,
+        "cities_evaluated": 100
+      },
+      "noaa": {
+        "mean_MAE": 6.229567218478355,
+        "std_MAE": 3.0139971858008705,
+        "mean_R2": -1.8964530805488449,
+        "cities_evaluated": 100
+      }
+    },
+    "NO2": {
+      "simple_avg": {
+        "mean_MAE": 0.5016064155367075,
+        "std_MAE": 0.24281372832968628,
+        "mean_R2": 0.1546978639508115,
+        "cities_evaluated": 100
+      },
+      "ridge": {
+        "mean_MAE": 0.4022843139319193,
+        "std_MAE": 0.1661507151064099,
+        "mean_R2": 0.4691217250832863,
+        "cities_evaluated": 100
+      },
+      "cams": {
+        "mean_MAE": 0.749381851143645,
+        "std_MAE": 0.3426873219694137,
+        "mean_R2": -0.8896007008253579,
+        "cities_evaluated": 100
+      },
+      "noaa": {
+        "mean_MAE": 0.6485870617950699,
+        "std_MAE": 0.2856230866037297,
+        "mean_R2": -0.41449983146135033,
+        "cities_evaluated": 100
+      }
+    },
+    "O3": {
+      "simple_avg": {
+        "mean_MAE": 2.8957888392253905,
+        "std_MAE": 1.4077338122423608,
+        "mean_R2": 0.44864514816906775,
+        "cities_evaluated": 100
+      },
+      "ridge": {
+        "mean_MAE": 2.5778951494220563,
+        "std_MAE": 1.2186771079867773,
+        "mean_R2": 0.5803408799412084,
+        "cities_evaluated": 100
+      },
+      "cams": {
+        "mean_MAE": 4.418356481991088,
+        "std_MAE": 2.0589122255632613,
+        "mean_R2": -0.31141194120308,
+        "cities_evaluated": 100
+      },
+      "noaa": {
+        "mean_MAE": 3.7397363174760105,
+        "std_MAE": 1.795321188902664,
+        "mean_R2": 0.08197005511092939,
+        "cities_evaluated": 100
+      }
+    },
+    "SO2": {
+      "simple_avg": {
+        "mean_MAE": 0.4433177533533042,
+        "std_MAE": 0.09990046331641744,
+        "mean_R2": -1.5753197767022726,
+        "cities_evaluated": 100
+      },
+      "ridge": {
+        "mean_MAE": 0.27646634723954927,
+        "std_MAE": 0.06194923179634014,
+        "mean_R2": 0.05394904897551666,
+        "cities_evaluated": 100
+      },
+      "cams": {
+        "mean_MAE": 0.6059098856661267,
+        "std_MAE": 0.12834512909565063,
+        "mean_R2": -3.7834490824687417,
+        "cities_evaluated": 100
+      },
+      "noaa": {
+        "mean_MAE": 0.6688636776323073,
+        "std_MAE": 0.17201920416514485,
+        "mean_R2": -4.91395656582563,
+        "cities_evaluated": 100
+      }
+    },
+    "CO": {
+      "simple_avg": {
+        "mean_MAE": 0.4292895700430905,
+        "std_MAE": 0.18239711122113697,
+        "mean_R2": 0.20842863032946057,
+        "cities_evaluated": 100
+      },
+      "ridge": {
+        "mean_MAE": 0.3577260599058221,
+        "std_MAE": 0.13867989621941526,
+        "mean_R2": 0.46360720544673995,
+        "cities_evaluated": 100
+      },
+      "cams": {
+        "mean_MAE": 0.5640889228027945,
+        "std_MAE": 0.24046025518305508,
+        "mean_R2": -0.40213962542843307,
+        "cities_evaluated": 100
+      },
+      "noaa": {
+        "mean_MAE": 0.6481417678275021,
+        "std_MAE": 0.2565874100243913,
+        "mean_R2": -0.8047317474293522,
+        "cities_evaluated": 100
+      }
+    },
+    "AQI": {
+      "simple_avg": {
+        "mean_MAE": 13.386552047001398,
+        "std_MAE": 8.946511616561441,
+        "mean_R2": 0.22003981608717788,
+        "cities_evaluated": 100
+      },
+      "ridge": {
+        "mean_MAE": 12.232588658824103,
+        "std_MAE": 8.302667769868002,
+        "mean_R2": 0.41311749877439147,
+        "cities_evaluated": 100
+      },
+      "cams": {
+        "mean_MAE": 19.544653999282875,
+        "std_MAE": 13.127089207898802,
+        "mean_R2": -0.42330386064362474,
+        "cities_evaluated": 100
+      },
+      "noaa": {
+        "mean_MAE": 17.88418492329838,
+        "std_MAE": 12.257075249690317,
+        "mean_R2": -0.5055546798368513,
+        "cities_evaluated": 100
+      }
+    }
+  },
+  "continental_performance": {
+    "Asia": {
+      "PM25": {
+        "simple_avg": {
+          "mean_MAE": 4.855728699921494,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 4.17549165971299,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 5.927758096953985,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 7.794279662968822,
+          "cities": 20
+        }
+      },
+      "PM10": {
+        "simple_avg": {
+          "mean_MAE": 3.9989561890228154,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 3.290270305402314,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 5.44357462738403,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 6.115126081802842,
+          "cities": 20
+        }
+      },
+      "NO2": {
+        "simple_avg": {
+          "mean_MAE": 0.5047581837530077,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.4214474580075708,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.7480000852982278,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6612851625825196,
+          "cities": 20
+        }
+      },
+      "O3": {
+        "simple_avg": {
+          "mean_MAE": 3.012193543224289,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 2.539598812950513,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 4.5100914060546,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 3.7405367396229137,
+          "cities": 20
+        }
+      },
+      "SO2": {
+        "simple_avg": {
+          "mean_MAE": 0.4450179438053314,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.28521516451668544,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.6321920566098368,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6973874815255663,
+          "cities": 20
+        }
+      },
+      "CO": {
+        "simple_avg": {
+          "mean_MAE": 0.4552198815317682,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.38391117904227634,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.568363285566049,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6998461546015005,
+          "cities": 20
+        }
+      },
+      "AQI": {
+        "simple_avg": {
+          "mean_MAE": 16.470618726116488,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 14.783802778275458,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 22.507299630634936,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 23.592405471885975,
+          "cities": 20
+        }
+      }
+    },
+    "Africa": {
+      "PM25": {
+        "simple_avg": {
+          "mean_MAE": 4.295494710271601,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 3.3274353621083748,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 5.068587853915031,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 6.388887717014412,
+          "cities": 20
+        }
+      },
+      "PM10": {
+        "simple_avg": {
+          "mean_MAE": 3.9697948194647994,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 3.0311149886826714,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 4.9922178641983646,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 5.9247062035153855,
+          "cities": 20
+        }
+      },
+      "NO2": {
+        "simple_avg": {
+          "mean_MAE": 0.4828532502566055,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.403835421421023,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.7262938858123915,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6050261752210806,
+          "cities": 20
+        }
+      },
+      "O3": {
+        "simple_avg": {
+          "mean_MAE": 2.8672392913753395,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 2.661590126354714,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 4.567654759219943,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 3.8338799522165035,
+          "cities": 20
+        }
+      },
+      "SO2": {
+        "simple_avg": {
+          "mean_MAE": 0.44123705322871787,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.2626000994059,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.5843705569942613,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6399200871763709,
+          "cities": 20
+        }
+      },
+      "CO": {
+        "simple_avg": {
+          "mean_MAE": 0.405294033623825,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.34461241620504274,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.5560788058269567,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.5875251618842371,
+          "cities": 20
+        }
+      },
+      "AQI": {
+        "simple_avg": {
+          "mean_MAE": 17.23996875872204,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 15.734608670496055,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 25.91322292390355,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 22.94865617659368,
+          "cities": 20
+        }
+      }
+    },
+    "Europe": {
+      "PM25": {
+        "simple_avg": {
+          "mean_MAE": 1.4845699985515712,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 1.2254179563262833,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 1.889753992434228,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 2.1769570058252428,
+          "cities": 20
+        }
+      },
+      "PM10": {
+        "simple_avg": {
+          "mean_MAE": 4.627648809850232,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 3.590207420590123,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 5.932211927415081,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 7.387757726419473,
+          "cities": 20
+        }
+      },
+      "NO2": {
+        "simple_avg": {
+          "mean_MAE": 0.6016864483735787,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.43641053019801274,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.8742686933061533,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.7635263019004827,
+          "cities": 20
+        }
+      },
+      "O3": {
+        "simple_avg": {
+          "mean_MAE": 3.4050524057736475,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 2.9174279487816195,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 5.0554545791576775,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 4.309712865107836,
+          "cities": 20
+        }
+      },
+      "SO2": {
+        "simple_avg": {
+          "mean_MAE": 0.4797327226434147,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.28795183731899837,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.6454555325865948,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.7075411185074268,
+          "cities": 20
+        }
+      },
+      "CO": {
+        "simple_avg": {
+          "mean_MAE": 0.4759235960935714,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.37131457483762487,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.6297215641181179,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.7398366710402499,
+          "cities": 20
+        }
+      },
+      "AQI": {
+        "simple_avg": {
+          "mean_MAE": 0.14410396286800115,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.12080193889425841,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.1780186237994103,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.221031145593891,
+          "cities": 20
+        }
+      }
+    },
+    "North_America": {
+      "PM25": {
+        "simple_avg": {
+          "mean_MAE": 2.656027204057992,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 2.2374290370463887,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 3.498068946318832,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 4.010769898978349,
+          "cities": 20
+        }
+      },
+      "PM10": {
+        "simple_avg": {
+          "mean_MAE": 3.5749523702665016,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 2.7344474347699768,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 4.2283414262826735,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 5.7429463589878536,
+          "cities": 20
+        }
+      },
+      "NO2": {
+        "simple_avg": {
+          "mean_MAE": 0.4345018597584298,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.36098811636493067,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.645076868953708,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.5730086832495623,
+          "cities": 20
+        }
+      },
+      "O3": {
+        "simple_avg": {
+          "mean_MAE": 2.535862262204846,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 2.261049708544108,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 3.684703798187301,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 3.2728721730929053,
+          "cities": 20
+        }
+      },
+      "SO2": {
+        "simple_avg": {
+          "mean_MAE": 0.4357572848987952,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.27603599160223824,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.5857376123524399,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6492718040604024,
+          "cities": 20
+        }
+      },
+      "CO": {
+        "simple_avg": {
+          "mean_MAE": 0.39851106637316785,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.344374624208284,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.5104143943600175,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6158804953980515,
+          "cities": 20
+        }
+      },
+      "AQI": {
+        "simple_avg": {
+          "mean_MAE": 16.697149362435525,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 15.023504562855972,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 23.60756131240373,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 21.55816930780818,
+          "cities": 20
+        }
+      }
+    },
+    "South_America": {
+      "PM25": {
+        "simple_avg": {
+          "mean_MAE": 2.7560167465030703,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 2.2968592036678603,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 3.4727986913138915,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 4.2446492613839935,
+          "cities": 20
+        }
+      },
+      "PM10": {
+        "simple_avg": {
+          "mean_MAE": 4.035324665507205,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 3.215090562651062,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 5.171899179093524,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 5.977299721666225,
+          "cities": 20
+        }
+      },
+      "NO2": {
+        "simple_avg": {
+          "mean_MAE": 0.4842323355419153,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.3887400436680599,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.7532697223477447,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6400889860217036,
+          "cities": 20
+        }
+      },
+      "O3": {
+        "simple_avg": {
+          "mean_MAE": 2.658596693548828,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 2.5098091504793265,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 4.273877867335918,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 3.5416798573398927,
+          "cities": 20
+        }
+      },
+      "SO2": {
+        "simple_avg": {
+          "mean_MAE": 0.414843762190262,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.27052864335392446,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.5817936697875007,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.6501978968917692,
+          "cities": 20
+        }
+      },
+      "CO": {
+        "simple_avg": {
+          "mean_MAE": 0.41149927259311986,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 0.34441750523588277,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 0.5558665641428314,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 0.5976203562134711,
+          "cities": 20
+        }
+      },
+      "AQI": {
+        "simple_avg": {
+          "mean_MAE": 16.38091942486494,
+          "cities": 20
+        },
+        "ridge": {
+          "mean_MAE": 15.500225343598776,
+          "cities": 20
+        },
+        "cams": {
+          "mean_MAE": 25.517167505672752,
+          "cities": 20
+        },
+        "noaa": {
+          "mean_MAE": 21.10066251461017,
+          "cities": 20
+        }
+      }
+    }
+  },
+  "health_warning_analysis": {
+    "overall_metrics": {
+      "simple_avg": {
+        "sensitive_alerts": {
+          "precision": 0.9961496149614961,
+          "recall": 0.9917853231106243,
+          "f1_score": 0.9939626783754115,
+          "false_positive_rate": 0.040229885057471264,
+          "false_negative_rate": 0.008214676889375685,
+          "total_predictions": 2000
+        },
+        "general_alerts": {
+          "precision": 0.9946428571428572,
+          "recall": 0.9964221824686941,
+          "f1_score": 0.9955317247542449,
+          "false_positive_rate": 0.02786377708978328,
+          "false_negative_rate": 0.0035778175313059034,
+          "total_predictions": 2000
+        }
+      },
+      "ridge": {
+        "sensitive_alerts": {
+          "precision": 0.9934102141680395,
+          "recall": 0.9906900328587076,
+          "f1_score": 0.9920482588428845,
+          "false_positive_rate": 0.06896551724137931,
+          "false_negative_rate": 0.009309967141292442,
+          "total_predictions": 2000
+        },
+        "general_alerts": {
+          "precision": 0.9934562760261749,
+          "recall": 0.9958258795468098,
+          "f1_score": 0.9946396664681357,
+          "false_positive_rate": 0.034055727554179564,
+          "false_negative_rate": 0.0041741204531902205,
+          "total_predictions": 2000
+        }
+      },
+      "cams": {
+        "sensitive_alerts": {
+          "precision": 0.9917808219178083,
+          "recall": 0.9912376779846659,
+          "f1_score": 0.9915091755683374,
+          "false_positive_rate": 0.08620689655172414,
+          "false_negative_rate": 0.008762322015334063,
+          "total_predictions": 2000
+        },
+        "general_alerts": {
+          "precision": 0.9922711058263971,
+          "recall": 0.9952295766249255,
+          "f1_score": 0.9937481393271808,
+          "false_positive_rate": 0.04024767801857585,
+          "false_negative_rate": 0.004770423375074538,
+          "total_predictions": 2000
+        }
+      },
+      "noaa": {
+        "sensitive_alerts": {
+          "precision": 0.9901207464324918,
+          "recall": 0.9879518072289156,
+          "f1_score": 0.9890350877192983,
+          "false_positive_rate": 0.10344827586206896,
+          "false_negative_rate": 0.012048192771084338,
+          "total_predictions": 2000
+        },
+        "general_alerts": {
+          "precision": 0.9904591532498509,
+          "recall": 0.9904591532498509,
+          "f1_score": 0.9904591532498509,
+          "false_positive_rate": 0.04953560371517028,
+          "false_negative_rate": 0.009540846750149075,
+          "total_predictions": 2000
+        }
+      }
+    },
+    "continental_breakdown": {},
+    "false_positive_analysis": {
+      "sensitive_population_fpr": 0.06896551724137931,
+      "general_population_fpr": 0.034055727554179564,
+      "impact_assessment": "Acceptable"
+    },
+    "false_negative_analysis": {
+      "sensitive_population_fnr": 0.009309967141292442,
+      "general_population_fnr": 0.0041741204531902205,
+      "impact_assessment": "Acceptable"
+    },
+    "critical_findings": []
+  },
+  "improvement_analysis": {
+    "PM25": {
+      "improvement_percent": 33.20917121507051,
+      "best_ensemble_mae": 2.6525266437723793,
+      "best_benchmark_mae": 3.9713935161871934,
+      "significance": "major"
+    },
+    "PM10": {
+      "improvement_percent": 38.446988931169294,
+      "best_ensemble_mae": 3.1722261424192286,
+      "best_benchmark_mae": 5.153649004874734,
+      "significance": "major"
+    },
+    "NO2": {
+      "improvement_percent": 37.97527924492785,
+      "best_ensemble_mae": 0.4022843139319193,
+      "best_benchmark_mae": 0.6485870617950699,
+      "significance": "major"
+    },
+    "O3": {
+      "improvement_percent": 31.067462233222198,
+      "best_ensemble_mae": 2.5778951494220563,
+      "best_benchmark_mae": 3.7397363174760105,
+      "significance": "major"
+    },
+    "SO2": {
+      "improvement_percent": 54.37170546646437,
+      "best_ensemble_mae": 0.27646634723954927,
+      "best_benchmark_mae": 0.6059098856661267,
+      "significance": "major"
+    },
+    "CO": {
+      "improvement_percent": 36.583392184270366,
+      "best_ensemble_mae": 0.3577260599058221,
+      "best_benchmark_mae": 0.5640889228027945,
+      "significance": "major"
+    },
+    "AQI": {
+      "improvement_percent": 31.601083799529146,
+      "best_ensemble_mae": 12.232588658824103,
+      "best_benchmark_mae": 17.88418492329838,
+      "significance": "major"
+    }
+  },
+  "false_positive_negative_analysis": {}
+}
