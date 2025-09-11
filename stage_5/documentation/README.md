@@ -13,7 +13,9 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 - **Features**: 50+ comprehensive features including air quality, meteorological, fire risk, holiday impacts, and temporal patterns
 - **Quality Focus**: Cities selected for poor air quality to maximize research relevance
 - **File Format**: CSV (comprehensive tables) + JSON (collection results)
-- **Total Records**: 76,000 city-day records (100 cities × 760 days)
+- **Total Records**: 36,500 city-day records (100 cities × 365 days)
+- **Forecasting Models**: Walk-forward validation with Simple Average and Ridge Regression models
+- **Benchmark Coverage**: 100% cities with CAMS and NOAA style benchmark forecasts
 
 ## Data Files
 

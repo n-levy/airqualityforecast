@@ -1,0 +1,2756 @@
+{
+  "generation_time": "2025-09-11T20:27:22.222383",
+  "dataset_info": {
+    "total_cities": 100,
+    "total_predictions": 33500,
+    "validation_period": "2024-01-01 to 2024-12-31",
+    "methodology": "Walk-forward validation with daily retraining"
+  },
+  "model_performance": {
+    "simple_average": {
+      "mae": {
+        "mean": 13.251047761975734,
+        "std": 2.4222893736506284,
+        "min": 7.109569859304174,
+        "max": 16.89935360102401,
+        "median": 13.964190744189612
+      },
+      "rmse": {
+        "mean": 16.997115919516396,
+        "std": 3.1437689271273253,
+        "min": 9.340541196686535,
+        "max": 21.882661128323686,
+        "median": 17.702990551751007
+      },
+      "r2": {
+        "mean": 0.817733452501506,
+        "std": 0.01772048850744747,
+        "min": 0.76338259920963,
+        "max": 0.8604313633010108,
+        "median": 0.8181175774978057
+      },
+      "mean_absolute_percentage_error": {
+        "mean": 9.93397157890945,
+        "std": 0.3843105960197999,
+        "min": 8.960977573146897,
+        "max": 10.967952921650518,
+        "median": 9.91481234418216
+      }
+    },
+    "ridge_regression": {
+      "mae": {
+        "mean": 9.483176653885097,
+        "std": 1.7502473909123306,
+        "min": 5.377864387692491,
+        "max": 12.574401543898519,
+        "median": 9.927252202683785
+      },
+      "rmse": {
+        "mean": 12.279437992535664,
+        "std": 2.2932562994565697,
+        "min": 7.0444568352593455,
+        "max": 15.990988077362099,
+        "median": 12.96251209861951
+      },
+      "r2": {
+        "mean": 0.9050183448595618,
+        "std": 0.00832230903563167,
+        "min": 0.8869499758163303,
+        "max": 0.9271781195181,
+        "median": 0.9059036429780877
+      },
+      "mean_absolute_percentage_error": {
+        "mean": 7.286854931944304,
+        "std": 0.304495889010046,
+        "min": 6.734421837559597,
+        "max": 8.291869489687437,
+        "median": 7.232115458468094
+      }
+    },
+    "cams_benchmark": {
+      "mae": {
+        "mean": 19.397159876253337,
+        "std": 3.493532592378003,
+        "min": 10.465636590078233,
+        "max": 25.768717708048595,
+        "median": 20.613827174689064
+      },
+      "rmse": {
+        "mean": 25.010175435460727,
+        "std": 4.489183238846194,
+        "min": 13.91458402500893,
+        "max": 33.25035550577823,
+        "median": 26.379311127905286
+      },
+      "r2": {
+        "mean": 0.6042591994851808,
+        "std": 0.040320099568983005,
+        "min": 0.4805514800065215,
+        "max": 0.6952634120393575,
+        "median": 0.6088621234228794
+      },
+      "mean_absolute_percentage_error": {
+        "mean": 14.566028185959846,
+        "std": 0.5391829968885207,
+        "min": 12.623499896203954,
+        "max": 15.880595451936616,
+        "median": 14.539030329076686
+      }
+    },
+    "noaa_benchmark": {
+      "mae": {
+        "mean": 13.885283985540346,
+        "std": 2.567454471557013,
+        "min": 7.823947328963117,
+        "max": 18.388818526551653,
+        "median": 14.640339172342259
+      },
+      "rmse": {
+        "mean": 18.10408520272176,
+        "std": 3.3819583251300593,
+        "min": 10.223571273396885,
+        "max": 24.09344171568843,
+        "median": 19.017871940657876
+      },
+      "r2": {
+        "mean": 0.7930904711573238,
+        "std": 0.02229085511367279,
+        "min": 0.7463031687943578,
+        "max": 0.8425161607657673,
+        "median": 0.7935200439497194
+      },
+      "mean_absolute_percentage_error": {
+        "mean": 10.425515569477586,
+        "std": 0.4169121403749265,
+        "min": 9.472595258309328,
+        "max": 11.514396120281635,
+        "median": 10.410627825251591
+      }
+    }
+  },
+  "city_level_results": {
+    "Delhi": {
+      "simple_average": {
+        "mae": 16.098227998400162,
+        "rmse": 20.686734181183944,
+        "r2": 0.8419050023053329,
+        "mean_absolute_percentage_error": 9.502949616386246
+      },
+      "ridge_regression": {
+        "mae": 11.573753667813445,
+        "rmse": 14.729506319885413,
+        "r2": 0.9198486866717848,
+        "mean_absolute_percentage_error": 7.163167382071159
+      },
+      "cams_benchmark": {
+        "mae": 24.088606531100307,
+        "rmse": 31.658985078194434,
+        "r2": 0.6297217205401593,
+        "mean_absolute_percentage_error": 14.41396004280024
+      },
+      "noaa_benchmark": {
+        "mae": 16.766057823261903,
+        "rmse": 22.33717004993204,
+        "r2": 0.8156723180219357,
+        "mean_absolute_percentage_error": 9.904502291950571
+      }
+    },
+    "Lahore": {
+      "simple_average": {
+        "mae": 16.489490328795306,
+        "rmse": 20.80222823186081,
+        "r2": 0.7904226073272904,
+        "mean_absolute_percentage_error": 10.319506058009335
+      },
+      "ridge_regression": {
+        "mae": 11.073451696692159,
+        "rmse": 14.60933051261301,
+        "r2": 0.8966321821944324,
+        "mean_absolute_percentage_error": 7.0876060437243105
+      },
+      "cams_benchmark": {
+        "mae": 23.290882978168437,
+        "rmse": 30.041800354308222,
+        "r2": 0.5629042029699334,
+        "mean_absolute_percentage_error": 14.576194595728554
+      },
+      "noaa_benchmark": {
+        "mae": 16.875874106067105,
+        "rmse": 21.766444411122297,
+        "r2": 0.7705438495374659,
+        "mean_absolute_percentage_error": 10.627718240534403
+      }
+    },
+    "Dhaka": {
+      "simple_average": {
+        "mae": 15.70385337840964,
+        "rmse": 20.330999267253425,
+        "r2": 0.8156481160166944,
+        "mean_absolute_percentage_error": 10.113534011679922
+      },
+      "ridge_regression": {
+        "mae": 11.788235535937856,
+        "rmse": 15.241152349567743,
+        "r2": 0.8963985725253806,
+        "mean_absolute_percentage_error": 7.718805996220681
+      },
+      "cams_benchmark": {
+        "mae": 22.360765815086793,
+        "rmse": 28.567161340069827,
+        "r2": 0.6360310749875657,
+        "mean_absolute_percentage_error": 14.561761188913541
+      },
+      "noaa_benchmark": {
+        "mae": 16.388119244681047,
+        "rmse": 21.7478364364711,
+        "r2": 0.7890583946096257,
+        "mean_absolute_percentage_error": 10.69458722368584
+      }
+    },
+    "Kolkata": {
+      "simple_average": {
+        "mae": 15.133033477011253,
+        "rmse": 19.660590366779044,
+        "r2": 0.8315917627170537,
+        "mean_absolute_percentage_error": 9.83659881881491
+      },
+      "ridge_regression": {
+        "mae": 11.665912683128598,
+        "rmse": 14.83669031666992,
+        "r2": 0.9040943298144242,
+        "mean_absolute_percentage_error": 7.94205640216838
+      },
+      "cams_benchmark": {
+        "mae": 21.519874572682635,
+        "rmse": 27.544585804148927,
+        "r2": 0.6694457745124758,
+        "mean_absolute_percentage_error": 14.187432007631223
+      },
+      "noaa_benchmark": {
+        "mae": 16.693457984993504,
+        "rmse": 21.531882237538664,
+        "r2": 0.7980079798526853,
+        "mean_absolute_percentage_error": 10.939909355704614
+      }
+    },
+    "Muzaffarpur": {
+      "simple_average": {
+        "mae": 15.001540892024956,
+        "rmse": 19.311562843743936,
+        "r2": 0.8142531091513541,
+        "mean_absolute_percentage_error": 9.764575074362488
+      },
+      "ridge_regression": {
+        "mae": 10.177911135164555,
+        "rmse": 13.601133194426282,
+        "r2": 0.9078623997380035,
+        "mean_absolute_percentage_error": 6.787451201998174
+      },
+      "cams_benchmark": {
+        "mae": 22.800920717377068,
+        "rmse": 30.095109059782448,
+        "r2": 0.5488940530260233,
+        "mean_absolute_percentage_error": 14.65717413323212
+      },
+      "noaa_benchmark": {
+        "mae": 15.509896621076525,
+        "rmse": 19.852275051005318,
+        "r2": 0.8037058861549797,
+        "mean_absolute_percentage_error": 10.343299608161933
+      }
+    },
+    "Baghdad": {
+      "simple_average": {
+        "mae": 15.881008467036454,
+        "rmse": 20.284425728362812,
+        "r2": 0.8315028369609548,
+        "mean_absolute_percentage_error": 10.38515458214196
+      },
+      "ridge_regression": {
+        "mae": 10.932130627854683,
+        "rmse": 14.555698050947482,
+        "r2": 0.9132372647532498,
+        "mean_absolute_percentage_error": 7.3809963468902495
+      },
+      "cams_benchmark": {
+        "mae": 23.31582038672718,
+        "rmse": 30.62756817451048,
+        "r2": 0.6158576491957806,
+        "mean_absolute_percentage_error": 15.067086843711241
+      },
+      "noaa_benchmark": {
+        "mae": 15.089245970812472,
+        "rmse": 19.610308111329193,
+        "r2": 0.8425161607657673,
+        "mean_absolute_percentage_error": 10.123636482963246
+      }
+    },
+    "Ghaziabad": {
+      "simple_average": {
+        "mae": 15.320028871484274,
+        "rmse": 19.751108911889457,
+        "r2": 0.7879459102891855,
+        "mean_absolute_percentage_error": 10.236048890617749
+      },
+      "ridge_regression": {
+        "mae": 10.540158577650532,
+        "rmse": 13.92929919319431,
+        "r2": 0.8945316336889563,
+        "mean_absolute_percentage_error": 7.274155223261499
+      },
+      "cams_benchmark": {
+        "mae": 21.557112640343572,
+        "rmse": 27.77961654267335,
+        "r2": 0.5805152486764094,
+        "mean_absolute_percentage_error": 14.465219003286018
+      },
+      "noaa_benchmark": {
+        "mae": 15.953851343031983,
+        "rmse": 20.621307085489114,
+        "r2": 0.768848846789484,
+        "mean_absolute_percentage_error": 10.82853978876941
+      }
+    },
+    "Patna": {
+      "simple_average": {
+        "mae": 15.188991746079122,
+        "rmse": 19.776697717416525,
+        "r2": 0.8182016103565475,
+        "mean_absolute_percentage_error": 10.312230381013435
+      },
+      "ridge_regression": {
+        "mae": 10.673146753176479,
+        "rmse": 13.754163347049708,
+        "r2": 0.9120672133275783,
+        "mean_absolute_percentage_error": 7.234332423203295
+      },
+      "cams_benchmark": {
+        "mae": 21.961790871154648,
+        "rmse": 28.31800885651759,
+        "r2": 0.6272583636333489,
+        "mean_absolute_percentage_error": 15.282954129591328
+      },
+      "noaa_benchmark": {
+        "mae": 15.770579055865547,
+        "rmse": 20.410565233217476,
+        "r2": 0.8063611277191822,
+        "mean_absolute_percentage_error": 10.402429768235539
+      }
+    },
+    "Hotan": {
+      "simple_average": {
+        "mae": 14.28152657531549,
+        "rmse": 17.875943149310928,
+        "r2": 0.7891945473789637,
+        "mean_absolute_percentage_error": 9.935848377415295
+      },
+      "ridge_regression": {
+        "mae": 9.34189715467011,
+        "rmse": 11.882581598670969,
+        "r2": 0.9068537187288507,
+        "mean_absolute_percentage_error": 6.799940073296022
+      },
+      "cams_benchmark": {
+        "mae": 21.72725341992942,
+        "rmse": 27.497697623944145,
+        "r2": 0.5011883658119949,
+        "mean_absolute_percentage_error": 14.853856395037923
+      },
+      "noaa_benchmark": {
+        "mae": 14.200041312433086,
+        "rmse": 17.985358977995283,
+        "r2": 0.7866060357578026,
+        "mean_absolute_percentage_error": 10.039836001694095
+      }
+    },
+    "Chennai": {
+      "simple_average": {
+        "mae": 16.89935360102401,
+        "rmse": 21.754490467515932,
+        "r2": 0.8135281801769927,
+        "mean_absolute_percentage_error": 10.597565241765125
+      },
+      "ridge_regression": {
+        "mae": 11.130173215719502,
+        "rmse": 14.616233718128639,
+        "r2": 0.915824377733869,
+        "mean_absolute_percentage_error": 7.180415084043741
+      },
+      "cams_benchmark": {
+        "mae": 25.768717708048595,
+        "rmse": 33.25035550577823,
+        "r2": 0.5643798463448295,
+        "mean_absolute_percentage_error": 15.83404672186782
+      },
+      "noaa_benchmark": {
+        "mae": 15.384688414176045,
+        "rmse": 20.124732582832188,
+        "r2": 0.8404210459712893,
+        "mean_absolute_percentage_error": 9.867421359105169
+      }
+    },
+    "Faridabad": {
+      "simple_average": {
+        "mae": 14.975984670335919,
+        "rmse": 19.210452549201513,
+        "r2": 0.7941910242514582,
+        "mean_absolute_percentage_error": 10.305043912165386
+      },
+      "ridge_regression": {
+        "mae": 9.773523092109604,
+        "rmse": 12.73846000111817,
+        "r2": 0.9095053353351854,
+        "mean_absolute_percentage_error": 6.883432691437595
+      },
+      "cams_benchmark": {
+        "mae": 22.12464286620288,
+        "rmse": 28.20825193705699,
+        "r2": 0.556246831334242,
+        "mean_absolute_percentage_error": 15.27820355273399
+      },
+      "noaa_benchmark": {
+        "mae": 15.296307904745763,
+        "rmse": 19.67345978854947,
+        "r2": 0.7841507203928972,
+        "mean_absolute_percentage_error": 10.810551360539895
+      }
+    },
+    "Noida": {
+      "simple_average": {
+        "mae": 14.852063905273756,
+        "rmse": 19.5705658577128,
+        "r2": 0.7808531564428358,
+        "mean_absolute_percentage_error": 10.177477598614372
+      },
+      "ridge_regression": {
+        "mae": 10.263542351876827,
+        "rmse": 13.246663180296476,
+        "r2": 0.8995982132812738,
+        "mean_absolute_percentage_error": 7.280291731349053
+      },
+      "cams_benchmark": {
+        "mae": 21.021428625027703,
+        "rmse": 27.837031976189767,
+        "r2": 0.5566218258939312,
+        "mean_absolute_percentage_error": 14.394919505737317
+      },
+      "noaa_benchmark": {
+        "mae": 15.655518988302415,
+        "rmse": 20.928769749337345,
+        "r2": 0.7493799258915936,
+        "mean_absolute_percentage_error": 10.687945639300844
+      }
+    },
+    "Hyderabad": {
+      "simple_average": {
+        "mae": 15.971798330948708,
+        "rmse": 20.722852228829037,
+        "r2": 0.8175648136444352,
+        "mean_absolute_percentage_error": 9.78126005547071
+      },
+      "ridge_regression": {
+        "mae": 11.602135683362297,
+        "rmse": 15.120520861347247,
+        "r2": 0.9028723127257343,
+        "mean_absolute_percentage_error": 7.415105466173595
+      },
+      "cams_benchmark": {
+        "mae": 23.940178794156143,
+        "rmse": 30.766056180596397,
+        "r2": 0.5978822888453824,
+        "mean_absolute_percentage_error": 14.734745440834763
+      },
+      "noaa_benchmark": {
+        "mae": 17.37855048165466,
+        "rmse": 21.91729849854577,
+        "r2": 0.7959279208103207,
+        "mean_absolute_percentage_error": 10.763211325434991
+      }
+    },
+    "Peshawar": {
+      "simple_average": {
+        "mae": 13.98144330513361,
+        "rmse": 18.138547100582755,
+        "r2": 0.8043540308118514,
+        "mean_absolute_percentage_error": 9.844696113144568
+      },
+      "ridge_regression": {
+        "mae": 9.711490045711985,
+        "rmse": 12.64223413145302,
+        "r2": 0.9049584372354681,
+        "mean_absolute_percentage_error": 7.045762338528183
+      },
+      "cams_benchmark": {
+        "mae": 20.83460450686887,
+        "rmse": 26.84238151497584,
+        "r2": 0.5715422526765577,
+        "mean_absolute_percentage_error": 14.677022862311226
+      },
+      "noaa_benchmark": {
+        "mae": 14.109621140806311,
+        "rmse": 18.021727441345543,
+        "r2": 0.8068659957009726,
+        "mean_absolute_percentage_error": 10.055035872790835
+      }
+    },
+    "Lucknow": {
+      "simple_average": {
+        "mae": 13.54461910801221,
+        "rmse": 17.687270492415948,
+        "r2": 0.8163517942895092,
+        "mean_absolute_percentage_error": 9.51578126042637
+      },
+      "ridge_regression": {
+        "mae": 9.983560881447993,
+        "rmse": 13.359374275041796,
+        "r2": 0.8952299168056106,
+        "mean_absolute_percentage_error": 7.228591985892918
+      },
+      "cams_benchmark": {
+        "mae": 20.076113329871497,
+        "rmse": 26.723609160944772,
+        "r2": 0.5807671771688578,
+        "mean_absolute_percentage_error": 13.9102541720833
+      },
+      "noaa_benchmark": {
+        "mae": 14.261351996368608,
+        "rmse": 18.942479863162212,
+        "r2": 0.7893610297816342,
+        "mean_absolute_percentage_error": 10.013255201114738
+      }
+    },
+    "Mumbai": {
+      "simple_average": {
+        "mae": 16.075213051875657,
+        "rmse": 20.555339085081975,
+        "r2": 0.8264063459096845,
+        "mean_absolute_percentage_error": 9.796786417448816
+      },
+      "ridge_regression": {
+        "mae": 12.574401543898519,
+        "rmse": 15.990988077362099,
+        "r2": 0.8949405426695074,
+        "mean_absolute_percentage_error": 7.666876953532962
+      },
+      "cams_benchmark": {
+        "mae": 23.564385167277457,
+        "rmse": 30.395967139937778,
+        "r2": 0.6204084930203542,
+        "mean_absolute_percentage_error": 14.376628992281242
+      },
+      "noaa_benchmark": {
+        "mae": 16.54881823139355,
+        "rmse": 22.338440531399154,
+        "r2": 0.7949828193701385,
+        "mean_absolute_percentage_error": 10.07377481327806
+      }
+    },
+    "Dushanbe": {
+      "simple_average": {
+        "mae": 13.621883831378435,
+        "rmse": 17.444557431428173,
+        "r2": 0.8321423630732385,
+        "mean_absolute_percentage_error": 9.81191923249713
+      },
+      "ridge_regression": {
+        "mae": 10.434343967950607,
+        "rmse": 13.214121428630174,
+        "r2": 0.9036841459701811,
+        "mean_absolute_percentage_error": 7.8717984826838325
+      },
+      "cams_benchmark": {
+        "mae": 20.177114889019794,
+        "rmse": 26.110836486721833,
+        "r2": 0.6239351321250759,
+        "mean_absolute_percentage_error": 14.53434476119221
+      },
+      "noaa_benchmark": {
+        "mae": 14.440208662508748,
+        "rmse": 18.937118563577528,
+        "r2": 0.8021896598853784,
+        "mean_absolute_percentage_error": 10.362214014722564
+      }
+    },
+    "Almaty": {
+      "simple_average": {
+        "mae": 13.957163581707952,
+        "rmse": 17.44274434186199,
+        "r2": 0.8320777477114399,
+        "mean_absolute_percentage_error": 10.297139995016032
+      },
+      "ridge_regression": {
+        "mae": 9.866780511319005,
+        "rmse": 12.399204218422645,
+        "r2": 0.9151471867058864,
+        "mean_absolute_percentage_error": 7.434488319289052
+      },
+      "cams_benchmark": {
+        "mae": 20.7930041646288,
+        "rmse": 25.80904885975637,
+        "r2": 0.6323601167765733,
+        "mean_absolute_percentage_error": 15.281848843718066
+      },
+      "noaa_benchmark": {
+        "mae": 14.890045951176141,
+        "rmse": 19.549569163830274,
+        "r2": 0.7890628851753305,
+        "mean_absolute_percentage_error": 10.862643056851162
+      }
+    },
+    "Kabul": {
+      "simple_average": {
+        "mae": 14.221200986825794,
+        "rmse": 18.709442512552585,
+        "r2": 0.7887408320360885,
+        "mean_absolute_percentage_error": 10.246536208334827
+      },
+      "ridge_regression": {
+        "mae": 10.196628923688495,
+        "rmse": 13.625789396531049,
+        "r2": 0.8879486185348004,
+        "mean_absolute_percentage_error": 7.520224891413259
+      },
+      "cams_benchmark": {
+        "mae": 19.90839881744511,
+        "rmse": 26.10239443953683,
+        "r2": 0.5887986164031151,
+        "mean_absolute_percentage_error": 14.378402284017106
+      },
+      "noaa_benchmark": {
+        "mae": 14.533006320338856,
+        "rmse": 18.57525248063848,
+        "r2": 0.7917603993941984,
+        "mean_absolute_percentage_error": 10.65351195163383
+      }
+    },
+    "Ulaanbaatar": {
+      "simple_average": {
+        "mae": 13.903259398265552,
+        "rmse": 17.982753336247377,
+        "r2": 0.8152102323382843,
+        "mean_absolute_percentage_error": 9.812357737705476
+      },
+      "ridge_regression": {
+        "mae": 9.761424122617512,
+        "rmse": 12.539553842776666,
+        "r2": 0.9101475933215456,
+        "mean_absolute_percentage_error": 7.0381473721113545
+      },
+      "cams_benchmark": {
+        "mae": 20.752357894656935,
+        "rmse": 26.54272286314029,
+        "r2": 0.5974160190725433,
+        "mean_absolute_percentage_error": 14.640547688011491
+      },
+      "noaa_benchmark": {
+        "mae": 14.934373407298432,
+        "rmse": 19.64459110314477,
+        "r2": 0.7794781983516567,
+        "mean_absolute_percentage_error": 10.675986382940298
+      }
+    },
+    "Cairo": {
+      "simple_average": {
+        "mae": 15.57129427779543,
+        "rmse": 20.281582963573037,
+        "r2": 0.8414121826232038,
+        "mean_absolute_percentage_error": 9.429318217283496
+      },
+      "ridge_regression": {
+        "mae": 11.741379343951017,
+        "rmse": 15.46001860247354,
+        "r2": 0.907851949937104,
+        "mean_absolute_percentage_error": 7.210428987134086
+      },
+      "cams_benchmark": {
+        "mae": 22.914347002593733,
+        "rmse": 29.661646374585434,
+        "r2": 0.660799384863328,
+        "mean_absolute_percentage_error": 13.899686115572798
+      },
+      "noaa_benchmark": {
+        "mae": 17.249479903023175,
+        "rmse": 22.670047837874094,
+        "r2": 0.8018605293431218,
+        "mean_absolute_percentage_error": 10.338196056945627
+      }
+    },
+    "Khartoum": {
+      "simple_average": {
+        "mae": 15.715841133669892,
+        "rmse": 20.43224331622936,
+        "r2": 0.8130916038677061,
+        "mean_absolute_percentage_error": 9.601545384885798
+      },
+      "ridge_regression": {
+        "mae": 12.075883916294112,
+        "rmse": 15.679972138568605,
+        "r2": 0.8899253582480027,
+        "mean_absolute_percentage_error": 7.64772253163804
+      },
+      "cams_benchmark": {
+        "mae": 22.86484065842839,
+        "rmse": 29.676561556448313,
+        "r2": 0.6057026409287245,
+        "mean_absolute_percentage_error": 14.019399126252027
+      },
+      "noaa_benchmark": {
+        "mae": 17.30615683967976,
+        "rmse": 21.97646268478363,
+        "r2": 0.7837718227432553,
+        "mean_absolute_percentage_error": 10.617355383184439
+      }
+    },
+    "Giza": {
+      "simple_average": {
+        "mae": 15.369733572961227,
+        "rmse": 19.443305510292227,
+        "r2": 0.8194748334703881,
+        "mean_absolute_percentage_error": 9.808378951560574
+      },
+      "ridge_regression": {
+        "mae": 11.067429328340436,
+        "rmse": 13.992902775144284,
+        "r2": 0.9064996606718924,
+        "mean_absolute_percentage_error": 7.083610026301887
+      },
+      "cams_benchmark": {
+        "mae": 22.63864607873136,
+        "rmse": 29.707294532615997,
+        "r2": 0.5785716401608249,
+        "mean_absolute_percentage_error": 14.218672801682219
+      },
+      "noaa_benchmark": {
+        "mae": 16.489511198977343,
+        "rmse": 20.906125977547607,
+        "r2": 0.7912893166888251,
+        "mean_absolute_percentage_error": 10.428179245607938
+      }
+    },
+    "N'Djamena": {
+      "simple_average": {
+        "mae": 15.788374902500008,
+        "rmse": 20.284936751639655,
+        "r2": 0.7915818412516572,
+        "mean_absolute_percentage_error": 9.937668258560786
+      },
+      "ridge_regression": {
+        "mae": 10.863853682025459,
+        "rmse": 14.073682166473287,
+        "r2": 0.8996762593487698,
+        "mean_absolute_percentage_error": 6.869393598546621
+      },
+      "cams_benchmark": {
+        "mae": 22.91208499557721,
+        "rmse": 29.647504904731964,
+        "r2": 0.5547903817771571,
+        "mean_absolute_percentage_error": 14.479277251209192
+      },
+      "noaa_benchmark": {
+        "mae": 16.332905366465013,
+        "rmse": 21.67671061412849,
+        "r2": 0.7620010732761096,
+        "mean_absolute_percentage_error": 10.136445132034499
+      }
+    },
+    "Algiers": {
+      "simple_average": {
+        "mae": 14.926113957658195,
+        "rmse": 19.10471291895137,
+        "r2": 0.8099819507345365,
+        "mean_absolute_percentage_error": 9.747696833566156
+      },
+      "ridge_regression": {
+        "mae": 11.151162180965958,
+        "rmse": 14.463654074088863,
+        "r2": 0.8910894689371515,
+        "mean_absolute_percentage_error": 7.554179606951999
+      },
+      "cams_benchmark": {
+        "mae": 21.64783331669093,
+        "rmse": 28.261679943012442,
+        "r2": 0.5841757903072344,
+        "mean_absolute_percentage_error": 14.208250124922598
+      },
+      "noaa_benchmark": {
+        "mae": 15.063727616226899,
+        "rmse": 19.11465218770685,
+        "r2": 0.8097841846908672,
+        "mean_absolute_percentage_error": 10.180338979757055
+      }
+    },
+    "Durban": {
+      "simple_average": {
+        "mae": 16.076055206474447,
+        "rmse": 21.278840024536,
+        "r2": 0.8061036173811655,
+        "mean_absolute_percentage_error": 9.957242366404795
+      },
+      "ridge_regression": {
+        "mae": 11.811325693322974,
+        "rmse": 15.253371282869926,
+        "r2": 0.9003664761159325,
+        "mean_absolute_percentage_error": 7.556677579605339
+      },
+      "cams_benchmark": {
+        "mae": 23.64698200854213,
+        "rmse": 30.648121631430445,
+        "r2": 0.5977634483350465,
+        "mean_absolute_percentage_error": 14.910509085081053
+      },
+      "noaa_benchmark": {
+        "mae": 17.56482514708064,
+        "rmse": 24.09344171568843,
+        "r2": 0.7514169608205338,
+        "mean_absolute_percentage_error": 10.768232971065835
+      }
+    },
+    "Bamako": {
+      "simple_average": {
+        "mae": 15.350302367301357,
+        "rmse": 19.55043981228191,
+        "r2": 0.8083713944800137,
+        "mean_absolute_percentage_error": 9.83739245778259
+      },
+      "ridge_regression": {
+        "mae": 11.695251075488777,
+        "rmse": 14.518152882572528,
+        "r2": 0.8943255475175004,
+        "mean_absolute_percentage_error": 7.783793932252054
+      },
+      "cams_benchmark": {
+        "mae": 21.81448153154186,
+        "rmse": 27.73157306571982,
+        "r2": 0.6144361692221983,
+        "mean_absolute_percentage_error": 14.150915292518867
+      },
+      "noaa_benchmark": {
+        "mae": 15.833418537125908,
+        "rmse": 20.53318260947569,
+        "r2": 0.7886219853169015,
+        "mean_absolute_percentage_error": 10.229118744407627
+      }
+    },
+    "Ouagadougou": {
+      "simple_average": {
+        "mae": 14.937237709202149,
+        "rmse": 18.57432075199471,
+        "r2": 0.8485982397194805,
+        "mean_absolute_percentage_error": 9.992631653376478
+      },
+      "ridge_regression": {
+        "mae": 10.524250299574362,
+        "rmse": 13.61987810496531,
+        "r2": 0.9185949243555795,
+        "mean_absolute_percentage_error": 6.992359611889684
+      },
+      "cams_benchmark": {
+        "mae": 21.350496136750753,
+        "rmse": 27.528559277729403,
+        "r2": 0.6674384707264074,
+        "mean_absolute_percentage_error": 14.078691024828792
+      },
+      "noaa_benchmark": {
+        "mae": 15.112765018338889,
+        "rmse": 19.357100126265436,
+        "r2": 0.835568266360455,
+        "mean_absolute_percentage_error": 10.135653550577164
+      }
+    },
+    "Addis Ababa": {
+      "simple_average": {
+        "mae": 16.04897174075385,
+        "rmse": 20.85715258191861,
+        "r2": 0.7977204337077031,
+        "mean_absolute_percentage_error": 10.336510171459599
+      },
+      "ridge_regression": {
+        "mae": 11.385272438235114,
+        "rmse": 14.783818001938023,
+        "r2": 0.898371575675304,
+        "mean_absolute_percentage_error": 7.726406177327097
+      },
+      "cams_benchmark": {
+        "mae": 23.230237838233723,
+        "rmse": 30.28146086614629,
+        "r2": 0.5736211801465352,
+        "mean_absolute_percentage_error": 15.030875164546265
+      },
+      "noaa_benchmark": {
+        "mae": 16.3146917904876,
+        "rmse": 21.365114461606126,
+        "r2": 0.7877476902537282,
+        "mean_absolute_percentage_error": 10.416448521541785
+      }
+    },
+    "Lagos": {
+      "simple_average": {
+        "mae": 14.43141029250072,
+        "rmse": 18.581490541400964,
+        "r2": 0.8157425561260312,
+        "mean_absolute_percentage_error": 9.597405063735343
+      },
+      "ridge_regression": {
+        "mae": 10.697491543887958,
+        "rmse": 13.711868786015925,
+        "r2": 0.8996638940123753,
+        "mean_absolute_percentage_error": 7.285866246386871
+      },
+      "cams_benchmark": {
+        "mae": 18.981093246266276,
+        "rmse": 25.144868164363995,
+        "r2": 0.6625863322744241,
+        "mean_absolute_percentage_error": 12.623499896203954
+      },
+      "noaa_benchmark": {
+        "mae": 15.954887946772427,
+        "rmse": 21.552074998300235,
+        "r2": 0.7521196365944085,
+        "mean_absolute_percentage_error": 10.616535923030595
+      }
+    },
+    "Accra": {
+      "simple_average": {
+        "mae": 14.718602841489155,
+        "rmse": 19.23865785807668,
+        "r2": 0.8071340677622892,
+        "mean_absolute_percentage_error": 10.088257216672266
+      },
+      "ridge_regression": {
+        "mae": 10.9824462981794,
+        "rmse": 14.465437623332182,
+        "r2": 0.8909641955022428,
+        "mean_absolute_percentage_error": 7.815145376555995
+      },
+      "cams_benchmark": {
+        "mae": 21.95389441238185,
+        "rmse": 27.64890558766012,
+        "r2": 0.6016527076558105,
+        "mean_absolute_percentage_error": 15.238396323886946
+      },
+      "noaa_benchmark": {
+        "mae": 15.977105120428583,
+        "rmse": 20.529058722288895,
+        "r2": 0.7803940754123899,
+        "mean_absolute_percentage_error": 10.908163383880565
+      }
+    },
+    "Kampala": {
+      "simple_average": {
+        "mae": 13.885317656202222,
+        "rmse": 17.672930585138417,
+        "r2": 0.820912978908095,
+        "mean_absolute_percentage_error": 9.940661150285104
+      },
+      "ridge_regression": {
+        "mae": 10.60307991678331,
+        "rmse": 13.124656803508316,
+        "r2": 0.9012304941576724,
+        "mean_absolute_percentage_error": 7.724039908943929
+      },
+      "cams_benchmark": {
+        "mae": 20.70637554954579,
+        "rmse": 26.047269089354796,
+        "r2": 0.6109805078597004,
+        "mean_absolute_percentage_error": 14.724064715358736
+      },
+      "noaa_benchmark": {
+        "mae": 14.684433380260103,
+        "rmse": 19.15591053165217,
+        "r2": 0.7895966892924211,
+        "mean_absolute_percentage_error": 10.4048071289614
+      }
+    },
+    "Johannesburg": {
+      "simple_average": {
+        "mae": 15.885907249077462,
+        "rmse": 20.294222330955463,
+        "r2": 0.8237516039928847,
+        "mean_absolute_percentage_error": 9.64377527189797
+      },
+      "ridge_regression": {
+        "mae": 11.509060962151258,
+        "rmse": 14.92505243053458,
+        "r2": 0.9046738449349048,
+        "mean_absolute_percentage_error": 7.119827861016173
+      },
+      "cams_benchmark": {
+        "mae": 23.402735097302802,
+        "rmse": 30.248661251117497,
+        "r2": 0.6084451009506295,
+        "mean_absolute_percentage_error": 14.157429856110863
+      },
+      "noaa_benchmark": {
+        "mae": 16.879698133103958,
+        "rmse": 22.16680135424452,
+        "r2": 0.7897255991253569,
+        "mean_absolute_percentage_error": 10.115791006790976
+      }
+    },
+    "Abidjan": {
+      "simple_average": {
+        "mae": 13.611198079421964,
+        "rmse": 17.61503080759183,
+        "r2": 0.8344133943716697,
+        "mean_absolute_percentage_error": 10.001573268305023
+      },
+      "ridge_regression": {
+        "mae": 9.669672807204917,
+        "rmse": 12.414094259128978,
+        "r2": 0.917758984043003,
+        "mean_absolute_percentage_error": 7.131714737052759
+      },
+      "cams_benchmark": {
+        "mae": 20.094460919461273,
+        "rmse": 26.445393336642688,
+        "r2": 0.6267855491572072,
+        "mean_absolute_percentage_error": 14.70854419448161
+      },
+      "noaa_benchmark": {
+        "mae": 13.243642859955044,
+        "rmse": 17.198864639229978,
+        "r2": 0.8421451439997618,
+        "mean_absolute_percentage_error": 9.633657319888513
+      }
+    },
+    "Abuja": {
+      "simple_average": {
+        "mae": 15.05819251164138,
+        "rmse": 19.269466663199,
+        "r2": 0.7903762483353765,
+        "mean_absolute_percentage_error": 10.159541555957219
+      },
+      "ridge_regression": {
+        "mae": 10.323067440325325,
+        "rmse": 13.195269490207995,
+        "r2": 0.9017035962674059,
+        "mean_absolute_percentage_error": 7.058168801567807
+      },
+      "cams_benchmark": {
+        "mae": 22.119910856692,
+        "rmse": 28.118211557716773,
+        "r2": 0.5536490240373431,
+        "mean_absolute_percentage_error": 14.978489456815328
+      },
+      "noaa_benchmark": {
+        "mae": 15.630495053312357,
+        "rmse": 19.891729211893292,
+        "r2": 0.7766190274834257,
+        "mean_absolute_percentage_error": 10.545522781525971
+      }
+    },
+    "Nairobi": {
+      "simple_average": {
+        "mae": 16.067772127627634,
+        "rmse": 20.454750055677877,
+        "r2": 0.7990690751530489,
+        "mean_absolute_percentage_error": 10.311098268916986
+      },
+      "ridge_regression": {
+        "mae": 11.233886429228873,
+        "rmse": 14.761366623874181,
+        "r2": 0.8953566672872892,
+        "mean_absolute_percentage_error": 7.262432226351252
+      },
+      "cams_benchmark": {
+        "mae": 24.084082518513583,
+        "rmse": 30.202782574807472,
+        "r2": 0.5619210943175232,
+        "mean_absolute_percentage_error": 15.542874829423486
+      },
+      "noaa_benchmark": {
+        "mae": 15.770502403305102,
+        "rmse": 21.356669773920753,
+        "r2": 0.7809589593880705,
+        "mean_absolute_percentage_error": 10.060577487319373
+      }
+    },
+    "Cape Town": {
+      "simple_average": {
+        "mae": 16.511327476478822,
+        "rmse": 20.930519449684684,
+        "r2": 0.831990710958282,
+        "mean_absolute_percentage_error": 10.098228248931461
+      },
+      "ridge_regression": {
+        "mae": 11.104497815200833,
+        "rmse": 14.55691312046635,
+        "r2": 0.9187334429681556,
+        "mean_absolute_percentage_error": 6.895243699732968
+      },
+      "cams_benchmark": {
+        "mae": 24.48667193821384,
+        "rmse": 31.112821436608154,
+        "r2": 0.6287622998068185,
+        "mean_absolute_percentage_error": 14.840051991015715
+      },
+      "noaa_benchmark": {
+        "mae": 17.35771117616386,
+        "rmse": 21.760314865430384,
+        "r2": 0.8184051068704306,
+        "mean_absolute_percentage_error": 10.709366172565057
+      }
+    },
+    "Bloemfontein": {
+      "simple_average": {
+        "mae": 14.827212245503734,
+        "rmse": 19.183993903343943,
+        "r2": 0.8270523520187025,
+        "mean_absolute_percentage_error": 9.723923483675907
+      },
+      "ridge_regression": {
+        "mae": 10.64852695059009,
+        "rmse": 13.509179474910825,
+        "r2": 0.9142380696457255,
+        "mean_absolute_percentage_error": 7.323993318662586
+      },
+      "cams_benchmark": {
+        "mae": 21.74547678609099,
+        "rmse": 27.897328364701117,
+        "r2": 0.6342689495969185,
+        "mean_absolute_percentage_error": 14.308045490499884
+      },
+      "noaa_benchmark": {
+        "mae": 15.822934519272723,
+        "rmse": 20.595792409892407,
+        "r2": 0.8006603844592165,
+        "mean_absolute_percentage_error": 10.7224678378941
+      }
+    },
+    "Pretoria": {
+      "simple_average": {
+        "mae": 14.796946877115575,
+        "rmse": 19.47476250741163,
+        "r2": 0.8145371647276207,
+        "mean_absolute_percentage_error": 9.308771987567974
+      },
+      "ridge_regression": {
+        "mae": 10.746409665114387,
+        "rmse": 14.282132692614331,
+        "r2": 0.9002532666241823,
+        "mean_absolute_percentage_error": 7.0032191232988446
+      },
+      "cams_benchmark": {
+        "mae": 22.269957698133936,
+        "rmse": 28.709086943068,
+        "r2": 0.5969570625094434,
+        "mean_absolute_percentage_error": 14.340346930518233
+      },
+      "noaa_benchmark": {
+        "mae": 15.029690502261921,
+        "rmse": 20.884387884059525,
+        "r2": 0.7867170908393696,
+        "mean_absolute_percentage_error": 9.472595258309328
+      }
+    },
+    "Kinshasa": {
+      "simple_average": {
+        "mae": 12.907376921932622,
+        "rmse": 16.324127883620715,
+        "r2": 0.8126731234803575,
+        "mean_absolute_percentage_error": 10.174747937498987
+      },
+      "ridge_regression": {
+        "mae": 8.750353528037065,
+        "rmse": 11.192389965894755,
+        "r2": 0.9119385601909838,
+        "mean_absolute_percentage_error": 6.92497170639713
+      },
+      "cams_benchmark": {
+        "mae": 18.57326912226918,
+        "rmse": 24.576944784216444,
+        "r2": 0.575384442211071,
+        "mean_absolute_percentage_error": 14.626514520429481
+      },
+      "noaa_benchmark": {
+        "mae": 12.989426706368212,
+        "rmse": 16.707580816644622,
+        "r2": 0.8037691630981417,
+        "mean_absolute_percentage_error": 10.099388558285371
+      }
+    },
+    "Skopje": {
+      "simple_average": {
+        "mae": 11.572008829165132,
+        "rmse": 14.809836899522079,
+        "r2": 0.8333104243870628,
+        "mean_absolute_percentage_error": 9.709245677968442
+      },
+      "ridge_regression": {
+        "mae": 8.147793250662307,
+        "rmse": 10.671930409162771,
+        "r2": 0.9134446615879165,
+        "mean_absolute_percentage_error": 7.00665922107848
+      },
+      "cams_benchmark": {
+        "mae": 16.80474001755121,
+        "rmse": 21.651367528822213,
+        "r2": 0.643730574154622,
+        "mean_absolute_percentage_error": 14.095285536153929
+      },
+      "noaa_benchmark": {
+        "mae": 11.643515334417307,
+        "rmse": 15.322892379830934,
+        "r2": 0.8215611596289857,
+        "mean_absolute_percentage_error": 9.877748261833071
+      }
+    },
+    "Sarajevo": {
+      "simple_average": {
+        "mae": 11.795061377201177,
+        "rmse": 15.292733219021803,
+        "r2": 0.8148678256851621,
+        "mean_absolute_percentage_error": 10.102527030027543
+      },
+      "ridge_regression": {
+        "mae": 8.769615448035385,
+        "rmse": 11.821514652856626,
+        "r2": 0.8893738172746628,
+        "mean_absolute_percentage_error": 7.681483579501858
+      },
+      "cams_benchmark": {
+        "mae": 16.4749274371447,
+        "rmse": 21.741389242495288,
+        "r2": 0.6258150981948187,
+        "mean_absolute_percentage_error": 14.182513608329883
+      },
+      "noaa_benchmark": {
+        "mae": 12.560925171809558,
+        "rmse": 16.623797146891192,
+        "r2": 0.7812378723661548,
+        "mean_absolute_percentage_error": 10.829054195847391
+      }
+    },
+    "Tuzla": {
+      "simple_average": {
+        "mae": 10.626718726503789,
+        "rmse": 13.492857751198832,
+        "r2": 0.8209584448212737,
+        "mean_absolute_percentage_error": 9.689585074013749
+      },
+      "ridge_regression": {
+        "mae": 7.825328392993269,
+        "rmse": 9.760615013869938,
+        "r2": 0.9063084714233718,
+        "mean_absolute_percentage_error": 7.306106751506469
+      },
+      "cams_benchmark": {
+        "mae": 15.978450552075053,
+        "rmse": 20.906467790671975,
+        "r2": 0.5701595469968355,
+        "mean_absolute_percentage_error": 14.659797306081085
+      },
+      "noaa_benchmark": {
+        "mae": 10.756651555734512,
+        "rmse": 13.705496079305249,
+        "r2": 0.8152708306695529,
+        "mean_absolute_percentage_error": 9.953793664087202
+      }
+    },
+    "Zenica": {
+      "simple_average": {
+        "mae": 11.079509242713746,
+        "rmse": 14.271895401235595,
+        "r2": 0.8068312170017374,
+        "mean_absolute_percentage_error": 10.166580041230597
+      },
+      "ridge_regression": {
+        "mae": 7.763637060181702,
+        "rmse": 9.874764355451857,
+        "r2": 0.9075244087014418,
+        "mean_absolute_percentage_error": 7.340660928214011
+      },
+      "cams_benchmark": {
+        "mae": 15.63659816032877,
+        "rmse": 20.647269892811284,
+        "r2": 0.5957045023236849,
+        "mean_absolute_percentage_error": 14.412410399858846
+      },
+      "noaa_benchmark": {
+        "mae": 11.326598012655419,
+        "rmse": 14.894547513248634,
+        "r2": 0.7896084642227076,
+        "mean_absolute_percentage_error": 10.46694580503678
+      }
+    },
+    "Tetovo": {
+      "simple_average": {
+        "mae": 10.366319878583623,
+        "rmse": 13.070634092664015,
+        "r2": 0.8340343445799238,
+        "mean_absolute_percentage_error": 9.435603366636801
+      },
+      "ridge_regression": {
+        "mae": 7.692291422691262,
+        "rmse": 10.083952481044626,
+        "r2": 0.9012160262359811,
+        "mean_absolute_percentage_error": 7.064838949100485
+      },
+      "cams_benchmark": {
+        "mae": 15.466241081611455,
+        "rmse": 19.849829841923867,
+        "r2": 0.6172294748675102,
+        "mean_absolute_percentage_error": 14.20597152628798
+      },
+      "noaa_benchmark": {
+        "mae": 10.674378473441049,
+        "rmse": 14.257629444476958,
+        "r2": 0.8025216190452982,
+        "mean_absolute_percentage_error": 9.589759152598253
+      }
+    },
+    "Plovdiv": {
+      "simple_average": {
+        "mae": 10.824021731638508,
+        "rmse": 13.454216903943433,
+        "r2": 0.8210938812628439,
+        "mean_absolute_percentage_error": 10.177382687136527
+      },
+      "ridge_regression": {
+        "mae": 7.644889792739742,
+        "rmse": 9.512666423426865,
+        "r2": 0.9105638944612701,
+        "mean_absolute_percentage_error": 7.494151153371574
+      },
+      "cams_benchmark": {
+        "mae": 15.880997173805627,
+        "rmse": 20.197781126330142,
+        "r2": 0.5968045082660998,
+        "mean_absolute_percentage_error": 14.869326089562868
+      },
+      "noaa_benchmark": {
+        "mae": 10.721433626157445,
+        "rmse": 14.174006467619648,
+        "r2": 0.8014391618532479,
+        "mean_absolute_percentage_error": 10.22686063101726
+      }
+    },
+    "Sofia": {
+      "simple_average": {
+        "mae": 10.113027167744002,
+        "rmse": 13.084404574303445,
+        "r2": 0.835231963375981,
+        "mean_absolute_percentage_error": 9.705646753445182
+      },
+      "ridge_regression": {
+        "mae": 7.7262258607401995,
+        "rmse": 9.878747428664084,
+        "r2": 0.9060776820674338,
+        "mean_absolute_percentage_error": 7.7075593877746735
+      },
+      "cams_benchmark": {
+        "mae": 15.645022966261438,
+        "rmse": 20.178231216787697,
+        "r2": 0.6081397360621233,
+        "mean_absolute_percentage_error": 15.048229550877714
+      },
+      "noaa_benchmark": {
+        "mae": 10.886802504753469,
+        "rmse": 13.876895082730949,
+        "r2": 0.8146683262730113,
+        "mean_absolute_percentage_error": 10.518499636182822
+      }
+    },
+    "Kraków": {
+      "simple_average": {
+        "mae": 10.023313294983176,
+        "rmse": 12.788985421505851,
+        "r2": 0.8344707757124697,
+        "mean_absolute_percentage_error": 9.99556184141376
+      },
+      "ridge_regression": {
+        "mae": 6.578737110261926,
+        "rmse": 8.482613847739572,
+        "r2": 0.9271781195181,
+        "mean_absolute_percentage_error": 6.789393887588966
+      },
+      "cams_benchmark": {
+        "mae": 16.00142327491758,
+        "rmse": 20.516796352589076,
+        "r2": 0.5739882372975063,
+        "mean_absolute_percentage_error": 15.880595451936616
+      },
+      "noaa_benchmark": {
+        "mae": 9.899740414691095,
+        "rmse": 12.819564326646498,
+        "r2": 0.8336782572079888,
+        "mean_absolute_percentage_error": 9.83007395709541
+      }
+    },
+    "Wrocław": {
+      "simple_average": {
+        "mae": 9.028684635836441,
+        "rmse": 11.758821565512847,
+        "r2": 0.8489331291247579,
+        "mean_absolute_percentage_error": 9.136175076137153
+      },
+      "ridge_regression": {
+        "mae": 6.994848011389613,
+        "rmse": 9.07194339103561,
+        "r2": 0.9100828990416568,
+        "mean_absolute_percentage_error": 7.211202231264918
+      },
+      "cams_benchmark": {
+        "mae": 13.54375212016688,
+        "rmse": 17.23105785438878,
+        "r2": 0.6756114515677214,
+        "mean_absolute_percentage_error": 13.907363458510691
+      },
+      "noaa_benchmark": {
+        "mae": 9.900975278105307,
+        "rmse": 12.89486320478349,
+        "r2": 0.8183333901646611,
+        "mean_absolute_percentage_error": 9.970347279970387
+      }
+    },
+    "Katowice": {
+      "simple_average": {
+        "mae": 9.506117504312153,
+        "rmse": 11.97975143452463,
+        "r2": 0.8218861378979543,
+        "mean_absolute_percentage_error": 9.747562256313774
+      },
+      "ridge_regression": {
+        "mae": 6.869517056117121,
+        "rmse": 8.534163216449828,
+        "r2": 0.9096092488074428,
+        "mean_absolute_percentage_error": 7.138686353517351
+      },
+      "cams_benchmark": {
+        "mae": 13.531419112801537,
+        "rmse": 17.336040828929143,
+        "r2": 0.6270059114665063,
+        "mean_absolute_percentage_error": 13.908084044908477
+      },
+      "noaa_benchmark": {
+        "mae": 10.068189529770784,
+        "rmse": 13.207075763312298,
+        "r2": 0.7835211635362233,
+        "mean_absolute_percentage_error": 10.293365377192348
+      }
+    },
+    "Ostrava": {
+      "simple_average": {
+        "mae": 9.515240420955429,
+        "rmse": 12.280928796805929,
+        "r2": 0.7941547239564166,
+        "mean_absolute_percentage_error": 9.59798407432687
+      },
+      "ridge_regression": {
+        "mae": 6.822405192714834,
+        "rmse": 8.6469656687409,
+        "r2": 0.8979516593269481,
+        "mean_absolute_percentage_error": 7.111391554268678
+      },
+      "cams_benchmark": {
+        "mae": 14.70716001974913,
+        "rmse": 18.986111463772833,
+        "r2": 0.5080165083242921,
+        "mean_absolute_percentage_error": 14.992132075012973
+      },
+      "noaa_benchmark": {
+        "mae": 9.79232244183308,
+        "rmse": 12.706889653892299,
+        "r2": 0.7796277047022314,
+        "mean_absolute_percentage_error": 10.043764396645793
+      }
+    },
+    "Bucharest": {
+      "simple_average": {
+        "mae": 9.434408790601509,
+        "rmse": 12.019244555353383,
+        "r2": 0.8186104888795652,
+        "mean_absolute_percentage_error": 10.220147750095673
+      },
+      "ridge_regression": {
+        "mae": 6.6853199136402335,
+        "rmse": 8.58434433339142,
+        "r2": 0.907472232033473,
+        "mean_absolute_percentage_error": 7.528795803429217
+      },
+      "cams_benchmark": {
+        "mae": 13.855019465415996,
+        "rmse": 17.64023565325322,
+        "r2": 0.6092791458951292,
+        "mean_absolute_percentage_error": 14.950763377377625
+      },
+      "noaa_benchmark": {
+        "mae": 9.480723666905181,
+        "rmse": 12.411679479096204,
+        "r2": 0.8065721831325934,
+        "mean_absolute_percentage_error": 10.301610922196316
+      }
+    },
+    "Belgrade": {
+      "simple_average": {
+        "mae": 9.225251733213833,
+        "rmse": 11.631322688439269,
+        "r2": 0.8340749207500155,
+        "mean_absolute_percentage_error": 10.090298560898786
+      },
+      "ridge_regression": {
+        "mae": 6.411217038357367,
+        "rmse": 8.14031254247742,
+        "r2": 0.9187289288044124,
+        "mean_absolute_percentage_error": 7.0789774963408405
+      },
+      "cams_benchmark": {
+        "mae": 13.44230998187354,
+        "rmse": 17.389380282289984,
+        "r2": 0.6291297178595292,
+        "mean_absolute_percentage_error": 14.57789605029711
+      },
+      "noaa_benchmark": {
+        "mae": 9.703426745710695,
+        "rmse": 12.645306351546047,
+        "r2": 0.8038842220035467,
+        "mean_absolute_percentage_error": 10.827796105638566
+      }
+    },
+    "Novi Sad": {
+      "simple_average": {
+        "mae": 9.866678909735965,
+        "rmse": 12.653866509027448,
+        "r2": 0.7822696311291921,
+        "mean_absolute_percentage_error": 10.959632535829671
+      },
+      "ridge_regression": {
+        "mae": 6.428528872380391,
+        "rmse": 8.513419093098548,
+        "r2": 0.9014445744909644,
+        "mean_absolute_percentage_error": 7.122438791422716
+      },
+      "cams_benchmark": {
+        "mae": 14.120931466845096,
+        "rmse": 18.480824633792775,
+        "r2": 0.5355754134535103,
+        "mean_absolute_percentage_error": 15.570059813451314
+      },
+      "noaa_benchmark": {
+        "mae": 9.739603108049982,
+        "rmse": 12.814834150045067,
+        "r2": 0.7766949776123375,
+        "mean_absolute_percentage_error": 11.020821243233245
+      }
+    },
+    "Turin": {
+      "simple_average": {
+        "mae": 8.550850262530735,
+        "rmse": 10.942199620494641,
+        "r2": 0.8246986893313123,
+        "mean_absolute_percentage_error": 9.914773658810736
+      },
+      "ridge_regression": {
+        "mae": 6.142523867988782,
+        "rmse": 7.9993664426909294,
+        "r2": 0.9063113286606918,
+        "mean_absolute_percentage_error": 7.125700901616071
+      },
+      "cams_benchmark": {
+        "mae": 11.842090823498879,
+        "rmse": 15.375140450508475,
+        "r2": 0.6538900538807857,
+        "mean_absolute_percentage_error": 14.0484957871781
+      },
+      "noaa_benchmark": {
+        "mae": 9.05111877954564,
+        "rmse": 11.743637565772312,
+        "r2": 0.7980791455466077,
+        "mean_absolute_percentage_error": 10.370054629344354
+      }
+    },
+    "Milan": {
+      "simple_average": {
+        "mae": 8.441936433962605,
+        "rmse": 10.597813236548415,
+        "r2": 0.8414779096423338,
+        "mean_absolute_percentage_error": 9.859278815968404
+      },
+      "ridge_regression": {
+        "mae": 5.9451684179915905,
+        "rmse": 7.619554974068621,
+        "r2": 0.9180561281357474,
+        "mean_absolute_percentage_error": 7.119690290018344
+      },
+      "cams_benchmark": {
+        "mae": 12.396865253335001,
+        "rmse": 15.653518656112713,
+        "r2": 0.6541552260825789,
+        "mean_absolute_percentage_error": 14.499653285431405
+      },
+      "noaa_benchmark": {
+        "mae": 8.981866442799136,
+        "rmse": 11.67278753501325,
+        "r2": 0.8076879805356102,
+        "mean_absolute_percentage_error": 10.522185727390807
+      }
+    },
+    "Miskolc": {
+      "simple_average": {
+        "mae": 8.608603807784379,
+        "rmse": 10.966121944590515,
+        "r2": 0.8164115318887101,
+        "mean_absolute_percentage_error": 10.132727837895011
+      },
+      "ridge_regression": {
+        "mae": 6.1446373101812135,
+        "rmse": 7.948001961023047,
+        "r2": 0.9035604473296647,
+        "mean_absolute_percentage_error": 7.334267810411234
+      },
+      "cams_benchmark": {
+        "mae": 12.881198339422768,
+        "rmse": 16.559160503709254,
+        "r2": 0.5813839384591433,
+        "mean_absolute_percentage_error": 14.947252779404769
+      },
+      "noaa_benchmark": {
+        "mae": 8.949866358172274,
+        "rmse": 11.666752561302117,
+        "r2": 0.792203020610126,
+        "mean_absolute_percentage_error": 10.4221222579987
+      }
+    },
+    "Pécs": {
+      "simple_average": {
+        "mae": 8.21298888494764,
+        "rmse": 10.239007852155307,
+        "r2": 0.8190048225698383,
+        "mean_absolute_percentage_error": 9.929665596017987
+      },
+      "ridge_regression": {
+        "mae": 5.773259845306229,
+        "rmse": 7.37288690552476,
+        "r2": 0.9061517031124491,
+        "mean_absolute_percentage_error": 7.072454966415999
+      },
+      "cams_benchmark": {
+        "mae": 12.340397392083084,
+        "rmse": 15.709609867257413,
+        "r2": 0.5739289258696065,
+        "mean_absolute_percentage_error": 14.97947577985013
+      },
+      "noaa_benchmark": {
+        "mae": 8.652040313256933,
+        "rmse": 10.894836659291808,
+        "r2": 0.7950760595778015,
+        "mean_absolute_percentage_error": 10.452234342522972
+      }
+    },
+    "Warsaw": {
+      "simple_average": {
+        "mae": 13.971217906671269,
+        "rmse": 18.094185153727583,
+        "r2": 0.815248860415218,
+        "mean_absolute_percentage_error": 9.50558104260274
+      },
+      "ridge_regression": {
+        "mae": 9.89979888388705,
+        "rmse": 12.854695002810775,
+        "r2": 0.9067534828566376,
+        "mean_absolute_percentage_error": 7.095829921330582
+      },
+      "cams_benchmark": {
+        "mae": 20.45250201356798,
+        "rmse": 26.990286593063093,
+        "r2": 0.5889221674662045,
+        "mean_absolute_percentage_error": 13.89782809299604
+      },
+      "noaa_benchmark": {
+        "mae": 14.634842618135828,
+        "rmse": 18.855053724154924,
+        "r2": 0.7993844401084851,
+        "mean_absolute_percentage_error": 10.0839608531592
+      }
+    },
+    "Košice": {
+      "simple_average": {
+        "mae": 7.109569859304174,
+        "rmse": 9.340541196686535,
+        "r2": 0.8174362356265907,
+        "mean_absolute_percentage_error": 9.125824300465807
+      },
+      "ridge_regression": {
+        "mae": 5.377864387692491,
+        "rmse": 7.0444568352593455,
+        "r2": 0.8961597975209312,
+        "mean_absolute_percentage_error": 7.090218196502346
+      },
+      "cams_benchmark": {
+        "mae": 10.465636590078233,
+        "rmse": 13.91458402500893,
+        "r2": 0.5948545583501916,
+        "mean_absolute_percentage_error": 13.56088578384039
+      },
+      "noaa_benchmark": {
+        "mae": 7.823947328963117,
+        "rmse": 10.223571273396885,
+        "r2": 0.7812864148344983,
+        "mean_absolute_percentage_error": 10.001650580258035
+      }
+    },
+    "Mexicali": {
+      "simple_average": {
+        "mae": 14.477305026517554,
+        "rmse": 18.81391097850392,
+        "r2": 0.8291478668467307,
+        "mean_absolute_percentage_error": 9.620728914786996
+      },
+      "ridge_regression": {
+        "mae": 10.046267914935344,
+        "rmse": 13.151926444945966,
+        "r2": 0.9165087470332138,
+        "mean_absolute_percentage_error": 6.791445535826192
+      },
+      "cams_benchmark": {
+        "mae": 21.18355920402042,
+        "rmse": 28.127385205971127,
+        "r2": 0.6181252372046352,
+        "mean_absolute_percentage_error": 14.025109636557238
+      },
+      "noaa_benchmark": {
+        "mae": 14.599549466829819,
+        "rmse": 19.39647161777531,
+        "r2": 0.8184034027148943,
+        "mean_absolute_percentage_error": 9.799442595603153
+      }
+    },
+    "Phoenix": {
+      "simple_average": {
+        "mae": 14.217003208087327,
+        "rmse": 17.71871061108607,
+        "r2": 0.8498124469315145,
+        "mean_absolute_percentage_error": 9.904146584862158
+      },
+      "ridge_regression": {
+        "mae": 10.585634914675992,
+        "rmse": 13.596118219709034,
+        "r2": 0.9115700100474742,
+        "mean_absolute_percentage_error": 7.475964272769983
+      },
+      "cams_benchmark": {
+        "mae": 19.97166879330773,
+        "rmse": 25.23930806832351,
+        "r2": 0.6952634120393575,
+        "mean_absolute_percentage_error": 13.978378728657455
+      },
+      "noaa_benchmark": {
+        "mae": 15.945978927506896,
+        "rmse": 20.409397153573963,
+        "r2": 0.8007354397771225,
+        "mean_absolute_percentage_error": 11.109859763179678
+      }
+    },
+    "Bakersfield": {
+      "simple_average": {
+        "mae": 13.81802323468673,
+        "rmse": 17.47809075341016,
+        "r2": 0.8353133889925967,
+        "mean_absolute_percentage_error": 9.56807318163055
+      },
+      "ridge_regression": {
+        "mae": 9.970978447043874,
+        "rmse": 13.03271930970861,
+        "r2": 0.908432702635906,
+        "mean_absolute_percentage_error": 7.125179103949077
+      },
+      "cams_benchmark": {
+        "mae": 20.895971809198464,
+        "rmse": 26.794760000525546,
+        "r2": 0.6129473410276933,
+        "mean_absolute_percentage_error": 14.543715896961162
+      },
+      "noaa_benchmark": {
+        "mae": 14.724791451588572,
+        "rmse": 19.174519613117628,
+        "r2": 0.801792859151983,
+        "mean_absolute_percentage_error": 10.19194105353672
+      }
+    },
+    "Fresno": {
+      "simple_average": {
+        "mae": 14.601947987982935,
+        "rmse": 18.38773244910048,
+        "r2": 0.8161335324283269,
+        "mean_absolute_percentage_error": 10.409698297869419
+      },
+      "ridge_regression": {
+        "mae": 10.683123603773883,
+        "rmse": 13.724079750228075,
+        "r2": 0.89757342593231,
+        "mean_absolute_percentage_error": 7.986845790613844
+      },
+      "cams_benchmark": {
+        "mae": 21.09956613126218,
+        "rmse": 27.233189382998837,
+        "r2": 0.5966860971180192,
+        "mean_absolute_percentage_error": 15.07347822993799
+      },
+      "noaa_benchmark": {
+        "mae": 15.90965142406193,
+        "rmse": 21.23353316984095,
+        "r2": 0.7548167990759314,
+        "mean_absolute_percentage_error": 11.261548175293964
+      }
+    },
+    "Los Angeles": {
+      "simple_average": {
+        "mae": 14.22754248945055,
+        "rmse": 18.001952098098492,
+        "r2": 0.7896692195028022,
+        "mean_absolute_percentage_error": 10.428152525747937
+      },
+      "ridge_regression": {
+        "mae": 10.731131482637066,
+        "rmse": 13.1978599293135,
+        "r2": 0.8869499758163303,
+        "mean_absolute_percentage_error": 8.291869489687437
+      },
+      "cams_benchmark": {
+        "mae": 20.816177551309618,
+        "rmse": 26.567805419208476,
+        "r2": 0.541884491986006,
+        "mean_absolute_percentage_error": 15.180176224540679
+      },
+      "noaa_benchmark": {
+        "mae": 14.703138495704241,
+        "rmse": 18.876699596603792,
+        "r2": 0.7687318858577903,
+        "mean_absolute_percentage_error": 10.75406871736398
+      }
+    },
+    "Visalia": {
+      "simple_average": {
+        "mae": 13.67049127731127,
+        "rmse": 17.15293213715538,
+        "r2": 0.8343222855212156,
+        "mean_absolute_percentage_error": 10.101681863377134
+      },
+      "ridge_regression": {
+        "mae": 9.647216171552827,
+        "rmse": 12.561039373239428,
+        "r2": 0.9111538711159478,
+        "mean_absolute_percentage_error": 7.302891565447339
+      },
+      "cams_benchmark": {
+        "mae": 20.097528237229625,
+        "rmse": 25.35704797124079,
+        "r2": 0.6379365040004611,
+        "mean_absolute_percentage_error": 14.938623693072026
+      },
+      "noaa_benchmark": {
+        "mae": 14.391999783006218,
+        "rmse": 19.00365348331127,
+        "r2": 0.7966418596937962,
+        "mean_absolute_percentage_error": 10.540514422409535
+      }
+    },
+    "Modesto": {
+      "simple_average": {
+        "mae": 14.145151311400774,
+        "rmse": 17.990241958866086,
+        "r2": 0.810520362233795,
+        "mean_absolute_percentage_error": 10.343307582266862
+      },
+      "ridge_regression": {
+        "mae": 9.558550153751286,
+        "rmse": 12.195195091004424,
+        "r2": 0.9129305017998998,
+        "mean_absolute_percentage_error": 7.07191585778484
+      },
+      "cams_benchmark": {
+        "mae": 19.998913064962316,
+        "rmse": 25.900763375934808,
+        "r2": 0.6072522863180783,
+        "mean_absolute_percentage_error": 14.83377980610642
+      },
+      "noaa_benchmark": {
+        "mae": 15.17896018973384,
+        "rmse": 19.832220732107793,
+        "r2": 0.769733249687706,
+        "mean_absolute_percentage_error": 11.09888536736964
+      }
+    },
+    "El Paso": {
+      "simple_average": {
+        "mae": 12.953644825264524,
+        "rmse": 16.436194550439325,
+        "r2": 0.8442487368484425,
+        "mean_absolute_percentage_error": 9.977609595871916
+      },
+      "ridge_regression": {
+        "mae": 9.553955237010399,
+        "rmse": 12.349272871191877,
+        "r2": 0.9120751158124205,
+        "mean_absolute_percentage_error": 7.447950443781474
+      },
+      "cams_benchmark": {
+        "mae": 19.095598419053992,
+        "rmse": 24.710159157847876,
+        "r2": 0.6479696427111157,
+        "mean_absolute_percentage_error": 14.612147822811808
+      },
+      "noaa_benchmark": {
+        "mae": 13.301408951284794,
+        "rmse": 17.22941832537566,
+        "r2": 0.8288526171539222,
+        "mean_absolute_percentage_error": 10.155525078744803
+      }
+    },
+    "Fairbanks": {
+      "simple_average": {
+        "mae": 12.390450877518179,
+        "rmse": 15.842565945483697,
+        "r2": 0.8291304608948675,
+        "mean_absolute_percentage_error": 9.914851029553585
+      },
+      "ridge_regression": {
+        "mae": 9.072352369551327,
+        "rmse": 11.752580619867514,
+        "r2": 0.9059670461259907,
+        "mean_absolute_percentage_error": 7.631028435766258
+      },
+      "cams_benchmark": {
+        "mae": 18.190279001970147,
+        "rmse": 23.723847304096022,
+        "r2": 0.6168367564346685,
+        "mean_absolute_percentage_error": 14.632469845236928
+      },
+      "noaa_benchmark": {
+        "mae": 12.727082951426203,
+        "rmse": 16.154689855048765,
+        "r2": 0.8223313304688284,
+        "mean_absolute_percentage_error": 10.260738555381621
+      }
+    },
+    "San Bernardino": {
+      "simple_average": {
+        "mae": 11.785573527895677,
+        "rmse": 15.313206670609745,
+        "r2": 0.8168914637006611,
+        "mean_absolute_percentage_error": 9.578522263723292
+      },
+      "ridge_regression": {
+        "mae": 8.696599605321948,
+        "rmse": 11.467496572967637,
+        "r2": 0.8973134551193689,
+        "mean_absolute_percentage_error": 7.058086725846853
+      },
+      "cams_benchmark": {
+        "mae": 18.165698563754106,
+        "rmse": 23.72514941397896,
+        "r2": 0.5604642388198673,
+        "mean_absolute_percentage_error": 14.927476752695526
+      },
+      "noaa_benchmark": {
+        "mae": 12.714904180426533,
+        "rmse": 16.57112187968145,
+        "r2": 0.7855726757041823,
+        "mean_absolute_percentage_error": 10.452079285045757
+      }
+    },
+    "Riverside": {
+      "simple_average": {
+        "mae": 11.7753642712356,
+        "rmse": 15.03140226772018,
+        "r2": 0.8076188713348277,
+        "mean_absolute_percentage_error": 9.721962860153393
+      },
+      "ridge_regression": {
+        "mae": 8.339901245013369,
+        "rmse": 10.940696379872934,
+        "r2": 0.8980814103649548,
+        "mean_absolute_percentage_error": 7.101838353481306
+      },
+      "cams_benchmark": {
+        "mae": 17.19902330482713,
+        "rmse": 21.47848301755014,
+        "r2": 0.6072007201306802,
+        "mean_absolute_percentage_error": 14.378070174111732
+      },
+      "noaa_benchmark": {
+        "mae": 13.00990876611777,
+        "rmse": 17.17423500469275,
+        "r2": 0.7488586201964356,
+        "mean_absolute_percentage_error": 10.47285941345526
+      }
+    },
+    "Stockton": {
+      "simple_average": {
+        "mae": 11.051809149612689,
+        "rmse": 14.420469475387055,
+        "r2": 0.8240857506446564,
+        "mean_absolute_percentage_error": 9.600759293670595
+      },
+      "ridge_regression": {
+        "mae": 7.792263369395135,
+        "rmse": 10.200507693039645,
+        "r2": 0.911979101841146,
+        "mean_absolute_percentage_error": 6.879147338826537
+      },
+      "cams_benchmark": {
+        "mae": 16.422985046043777,
+        "rmse": 21.192424544994655,
+        "r2": 0.6200700666961569,
+        "mean_absolute_percentage_error": 14.214729867272045
+      },
+      "noaa_benchmark": {
+        "mae": 11.658914924916722,
+        "rmse": 15.235503458886171,
+        "r2": 0.8036387262867465,
+        "mean_absolute_percentage_error": 10.009378263035572
+      }
+    },
+    "Tijuana": {
+      "simple_average": {
+        "mae": 11.639325676696863,
+        "rmse": 14.991196654740468,
+        "r2": 0.7935580289249115,
+        "mean_absolute_percentage_error": 10.331278635977137
+      },
+      "ridge_regression": {
+        "mae": 7.62038836747831,
+        "rmse": 10.2933463748457,
+        "r2": 0.9026718275079236,
+        "mean_absolute_percentage_error": 6.75516135749864
+      },
+      "cams_benchmark": {
+        "mae": 16.941726293143113,
+        "rmse": 21.610949258644936,
+        "r2": 0.5709844026789228,
+        "mean_absolute_percentage_error": 15.040569854578164
+      },
+      "noaa_benchmark": {
+        "mae": 12.400558989406452,
+        "rmse": 16.06312752514083,
+        "r2": 0.7629796642952424,
+        "mean_absolute_percentage_error": 10.934913726066888
+      }
+    },
+    "Atlanta": {
+      "simple_average": {
+        "mae": 14.209061340671616,
+        "rmse": 17.635117247149445,
+        "r2": 0.8238500121102884,
+        "mean_absolute_percentage_error": 9.860505254661179
+      },
+      "ridge_regression": {
+        "mae": 10.336974582606393,
+        "rmse": 13.376749078012221,
+        "r2": 0.8986492245123545,
+        "mean_absolute_percentage_error": 7.229898493732892
+      },
+      "cams_benchmark": {
+        "mae": 20.72069344537177,
+        "rmse": 25.952400409297486,
+        "r2": 0.6185119124583889,
+        "mean_absolute_percentage_error": 14.244356422164586
+      },
+      "noaa_benchmark": {
+        "mae": 14.874601337744362,
+        "rmse": 19.032090398004485,
+        "r2": 0.7948370672893128,
+        "mean_absolute_percentage_error": 10.365746570918432
+      }
+    },
+    "Guadalajara": {
+      "simple_average": {
+        "mae": 12.157321935555531,
+        "rmse": 15.575761204993409,
+        "r2": 0.7776719102345102,
+        "mean_absolute_percentage_error": 10.967952921650518
+      },
+      "ridge_regression": {
+        "mae": 7.609901180294672,
+        "rmse": 9.917308575165544,
+        "r2": 0.9098670825217797,
+        "mean_absolute_percentage_error": 7.20853645312883
+      },
+      "cams_benchmark": {
+        "mae": 17.27842610722465,
+        "rmse": 22.52577046203458,
+        "r2": 0.5349977175636473,
+        "mean_absolute_percentage_error": 15.639108322096293
+      },
+      "noaa_benchmark": {
+        "mae": 12.35057291162886,
+        "rmse": 15.923111606063852,
+        "r2": 0.7676451970185947,
+        "mean_absolute_percentage_error": 11.291580670462805
+      }
+    },
+    "Mexico City": {
+      "simple_average": {
+        "mae": 10.512996830471812,
+        "rmse": 13.499014108252076,
+        "r2": 0.8263788445828524,
+        "mean_absolute_percentage_error": 10.017609815449772
+      },
+      "ridge_regression": {
+        "mae": 7.712394399999439,
+        "rmse": 9.806981747230186,
+        "r2": 0.9083633353493464,
+        "mean_absolute_percentage_error": 7.481260097921984
+      },
+      "cams_benchmark": {
+        "mae": 15.561223202914618,
+        "rmse": 19.952013396597344,
+        "r2": 0.6207094739051879,
+        "mean_absolute_percentage_error": 14.843190049923068
+      },
+      "noaa_benchmark": {
+        "mae": 10.748117098549871,
+        "rmse": 13.993397420345755,
+        "r2": 0.8134286832630041,
+        "mean_absolute_percentage_error": 10.17549945947821
+      }
+    },
+    "Monterrey": {
+      "simple_average": {
+        "mae": 9.554549939799973,
+        "rmse": 12.412277518057952,
+        "r2": 0.8247529353527008,
+        "mean_absolute_percentage_error": 9.44490964420002
+      },
+      "ridge_regression": {
+        "mae": 7.231787027644516,
+        "rmse": 9.322179439796594,
+        "r2": 0.9011486249937855,
+        "mean_absolute_percentage_error": 7.210784591200478
+      },
+      "cams_benchmark": {
+        "mae": 14.011700924249627,
+        "rmse": 18.050344307682813,
+        "r2": 0.6293885958464234,
+        "mean_absolute_percentage_error": 13.846206417911066
+      },
+      "noaa_benchmark": {
+        "mae": 11.184851171829788,
+        "rmse": 14.511332672575112,
+        "r2": 0.7604686319208744,
+        "mean_absolute_percentage_error": 10.694496271533268
+      }
+    },
+    "Salt Lake City": {
+      "simple_average": {
+        "mae": 9.09547555817031,
+        "rmse": 12.123536442875489,
+        "r2": 0.8341845711449211,
+        "mean_absolute_percentage_error": 8.960977573146897
+      },
+      "ridge_regression": {
+        "mae": 7.285237536922941,
+        "rmse": 9.585339176607807,
+        "r2": 0.8963471461607554,
+        "mean_absolute_percentage_error": 7.450474432707511
+      },
+      "cams_benchmark": {
+        "mae": 13.498340667552323,
+        "rmse": 18.37191677001622,
+        "r2": 0.6192190329474181,
+        "mean_absolute_percentage_error": 13.269781907791586
+      },
+      "noaa_benchmark": {
+        "mae": 10.366538839645372,
+        "rmse": 13.456691098338974,
+        "r2": 0.7957119982814019,
+        "mean_absolute_percentage_error": 10.333117657058274
+      }
+    },
+    "Pittsburgh": {
+      "simple_average": {
+        "mae": 10.478525798554273,
+        "rmse": 13.085465500799693,
+        "r2": 0.8174849213914975,
+        "mean_absolute_percentage_error": 10.84726102050902
+      },
+      "ridge_regression": {
+        "mae": 6.9923840675390485,
+        "rmse": 8.727723412120307,
+        "r2": 0.9188062975808583,
+        "mean_absolute_percentage_error": 7.640866901182007
+      },
+      "cams_benchmark": {
+        "mae": 14.614564604122737,
+        "rmse": 18.857109866977005,
+        "r2": 0.6209725540439395,
+        "mean_absolute_percentage_error": 14.901478020242456
+      },
+      "noaa_benchmark": {
+        "mae": 10.71287978192548,
+        "rmse": 13.74995734559397,
+        "r2": 0.7984777060801616,
+        "mean_absolute_percentage_error": 11.17395222518646
+      }
+    },
+    "Detroit": {
+      "simple_average": {
+        "mae": 8.967657631585986,
+        "rmse": 11.563249101644692,
+        "r2": 0.8197593137955771,
+        "mean_absolute_percentage_error": 9.736461906478217
+      },
+      "ridge_regression": {
+        "mae": 6.298967298866502,
+        "rmse": 8.120127332032128,
+        "r2": 0.9111169911114722,
+        "mean_absolute_percentage_error": 7.151648121025807
+      },
+      "cams_benchmark": {
+        "mae": 13.423081512056182,
+        "rmse": 17.605916837107195,
+        "r2": 0.58215966477192,
+        "mean_absolute_percentage_error": 14.363933578146263
+      },
+      "noaa_benchmark": {
+        "mae": 8.778700985733467,
+        "rmse": 11.459773655291315,
+        "r2": 0.8229707013524508,
+        "mean_absolute_percentage_error": 9.641801917264592
+      }
+    },
+    "Lima": {
+      "simple_average": {
+        "mae": 16.828109386714903,
+        "rmse": 21.882661128323686,
+        "r2": 0.7962018829940218,
+        "mean_absolute_percentage_error": 10.56508497166252
+      },
+      "ridge_regression": {
+        "mae": 11.459470059468092,
+        "rmse": 15.137299227784158,
+        "r2": 0.9024793271694732,
+        "mean_absolute_percentage_error": 7.27994146950867
+      },
+      "cams_benchmark": {
+        "mae": 22.59333963712716,
+        "rmse": 29.523592933075246,
+        "r2": 0.6290304062324398,
+        "mean_absolute_percentage_error": 14.298002089501487
+      },
+      "noaa_benchmark": {
+        "mae": 18.388818526551653,
+        "rmse": 24.000644157018627,
+        "r2": 0.754842212667772,
+        "mean_absolute_percentage_error": 11.514396120281635
+      }
+    },
+    "Belém": {
+      "simple_average": {
+        "mae": 13.637034229676614,
+        "rmse": 17.392843516380218,
+        "r2": 0.8255862466269169,
+        "mean_absolute_percentage_error": 9.709478506583972
+      },
+      "ridge_regression": {
+        "mae": 9.815550057245753,
+        "rmse": 12.352289549110235,
+        "r2": 0.912030023554577,
+        "mean_absolute_percentage_error": 7.202337253319506
+      },
+      "cams_benchmark": {
+        "mae": 19.854997515643117,
+        "rmse": 25.28494769032536,
+        "r2": 0.6313929240066761,
+        "mean_absolute_percentage_error": 13.941618820279327
+      },
+      "noaa_benchmark": {
+        "mae": 14.676558956234171,
+        "rmse": 19.281425620196288,
+        "r2": 0.7856527916105263,
+        "mean_absolute_percentage_error": 10.496918280738004
+      }
+    },
+    "Cochabamba": {
+      "simple_average": {
+        "mae": 15.984962985754382,
+        "rmse": 20.57073209102426,
+        "r2": 0.76338259920963,
+        "mean_absolute_percentage_error": 10.477117738016354
+      },
+      "ridge_regression": {
+        "mae": 10.466428843791507,
+        "rmse": 14.057956982140302,
+        "r2": 0.88949253834751,
+        "mean_absolute_percentage_error": 6.884443291123252
+      },
+      "cams_benchmark": {
+        "mae": 23.649606968439347,
+        "rmse": 30.47878602398492,
+        "r2": 0.4805514800065215,
+        "mean_absolute_percentage_error": 15.430406424223412
+      },
+      "noaa_benchmark": {
+        "mae": 16.28555785597075,
+        "rmse": 21.300212183934992,
+        "r2": 0.7463031687943578,
+        "mean_absolute_percentage_error": 10.710120574919864
+      }
+    },
+    "Santa Cruz": {
+      "simple_average": {
+        "mae": 14.177991379400394,
+        "rmse": 18.465526771040064,
+        "r2": 0.8421303540029617,
+        "mean_absolute_percentage_error": 9.50153583204892
+      },
+      "ridge_regression": {
+        "mae": 11.044106394969267,
+        "rmse": 14.669040482912415,
+        "r2": 0.9003726344137991,
+        "mean_absolute_percentage_error": 7.665955151266676
+      },
+      "cams_benchmark": {
+        "mae": 20.955605853832296,
+        "rmse": 26.972058995716182,
+        "r2": 0.663175685809076,
+        "mean_absolute_percentage_error": 14.112828067693744
+      },
+      "noaa_benchmark": {
+        "mae": 15.579357282539053,
+        "rmse": 20.333245940113734,
+        "r2": 0.8085794059498905,
+        "mean_absolute_percentage_error": 10.46193719634368
+      }
+    },
+    "Santiago": {
+      "simple_average": {
+        "mae": 14.502496129766122,
+        "rmse": 18.695030409864298,
+        "r2": 0.8115446551353523,
+        "mean_absolute_percentage_error": 9.742147393125734
+      },
+      "ridge_regression": {
+        "mae": 9.954705521480523,
+        "rmse": 13.00993073607819,
+        "r2": 0.9087346179506941,
+        "mean_absolute_percentage_error": 6.980805203222322
+      },
+      "cams_benchmark": {
+        "mae": 21.87769179702879,
+        "rmse": 28.359037045763493,
+        "r2": 0.5663502831060063,
+        "mean_absolute_percentage_error": 14.709979985819796
+      },
+      "noaa_benchmark": {
+        "mae": 15.640761023667087,
+        "rmse": 19.79576172677965,
+        "r2": 0.7886994911924603,
+        "mean_absolute_percentage_error": 10.542252218201947
+      }
+    },
+    "Salvador": {
+      "simple_average": {
+        "mae": 15.310362314923001,
+        "rmse": 19.765457296285728,
+        "r2": 0.8076220470405959,
+        "mean_absolute_percentage_error": 9.914509273614723
+      },
+      "ridge_regression": {
+        "mae": 10.805579950990143,
+        "rmse": 14.373787674711322,
+        "r2": 0.8982618077745191,
+        "mean_absolute_percentage_error": 7.146949004080462
+      },
+      "cams_benchmark": {
+        "mae": 22.346838318966732,
+        "rmse": 28.997074596158637,
+        "r2": 0.5859527186090767,
+        "mean_absolute_percentage_error": 14.414641391101798
+      },
+      "noaa_benchmark": {
+        "mae": 16.94801867117303,
+        "rmse": 22.13793518820876,
+        "r2": 0.7586675126101029,
+        "mean_absolute_percentage_error": 10.888784137342867
+      }
+    },
+    "São Paulo": {
+      "simple_average": {
+        "mae": 13.753244045295018,
+        "rmse": 17.642644220401362,
+        "r2": 0.8080915033396499,
+        "mean_absolute_percentage_error": 10.325819907881748
+      },
+      "ridge_regression": {
+        "mae": 9.796967206907157,
+        "rmse": 12.91509346116083,
+        "r2": 0.8971600261696031,
+        "mean_absolute_percentage_error": 7.295761089172228
+      },
+      "cams_benchmark": {
+        "mae": 21.030661554911525,
+        "rmse": 26.968680950529023,
+        "r2": 0.5515786707760417,
+        "mean_absolute_percentage_error": 15.539858165283343
+      },
+      "noaa_benchmark": {
+        "mae": 13.586537650507779,
+        "rmse": 17.643538793988814,
+        "r2": 0.8080720413335454,
+        "mean_absolute_percentage_error": 10.154712527075754
+      }
+    },
+    "Medellín": {
+      "simple_average": {
+        "mae": 12.350329047329845,
+        "rmse": 16.14107811692447,
+        "r2": 0.8595945927300603,
+        "mean_absolute_percentage_error": 9.153712388131373
+      },
+      "ridge_regression": {
+        "mae": 10.2709982298,
+        "rmse": 13.012246986167607,
+        "r2": 0.9087520006779388,
+        "mean_absolute_percentage_error": 7.8074014036691
+      },
+      "cams_benchmark": {
+        "mae": 19.38217152091935,
+        "rmse": 24.58160993117478,
+        "r2": 0.6743587593785565,
+        "mean_absolute_percentage_error": 14.165527628634115
+      },
+      "noaa_benchmark": {
+        "mae": 13.581072399924222,
+        "rmse": 17.963252255848197,
+        "r2": 0.8261043604061862,
+        "mean_absolute_percentage_error": 9.8877483224297
+      }
+    },
+    "Bogotá": {
+      "simple_average": {
+        "mae": 13.484123464740406,
+        "rmse": 17.08325696954888,
+        "r2": 0.8223835186656043,
+        "mean_absolute_percentage_error": 10.06363902446388
+      },
+      "ridge_regression": {
+        "mae": 9.69191263789717,
+        "rmse": 12.438319676302989,
+        "r2": 0.9058402398301847,
+        "mean_absolute_percentage_error": 7.5054195274187325
+      },
+      "cams_benchmark": {
+        "mae": 19.061266401818298,
+        "rmse": 24.513055645156594,
+        "r2": 0.634290015865398,
+        "mean_absolute_percentage_error": 14.342252437410878
+      },
+      "noaa_benchmark": {
+        "mae": 14.49503610344778,
+        "rmse": 18.86307570564292,
+        "r2": 0.7834456408107294,
+        "mean_absolute_percentage_error": 10.780559045650849
+      }
+    },
+    "Cali": {
+      "simple_average": {
+        "mae": 12.396587274486663,
+        "rmse": 16.124255898808293,
+        "r2": 0.8238452349585372,
+        "mean_absolute_percentage_error": 9.471650365236439
+      },
+      "ridge_regression": {
+        "mae": 9.58922993820393,
+        "rmse": 12.33225027695548,
+        "r2": 0.8969567159626664,
+        "mean_absolute_percentage_error": 7.522376124855904
+      },
+      "cams_benchmark": {
+        "mae": 18.331587157277742,
+        "rmse": 24.012609308500057,
+        "r2": 0.6093266908294025,
+        "mean_absolute_percentage_error": 14.14153389348803
+      },
+      "noaa_benchmark": {
+        "mae": 13.588066789908929,
+        "rmse": 17.888880076463245,
+        "r2": 0.7831790031297722,
+        "mean_absolute_percentage_error": 10.315443837339183
+      }
+    },
+    "Quito": {
+      "simple_average": {
+        "mae": 11.858266271500385,
+        "rmse": 15.017169707084234,
+        "r2": 0.8604313633010108,
+        "mean_absolute_percentage_error": 9.26468057424997
+      },
+      "ridge_regression": {
+        "mae": 8.871297708972905,
+        "rmse": 11.518924544101228,
+        "r2": 0.9178825365722053,
+        "mean_absolute_percentage_error": 7.124529790193981
+      },
+      "cams_benchmark": {
+        "mae": 17.645037090261113,
+        "rmse": 22.32461754284706,
+        "r2": 0.6915535942728531,
+        "mean_absolute_percentage_error": 13.966752887322572
+      },
+      "noaa_benchmark": {
+        "mae": 12.348775949682114,
+        "rmse": 16.25677365406028,
+        "r2": 0.8364387665582759,
+        "mean_absolute_percentage_error": 9.702687421310962
+      }
+    },
+    "Caracas": {
+      "simple_average": {
+        "mae": 15.078104132141352,
+        "rmse": 19.585398788656036,
+        "r2": 0.8200275357527702,
+        "mean_absolute_percentage_error": 9.882600574085206
+      },
+      "ridge_regression": {
+        "mae": 10.550285198356091,
+        "rmse": 13.551573529699226,
+        "r2": 0.9138370266789784,
+        "mean_absolute_percentage_error": 7.241550851528006
+      },
+      "cams_benchmark": {
+        "mae": 22.109824040466904,
+        "rmse": 27.923393823511642,
+        "r2": 0.6341714223315386,
+        "mean_absolute_percentage_error": 14.640199486594499
+      },
+      "noaa_benchmark": {
+        "mae": 16.533023740386298,
+        "rmse": 21.66378793064909,
+        "r2": 0.7798037001855012,
+        "mean_absolute_percentage_error": 10.915984622259444
+      }
+    },
+    "Rio de Janeiro": {
+      "simple_average": {
+        "mae": 12.780342238745817,
+        "rmse": 16.267497197259722,
+        "r2": 0.8103945785552348,
+        "mean_absolute_percentage_error": 10.568237636547172
+      },
+      "ridge_regression": {
+        "mae": 8.710442380685237,
+        "rmse": 11.566871926630075,
+        "r2": 0.9041391835092603,
+        "mean_absolute_percentage_error": 7.286501086773484
+      },
+      "cams_benchmark": {
+        "mae": 17.305354890240263,
+        "rmse": 22.225929464550973,
+        "r2": 0.6460604181798417,
+        "mean_absolute_percentage_error": 14.3896905210755
+      },
+      "noaa_benchmark": {
+        "mae": 13.790364557945344,
+        "rmse": 18.432218459203895,
+        "r2": 0.7565753871184615,
+        "mean_absolute_percentage_error": 11.176783265016738
+      }
+    },
+    "Guarulhos": {
+      "simple_average": {
+        "mae": 13.73302716002273,
+        "rmse": 17.500013235243376,
+        "r2": 0.8180335446390639,
+        "mean_absolute_percentage_error": 9.722894609858843
+      },
+      "ridge_regression": {
+        "mae": 9.287390487396376,
+        "rmse": 12.131699834799315,
+        "r2": 0.9125503866343101,
+        "mean_absolute_percentage_error": 6.734421837559597
+      },
+      "cams_benchmark": {
+        "mae": 21.198456514358,
+        "rmse": 26.69510057739573,
+        "r2": 0.576573822521403,
+        "mean_absolute_percentage_error": 14.780609534492545
+      },
+      "noaa_benchmark": {
+        "mae": 14.400213266378406,
+        "rmse": 18.28627812000543,
+        "r2": 0.8013149351168473,
+        "mean_absolute_percentage_error": 10.346661435070004
+      }
+    },
+    "Campinas": {
+      "simple_average": {
+        "mae": 14.153925395300659,
+        "rmse": 18.725784468422198,
+        "r2": 0.8172778714949923,
+        "mean_absolute_percentage_error": 9.65443200415224
+      },
+      "ridge_regression": {
+        "mae": 10.41789112733015,
+        "rmse": 13.639213741701948,
+        "r2": 0.9030629552728984,
+        "mean_absolute_percentage_error": 7.24568563682481
+      },
+      "cams_benchmark": {
+        "mae": 20.521278799832338,
+        "rmse": 26.313228919167884,
+        "r2": 0.6392059283610899,
+        "mean_absolute_percentage_error": 14.365916413092464
+      },
+      "noaa_benchmark": {
+        "mae": 14.64583572654869,
+        "rmse": 20.615628515228313,
+        "r2": 0.7785354264469683,
+        "mean_absolute_percentage_error": 9.843815462567505
+      }
+    },
+    "Brasília": {
+      "simple_average": {
+        "mae": 15.266244447198698,
+        "rmse": 19.12044864614679,
+        "r2": 0.8371198994264732,
+        "mean_absolute_percentage_error": 10.169285671302523
+      },
+      "ridge_regression": {
+        "mae": 10.996991998118249,
+        "rmse": 14.07165472135083,
+        "r2": 0.9117809833767373,
+        "mean_absolute_percentage_error": 7.509784718560812
+      },
+      "cams_benchmark": {
+        "mae": 21.18048194678822,
+        "rmse": 27.58459309593956,
+        "r2": 0.660995833447937,
+        "mean_absolute_percentage_error": 14.091714631606223
+      },
+      "noaa_benchmark": {
+        "mae": 15.72865950475362,
+        "rmse": 20.373100810317997,
+        "r2": 0.8150790396079693,
+        "mean_absolute_percentage_error": 10.591052828927952
+      }
+    },
+    "Buenos Aires": {
+      "simple_average": {
+        "mae": 11.225354486138368,
+        "rmse": 13.946756672597166,
+        "r2": 0.8203487601965525,
+        "mean_absolute_percentage_error": 10.224815673458028
+      },
+      "ridge_regression": {
+        "mae": 7.661509842830295,
+        "rmse": 9.884925026084263,
+        "r2": 0.9097534662372613,
+        "mean_absolute_percentage_error": 7.147302509240639
+      },
+      "cams_benchmark": {
+        "mae": 17.318989661399772,
+        "rmse": 22.146802475794576,
+        "r2": 0.5469920377255968,
+        "mean_absolute_percentage_error": 15.638990088298838
+      },
+      "noaa_benchmark": {
+        "mae": 11.207751898829219,
+        "rmse": 14.357124811898249,
+        "r2": 0.8096211396582011,
+        "mean_absolute_percentage_error": 10.317251995818513
+      }
+    },
+    "Córdoba": {
+      "simple_average": {
+        "mae": 10.447618023209248,
+        "rmse": 13.51432617594673,
+        "r2": 0.8098567176454994,
+        "mean_absolute_percentage_error": 9.615369522092339
+      },
+      "ridge_regression": {
+        "mae": 7.82536903468314,
+        "rmse": 10.173558179587243,
+        "r2": 0.8922448739174393,
+        "mean_absolute_percentage_error": 7.625048644437528
+      },
+      "cams_benchmark": {
+        "mae": 15.593491234241537,
+        "rmse": 20.1129334192177,
+        "r2": 0.5788439680230528,
+        "mean_absolute_percentage_error": 14.520162633646743
+      },
+      "noaa_benchmark": {
+        "mae": 11.441654087790207,
+        "rmse": 15.212233462006667,
+        "r2": 0.759077058395636,
+        "mean_absolute_percentage_error": 10.37649066838326
+      }
+    },
+    "La Paz": {
+      "simple_average": {
+        "mae": 15.645315134167685,
+        "rmse": 20.232157028246114,
+        "r2": 0.8043563773259838,
+        "mean_absolute_percentage_error": 10.212613869137193
+      },
+      "ridge_regression": {
+        "mae": 11.373500191274319,
+        "rmse": 14.839741087520292,
+        "r2": 0.8947471245462969,
+        "mean_absolute_percentage_error": 7.54507998994993
+      },
+      "cams_benchmark": {
+        "mae": 21.805486869750002,
+        "rmse": 27.732182799504926,
+        "r2": 0.6324220678243855,
+        "mean_absolute_percentage_error": 14.348593045098463
+      },
+      "noaa_benchmark": {
+        "mae": 16.92357979178084,
+        "rmse": 21.860190153460596,
+        "r2": 0.7716036324141591,
+        "mean_absolute_percentage_error": 11.175889113046376
+      }
+    },
+    "Asunción": {
+      "simple_average": {
+        "mae": 15.303712701555414,
+        "rmse": 19.249364103051825,
+        "r2": 0.8194996893942174,
+        "mean_absolute_percentage_error": 10.329920281119342
+      },
+      "ridge_regression": {
+        "mae": 10.669518979450283,
+        "rmse": 13.914749925366165,
+        "r2": 0.9056816943824922,
+        "mean_absolute_percentage_error": 7.298055607968065
+      },
+      "cams_benchmark": {
+        "mae": 22.27755831818701,
+        "rmse": 28.31961619075023,
+        "r2": 0.6093211458107023,
+        "mean_absolute_percentage_error": 14.891602047079411
+      },
+      "noaa_benchmark": {
+        "mae": 15.919052256438242,
+        "rmse": 20.24153995032736,
+        "r2": 0.8004129868318394,
+        "mean_absolute_percentage_error": 10.762618484411789
+      }
+    }
+  },
+  "methodology": {
+    "training_approach": "Walk-forward validation",
+    "minimum_training_days": 30,
+    "features_used": [
+      "temperature",
+      "humidity",
+      "pressure",
+      "wind_speed",
+      "day_of_year",
+      "latitude",
+      "longitude",
+      "cams_forecast",
+      "noaa_forecast",
+      "lagged_values",
+      "moving_averages"
+    ],
+    "models_evaluated": {
+      "simple_average": "Mean of CAMS and NOAA forecasts",
+      "ridge_regression": "Ridge regression with meteorological features",
+      "cams_benchmark": "CAMS-style forecast (simulated)",
+      "noaa_benchmark": "NOAA-style forecast (simulated)"
+    }
+  }
+}
