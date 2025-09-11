@@ -64,3 +64,8 @@ stage_2/data/
 stage_2/logs/
 stage_3/data/
 stage_3/logs/
+
+# Secure configuration files (API keys, credentials)
+.config/
+*.api_keys.json
+api_keys.json

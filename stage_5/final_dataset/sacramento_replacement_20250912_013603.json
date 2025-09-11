@@ -1,0 +1,252 @@
+{
+  "collection_timestamp": "2025-09-12T01:35:41.237775",
+  "replacement_info": {
+    "original_city": "Fresno",
+    "replacement_city": "Sacramento",
+    "reason": "Fresno historical data timeout - replaced with nearest working city"
+  },
+  "city_data": {
+    "city_name": "Sacramento",
+    "country": "USA",
+    "continent": "North America",
+    "coordinates": {
+      "latitude": 38.5816,
+      "longitude": -121.4944
+    },
+    "collection_timestamp": "2025-09-12T01:36:03.826127",
+    "data_source": "Open-Meteo Archive API (Chunked Collection)",
+    "date_range": {
+      "start_date": "2023-09-13",
+      "end_date": "2025-09-09",
+      "total_days": 728
+    },
+    "daily_data": {
+      "records": 728,
+      "parameters": [
+        "time",
+        "temperature_2m_max",
+        "temperature_2m_min",
+        "precipitation_sum",
+        "wind_speed_10m_max",
+        "wind_direction_10m_dominant"
+      ],
+      "statistics": {
+        "temperature_2m_max": {
+          "mean": 24.692984869325997,
+          "min": 8.8,
+          "max": 45.5,
+          "std": 9.331649854777421
+        },
+        "temperature_2m_min": {
+          "mean": 10.690371389270977,
+          "min": -0.2,
+          "max": 26.2,
+          "std": 4.969573067523032
+        },
+        "precipitation_sum": {
+          "mean": 1.7499312242090785,
+          "min": 0.0,
+          "max": 64.1,
+          "std": 6.0806106397991915
+        }
+      },
+      "sample_records": [
+        {
+          "time": "2023-09-13",
+          "temperature_2m_max": 34.4,
+          "temperature_2m_min": 14.6,
+          "precipitation_sum": 0.0,
+          "wind_speed_10m_max": 15.1,
+          "wind_direction_10m_dominant": 198.0
+        },
+        {
+          "time": "2023-09-14",
+          "temperature_2m_max": 33.5,
+          "temperature_2m_min": 15.7,
+          "precipitation_sum": 0.0,
+          "wind_speed_10m_max": 18.1,
+          "wind_direction_10m_dominant": 188.0
+        },
+        {
+          "time": "2023-09-15",
+          "temperature_2m_max": 32.4,
+          "temperature_2m_min": 15.6,
+          "precipitation_sum": 0.0,
+          "wind_speed_10m_max": 16.7,
+          "wind_direction_10m_dominant": 190.0
+        },
+        {
+          "time": "2023-09-16",
+          "temperature_2m_max": 30.4,
+          "temperature_2m_min": 15.4,
+          "precipitation_sum": 0.0,
+          "wind_speed_10m_max": 18.4,
+          "wind_direction_10m_dominant": 196.0
+        },
+        {
+          "time": "2023-09-17",
+          "temperature_2m_max": 28.4,
+          "temperature_2m_min": 15.6,
+          "precipitation_sum": 0.0,
+          "wind_speed_10m_max": 21.1,
+          "wind_direction_10m_dominant": 198.0
+        }
+      ]
+    },
+    "hourly_data": {
+      "records": 17472,
+      "parameters": [
+        "time",
+        "temperature_2m",
+        "relative_humidity_2m",
+        "wind_speed_10m",
+        "pressure_msl",
+        "cloud_cover",
+        "visibility"
+      ],
+      "statistics": {
+        "temperature_2m": {
+          "mean": 17.031844726897976,
+          "min": -0.2,
+          "max": 45.5,
+          "std": 8.574006242690382
+        },
+        "relative_humidity_2m": {
+          "mean": 62.34409710294286,
+          "min": 5.0,
+          "max": 100.0,
+          "std": 25.55629228535024
+        }
+      },
+      "sample_records": [
+        {
+          "time": "2023-09-13T00:00",
+          "temperature_2m": 18.6,
+          "relative_humidity_2m": 72.0,
+          "wind_speed_10m": 8.0,
+          "pressure_msl": 1011.6,
+          "cloud_cover": 0.0,
+          "visibility": null
+        },
+        {
+          "time": "2023-09-13T01:00",
+          "temperature_2m": 17.7,
+          "relative_humidity_2m": 75.0,
+          "wind_speed_10m": 6.3,
+          "pressure_msl": 1011.5,
+          "cloud_cover": 0.0,
+          "visibility": null
+        },
+        {
+          "time": "2023-09-13T02:00",
+          "temperature_2m": 17.0,
+          "relative_humidity_2m": 77.0,
+          "wind_speed_10m": 6.8,
+          "pressure_msl": 1011.6,
+          "cloud_cover": 0.0,
+          "visibility": null
+        },
+        {
+          "time": "2023-09-13T03:00",
+          "temperature_2m": 16.6,
+          "relative_humidity_2m": 78.0,
+          "wind_speed_10m": 7.6,
+          "pressure_msl": 1011.6,
+          "cloud_cover": 0.0,
+          "visibility": null
+        },
+        {
+          "time": "2023-09-13T04:00",
+          "temperature_2m": 15.9,
+          "relative_humidity_2m": 82.0,
+          "wind_speed_10m": 5.4,
+          "pressure_msl": 1011.7,
+          "cloud_cover": 0.0,
+          "visibility": null
+        }
+      ]
+    },
+    "data_quality": {
+      "daily_completeness": 0.9988553113553115,
+      "hourly_completeness": 0.8568975667189953,
+      "temporal_consistency": "Sequential daily and hourly records",
+      "geographic_accuracy": "Exact coordinates for Sacramento, CA"
+    },
+    "status": "success",
+    "replacement_notes": "Replaced Fresno due to API timeout issues. Sacramento chosen for geographic proximity and API compatibility."
+  },
+  "collection_success": true,
+  "chunk_details": [
+    {
+      "chunk_number": 1,
+      "start_date": "2023-09-13",
+      "end_date": "2023-12-12",
+      "daily_records": 91,
+      "hourly_records": 2184,
+      "status": "success"
+    },
+    {
+      "chunk_number": 2,
+      "start_date": "2023-12-13",
+      "end_date": "2024-03-12",
+      "daily_records": 91,
+      "hourly_records": 2184,
+      "status": "success"
+    },
+    {
+      "chunk_number": 3,
+      "start_date": "2024-03-13",
+      "end_date": "2024-06-11",
+      "daily_records": 91,
+      "hourly_records": 2184,
+      "status": "success"
+    },
+    {
+      "chunk_number": 4,
+      "start_date": "2024-06-12",
+      "end_date": "2024-09-10",
+      "daily_records": 91,
+      "hourly_records": 2184,
+      "status": "success"
+    },
+    {
+      "chunk_number": 5,
+      "start_date": "2024-09-11",
+      "end_date": "2024-12-10",
+      "daily_records": 91,
+      "hourly_records": 2184,
+      "status": "success"
+    },
+    {
+      "chunk_number": 6,
+      "start_date": "2024-12-11",
+      "end_date": "2025-03-11",
+      "daily_records": 91,
+      "hourly_records": 2184,
+      "status": "success"
+    },
+    {
+      "chunk_number": 7,
+      "start_date": "2025-03-12",
+      "end_date": "2025-06-10",
+      "daily_records": 91,
+      "hourly_records": 2184,
+      "status": "success"
+    },
+    {
+      "chunk_number": 8,
+      "start_date": "2025-06-11",
+      "end_date": "2025-09-09",
+      "daily_records": 91,
+      "hourly_records": 2184,
+      "status": "success"
+    },
+    {
+      "chunk_number": 9,
+      "start_date": "2025-09-10",
+      "end_date": "2025-09-12",
+      "status": "failed",
+      "error": "API error 400"
+    }
+  ]
+}

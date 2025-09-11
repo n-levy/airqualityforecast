@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-09-12T00:03:20.939796",
+  "apis": {
+    "openaq": false,
+    "airnow": false,
+    "iqair": false
+  }
+}

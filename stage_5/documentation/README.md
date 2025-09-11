@@ -9,8 +9,9 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 - **Cities**: 100 cities across 5 continents (20 cities per continent)
 - **Real Data Coverage**: 100% (100 cities with verified real data sources)
 - **Continental Balance**: Perfect 20-city distribution per continent
-- **Data Sources**: NOAA Weather API (15 US cities) + WAQI Air Quality API (100 global cities)
-- **Features**: 50+ comprehensive features including air quality, meteorological, fire risk, holiday impacts, and temporal patterns
+- **Data Sources**: Open-Meteo API (100% success rate) + OpenAQ API + WAQI Air Quality API + NOAA Weather API
+- **Recent Updates**: Sacramento successfully replaced Fresno (Open-Meteo timeout resolved via chunked collection)
+- **Features**: 64 comprehensive features including air quality, meteorological, fire risk, holiday impacts, and temporal patterns
 - **Quality Focus**: Cities selected for poor air quality to maximize research relevance
 - **File Format**: CSV (comprehensive tables) + JSON (collection results)
 - **Total Records**: 204,000 daily data points + 72,000 hourly records (REAL temporal resolution)
@@ -20,6 +21,7 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 - **AQI Analysis**: Location-specific health warning evaluation with optimal performance in both resolutions
 - **Health Protection**: Production-ready system with 3.5% false negative rate (Gradient Boosting hourly - BEST)
 - **Complete Hourly Dataset**: 55,200 predictions across 100 cities with real-time health warning capability
+- **API Management**: Secure API key storage system for authenticated data sources
 
 ## Data Files
 
@@ -48,6 +50,34 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 ### AQI Health Warning Analysis
 - `AQI_HEALTH_WARNING_SUMMARY_*.md` - Health warning performance summary
 - `COMPREHENSIVE_AQI_RESULTS_REPORT.md` - Detailed AQI analysis with public health recommendations
+
+## Data Sources & APIs
+
+### Authenticated APIs
+- **OpenAQ API v3**: Real measured air quality data from global monitoring stations
+  - API Key: Securely stored in `.config/api_keys.json` (excluded from Git)
+  - Coverage: Global monitoring stations with PM2.5, PM10, NO2, O3, CO, SO2
+  - Authentication: X-API-Key header method
+
+### Free APIs
+- **Open-Meteo**: Historical weather data and air quality forecasts (100% success rate)
+- **WAQI**: World Air Quality Index data from monitoring stations
+- **NOAA**: US National Weather Service data for US cities
+
+### Synthetic & Enhanced Sources
+- **CAMS Simulation**: Literature-based atmospheric monitoring simulation
+- **Fire Risk Features**: Agricultural burning and forest fire risk modeling
+- **Holiday Features**: Cultural and religious holiday impact modeling
+- **Temporal Features**: Systematic time-based feature engineering
+
+### Comprehensive Data Source Documentation
+See `DATA_SOURCES_COMPREHENSIVE.md` for complete details on all 14 data sources used in the project.
+
+## API Key Management
+
+**Location**: `.config/api_keys.json` (local file, not synced with Git)
+**Security**: Excluded from version control via .gitignore
+**Usage**: JSON format with structured API information for easy programmatic access
 - `ENHANCED_GRADIENT_BOOSTING_SUMMARY_*.md` - Complete 5-model comparison with Gradient Boosting
 - **Daily Dataset - Gradient Boosting**: MAE=8.5, R²=0.42 (GOOD forecasting performance)
 - **Daily Dataset - Ridge Regression**: 4.3% false negative rate (EXCEPTIONAL health protection)

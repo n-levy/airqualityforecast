@@ -1,0 +1,103 @@
+{
+  "generation_time": "2025-09-12T00:27:37.349769",
+  "dataset_type": "OPEN_METEO_100_CITY_REAL_DATA",
+  "timeframe": {
+    "start_date": "2025-09-11",
+    "end_date": "2023-09-12",
+    "total_days": 730,
+    "coverage": "2 years of historical data"
+  },
+  "data_authenticity": {
+    "weather_data_source": "Open-Meteo Historical (ECMWF/GFS models)",
+    "air_quality_method": "Physics-based synthesis from weather",
+    "authenticity_level": "Real weather models + physics-based air quality",
+    "total_cities": 100,
+    "successful_cities": 99,
+    "success_rate": "99.0%"
+  },
+  "dataset_comparison": {
+    "daily_dataset": {
+      "cities": 99,
+      "total_records": 72369,
+      "records_per_city": 730,
+      "expected_records": 72270
+    },
+    "hourly_dataset": {
+      "cities": 99,
+      "total_records": 1736856,
+      "records_per_city": 17520,
+      "expected_records": 1734480
+    },
+    "ratio_verification": {
+      "actual_ratio": "24.0x",
+      "expected_ratio": "24x",
+      "ratio_match": true
+    }
+  },
+  "model_performance": {
+    "daily_models": {
+      "simple_average": {
+        "mae": 13.143777519459228,
+        "rmse": 16.401423030552383,
+        "r2": -4.271935263311377e-06,
+        "predictions_count": 21711
+      },
+      "cams_benchmark": {
+        "mae": 1.9615033853806825,
+        "rmse": 2.7846455502608802,
+        "r2": 0.9711743810956301,
+        "predictions_count": 21711
+      },
+      "noaa_gfs_benchmark": {
+        "mae": 39.0101146884068,
+        "rmse": 43.87903408216488,
+        "r2": -6.157360833764954,
+        "predictions_count": 21711
+      },
+      "ridge_regression": {
+        "mae": 11.89772753911929,
+        "rmse": 15.174366067692688,
+        "r2": 0.14402731032411942,
+        "predictions_count": 21711
+      },
+      "gradient_boosting": {
+        "mae": 11.85853996141862,
+        "rmse": 15.122411413403038,
+        "r2": 0.14987870903084344,
+        "predictions_count": 21711
+      }
+    },
+    "hourly_models": {
+      "simple_average": {
+        "mae": 15.729622857872421,
+        "rmse": 20.26580086947073,
+        "r2": -2.8427307461331708e-06,
+        "predictions_count": 521057
+      },
+      "cams_benchmark": {
+        "mae": 2.898220156336063,
+        "rmse": 4.27472987350024,
+        "r2": 0.9555070660353633,
+        "predictions_count": 521057
+      },
+      "noaa_gfs_benchmark": {
+        "mae": 41.2826141861639,
+        "rmse": 48.768557622896886,
+        "r2": -4.790999331739266,
+        "predictions_count": 521057
+      },
+      "ridge_regression": {
+        "mae": 12.859580093197756,
+        "rmse": 16.996385936728107,
+        "r2": 0.2966251092471057,
+        "predictions_count": 521057
+      },
+      "gradient_boosting": {
+        "mae": 12.711426171814791,
+        "rmse": 16.84109356730381,
+        "r2": 0.3094195649413831,
+        "predictions_count": 521057
+      }
+    }
+  }
+}
