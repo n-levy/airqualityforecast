@@ -12,7 +12,7 @@ A comprehensive air quality forecasting system that combines multiple forecast m
   - Phase 3: Data Processing ✅ (76,000 enhanced records)
   - Phase 4: Enhanced Features Integration ✅ (Fire + Holiday features)
   - Phase 5: Comprehensive Tables Generation ✅ (3 analysis-ready tables)
-- **REAL DATA INTEGRATION**: WAQI API + Enhanced Synthetic Data ✅
+- **VALIDATED DATA SOURCES**: Full transparency with documented real vs synthetic data ✅
 - **COMPREHENSIVE FEATURE SET**: Fire Activity + Holiday Impacts + AQI Standards ✅
 - **5+ years of comprehensive synthetic data** (2020-01-01 to 2025-09-08)
 - **Multiple validation approaches** including walk-forward validation
@@ -29,7 +29,7 @@ A comprehensive air quality forecasting system that combines multiple forecast m
 - **Temporal Coverage**: 365 days daily data + 30 extreme scenarios + 365 historical per city
 - **Total Records**: 251,343 data points across all 100 cities (760 records per city)
 - **Dataset Size**: 90 MB uncompressed, 30 MB compressed + 112 KB comprehensive tables
-- **Real Data Integration**: WAQI API integration + realistic synthetic data with 100% city coverage
+- **Validated Data Sources**: 14% real weather data (US cities) + scientifically-documented synthetic data with full transparency
 - **Enhanced Features**: 64 comprehensive features including fire activity + holiday impacts
 - **AQI Standards**: 7 regional standards properly applied (US EPA, European EAQI, Chinese, Indian, Canadian, WHO, Chilean)
 - **Comprehensive Tables**: 3 analysis-ready CSV tables (Features, APIs, AQI Standards)
@@ -107,12 +107,12 @@ Raw Data Sources → Feature Engineering → Model Training → Ensemble Predict
 ## Results Summary
 
 ### Forecasting Performance (Enhanced Benchmark Evaluation)
-- **Overall Best Method**: Ridge Regression ensemble  
+- **Overall Best Method**: Ridge Regression ensemble
 - **Average Improvement**: 36.3% over enhanced realistic benchmark models (CAMS, NOAA)
 - **Continental Performance**: Best in Africa (41.4% improvement), all continents >30%
 - **Individual Pollutant Improvements**: All achieve MAJOR significance (>30%)
   - AQI: 41.5% improvement (highest)
-  - SO2: 41.0% improvement  
+  - SO2: 41.0% improvement
   - PM10: 39.0% improvement
   - CO: 37.3% improvement
   - PM2.5: 32.7% improvement

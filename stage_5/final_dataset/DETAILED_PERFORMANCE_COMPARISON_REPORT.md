@@ -248,28 +248,28 @@ HEALTH WARNING CONFUSION MATRIX ANALYSIS
 ================================================================================
 
 GLOBAL HEALTH WARNING PERFORMANCE:
-Method   Alert      Precision  Recall   FPR      FNR      F1      
+Method   Alert      Precision  Recall   FPR      FNR      F1
 --------------------------------------------------------------------
-RIDGE    sensitive  0.993      0.991    0.069    0.009    0.992   
-RIDGE    general    0.993      0.996    0.034    0.004    0.995   
-CAMS     sensitive  0.992      0.991    0.086    0.009    0.992   
-CAMS     general    0.992      0.995    0.040    0.005    0.994   
-NOAA     sensitive  0.990      0.988    0.103    0.012    0.989   
-NOAA     general    0.990      0.990    0.050    0.010    0.990   
+RIDGE    sensitive  0.993      0.991    0.069    0.009    0.992
+RIDGE    general    0.993      0.996    0.034    0.004    0.995
+CAMS     sensitive  0.992      0.991    0.086    0.009    0.992
+CAMS     general    0.992      0.995    0.040    0.005    0.994
+NOAA     sensitive  0.990      0.988    0.103    0.012    0.989
+NOAA     general    0.990      0.990    0.050    0.010    0.990
 
 RIDGE HEALTH WARNING PERFORMANCE BY CONTINENT:
-Continent       Alert      Precision  Recall   FPR      FNR     
+Continent       Alert      Precision  Recall   FPR      FNR
 --------------------------------------------------------------
-Africa          sensitive  1.000      1.000    0.000    0.000   
-Africa          general    1.000      1.000    0.000    0.000   
-Asia            sensitive  1.000      1.000    0.000    0.000   
-Asia            general    1.000      1.000    0.000    0.000   
-Europe          sensitive  0.946      0.925    0.069    0.075   
-Europe          general    0.967      0.967    0.010    0.033   
-North_America   sensitive  1.000      1.000    0.000    0.000   
-North_America   general    1.000      1.000    0.000    0.000   
-South_America   sensitive  1.000      1.000    0.000    0.000   
-South_America   general    0.979      0.990    0.533    0.010   
+Africa          sensitive  1.000      1.000    0.000    0.000
+Africa          general    1.000      1.000    0.000    0.000
+Asia            sensitive  1.000      1.000    0.000    0.000
+Asia            general    1.000      1.000    0.000    0.000
+Europe          sensitive  0.946      0.925    0.069    0.075
+Europe          general    0.967      0.967    0.010    0.033
+North_America   sensitive  1.000      1.000    0.000    0.000
+North_America   general    1.000      1.000    0.000    0.000
+South_America   sensitive  1.000      1.000    0.000    0.000
+South_America   general    0.979      0.990    0.533    0.010
 
 ================================================================================
 CITY RANKINGS BY OVERALL IMPROVEMENT
