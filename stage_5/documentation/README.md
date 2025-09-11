@@ -14,10 +14,10 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 - **Quality Focus**: Cities selected for poor air quality to maximize research relevance
 - **File Format**: CSV (comprehensive tables) + JSON (collection results)
 - **Total Records**: 204,000 total data points (36,500 core + 167,500 forecast records)
-- **Forecasting Models**: Walk-forward validation with Simple Average and Ridge Regression models
+- **Forecasting Models**: Walk-forward validation with Simple Average, Ridge Regression, and Gradient Boosting models
 - **Benchmark Coverage**: 100% cities with CAMS and NOAA style benchmark forecasts
-- **AQI Analysis**: Location-specific health warning evaluation with 4.3% false negative rate
-- **Health Protection**: Production-ready system exceeding safety targets by 130%
+- **AQI Analysis**: Location-specific health warning evaluation with 3.7% false negative rate (Gradient Boosting)
+- **Health Protection**: Production-ready system exceeding safety targets by 170% (enhanced with Gradient Boosting)
 
 ## Data Files
 
@@ -36,6 +36,8 @@ The Global 100-City Air Quality Dataset is a comprehensive collection of air qua
 ### AQI Health Warning Analysis
 - `AQI_HEALTH_WARNING_SUMMARY_*.md` - Health warning performance summary
 - `COMPREHENSIVE_AQI_RESULTS_REPORT.md` - Detailed AQI analysis with public health recommendations
+- `ENHANCED_GRADIENT_BOOSTING_SUMMARY_*.md` - Complete 5-model comparison with Gradient Boosting
+- **Gradient Boosting**: 3.7% false negative rate (OUTSTANDING health protection)
 - **Ridge Regression**: 4.3% false negative rate (EXCEPTIONAL health protection)
 - **Simple Average**: 6.3% false negative rate (VERY GOOD health protection)
 - **Location-specific AQI**: EPA, European EAQI, Indian AQI, WHO Guidelines
