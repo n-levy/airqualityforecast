@@ -43,14 +43,18 @@ class WalkForwardForecaster:
         print("Loading comprehensive 100-city dataset...")
 
         # Load main features table
-        features_file = self.data_path / "comprehensive_tables" / "comprehensive_features_table.csv"
+        features_file = (
+            self.data_path / "comprehensive_tables" / "comprehensive_features_table.csv"
+        )
         self.cities_df = pd.read_csv(features_file)
 
         # Generate synthetic time series data for walk-forward validation
         # This simulates the full year of data for each city
         self.data = self.generate_time_series_data()
 
-        print(f"Dataset loaded: {len(self.cities_df)} cities, {len(self.data)} total records")
+        print(
+            f"Dataset loaded: {len(self.cities_df)} cities, {len(self.data)} total records"
+        )
         return self.data
 
     def generate_time_series_data(self):
@@ -200,7 +204,7 @@ class WalkForwardForecaster:
             try:
                 print(f"Processing {city} ({idx+1}/{total_cities})...")
             except UnicodeEncodeError:
-                safe_city = city.encode('ascii', 'replace').decode('ascii')
+                safe_city = city.encode("ascii", "replace").decode("ascii")
                 print(f"Processing {safe_city} ({idx+1}/{total_cities})...")
 
             city_data = self.data[self.data["city"] == city].copy()
@@ -236,7 +240,8 @@ class WalkForwardForecaster:
 
                 # Simple average forecast
                 simple_avg_pred = self.simple_average_forecast(
-                    test_data["cams_forecast"].iloc[0], test_data["noaa_forecast"].iloc[0]
+                    test_data["cams_forecast"].iloc[0],
+                    test_data["noaa_forecast"].iloc[0],
                 )
 
                 # Train and predict with Ridge model
@@ -247,14 +252,16 @@ class WalkForwardForecaster:
                     ridge_pred = simple_avg_pred  # Fallback to simple average
 
                 # Store results
-                city_results["predictions"].append({
-                    "date": test_data["date"].iloc[0].strftime("%Y-%m-%d"),
-                    "actual": y_test,
-                    "simple_average": simple_avg_pred,
-                    "ridge_regression": ridge_pred,
-                    "cams_benchmark": test_data["cams_forecast"].iloc[0],
-                    "noaa_benchmark": test_data["noaa_forecast"].iloc[0],
-                })
+                city_results["predictions"].append(
+                    {
+                        "date": test_data["date"].iloc[0].strftime("%Y-%m-%d"),
+                        "actual": y_test,
+                        "simple_average": simple_avg_pred,
+                        "ridge_regression": ridge_pred,
+                        "cams_benchmark": test_data["cams_forecast"].iloc[0],
+                        "noaa_benchmark": test_data["noaa_forecast"].iloc[0],
+                    }
+                )
 
                 city_results["actuals"].append(y_test)
                 city_results["simple_avg_preds"].append(simple_avg_pred)
@@ -296,7 +303,8 @@ class WalkForwardForecaster:
                 "r2": r2_score(actuals, preds),
                 "mean_absolute_percentage_error": np.mean(
                     np.abs((actuals - preds) / np.maximum(actuals, 1))
-                ) * 100,
+                )
+                * 100,
             }
 
         return metrics
@@ -314,7 +322,12 @@ class WalkForwardForecaster:
                 city_summaries[city] = results["metrics"]
 
         # Aggregate metrics across all cities
-        model_names = ["simple_average", "ridge_regression", "cams_benchmark", "noaa_benchmark"]
+        model_names = [
+            "simple_average",
+            "ridge_regression",
+            "cams_benchmark",
+            "noaa_benchmark",
+        ]
         metric_names = ["mae", "rmse", "r2", "mean_absolute_percentage_error"]
 
         for model in model_names:
@@ -380,12 +393,18 @@ class WalkForwardForecaster:
 
         # Save comprehensive report
         report = self.generate_comprehensive_report()
-        report_file = self.data_path / "final_dataset" / f"walk_forward_evaluation_{timestamp}.json"
+        report_file = (
+            self.data_path
+            / "final_dataset"
+            / f"walk_forward_evaluation_{timestamp}.json"
+        )
         with open(report_file, "w", encoding="utf-8") as f:
             json.dump(report, f, indent=2, default=str, ensure_ascii=False)
 
         # Save detailed predictions
-        predictions_file = self.data_path / "final_dataset" / f"detailed_predictions_{timestamp}.json"
+        predictions_file = (
+            self.data_path / "final_dataset" / f"detailed_predictions_{timestamp}.json"
+        )
         with open(predictions_file, "w", encoding="utf-8") as f:
             json.dump(self.results, f, indent=2, default=str, ensure_ascii=False)
 
@@ -423,8 +442,12 @@ def main():
         for model, metrics in report["model_performance"].items():
             print(f"\n{model.upper()}:")
             if "mae" in metrics:
-                print(f"  MAE: {metrics['mae']['mean']:.2f} ± {metrics['mae']['std']:.2f}")
-                print(f"  RMSE: {metrics['rmse']['mean']:.2f} ± {metrics['rmse']['std']:.2f}")
+                print(
+                    f"  MAE: {metrics['mae']['mean']:.2f} ± {metrics['mae']['std']:.2f}"
+                )
+                print(
+                    f"  RMSE: {metrics['rmse']['mean']:.2f} ± {metrics['rmse']['std']:.2f}"
+                )
                 print(f"  R²: {metrics['r2']['mean']:.3f} ± {metrics['r2']['std']:.3f}")
 
         print(f"\nDetailed results saved to:")

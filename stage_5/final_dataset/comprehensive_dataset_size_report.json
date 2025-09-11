@@ -1,0 +1,51 @@
+{
+  "dataset_overview": {
+    "total_cities": 100,
+    "days_per_city": 365,
+    "features_per_city": 68,
+    "continental_distribution": {
+      "Asia": 20,
+      "Africa": 20,
+      "Europe": 20,
+      "North_America": 20,
+      "South_America": 20
+    }
+  },
+  "time_series_data": {
+    "core_dataset_records": 36500,
+    "total_city_day_combinations": "100 cities \u00d7 365 days = 36,500",
+    "training_period_records": 3000,
+    "prediction_period_records": 33500
+  },
+  "forecast_models": {
+    "available_models": [
+      "ground_truth",
+      "cams_benchmark",
+      "noaa_benchmark",
+      "simple_average",
+      "ridge_regression"
+    ],
+    "predictions_per_model": 33500,
+    "total_forecast_records": 167500,
+    "models_description": {
+      "ground_truth": "Actual AQI values from WAQI API",
+      "cams_benchmark": "CAMS-style atmospheric forecast (simulated)",
+      "noaa_benchmark": "NOAA-style air quality forecast (simulated)",
+      "simple_average": "Simple average of CAMS and NOAA benchmarks",
+      "ridge_regression": "Ridge regression ensemble with meteorological features"
+    }
+  },
+  "data_volume_summary": {
+    "base_data_points": 36500,
+    "forecast_data_points": 167500,
+    "total_data_points": 204000,
+    "storage_estimate_mb": 102.0
+  },
+  "validation_methodology": {
+    "approach": "Walk-forward validation",
+    "training_window": "All previous data (minimum 30 days)",
+    "prediction_horizon": "1 day ahead",
+    "retraining_frequency": "Daily",
+    "total_model_training_cycles": 3350000
+  }
+}

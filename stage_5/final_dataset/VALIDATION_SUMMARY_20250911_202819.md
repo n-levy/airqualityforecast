@@ -33,7 +33,7 @@
 
 ## Framework Compliance
 - ✅ Health Warning Focus
-- ✅ Multi-Standard AQI Support  
+- ✅ Multi-Standard AQI Support
 - ✅ Pollutant-Specific Metrics
 - ✅ Walk-Forward Validation
 

@@ -8,17 +8,17 @@ The Global 100-City Air Quality Dataset achieves **100% real data coverage** usi
 
 ### 1. World Air Quality Index (WAQI) API ✅
 
-**Coverage**: 100 cities (100% success rate)  
-**API Endpoint**: `https://api.waqi.info/`  
-**Authentication**: Demo token (free, no registration required)  
-**Data Type**: Real-time air quality measurements  
-**Update Frequency**: Hourly to real-time  
+**Coverage**: 100 cities (100% success rate)
+**API Endpoint**: `https://api.waqi.info/`
+**Authentication**: Demo token (free, no registration required)
+**Data Type**: Real-time air quality measurements
+**Update Frequency**: Hourly to real-time
 
 **Data Retrieved**:
 - Air Quality Index (AQI) values
 - Individual pollutant concentrations:
   - PM2.5 (μg/m³)
-  - PM10 (μg/m³) 
+  - PM10 (μg/m³)
   - Ozone (O3) (μg/m³)
   - Nitrogen Dioxide (NO2) (μg/m³)
   - Sulfur Dioxide (SO2) (μg/m³)
@@ -35,11 +35,11 @@ The Global 100-City Air Quality Dataset achieves **100% real data coverage** usi
 
 ### 2. NOAA National Weather Service API ✅
 
-**Coverage**: 15 US cities (100% success rate for US locations)  
-**API Endpoint**: `https://api.weather.gov/`  
-**Authentication**: No API key required  
-**Data Type**: Official weather forecasts and observations  
-**Update Frequency**: Multiple times daily  
+**Coverage**: 15 US cities (100% success rate for US locations)
+**API Endpoint**: `https://api.weather.gov/`
+**Authentication**: No API key required
+**Data Type**: Official weather forecasts and observations
+**Update Frequency**: Multiple times daily
 
 **Data Retrieved**:
 - Temperature (°C)
@@ -60,10 +60,10 @@ The Global 100-City Air Quality Dataset achieves **100% real data coverage** usi
 
 ### 1. CAMS-Style Air Quality Forecasts ✅
 
-**Coverage**: 100 cities (literature-based performance simulation)  
-**Original Source**: Copernicus Atmosphere Monitoring Service (ECMWF)  
-**Implementation**: Simulated based on published performance metrics  
-**Forecast Horizon**: 4-5 days  
+**Coverage**: 100 cities (literature-based performance simulation)
+**Original Source**: Copernicus Atmosphere Monitoring Service (ECMWF)
+**Implementation**: Simulated based on published performance metrics
+**Forecast Horizon**: 4-5 days
 
 **Methodology**:
 - Literature review of CAMS forecast skill metrics
@@ -80,10 +80,10 @@ The Global 100-City Air Quality Dataset achieves **100% real data coverage** usi
 
 ### 2. NOAA-Style Air Quality Forecasts ✅
 
-**Coverage**: 100 cities (extended methodology simulation)  
-**Original Source**: NOAA Air Resources Laboratory  
-**Implementation**: US methodology extended globally with regional adaptations  
-**Forecast Horizon**: 2-3 days  
+**Coverage**: 100 cities (extended methodology simulation)
+**Original Source**: NOAA Air Resources Laboratory
+**Implementation**: US methodology extended globally with regional adaptations
+**Forecast Horizon**: 2-3 days
 
 **Methodology**:
 - NOAA forecast system methodology extension
@@ -209,7 +209,7 @@ Every data point includes:
 ### Citation Requirements
 When using this dataset, please cite:
 ```
-Global 100-City Air Quality Dataset (2025). 
+Global 100-City Air Quality Dataset (2025).
 100% Real Data Coverage with Comprehensive Forecasts.
 DOI: [To be assigned]
 ```
