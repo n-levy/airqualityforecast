@@ -1,6 +1,6 @@
 # Confusion Matrix Comparison: Ridge Regression vs Benchmarks
 
-**Generated**: 2025-09-11  
+**Generated**: 2025-09-11
 **Analysis**: Health Warning Performance Across 100 Cities
 
 ## Executive Summary
@@ -28,7 +28,7 @@ False Positives: 12.4% ± 7.9% (minimal unnecessary alerts)
 
 ### NOAA Benchmark (GOOD)
 ```
-Precision:       94.8% ± 4.1% 
+Precision:       94.8% ± 4.1%
 Recall:          92.0% ± 2.4%
 F1 Score:        93.3% ± 2.9%
 False Negatives: 8.0% ± 2.4%  (acceptable for health protection)
@@ -60,7 +60,7 @@ Actual No Warning   15       114      (88% specificity)
 False Negative Rate: 5.8% ✅ EXCELLENT
 ```
 
-#### NOAA Benchmark  
+#### NOAA Benchmark
 ```
                  Predicted
                  Warning  No Warning
@@ -98,7 +98,7 @@ False Negative Rate: 2.4% ✅ OUTSTANDING
 ```
                  Predicted
                  Warning  No Warning
-Actual Warning     189        17      (92% recall)  
+Actual Warning     189        17      (92% recall)
 Actual No Warning   12       117      (91% specificity)
 
 False Negative Rate: 8.3% ✅ VERY GOOD
@@ -111,7 +111,7 @@ False Negative Rate: 8.3% ✅ VERY GOOD
 ### Critical False Negative Comparison (Missed Health Warnings)
 
 **Ridge Regression**: For every 1000 health threats, only **43 are missed**
-**NOAA Benchmark**: For every 1000 health threats, **80 are missed** 
+**NOAA Benchmark**: For every 1000 health threats, **80 are missed**
 **CAMS Benchmark**: For every 1000 health threats, **152 are missed**
 
 ### Ridge Regression Improvement
@@ -145,7 +145,7 @@ False Negative Rate: 8.3% ✅ VERY GOOD
 
 - **EPA AQI**: North America, South America (40 cities)
 - **European EAQI**: Europe (20 cities)
-- **Indian AQI**: Asia (20 cities)  
+- **Indian AQI**: Asia (20 cities)
 - **WHO Guidelines**: Africa (20 cities)
 
 Each city uses its regionally appropriate AQI calculation for accurate health warnings.
