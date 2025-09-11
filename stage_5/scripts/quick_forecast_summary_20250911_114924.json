@@ -1,0 +1,220 @@
+{
+  "total_cities": 19,
+  "pollutants": [
+    "PM25",
+    "PM10",
+    "NO2",
+    "O3",
+    "SO2",
+    "CO",
+    "AQI"
+  ],
+  "methods": [
+    "simple_avg",
+    "ridge",
+    "cams",
+    "noaa"
+  ],
+  "overall_performance": {
+    "PM25": {
+      "simple_avg": {
+        "avg_MAE": 4.483658752740908,
+        "avg_R2": 0.5392726527010356,
+        "cities": 19
+      },
+      "ridge": {
+        "avg_MAE": 4.176584067560049,
+        "avg_R2": 0.6358158738697228,
+        "cities": 19
+      },
+      "cams": {
+        "avg_MAE": 5.999367722287495,
+        "avg_R2": 0.14692664148249768,
+        "cities": 19
+      },
+      "noaa": {
+        "avg_MAE": 6.833264878548323,
+        "avg_R2": -0.10032574079882069,
+        "cities": 19
+      }
+    },
+    "PM10": {
+      "simple_avg": {
+        "avg_MAE": 5.209493169132966,
+        "avg_R2": 0.3091348842858845,
+        "cities": 19
+      },
+      "ridge": {
+        "avg_MAE": 4.208025048783866,
+        "avg_R2": 0.5553943146389337,
+        "cities": 19
+      },
+      "cams": {
+        "avg_MAE": 6.88868309624056,
+        "avg_R2": -0.19352444210104067,
+        "cities": 19
+      },
+      "noaa": {
+        "avg_MAE": 8.274528817499666,
+        "avg_R2": -0.7497743431815432,
+        "cities": 19
+      }
+    },
+    "NO2": {
+      "simple_avg": {
+        "avg_MAE": 0.6571549214310946,
+        "avg_R2": 0.5747944535213438,
+        "cities": 19
+      },
+      "ridge": {
+        "avg_MAE": 0.6006593091840596,
+        "avg_R2": 0.6740888329894377,
+        "cities": 19
+      },
+      "cams": {
+        "avg_MAE": 0.9502260091205103,
+        "avg_R2": 0.11100015759652694,
+        "cities": 19
+      },
+      "noaa": {
+        "avg_MAE": 0.8592769463072404,
+        "avg_R2": 0.30103218059402165,
+        "cities": 19
+      }
+    },
+    "O3": {
+      "simple_avg": {
+        "avg_MAE": 4.102657874605757,
+        "avg_R2": 0.4830291037358972,
+        "cities": 19
+      },
+      "ridge": {
+        "avg_MAE": 3.715852417107772,
+        "avg_R2": 0.5956083454551232,
+        "cities": 19
+      },
+      "cams": {
+        "avg_MAE": 6.134095562329153,
+        "avg_R2": -0.17870540512851488,
+        "cities": 19
+      },
+      "noaa": {
+        "avg_MAE": 4.947415082757456,
+        "avg_R2": 0.26632974170842205,
+        "cities": 19
+      }
+    },
+    "SO2": {
+      "simple_avg": {
+        "avg_MAE": 0.4945143476652309,
+        "avg_R2": -0.21227942479826892,
+        "cities": 19
+      },
+      "ridge": {
+        "avg_MAE": 0.35628411841154983,
+        "avg_R2": 0.37366267683766674,
+        "cities": 19
+      },
+      "cams": {
+        "avg_MAE": 0.6759223618111692,
+        "avg_R2": -1.339629516653677,
+        "cities": 19
+      },
+      "noaa": {
+        "avg_MAE": 0.7337778051112367,
+        "avg_R2": -1.8183372356403786,
+        "cities": 19
+      }
+    },
+    "CO": {
+      "simple_avg": {
+        "avg_MAE": 0.5729043387831868,
+        "avg_R2": 0.5664638944189744,
+        "cities": 19
+      },
+      "ridge": {
+        "avg_MAE": 0.5033397757587018,
+        "avg_R2": 0.6595782036747674,
+        "cities": 19
+      },
+      "cams": {
+        "avg_MAE": 0.7098313933695022,
+        "avg_R2": 0.29036094685119124,
+        "cities": 19
+      },
+      "noaa": {
+        "avg_MAE": 0.8294390221023061,
+        "avg_R2": 0.09647738320050121,
+        "cities": 19
+      }
+    },
+    "AQI": {
+      "simple_avg": {
+        "avg_MAE": 22.475969208089236,
+        "avg_R2": 0.4783872331077005,
+        "cities": 19
+      },
+      "ridge": {
+        "avg_MAE": 20.848990292795296,
+        "avg_R2": 0.5142972575779725,
+        "cities": 19
+      },
+      "cams": {
+        "avg_MAE": 31.215794590927743,
+        "avg_R2": -0.0734287658487212,
+        "cities": 19
+      },
+      "noaa": {
+        "avg_MAE": 28.22439817737896,
+        "avg_R2": 0.062082461096090925,
+        "cities": 19
+      }
+    }
+  },
+  "improvement_over_benchmarks": {
+    "PM25": {
+      "best_ensemble_mae": 4.176584067560049,
+      "best_baseline_mae": 5.999367722287495,
+      "improvement_percent": 30.38292932029907
+    },
+    "PM10": {
+      "best_ensemble_mae": 4.208025048783866,
+      "best_baseline_mae": 6.88868309624056,
+      "improvement_percent": 38.913940589307124
+    },
+    "NO2": {
+      "best_ensemble_mae": 0.6006593091840596,
+      "best_baseline_mae": 0.8592769463072404,
+      "improvement_percent": 30.097122730290295
+    },
+    "O3": {
+      "best_ensemble_mae": 3.715852417107772,
+      "best_baseline_mae": 4.947415082757456,
+      "improvement_percent": 24.893053140858953
+    },
+    "SO2": {
+      "best_ensemble_mae": 0.35628411841154983,
+      "best_baseline_mae": 0.6759223618111692,
+      "improvement_percent": 47.28919495178884
+    },
+    "CO": {
+      "best_ensemble_mae": 0.5033397757587018,
+      "best_baseline_mae": 0.7098313933695022,
+      "improvement_percent": 29.09023460213619
+    },
+    "AQI": {
+      "best_ensemble_mae": 20.848990292795296,
+      "best_baseline_mae": 28.22439817737896,
+      "improvement_percent": 26.13132027911525
+    }
+  },
+  "best_method_by_pollutant": {
+    "PM25": "ridge",
+    "PM10": "ridge",
+    "NO2": "ridge",
+    "O3": "ridge",
+    "SO2": "ridge",
+    "CO": "ridge",
+    "AQI": "ridge"
+  }
+}
