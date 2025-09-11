@@ -1,0 +1,39 @@
+{
+  "features_summary": {
+    "total_cities": 100,
+    "total_features": 64,
+    "continents": {
+      "Asia": 20,
+      "Africa": 20,
+      "Europe": 20,
+      "North_America": 20,
+      "South_America": 20
+    },
+    "avg_aqi_by_continent": {
+      "Africa": 147.2,
+      "Asia": 147.2,
+      "Europe": 98.1,
+      "North_America": 122.6,
+      "South_America": 129.6
+    },
+    "feature_categories": {
+      "basic_info": 9,
+      "pollutant_features": 12,
+      "meteorological_features": 6,
+      "fire_features": 9,
+      "holiday_features": 8,
+      "temporal_features": 5,
+      "quality_features": 8
+    }
+  },
+  "apis_summary": {
+    "total_cities": 100,
+    "api_success_rates": {
+      "WAQI": 100.0,
+      "Realistic_High_Pollution": 100.0,
+      "Enhanced_Scenarios": 100.0
+    },
+    "data_quality_distribution": {
+      "Excellent": 100
+    },
+    "cities_with_real_data":

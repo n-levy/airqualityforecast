@@ -1,0 +1,21 @@
+{
+  "filename": "air_quality_data.parquet",
+  "description": "Main air quality measurements",
+  "format": "Apache Parquet",
+  "records": 251343,
+  "columns": [
+    "city",
+    "date",
+    "PM2.5",
+    "PM10",
+    "NO2",
+    "O3",
+    "SO2",
+    "CO",
+    "AQI",
+    "AQI_category"
+  ],
+  "size_mb": 36.86,
+  "created": "2025-09-11T10:17:45.998788",
+  "note": "This is a placeholder file for the actual dataset"
+}

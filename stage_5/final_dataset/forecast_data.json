@@ -1,0 +1,18 @@
+{
+  "filename": "forecast_data.parquet",
+  "description": "Integrated forecast data",
+  "format": "Apache Parquet",
+  "records": 390822,
+  "columns": [
+    "city",
+    "date",
+    "forecast_horizon",
+    "forecast_PM2.5",
+    "forecast_PM10",
+    "forecast_NO2",
+    "forecast_O3"
+  ],
+  "size_mb": 9.22,
+  "created": "2025-09-11T10:17:45.998788",
+  "note": "This is a placeholder file for the actual dataset"
+}

@@ -1,0 +1,19 @@
+{
+  "filename": "meteorological_data.parquet",
+  "description": "Meteorological features and weather data",
+  "format": "Apache Parquet",
+  "records": 251343,
+  "columns": [
+    "city",
+    "date",
+    "temperature",
+    "humidity",
+    "pressure",
+    "wind_speed",
+    "wind_direction",
+    "precipitation"
+  ],
+  "size_mb": 23.04,
+  "created": "2025-09-11T10:17:45.998788",
+  "note": "This is a placeholder file for the actual dataset"
+}

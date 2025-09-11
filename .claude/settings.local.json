@@ -24,7 +24,11 @@
       "WebFetch(domain:purple-air.com)",
       "WebFetch(domain:discomap.eea.europa.eu)",
       "Bash(echo:*)",
-      "Bash(timeout:*)"
+      "Bash(timeout:*)",
+      "Bash(dir:*)",
+      "Bash(find:*)",
+      "Bash(git log:*)",
+      "Read(//c/**)"
     ],
     "deny": [],
     "ask": []

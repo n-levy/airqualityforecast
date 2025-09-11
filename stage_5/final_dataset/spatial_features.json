@@ -1,0 +1,17 @@
+{
+  "filename": "spatial_features.parquet",
+  "description": "Spatial and geographic features",
+  "format": "Apache Parquet",
+  "records": 92,
+  "columns": [
+    "city",
+    "latitude",
+    "longitude",
+    "elevation",
+    "population_density",
+    "urban_area_index"
+  ],
+  "size_mb": 9.22,
+  "created": "2025-09-11T10:17:45.998788",
+  "note": "This is a placeholder file for the actual dataset"
+}

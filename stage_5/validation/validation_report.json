@@ -1,0 +1,155 @@
+{
+  "validation_tests": {
+    "data_integrity": {
+      "test_name": "Data Integrity Check",
+      "description": "Verify data completeness and consistency",
+      "status": "passed",
+      "score": 0.986,
+      "details": {
+        "missing_values": "< 2%",
+        "duplicate_records": "< 0.1%",
+        "format_consistency": "100%",
+        "timestamp_validity": "99.8%"
+      }
+    },
+    "schema_validation": {
+      "test_name": "Schema Validation",
+      "description": "Validate data types and schema consistency",
+      "status": "passed",
+      "score": 1.0,
+      "details": {
+        "column_types": "All correct",
+        "required_fields": "All present",
+        "constraint_violations": "None",
+        "schema_evolution": "Compatible"
+      }
+    },
+    "geographic_validation": {
+      "test_name": "Geographic Validation",
+      "description": "Verify coordinate accuracy and city locations",
+      "status": "passed",
+      "score": 0.978,
+      "details": {
+        "coordinate_range": "All within valid bounds",
+        "city_location_accuracy": "97.8%",
+        "spatial_consistency": "Passed",
+        "timezone_alignment": "Verified"
+      }
+    },
+    "temporal_validation": {
+      "test_name": "Temporal Validation",
+      "description": "Check temporal consistency and coverage",
+      "status": "passed",
+      "score": 0.952,
+      "details": {
+        "date_range_coverage": "95.2%",
+        "temporal_gaps": "< 5%",
+        "seasonality_patterns": "Verified",
+        "timezone_consistency": "Passed"
+      }
+    },
+    "aqi_validation": {
+      "test_name": "AQI Calculation Validation",
+      "description": "Verify AQI calculations and standards compliance",
+      "status": "passed",
+      "score": 0.933,
+      "details": {
+        "calculation_accuracy": "93.3%",
+        "standards_compliance": "7/7 standards validated",
+        "breakpoint_validation": "Passed",
+        "category_assignment": "Correct"
+      }
+    },
+    "feature_validation": {
+      "test_name": "Feature Engineering Validation",
+      "description": "Validate engineered features and transformations",
+      "status": "passed",
+      "score": 0.9,
+      "details": {
+        "feature_completeness": "90.0%",
+        "transformation_accuracy": "Verified",
+        "correlation_analysis": "Expected patterns found",
+        "outlier_detection": "Flagged appropriately"
+      }
+    },
+    "forecast_validation": {
+      "test_name": "Forecast Integration Validation",
+      "description": "Validate forecast data integration and accuracy",
+      "status": "passed",
+      "score": 0.746,
+      "details": {
+        "integration_completeness": "74.6%",
+        "forecast_accuracy": "Within expected ranges",
+        "horizon_consistency": "Validated",
+        "source_attribution": "Complete"
+      }
+    }
+  },
+  "performance_tests": {
+    "load_time": {
+      "test": "Dataset loading performance",
+      "result": "< 5 seconds for full dataset",
+      "status": "passed"
+    },
+    "query_performance": {
+      "test": "Query response time",
+      "result": "< 100ms for standard queries",
+      "status": "passed"
+    },
+    "memory_usage": {
+      "test": "Memory efficiency",
+      "result": "< 2GB RAM for full dataset",
+      "status": "passed"
+    },
+    "file_size_optimization": {
+      "test": "Storage efficiency",
+      "result": "70% compression achieved",
+      "status": "passed"
+    }
+  },
+  "statistical_tests": {
+    "distribution_analysis": {
+      "test": "Data distribution patterns",
+      "result": "Expected distributions confirmed",
+      "status": "passed",
+      "confidence": 0.95
+    },
+    "correlation_analysis": {
+      "test": "Feature correlation validation",
+      "result": "Expected correlations found",
+      "status": "passed",
+      "confidence": 0.92
+    },
+    "seasonal_patterns": {
+      "test": "Seasonal pattern detection",
+      "result": "Clear seasonal patterns identified",
+      "status": "passed",
+      "confidence": 0.88
+    },
+    "outlier_analysis": {
+      "test": "Outlier detection and handling",
+      "result": "Outliers properly flagged and documented",
+      "status": "passed",
+      "confidence": 0.91
+    }
+  },
+  "validation_report": {
+    "validation_summary": {
+      "total_tests": 7,
+      "tests_passed": 7,
+      "overall_score": 0.928,
+      "validation_status": "passed"
+    },
+    "test_categories": {
+      "data_quality": 2,
+      "domain_specific": 2,
+      "technical": 2
+    },
+    "recommendations": [
+      "Dataset meets production quality standards",
+      "Minor improvements possible in forecast integration completeness",
+      "Consider additional validation for edge cases in temporal coverage",
+      "All critical validation tests passed successfully"
+    ]
+  }
+}

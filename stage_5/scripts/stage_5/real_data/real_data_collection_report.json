@@ -1,0 +1,273 @@
+{
+  "report_generated": "2025-09-11T10:34:14.767477",
+  "collection_type": "real_data_feasibility_test",
+  "api_connectivity": {
+    "total_apis_tested": 5,
+    "accessible_apis": 3,
+    "apis_requiring_keys": 4,
+    "free_tier_apis": 5
+  },
+  "sample_data_collection": {
+    "cities_tested": 5,
+    "cities_with_data": 0,
+    "cities_success_rate": 0.0,
+    "total_sample_data_points": 0,
+    "average_points_per_city": 0.0
+  },
+  "overall_assessment": {
+    "collection_feasibility": "viable",
+    "data_availability": "limited",
+    "recommended_approach": [
+      "Obtain API keys for WAQI (1000 requests/day free tier)",
+      "Obtain API keys for IQAir (10,000 requests/month free tier)",
+      "Obtain API keys for OpenWeatherMap Air Pollution API",
+      "Use multiple APIs per city for data validation and completeness",
+      "Implement progressive data collection (most recent data first)",
+      "Set up robust error handling and retry mechanisms",
+      "Use geographical clustering to optimize API usage",
+      "Implement data caching to avoid duplicate requests",
+      "Set up monitoring for data quality and API health"
+    ],
+    "estimated_success_rate": 0.2,
+    "next_steps": [
+      "Obtain API keys for key data sources (WAQI, IQAir, OpenWeatherMap)",
+      "Implement full data collection pipeline",
+      "Set up data quality validation and processing",
+      "Begin systematic collection across all 100 cities"
+    ]
+  },
+  "detailed_results": {
+    "collection_type": "real_data",
+    "start_time": "2025-09-11T10:33:09.980534",
+    "api_results": {
+      "openweathermap": {
+        "name": "OpenWeatherMap Air Pollution API",
+        "status": "accessible",
+        "status_code": 401,
+        "response_size": 108,
+        "requires_key": true,
+        "free_tier": true,
+        "rate_limit": 60
+      },
+      "waqi": {
+        "name": "World Air Quality Index API",
+        "status": "accessible",
+        "status_code": 200,
+        "response_size": 2174,
+        "requires_key": true,
+        "free_tier": true,
+        "rate_limit": 1000
+      },
+      "iqair": {
+        "name": "IQAir API",
+        "status": "accessible",
+        "status_code": 403,
+        "response_size": 48,
+        "requires_key": true,
+        "free_tier": true,
+        "rate_limit": 10000
+      },
+      "openaq": {
+        "name": "OpenAQ API",
+        "status": "inaccessible",
+        "status_code": 410,
+        "response_size": 134,
+        "requires_key": false,
+        "free_tier": true,
+        "rate_limit": 10000
+      },
+      "aqicn": {
+        "name": "AQICN.org API",
+        "status": "error",
+        "error": "HTTPSConnectionPool(host='api.aqicn.org', port=443): Max retries exceeded with url: /feed/here/?token=demo (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000012E69C32C50>, 'Connection to api.aqicn.org timed out. (connect timeout=10)'))",
+        "requires_key": true,
+        "free_tier": true
+      }
+    },
+    "city_results": {},
+    "collection_progress": {},
+    "status": "in_progress",
+    "sample_results": {
+      "Berlin": {
+        "city": "Berlin",
+        "country": "Germany",
+        "coordinates": {
+          "lat": 52.52,
+          "lon": 13.405
+        },
+        "continent": "europe",
+        "api_results": {
+          "openaq": {
+            "status": "api_error",
+            "source": "OpenAQ",
+            "status_code": 410,
+            "error": "{\"message\": \"Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints.\"}"
+          },
+          "waqi": {
+            "status": "requires_api_key",
+            "note": "Would collect from World Air Quality Index API with valid API key"
+          },
+          "iqair": {
+            "status": "requires_api_key",
+            "note": "Would collect from IQAir API with valid API key"
+          },
+          "aqicn": {
+            "status": "requires_api_key",
+            "note": "Would collect from AQICN.org API with valid API key"
+          }
+        },
+        "data_quality": {
+          "successful_apis": 0,
+          "total_apis_attempted": 4,
+          "success_rate": 0.0,
+          "data_availability": "limited"
+        },
+        "sample_data_points": 0
+      },
+      "London": {
+        "city": "London",
+        "country": "UK",
+        "coordinates": {
+          "lat": 51.5074,
+          "lon": -0.1278
+        },
+        "continent": "europe",
+        "api_results": {
+          "openaq": {
+            "status": "api_error",
+            "source": "OpenAQ",
+            "status_code": 410,
+            "error": "{\"message\": \"Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints.\"}"
+          },
+          "waqi": {
+            "status": "requires_api_key",
+            "note": "Would collect from World Air Quality Index API with valid API key"
+          },
+          "iqair": {
+            "status": "requires_api_key",
+            "note": "Would collect from IQAir API with valid API key"
+          },
+          "aqicn": {
+            "status": "requires_api_key",
+            "note": "Would collect from AQICN.org API with valid API key"
+          }
+        },
+        "data_quality": {
+          "successful_apis": 0,
+          "total_apis_attempted": 4,
+          "success_rate": 0.0,
+          "data_availability": "limited"
+        },
+        "sample_data_points": 0
+      },
+      "Paris": {
+        "city": "Paris",
+        "country": "France",
+        "coordinates": {
+          "lat": 48.8566,
+          "lon": 2.3522
+        },
+        "continent": "europe",
+        "api_results": {
+          "openaq": {
+            "status": "api_error",
+            "source": "OpenAQ",
+            "status_code": 410,
+            "error": "{\"message\": \"Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints.\"}"
+          },
+          "waqi": {
+            "status": "requires_api_key",
+            "note": "Would collect from World Air Quality Index API with valid API key"
+          },
+          "iqair": {
+            "status": "requires_api_key",
+            "note": "Would collect from IQAir API with valid API key"
+          },
+          "aqicn": {
+            "status": "requires_api_key",
+            "note": "Would collect from AQICN.org API with valid API key"
+          }
+        },
+        "data_quality": {
+          "successful_apis": 0,
+          "total_apis_attempted": 4,
+          "success_rate": 0.0,
+          "data_availability": "limited"
+        },
+        "sample_data_points": 0
+      },
+      "Madrid": {
+        "city": "Madrid",
+        "country": "Spain",
+        "coordinates": {
+          "lat": 40.4168,
+          "lon": -3.7038
+        },
+        "continent": "europe",
+        "api_results": {
+          "openaq": {
+            "status": "api_error",
+            "source": "OpenAQ",
+            "status_code": 410,
+            "error": "{\"message\": \"Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints.\"}"
+          },
+          "waqi": {
+            "status": "requires_api_key",
+            "note": "Would collect from World Air Quality Index API with valid API key"
+          },
+          "iqair": {
+            "status": "requires_api_key",
+            "note": "Would collect from IQAir API with valid API key"
+          },
+          "aqicn": {
+            "status": "requires_api_key",
+            "note": "Would collect from AQICN.org API with valid API key"
+          }
+        },
+        "data_quality": {
+          "successful_apis": 0,
+          "total_apis_attempted": 4,
+          "success_rate": 0.0,
+          "data_availability": "limited"
+        },
+        "sample_data_points": 0
+      },
+      "Rome": {
+        "city": "Rome",
+        "country": "Italy",
+        "coordinates": {
+          "lat": 41.9028,
+          "lon": 12.4964
+        },
+        "continent": "europe",
+        "api_results": {
+          "openaq": {
+            "status": "api_error",
+            "source": "OpenAQ",
+            "status_code": 410,
+            "error": "{\"message\": \"Gone. Version 1 and Version 2 API endpoints are retired and no longer available. Please migrate to Version 3 endpoints.\"}"
+          },
+          "waqi": {
+            "status": "requires_api_key",
+            "note": "Would collect from World Air Quality Index API with valid API key"
+          },
+          "iqair": {
+            "status": "requires_api_key",
+            "note": "Would collect from IQAir API with valid API key"
+          },
+          "aqicn": {
+            "status": "requires_api_key",
+            "note": "Would collect from AQICN.org API with valid API key"
+          }
+        },
+        "data_quality": {
+          "successful_apis": 0,
+          "total_apis_attempted": 4,
+          "success_rate": 0.0,
+          "data_availability": "limited"
+        },
+        "sample_data_points": 0
+      }
+    }
+  }
+}

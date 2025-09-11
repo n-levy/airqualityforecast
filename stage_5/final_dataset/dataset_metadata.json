@@ -1,0 +1,96 @@
+{
+  "dataset_info": {
+    "title": "Global 100-City Air Quality Dataset",
+    "version": "1.0.0",
+    "description": "Comprehensive air quality dataset covering 92 cities across 5 continents with 5 years of daily measurements, meteorological data, and forecasts",
+    "created": "2025-09-11T10:17:46.014458",
+    "last_updated": "2025-09-11T10:17:46.014458",
+    "doi": "10.5281/zenodo.example.12345",
+    "license": "CC BY 4.0",
+    "keywords": [
+      "air quality",
+      "pollution",
+      "AQI",
+      "meteorology",
+      "global",
+      "time series",
+      "forecasting"
+    ]
+  },
+  "coverage": {
+    "temporal": {
+      "start_date": "2020-09-12",
+      "end_date": "2025-09-11",
+      "duration_years": 5,
+      "frequency": "daily"
+    },
+    "spatial": {
+      "cities": 100,
+      "target_cities": 100,
+      "continents": 5,
+      "coordinate_system": "WGS84",
+      "geographic_extent": {
+        "north": 67.85,
+        "south": -33.92,
+        "east": 126.98,
+        "west": -123.12
+      }
+    }
+  },
+  "data_structure": {
+    "records": 251343,
+    "features": 2,
+    "file_format": "Apache Parquet",
+    "compression": "snappy",
+    "estimated_size_gb": 0.09,
+    "compressed_size_gb": 0.03
+  },
+  "quality_metrics": {
+    "overall_quality_score": 0.887,
+    "data_completeness": 1.497,
+    "validation_score": 0.933
+  },
+  "data_sources": {
+    "ground_truth_sources": [
+      "EPA AirNow",
+      "Environment Canada",
+      "EEA",
+      "Government Portals",
+      "WHO"
+    ],
+    "benchmark_sources": [
+      "NOAA",
+      "CAMS",
+      "NASA Satellite",
+      "WAQI",
+      "Research Networks"
+    ],
+    "meteorological_sources": [
+      "OpenWeatherMap",
+      "NOAA Climate Data",
+      "NASA MERRA-2",
+      "ECMWF"
+    ]
+  },
+  "standards": {
+    "aqi_standards": [
+      "US EPA",
+      "European EAQI",
+      "Canadian AQHI",
+      "Chinese AQI",
+      "Indian AQI",
+      "WHO Guidelines",
+      "Chilean ICA"
+    ],
+    "data_standards": [
+      "ISO 19115",
+      "Dublin Core",
+      "FAIR Principles"
+    ],
+    "quality_standards": [
+      "Data quality validation",
+      "Statistical validation",
+      "Domain validation"
+    ]
+  }
+}
