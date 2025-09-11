@@ -113,7 +113,7 @@ Raw Data Sources → Feature Engineering → Model Training → Ensemble Predict
 - **PM2.5 Performance**: 2.7 MAE (vs 4.0 best benchmark) - 33.2% improvement
 - **Individual Pollutant Improvements**: All achieve MAJOR significance (>20%)
   - SO2: 54.4% improvement (highest)
-  - PM10: 38.4% improvement  
+  - PM10: 38.4% improvement
   - NO2: 38.0% improvement
   - CO: 36.6% improvement
   - PM2.5: 33.2% improvement
