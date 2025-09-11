@@ -1,0 +1,101 @@
+City,Country,Continent,Latitude,Longitude,Has_Real_Data,Real_Sources_Count,NOAA_Available,WAQI_Available,OpenWeather_Available,Primary_Real_Source,Data_Quality_Level,Collection_Timestamp,Validation_Status
+Delhi,India,Asia,28.6139,77.209,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Lahore,Pakistan,Asia,31.5497,74.3436,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Dhaka,Bangladesh,Asia,23.8103,90.4125,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Kolkata,India,Asia,22.5726,88.3639,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Muzaffarpur,India,Asia,26.1197,85.391,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Baghdad,Iraq,Asia,33.3152,44.3661,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Ghaziabad,India,Asia,28.6692,77.4538,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Patna,India,Asia,25.5941,85.1376,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Hotan,China,Asia,37.1167,79.9167,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Xinjiang,China,Asia,41.7681,86.925,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Faridabad,India,Asia,28.4089,77.3178,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Noida,India,Asia,28.5355,77.391,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Bahawalpur,Pakistan,Asia,29.3956,71.6833,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Peshawar,Pakistan,Asia,34.0151,71.5249,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Lucknow,India,Asia,26.8467,80.9462,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Bamenda,Cameroon,Asia,5.9597,10.1494,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Dushanbe,Tajikistan,Asia,38.5598,68.787,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Almaty,Kazakhstan,Asia,43.222,76.8512,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Kabul,Afghanistan,Asia,34.5553,69.2075,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Ulaanbaatar,Mongolia,Asia,47.8864,106.9057,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Cairo,Egypt,Africa,30.0444,31.2357,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Khartoum,Sudan,Africa,15.5007,32.5599,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Giza,Egypt,Africa,30.0131,31.2089,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+N'Djamena,Chad,Africa,12.1348,15.0557,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+El Obeid,Sudan,Africa,13.1874,30.2167,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Omdurman,Sudan,Africa,15.6445,32.4777,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Bamako,Mali,Africa,12.6392,-8.0029,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Ouagadougou,Burkina Faso,Africa,12.3714,-1.5197,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Kaduna,Nigeria,Africa,10.5222,7.4383,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Lagos,Nigeria,Africa,6.5244,3.3792,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Accra,Ghana,Africa,5.6037,-0.187,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Kampala,Uganda,Africa,0.3476,32.5825,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Dakar,Senegal,Africa,14.7167,-17.4677,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Abidjan,Ivory Coast,Africa,5.36,-4.0083,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Casablanca,Morocco,Africa,33.5731,-7.5898,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Tripoli,Libya,Africa,32.8872,13.1913,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Douala,Cameroon,Africa,4.0511,9.7679,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Yaoundé,Cameroon,Africa,3.848,11.5021,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Brazzaville,Republic of Congo,Africa,-4.2634,15.2429,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Kinshasa,Democratic Republic of Congo,Africa,-4.4419,15.2663,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Skopje,North Macedonia,Europe,41.9973,21.428,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Sarajevo,Bosnia and Herzegovina,Europe,43.8563,18.4131,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Tuzla,Bosnia and Herzegovina,Europe,44.5376,18.6675,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Zenica,Bosnia and Herzegovina,Europe,44.2169,17.9061,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Tetovo,North Macedonia,Europe,42.0092,20.9717,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Plovdiv,Bulgaria,Europe,42.1354,24.7453,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Sofia,Bulgaria,Europe,42.6977,23.3219,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Kraków,Poland,Europe,50.0647,19.945,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Wrocław,Poland,Europe,51.1079,17.0385,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Katowice,Poland,Europe,50.2649,19.0238,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Ostrava,Czech Republic,Europe,49.8209,18.2625,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Bucharest,Romania,Europe,44.4268,26.1025,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Belgrade,Serbia,Europe,44.7866,20.4489,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Novi Sad,Serbia,Europe,45.2671,19.8335,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Turin,Italy,Europe,45.0703,7.6869,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Milan,Italy,Europe,45.4642,9.19,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Miskolc,Hungary,Europe,48.1034,20.7784,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Pécs,Hungary,Europe,46.0727,18.233,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Banja Luka,Bosnia and Herzegovina,Europe,44.7666,17.1686,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Košice,Slovakia,Europe,48.7164,21.2611,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Mexicali,Mexico,North_America,32.6245,-115.4523,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Phoenix,USA,North_America,33.4484,-112.074,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Bakersfield,USA,North_America,35.3733,-119.0187,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Fresno,USA,North_America,36.7378,-119.7871,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Los Angeles,USA,North_America,34.0522,-118.2437,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Visalia,USA,North_America,36.3302,-119.2921,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Modesto,USA,North_America,37.6391,-120.9969,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+El Paso,USA,North_America,31.7619,-106.485,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Fairbanks,USA,North_America,64.8378,-147.7164,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+San Bernardino,USA,North_America,34.1083,-117.2898,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Riverside,USA,North_America,33.9533,-117.3962,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Stockton,USA,North_America,37.9577,-121.2908,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Tijuana,Mexico,North_America,32.5149,-117.0382,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Ciudad Juárez,Mexico,North_America,31.6904,-106.4245,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Guadalajara,Mexico,North_America,20.6597,-103.3496,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Mexico City,Mexico,North_America,19.4326,-99.1332,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Monterrey,Mexico,North_America,25.6866,-100.3161,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Salt Lake City,USA,North_America,40.7608,-111.891,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Pittsburgh,USA,North_America,40.4406,-79.9959,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Detroit,USA,North_America,42.3314,-83.0458,True,2,True,True,False,NOAA_Weather,EXCELLENT,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Lima,Peru,South_America,-12.0464,-77.0428,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+La Paz,Bolivia,South_America,-16.5,-68.1193,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Cochabamba,Bolivia,South_America,-17.3895,-66.1568,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Santa Cruz,Bolivia,South_America,-17.8146,-63.156,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Santiago,Chile,South_America,-33.4489,-70.6693,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Arequipa,Peru,South_America,-16.409,-71.5375,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+São Paulo,Brazil,South_America,-23.5505,-46.6333,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Medellín,Colombia,South_America,6.2442,-75.5812,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Bogotá,Colombia,South_America,4.711,-74.0721,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Cali,Colombia,South_America,3.4516,-76.532,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Quito,Ecuador,South_America,-0.1807,-78.4678,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Guayaquil,Ecuador,South_America,-2.1709,-79.9224,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Rio de Janeiro,Brazil,South_America,-22.9068,-43.1729,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Belo Horizonte,Brazil,South_America,-19.8157,-43.9542,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Porto Alegre,Brazil,South_America,-30.0346,-51.2177,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Curitiba,Brazil,South_America,-25.4284,-49.2733,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Buenos Aires,Argentina,South_America,-34.6118,-58.396,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Córdoba,Argentina,South_America,-31.4201,-64.1888,True,1,False,True,False,WAQI_AirQuality,HIGH,2025-09-11T13:53:40.794560,CONFIRMED_REAL
+Rosario,Argentina,South_America,-32.9442,-60.6505,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
+Montevideo,Uruguay,South_America,-34.9011,-56.1645,False,0,False,False,False,None,SYNTHETIC,2025-09-11T13:53:40.794560,SYNTHETIC_DOCUMENTED
