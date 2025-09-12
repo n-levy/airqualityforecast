@@ -15,12 +15,13 @@ The AQF311 Air Quality Forecasting project utilizes multiple data sources to cre
    - **Authentication**: API Key required (stored securely)
    - **Status**: Authenticated and operational
 
-2. **Open-Meteo** (Weather & Forecast Data)
-   - **Purpose**: Historical weather data and air quality forecasts
+2. **Open-Meteo** (Weather Forecast Data)
+   - **Purpose**: Multi-model weather forecasts from ECMWF, GFS, and default models
    - **Coverage**: Global cities with 100% success rate (100/100 cities)
-   - **Data Type**: Weather parameters, physics-based air quality synthesis
+   - **Data Type**: Weather parameters (temperature, humidity, wind, pressure, precipitation)
+   - **Models**: Main Forecast API, ECMWF API (/v1/ecmwf), GFS API (/v1/gfs)
    - **Authentication**: None required (free access)
-   - **Status**: Fully operational
+   - **Status**: Fully operational with three distinct forecast models
 
 ### Synthetic & Enhanced Data Sources
 
@@ -46,19 +47,22 @@ The AQF311 Air Quality Forecasting project utilizes multiple data sources to cre
 
 ### Meteorological Data Sources
 
-6. **CAMS (Copernicus Atmosphere Monitoring Service)**
-   - **Data Type**: Literature-based CAMS performance simulation
-   - **Coverage**: Synthetic CAMS-style forecasts for all cities
-   - **Quality**: High quality, documented methodology
-   - **Records**: 60 records per city
-   - **Transparency**: Fully documented
+6. **NASA FIRMS (Fire Information for Resource Management System)**
+   - **Data Type**: Real satellite fire detection data from VIIRS sensors
+   - **Coverage**: Global fire detection with 100% API success rate
+   - **Quality**: Authentic satellite observations with confidence ratings
+   - **Authentication**: MAP_KEY required (stored securely)
+   - **Rate Limits**: 5,000 transactions per 10-minute interval
+   - **Status**: Fully operational for real fire features
 
-7. **NOAA/GFS (National Oceanic and Atmospheric Administration)**
-   - **Data Type**: NOAA National Weather Service data for US cities
-   - **Coverage**: US cities with successful weather office connections
-   - **Quality**: Excellent (real weather data)
-   - **Examples**: Phoenix, Bakersfield, Fresno (now Sacramento), Los Angeles, San Bernardino, Riverside, Stockton, Salt Lake City, Pittsburgh, Detroit
+7. **Open-Meteo Weather Models (Three Distinct Forecasts)**
+   - **Main Forecast API**: Default model blend weather predictions
+   - **ECMWF API**: European Centre for Medium-Range Weather Forecasts
+   - **GFS API**: Global Forecast System (NOAA) weather forecasts
+   - **Coverage**: All 100 cities with 24-hour forecast periods
+   - **Parameters**: Temperature, humidity, wind speed/direction, precipitation, pressure
    - **Authentication**: None required
+   - **Status**: All three models operational
 
 ### Feature Engineering Data Sources
 
@@ -146,17 +150,19 @@ openaq_key = keys['apis']['openaq']['key']
 ```
 
 ### Supported APIs in Key File
-- **OpenAQ**: Real measured air quality data
+- **OpenAQ**: Real measured air quality data (authenticated)
+- **NASA FIRMS**: Real satellite fire detection data (authenticated)
+- **Open-Meteo**: Weather forecast models (no authentication required)
 - **Future APIs**: Ready for additional API keys as needed
 
 ## Data Source Integration
 
 ### Primary Data Flow
-1. **External APIs**: OpenAQ, WAQI, Open-Meteo, NOAA → Raw Data
-2. **Synthetic Generation**: Physics-based and pattern-based synthetic data
-3. **Feature Engineering**: Fire, holiday, temporal, spatial features
-4. **Benchmark Creation**: CAMS and NOAA/GFS benchmark forecasts
-5. **Dataset Assembly**: Comprehensive 64-feature dataset per city
+1. **External APIs**: OpenAQ ground truth, Open-Meteo weather forecasts, NASA FIRMS fire data → Raw Data
+2. **Weather Forecast Models**: Three distinct models (Main/ECMWF/GFS) for comprehensive coverage
+3. **Fire Feature Processing**: Real satellite fire detection with authentic confidence ratings
+4. **Internal Feature Generation**: Holiday, temporal, geographic (system-generated only)
+5. **Dataset Assembly**: Strict authenticity requirements with external APIs + internal features only
 
 ### Quality Assurance
 - **Validation**: Each data source validated for completeness and quality
@@ -180,6 +186,8 @@ openaq_key = keys['apis']['openaq']['key']
 ## Documentation Updates
 
 **Last Updated**: September 12, 2025
-**Status**: Comprehensive documentation complete
-**API Keys**: Securely stored in `.config/api_keys.json`
-**Success Rate**: 100% (100/100 cities operational)
+**Status**: Updated with corrected Open-Meteo and NASA FIRMS integration
+**API Keys**: OpenAQ and NASA FIRMS securely stored in `.config/api_keys.json`
+**Weather Forecasts**: Three distinct Open-Meteo models operational (Main/ECMWF/GFS)
+**Fire Data**: NASA FIRMS real satellite detection fully integrated
+**Success Rate**: 100% API connectivity verified

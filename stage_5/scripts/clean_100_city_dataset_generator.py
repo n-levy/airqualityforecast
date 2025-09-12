@@ -16,9 +16,8 @@ import logging
 import warnings
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
-import pandas as pd
 import requests
 
 warnings.filterwarnings("ignore")
@@ -62,7 +61,7 @@ class Clean100CityDatasetGenerator:
             log.info("OpenAQ API key loaded successfully")
             if self.nasa_firms_key:
                 log.info("NASA FIRMS MAP_KEY loaded successfully")
-        except Exception as e:
+        except (FileNotFoundError, KeyError, json.JSONDecodeError) as e:
             log.error(f"Failed to load API keys: {e}")
             self.openaq_key = None
             self.nasa_firms_key = None
@@ -849,7 +848,7 @@ class Clean100CityDatasetGenerator:
 
             return {"status": "no_data", "data": None}
 
-        except Exception as e:
+        except (requests.RequestException, json.JSONDecodeError) as e:
             log.error(f"OpenAQ collection failed for {city['name']}: {e}")
             return {"status": "error", "error": str(e), "data": None}
 
@@ -890,7 +889,7 @@ class Clean100CityDatasetGenerator:
         return pollutant_data
 
     def collect_openmeteo_forecasts(self, city: Dict) -> Dict:
-        """Collect THREE DISTINCT forecast benchmarks from Open-Meteo API."""
+        """Collect THREE DISTINCT forecast models from Open-Meteo: Main Forecast, ECMWF, and GFS."""
         try:
             forecast_results = {
                 "status": "success",
@@ -901,134 +900,182 @@ class Clean100CityDatasetGenerator:
                 },
             }
 
-            # Benchmark 1: Standard Air Quality Forecast (7-day forecast)
-            log.info(f"    Collecting Benchmark 1: Standard Air Quality Forecast")
-            benchmark1_params = {
+            # Benchmark 1: Main Forecast API (Default model blend) - 24h forecast
+            log.info("    Collecting Benchmark 1: Main Forecast (Default Models)")
+            main_params = {
                 "latitude": city["lat"],
                 "longitude": city["lon"],
                 "hourly": [
-                    "pm10",
-                    "pm2_5",
-                    "carbon_monoxide",
-                    "nitrogen_dioxide",
-                    "sulphur_dioxide",
-                    "ozone",
-                    "european_aqi",
+                    "temperature_2m",
+                    "relative_humidity_2m",
+                    "wind_speed_10m",
+                    "wind_direction_10m",
+                    "precipitation",
+                    "surface_pressure",
                 ],
-                "past_days": 0,
-                "forecast_days": 7,
+                "forecast_days": 1,  # 24-hour forecast period
                 "timezone": "auto",
             }
 
-            benchmark1_response = requests.get(
-                "https://api.open-meteo.com/v1/air-quality",
-                params=benchmark1_params,
+            main_response = requests.get(
+                "https://api.open-meteo.com/v1/forecast",
+                params=main_params,
                 timeout=30,
             )
 
-            if benchmark1_response.status_code == 200:
-                benchmark1_data = benchmark1_response.json()
-                forecast_results["data"]["benchmark_forecasts"]["standard_forecast"] = (
-                    self._process_openmeteo_forecasts(benchmark1_data)
+            if main_response.status_code == 200:
+                main_data = main_response.json()
+                forecast_results["data"]["benchmark_forecasts"]["main_forecast"] = (
+                    self._process_openmeteo_weather_forecasts(main_data)
                 )
                 forecast_results["data"]["benchmark_descriptions"][
-                    "standard_forecast"
-                ] = "7-day hourly air quality forecast with all pollutants"
+                    "main_forecast"
+                ] = "Open-Meteo Main Forecast 24-hour weather prediction"
                 forecast_results["data"]["total_benchmarks"] += 1
 
-            # Benchmark 2: Historical Analysis (Past 7 days for pattern analysis)
-            log.info(f"    Collecting Benchmark 2: Historical Analysis")
-            benchmark2_params = {
+            # Benchmark 2: ECMWF (European Centre for Medium-Range Weather Forecasts) - 24h forecast
+            log.info("    Collecting Benchmark 2: ECMWF Weather Forecast")
+            ecmwf_params = {
                 "latitude": city["lat"],
                 "longitude": city["lon"],
                 "hourly": [
-                    "pm10",
-                    "pm2_5",
-                    "carbon_monoxide",
-                    "nitrogen_dioxide",
-                    "sulphur_dioxide",
-                    "ozone",
-                    "european_aqi",
+                    "temperature_2m",
+                    "relative_humidity_2m",
+                    "wind_speed_10m",
+                    "wind_direction_10m",
+                    "precipitation",
+                    "surface_pressure",
                 ],
-                "past_days": 7,
-                "forecast_days": 0,
+                "forecast_days": 1,  # 24-hour forecast period
                 "timezone": "auto",
             }
 
-            benchmark2_response = requests.get(
-                "https://api.open-meteo.com/v1/air-quality",
-                params=benchmark2_params,
+            ecmwf_response = requests.get(
+                "https://api.open-meteo.com/v1/ecmwf",
+                params=ecmwf_params,
                 timeout=30,
             )
 
-            if benchmark2_response.status_code == 200:
-                benchmark2_data = benchmark2_response.json()
-                forecast_results["data"]["benchmark_forecasts"][
-                    "historical_analysis"
-                ] = self._process_openmeteo_forecasts(benchmark2_data)
-                forecast_results["data"]["benchmark_descriptions"][
-                    "historical_analysis"
-                ] = "7-day historical air quality data for pattern analysis"
-                forecast_results["data"]["total_benchmarks"] += 1
-
-            # Benchmark 3: Extended Range Forecast (14-day forecast)
-            log.info(f"    Collecting Benchmark 3: Extended Range Forecast")
-            benchmark3_params = {
-                "latitude": city["lat"],
-                "longitude": city["lon"],
-                "hourly": [
-                    "pm10",
-                    "pm2_5",
-                    "carbon_monoxide",
-                    "nitrogen_dioxide",
-                    "sulphur_dioxide",
-                    "ozone",
-                    "european_aqi",
-                ],
-                "past_days": 0,
-                "forecast_days": 14,
-                "timezone": "auto",
-            }
-
-            benchmark3_response = requests.get(
-                "https://api.open-meteo.com/v1/air-quality",
-                params=benchmark3_params,
-                timeout=30,
-            )
-
-            if benchmark3_response.status_code == 200:
-                benchmark3_data = benchmark3_response.json()
-                forecast_results["data"]["benchmark_forecasts"]["extended_forecast"] = (
-                    self._process_openmeteo_forecasts(benchmark3_data)
+            if ecmwf_response.status_code == 200:
+                ecmwf_data = ecmwf_response.json()
+                forecast_results["data"]["benchmark_forecasts"]["ecmwf_forecast"] = (
+                    self._process_openmeteo_weather_forecasts(ecmwf_data)
                 )
                 forecast_results["data"]["benchmark_descriptions"][
-                    "extended_forecast"
-                ] = "14-day extended air quality forecast for long-range planning"
+                    "ecmwf_forecast"
+                ] = "ECMWF 24-hour weather forecast"
                 forecast_results["data"]["total_benchmarks"] += 1
 
-            # Verify we have all three benchmarks
+            # Benchmark 3: GFS (Global Forecast System) - 24h forecast
+            log.info("    Collecting Benchmark 3: GFS Weather Forecast")
+            gfs_params = {
+                "latitude": city["lat"],
+                "longitude": city["lon"],
+                "hourly": [
+                    "temperature_2m",
+                    "relative_humidity_2m",
+                    "wind_speed_10m",
+                    "wind_direction_10m",
+                    "precipitation",
+                    "surface_pressure",
+                ],
+                "forecast_days": 1,  # 24-hour forecast period
+                "timezone": "auto",
+            }
+
+            gfs_response = requests.get(
+                "https://api.open-meteo.com/v1/gfs",
+                params=gfs_params,
+                timeout=30,
+            )
+
+            if gfs_response.status_code == 200:
+                gfs_data = gfs_response.json()
+                forecast_results["data"]["benchmark_forecasts"]["gfs_forecast"] = (
+                    self._process_openmeteo_weather_forecasts(gfs_data)
+                )
+                forecast_results["data"]["benchmark_descriptions"][
+                    "gfs_forecast"
+                ] = "GFS (NOAA) 24-hour weather forecast"
+                forecast_results["data"]["total_benchmarks"] += 1
+
+            # Verify we have all three forecast models
             if forecast_results["data"]["total_benchmarks"] == 3:
                 log.info(
-                    f"    SUCCESS: Successfully collected all 3 forecast benchmarks"
+                    "    SUCCESS: Successfully collected all 3 forecast models (Main, ECMWF, GFS)"
                 )
                 return forecast_results
             else:
                 log.warning(
-                    f"    WARNING: Only collected {forecast_results['data']['total_benchmarks']}/3 benchmarks"
+                    f"    WARNING: Only collected {forecast_results['data']['total_benchmarks']}/3 forecast models"
                 )
                 return {
                     "status": "insufficient_benchmarks",
                     "data": forecast_results["data"],
                 }
 
-        except Exception as e:
+        except (requests.RequestException, json.JSONDecodeError) as e:
             log.error(
-                f"Open-Meteo three-benchmark collection failed for {city['name']}: {e}"
+                f"Open-Meteo forecast models collection failed for {city['name']}: {e}"
             )
             return {"status": "error", "error": str(e), "data": None}
 
+    def _process_openmeteo_weather_forecasts(self, forecast_data: Dict) -> Dict:
+        """Process Open-Meteo weather forecast data."""
+        hourly = forecast_data.get("hourly", {})
+
+        # Create forecast records
+        forecast_records = []
+        times = hourly.get("time", [])
+
+        for i, time_str in enumerate(times):
+            record = {
+                "datetime": time_str,
+                "temperature_2m": (
+                    hourly.get("temperature_2m", [])[i]
+                    if i < len(hourly.get("temperature_2m", []))
+                    else None
+                ),
+                "relative_humidity_2m": (
+                    hourly.get("relative_humidity_2m", [])[i]
+                    if i < len(hourly.get("relative_humidity_2m", []))
+                    else None
+                ),
+                "wind_speed_10m": (
+                    hourly.get("wind_speed_10m", [])[i]
+                    if i < len(hourly.get("wind_speed_10m", []))
+                    else None
+                ),
+                "wind_direction_10m": (
+                    hourly.get("wind_direction_10m", [])[i]
+                    if i < len(hourly.get("wind_direction_10m", []))
+                    else None
+                ),
+                "precipitation": (
+                    hourly.get("precipitation", [])[i]
+                    if i < len(hourly.get("precipitation", []))
+                    else None
+                ),
+                "surface_pressure": (
+                    hourly.get("surface_pressure", [])[i]
+                    if i < len(hourly.get("surface_pressure", []))
+                    else None
+                ),
+            }
+            forecast_records.append(record)
+
+        return {
+            "forecast_records": forecast_records,
+            "total_records": len(forecast_records),
+            "date_range": {
+                "start": times[0] if times else None,
+                "end": times[-1] if times else None,
+            },
+            "weather_parameters": list(hourly.keys()),
+        }
+
     def _process_openmeteo_forecasts(self, forecast_data: Dict) -> Dict:
-        """Process Open-Meteo forecast data."""
+        """Process Open-Meteo forecast data (legacy method for air quality)."""
         hourly = forecast_data.get("hourly", {})
 
         # Create forecast records
@@ -1135,7 +1182,7 @@ class Clean100CityDatasetGenerator:
                 )
                 return {"status": "api_error", "data": None}
 
-        except Exception as e:
+        except (requests.RequestException, ValueError) as e:
             log.error(f"NASA FIRMS collection failed for {city['name']}: {e}")
             return {"status": "error", "error": str(e), "data": None}
 
@@ -1267,10 +1314,10 @@ class Clean100CityDatasetGenerator:
         # Parse date
         try:
             date_obj = datetime.strptime(record_date, "%Y-%m-%d")
-        except:
+        except ValueError:
             try:
                 date_obj = datetime.fromisoformat(record_date.replace("Z", "+00:00"))
-            except:
+            except ValueError:
                 date_obj = datetime.now()
 
         features = {}
@@ -1354,6 +1401,89 @@ class Clean100CityDatasetGenerator:
         else:
             return "inland"
 
+    def _process_fire_features(self, nasa_firms_result: Dict, city: Dict) -> Dict:
+        """Process fire features from authentic NASA FIRMS data only (no synthetic patterns)."""
+        if nasa_firms_result["status"] == "no_fires":
+            return {
+                "fire_data_source": "NASA_FIRMS_API",
+                "fire_detection_status": "no_active_fires",
+                "total_fires_detected": 0,
+                "fire_impact_assessment": "minimal",
+                "closest_fire_distance_km": None,
+                "fire_confidence_scores": [],
+                "fire_brightness_values": [],
+                "fire_summary": "No active fires detected in 100km radius",
+            }
+
+        if nasa_firms_result["status"] != "success" or not nasa_firms_result.get(
+            "data"
+        ):
+            return {
+                "fire_data_source": "NASA_FIRMS_API",
+                "fire_detection_status": "no_data_available",
+                "error": nasa_firms_result.get("error", "Unknown error"),
+            }
+
+        fire_data = nasa_firms_result["data"]
+
+        # Extract real fire statistics from NASA FIRMS data (no synthetic generation)
+        fire_features = {
+            "fire_data_source": "NASA_FIRMS_API",
+            "fire_detection_status": "fires_detected",
+            "data_collection_period": "Last 7 days",
+            "satellite_source": "VIIRS_SNPP_NRT",
+            # Raw fire counts from NASA FIRMS
+            "total_fires_detected": fire_data.get("fire_count", 0),
+            "high_confidence_fires": fire_data.get("fire_statistics", {}).get(
+                "high_confidence_fires", 0
+            ),
+            # Distance calculations from NASA FIRMS coordinates
+            "closest_fire_distance_km": fire_data.get("fire_statistics", {}).get(
+                "closest_fire_distance_km"
+            ),
+            "average_fire_distance_km": fire_data.get("fire_statistics", {}).get(
+                "average_distance_km"
+            ),
+            # Authentic satellite measurements
+            "fire_confidence_scores": [
+                f["confidence"] for f in fire_data.get("active_fires", [])
+            ],
+            "fire_brightness_values": [
+                f["brightness"] for f in fire_data.get("active_fires", [])
+            ],
+            "max_brightness_detected": fire_data.get("fire_statistics", {}).get(
+                "max_brightness"
+            ),
+            "average_confidence": fire_data.get("fire_statistics", {}).get(
+                "average_confidence"
+            ),
+            # NASA FIRMS impact assessment (based on real data patterns)
+            "fire_risk_level": fire_data.get("fire_impact_assessment", {}).get(
+                "fire_risk_level", "low"
+            ),
+            "potential_pm25_impact": fire_data.get("fire_impact_assessment", {}).get(
+                "potential_pm25_impact", "minimal"
+            ),
+            "air_quality_alert": fire_data.get("fire_impact_assessment", {}).get(
+                "air_quality_alert", False
+            ),
+            # Geographic fire distribution (from real coordinates)
+            "fire_coordinates": [
+                {
+                    "lat": f["latitude"],
+                    "lon": f["longitude"],
+                    "distance_km": f["distance_km"],
+                }
+                for f in fire_data.get("active_fires", [])[
+                    :5
+                ]  # Limit to 5 closest fires
+            ],
+            # Fire summary based on authentic data
+            "fire_summary": f"Detected {fire_data.get('fire_count', 0)} fires within 100km radius using NASA VIIRS satellite data",
+        }
+
+        return fire_features
+
     def generate_clean_dataset(self) -> Dict[str, Any]:
         """Generate STRICT clean dataset - ALL cities MUST have OpenAQ ground truth and Open-Meteo forecasts."""
         log.info("=== STARTING STRICT CLEAN 100-CITY DATASET GENERATION ===")
@@ -1374,7 +1504,7 @@ class Clean100CityDatasetGenerator:
             },
             "data_sources": {
                 "ground_truth_required": "OpenAQ Real Measured Data (API authenticated) - MANDATORY",
-                "forecasts_required": "Open-Meteo Three Forecast Benchmarks - MANDATORY",
+                "forecasts_required": "Open-Meteo Three Weather Models (Main/ECMWF/GFS) - MANDATORY",
                 "fire_data_optional": "NASA FIRMS Real Fire Detection Data (API authenticated)",
                 "internal_features_only": "Holiday, Temporal, Geographic (system-generated only)",
             },
@@ -1441,7 +1571,7 @@ class Clean100CityDatasetGenerator:
                 dataset_results["summary"]["cities_with_nasa_firms_optional"] += 1
 
             # Generate internal features for sample dates
-            log.info(f"  Generating internal system features...")
+            log.info("  Generating internal system features...")
             sample_dates = [
                 datetime.now().strftime("%Y-%m-%d"),
                 (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d"),
@@ -1454,14 +1584,21 @@ class Clean100CityDatasetGenerator:
                     self.generate_internal_features(city, date)
                 )
 
+            # Generate fire features from NASA FIRMS data (EXTERNAL API ONLY)
+            log.info("  Processing fire features from NASA FIRMS data...")
+            if nasa_firms_result["status"] in ["success", "no_fires"]:
+                city_result["fire_features"] = self._process_fire_features(
+                    nasa_firms_result, city
+                )
+            else:
+                city_result["fire_features"] = {"status": "no_fire_data"}
+
             # STRICT MANDATORY REQUIREMENTS VALIDATION
             has_ground_truth = openaq_result["status"] == "success"
             has_forecasts = (
                 openmeteo_result["status"] == "success"
                 and openmeteo_result["data"]["total_benchmarks"] == 3
             )
-            has_fire_data = nasa_firms_result["status"] in ["success", "no_fires"]
-
             # ENFORCE STRICT REQUIREMENTS: BOTH OpenAQ ground truth AND 3 Open-Meteo benchmarks MANDATORY
             if has_ground_truth and has_forecasts:
                 dataset_results["summary"]["cities_meeting_strict_requirements"] += 1
@@ -1517,20 +1654,32 @@ class Clean100CityDatasetGenerator:
                 ]
 
                 log.info(f"STRICT PROGRESS: {i}/100 cities processed")
+
+                openaq_pct = openaq_success / i * 100
+                openmeteo_pct = openmeteo_success / i * 100
+                nasa_pct = nasa_firms_success / i * 100
+                approved_pct = strict_compliant / i * 100
+                excluded_pct = excluded_cities / i * 100
+
                 log.info(
-                    f"  OpenAQ ground truth: {openaq_success}/{i} ({openaq_success/i*100:.1f}%)"
+                    f"  OpenAQ ground truth: {openaq_success}/{i} "
+                    f"({openaq_pct:.1f}%)"
                 )
                 log.info(
-                    f"  Open-Meteo 3 benchmarks: {openmeteo_success}/{i} ({openmeteo_success/i*100:.1f}%)"
+                    f"  Open-Meteo 3 benchmarks: {openmeteo_success}/{i} "
+                    f"({openmeteo_pct:.1f}%)"
                 )
                 log.info(
-                    f"  NASA FIRMS fire data: {nasa_firms_success}/{i} ({nasa_firms_success/i*100:.1f}%)"
+                    f"  NASA FIRMS fire data: {nasa_firms_success}/{i} "
+                    f"({nasa_pct:.1f}%)"
                 )
                 log.info(
-                    f"  APPROVED (strict compliance): {strict_compliant}/{i} ({strict_compliant/i*100:.1f}%)"
+                    f"  APPROVED (strict compliance): {strict_compliant}/{i} "
+                    f"({approved_pct:.1f}%)"
                 )
                 log.info(
-                    f"  EXCLUDED (insufficient data): {excluded_cities}/{i} ({excluded_cities/i*100:.1f}%)"
+                    f"  EXCLUDED (insufficient data): {excluded_cities}/{i} "
+                    f"({excluded_pct:.1f}%)"
                 )
 
         return dataset_results

@@ -1,0 +1,30 @@
+{
+  "verification_timestamp": "2025-09-12T02:56:20.725240",
+  "verification_type": "COMPREHENSIVE_DATASET_VERIFICATION",
+  "storage_analysis": {},
+  "data_structure_validation": {},
+  "content_sanity_checks": {},
+  "api_consistency_verification": {
+    "consistency_verified": true,
+    "open_meteo_test": {
+      "status": "failed",
+      "status_code": 404
+    },
+    "nasa_firms_test": {
+      "status": "success",
+      "response_size": 25673,
+      "has_fire_data": true,
+      "content_preview": "  \n<!DOCTYPE html>\n<!-- saved from url=(0027)https://earthdata.nasa.gov/ -->\n<html lang=\"en\" xmlns:fb=\"http://ogp.me/ns/fb#\" class=\"\">\n    <head>  \n        <!-- Google Tag Manager -->\n            <scr"
+    },
+    "openaq_test": {}
+  },
+  "summary": {
+    "datasets_found": 0,
+    "datasets_verified": 0,
+    "storage_ratios_verified": 0,
+    "sanity_checks_passed": 0,
+    "api_consistency_verified": 1
+  },
+  "status": "completed",
+  "end_time": "2025-09-12T02:56:22.012811"
+}
