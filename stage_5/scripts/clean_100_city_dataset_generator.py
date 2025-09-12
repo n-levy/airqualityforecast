@@ -55,7 +55,7 @@ class Clean100CityDatasetGenerator:
 
         # Load API keys
         try:
-            with open(".config/api_keys.json", "r") as f:
+            with open("C:\\aqf311\\Git_repo\\.config\\api_keys.json", "r") as f:
                 keys = json.load(f)
             self.openaq_key = keys["apis"]["openaq"]["key"]
             self.nasa_firms_key = keys["apis"].get("nasa_firms", {}).get("key")
@@ -890,11 +890,55 @@ class Clean100CityDatasetGenerator:
         return pollutant_data
 
     def collect_openmeteo_forecasts(self, city: Dict) -> Dict:
-        """Collect forecast data from Open-Meteo API."""
+        """Collect THREE DISTINCT forecast benchmarks from Open-Meteo API."""
         try:
-            # Current and forecast air quality
-            forecast_url = "https://api.open-meteo.com/v1/air-quality"
-            forecast_params = {
+            forecast_results = {
+                "status": "success",
+                "data": {
+                    "benchmark_forecasts": {},
+                    "total_benchmarks": 0,
+                    "benchmark_descriptions": {},
+                },
+            }
+
+            # Benchmark 1: Standard Air Quality Forecast (7-day forecast)
+            log.info(f"    Collecting Benchmark 1: Standard Air Quality Forecast")
+            benchmark1_params = {
+                "latitude": city["lat"],
+                "longitude": city["lon"],
+                "hourly": [
+                    "pm10",
+                    "pm2_5",
+                    "carbon_monoxide",
+                    "nitrogen_dioxide",
+                    "sulphur_dioxide",
+                    "ozone",
+                    "european_aqi",
+                ],
+                "past_days": 0,
+                "forecast_days": 7,
+                "timezone": "auto",
+            }
+
+            benchmark1_response = requests.get(
+                "https://api.open-meteo.com/v1/air-quality",
+                params=benchmark1_params,
+                timeout=30,
+            )
+
+            if benchmark1_response.status_code == 200:
+                benchmark1_data = benchmark1_response.json()
+                forecast_results["data"]["benchmark_forecasts"]["standard_forecast"] = (
+                    self._process_openmeteo_forecasts(benchmark1_data)
+                )
+                forecast_results["data"]["benchmark_descriptions"][
+                    "standard_forecast"
+                ] = "7-day hourly air quality forecast with all pollutants"
+                forecast_results["data"]["total_benchmarks"] += 1
+
+            # Benchmark 2: Historical Analysis (Past 7 days for pattern analysis)
+            log.info(f"    Collecting Benchmark 2: Historical Analysis")
+            benchmark2_params = {
                 "latitude": city["lat"],
                 "longitude": city["lon"],
                 "hourly": [
@@ -907,26 +951,80 @@ class Clean100CityDatasetGenerator:
                     "european_aqi",
                 ],
                 "past_days": 7,
-                "forecast_days": 7,
+                "forecast_days": 0,
                 "timezone": "auto",
             }
 
-            forecast_response = requests.get(
-                forecast_url, params=forecast_params, timeout=30
+            benchmark2_response = requests.get(
+                "https://api.open-meteo.com/v1/air-quality",
+                params=benchmark2_params,
+                timeout=30,
             )
 
-            if forecast_response.status_code == 200:
-                forecast_data = forecast_response.json()
+            if benchmark2_response.status_code == 200:
+                benchmark2_data = benchmark2_response.json()
+                forecast_results["data"]["benchmark_forecasts"][
+                    "historical_analysis"
+                ] = self._process_openmeteo_forecasts(benchmark2_data)
+                forecast_results["data"]["benchmark_descriptions"][
+                    "historical_analysis"
+                ] = "7-day historical air quality data for pattern analysis"
+                forecast_results["data"]["total_benchmarks"] += 1
 
-                # Process forecast data
-                processed_forecasts = self._process_openmeteo_forecasts(forecast_data)
+            # Benchmark 3: Extended Range Forecast (14-day forecast)
+            log.info(f"    Collecting Benchmark 3: Extended Range Forecast")
+            benchmark3_params = {
+                "latitude": city["lat"],
+                "longitude": city["lon"],
+                "hourly": [
+                    "pm10",
+                    "pm2_5",
+                    "carbon_monoxide",
+                    "nitrogen_dioxide",
+                    "sulphur_dioxide",
+                    "ozone",
+                    "european_aqi",
+                ],
+                "past_days": 0,
+                "forecast_days": 14,
+                "timezone": "auto",
+            }
 
-                return {"status": "success", "data": processed_forecasts}
+            benchmark3_response = requests.get(
+                "https://api.open-meteo.com/v1/air-quality",
+                params=benchmark3_params,
+                timeout=30,
+            )
 
-            return {"status": "no_data", "data": None}
+            if benchmark3_response.status_code == 200:
+                benchmark3_data = benchmark3_response.json()
+                forecast_results["data"]["benchmark_forecasts"]["extended_forecast"] = (
+                    self._process_openmeteo_forecasts(benchmark3_data)
+                )
+                forecast_results["data"]["benchmark_descriptions"][
+                    "extended_forecast"
+                ] = "14-day extended air quality forecast for long-range planning"
+                forecast_results["data"]["total_benchmarks"] += 1
+
+            # Verify we have all three benchmarks
+            if forecast_results["data"]["total_benchmarks"] == 3:
+                log.info(
+                    f"    SUCCESS: Successfully collected all 3 forecast benchmarks"
+                )
+                return forecast_results
+            else:
+                log.warning(
+                    f"    WARNING: Only collected {forecast_results['data']['total_benchmarks']}/3 benchmarks"
+                )
+                return {
+                    "status": "insufficient_benchmarks",
+                    "data": forecast_results["data"],
+                }
 
         except Exception as e:
-            log.error(f"Open-Meteo collection failed for {city['name']}: {e}")
+            log.error(
+                f"Open-Meteo three-benchmark collection failed for {city['name']}: {e}"
+            )
             return {"status": "error", "error": str(e), "data": None}
 
     def _process_openmeteo_forecasts(self, forecast_data: Dict) -> Dict:
@@ -1257,32 +1355,46 @@ class Clean100CityDatasetGenerator:
             return "inland"
 
     def generate_clean_dataset(self) -> Dict[str, Any]:
-        """Generate clean dataset with only external APIs and internal features."""
-        log.info("=== STARTING CLEAN 100-CITY DATASET GENERATION ===")
+        """Generate STRICT clean dataset - ALL cities MUST have OpenAQ ground truth and Open-Meteo forecasts."""
+        log.info("=== STARTING STRICT CLEAN 100-CITY DATASET GENERATION ===")
+        log.info("STRICT REQUIREMENTS:")
+        log.info("  - ALL cities MUST have OpenAQ ground truth data")
+        log.info("  - ALL cities MUST have Open-Meteo forecast benchmarks")
+        log.info("  - NO synthetic, simulated, or mathematically generated data")
+        log.info("  - Only external APIs + internal system features allowed")
 
         dataset_results = {
             "generation_timestamp": datetime.now().isoformat(),
-            "dataset_type": "CLEAN_100_CITY_DATASET",
-            "data_sources": {
-                "ground_truth": "OpenAQ Real Measured Data (API authenticated)",
-                "forecasts": "Open-Meteo Weather-Based Air Quality Predictions",
-                "fire_data": "NASA FIRMS Real Fire Detection Data (API authenticated)",
-                "internal_features": "Holiday, Temporal, Geographic (system-generated)",
+            "dataset_type": "STRICT_CLEAN_100_CITY_DATASET",
+            "strict_requirements": {
+                "mandatory_openaq_ground_truth": "ALL cities must have real measured pollutant data",
+                "mandatory_openmeteo_forecasts": "ALL cities must have three distinct forecast benchmarks",
+                "no_synthetic_data": "Zero tolerance for synthetic/simulated/mathematical generation",
+                "data_sources_only": "External APIs + Internal system features only",
             },
-            "excluded_sources": [
-                "Pattern-based fire activity modeling",
-                "Synthetic WAQI fallback data",
-                "CAMS synthetic benchmarks",
-                "Extreme pollution scenarios",
-                "All pattern-based synthetic data",
+            "data_sources": {
+                "ground_truth_required": "OpenAQ Real Measured Data (API authenticated) - MANDATORY",
+                "forecasts_required": "Open-Meteo Three Forecast Benchmarks - MANDATORY",
+                "fire_data_optional": "NASA FIRMS Real Fire Detection Data (API authenticated)",
+                "internal_features_only": "Holiday, Temporal, Geographic (system-generated only)",
+            },
+            "absolutely_excluded": [
+                "ALL pattern-based modeling",
+                "ALL synthetic data generation",
+                "ALL simulated data",
+                "ALL mathematical modeling",
+                "ALL algorithmic synthesis",
+                "ALL fallback synthetic data",
+                "ANY non-external API data sources",
             ],
             "cities_data": [],
             "summary": {
                 "total_cities": len(self.cities),
-                "successful_openaq": 0,
-                "successful_openmeteo": 0,
-                "successful_nasa_firms": 0,
-                "cities_with_complete_data": 0,
+                "cities_with_openaq_required": 0,
+                "cities_with_openmeteo_required": 0,
+                "cities_with_nasa_firms_optional": 0,
+                "cities_meeting_strict_requirements": 0,
+                "cities_excluded_insufficient_data": 0,
             },
         }
 
@@ -1307,23 +1419,26 @@ class Clean100CityDatasetGenerator:
             city_result["ground_truth"] = openaq_result
 
             if openaq_result["status"] == "success":
-                dataset_results["summary"]["successful_openaq"] += 1
+                dataset_results["summary"]["cities_with_openaq_required"] += 1
 
             # Collect Open-Meteo forecasts
             log.info(f"  Collecting Open-Meteo forecasts...")
             openmeteo_result = self.collect_openmeteo_forecasts(city)
             city_result["forecasts"] = openmeteo_result
 
-            if openmeteo_result["status"] == "success":
-                dataset_results["summary"]["successful_openmeteo"] += 1
+            if (
+                openmeteo_result["status"] == "success"
+                and openmeteo_result["data"]["total_benchmarks"] == 3
+            ):
+                dataset_results["summary"]["cities_with_openmeteo_required"] += 1
 
-            # Collect NASA FIRMS fire data
-            log.info(f"  Collecting NASA FIRMS fire data...")
+            # Collect NASA FIRMS fire data (EXTERNAL API ONLY - NO SYNTHETIC FIRE FEATURES)
+            log.info(f"  Collecting NASA FIRMS real fire data...")
             nasa_firms_result = self.collect_nasa_firms_fire_data(city)
-            city_result["fire_data"] = nasa_firms_result
+            city_result["real_fire_data"] = nasa_firms_result
 
             if nasa_firms_result["status"] in ["success", "no_fires"]:
-                dataset_results["summary"]["successful_nasa_firms"] += 1
+                dataset_results["summary"]["cities_with_nasa_firms_optional"] += 1
 
             # Generate internal features for sample dates
             log.info(f"  Generating internal system features...")
@@ -1339,43 +1454,83 @@ class Clean100CityDatasetGenerator:
                     self.generate_internal_features(city, date)
                 )
 
-            # Check completeness
+            # STRICT MANDATORY REQUIREMENTS VALIDATION
             has_ground_truth = openaq_result["status"] == "success"
-            has_forecasts = openmeteo_result["status"] == "success"
+            has_forecasts = (
+                openmeteo_result["status"] == "success"
+                and openmeteo_result["data"]["total_benchmarks"] == 3
+            )
             has_fire_data = nasa_firms_result["status"] in ["success", "no_fires"]
 
-            # Count cities with at least ground truth OR forecasts as having useful data
-            if has_ground_truth and has_forecasts and has_fire_data:
-                dataset_results["summary"]["cities_with_complete_data"] += 1
-                city_result["data_completeness"] = "complete"
-            elif (has_ground_truth or has_forecasts) and has_fire_data:
-                city_result["data_completeness"] = "partial_with_fire"
-            elif has_ground_truth or has_forecasts:
-                city_result["data_completeness"] = "partial"
-            else:
-                city_result["data_completeness"] = "incomplete"
+            # ENFORCE STRICT REQUIREMENTS: BOTH OpenAQ ground truth AND 3 Open-Meteo benchmarks MANDATORY
+            if has_ground_truth and has_forecasts:
+                dataset_results["summary"]["cities_meeting_strict_requirements"] += 1
+                city_result["strict_compliance"] = "FULLY_COMPLIANT"
+                city_result["data_completeness"] = "meets_strict_requirements"
 
-            dataset_results["cities_data"].append(city_result)
+                # Add city to final dataset only if it meets strict requirements
+                dataset_results["cities_data"].append(city_result)
+
+                log.info(f"    APPROVED: {city['name']} meets strict requirements")
+            else:
+                dataset_results["summary"]["cities_excluded_insufficient_data"] += 1
+                city_result["strict_compliance"] = "EXCLUDED_INSUFFICIENT_DATA"
+                city_result["exclusion_reason"] = []
+
+                if not has_ground_truth:
+                    city_result["exclusion_reason"].append(
+                        "Missing mandatory OpenAQ ground truth data"
+                    )
+                    log.warning(
+                        f"    EXCLUDED: {city['name']} - No OpenAQ ground truth"
+                    )
+
+                if not has_forecasts:
+                    city_result["exclusion_reason"].append(
+                        "Missing mandatory 3 Open-Meteo forecast benchmarks"
+                    )
+                    log.warning(
+                        f"    EXCLUDED: {city['name']} - Insufficient Open-Meteo benchmarks"
+                    )
+
+                # Do NOT add excluded cities to final dataset
+                log.error(
+                    f"    REJECTED: {city['name']} does not meet strict requirements"
+                )
 
             # Progress update
             if i % 10 == 0:
-                openaq_success = dataset_results["summary"]["successful_openaq"]
-                openmeteo_success = dataset_results["summary"]["successful_openmeteo"]
-                nasa_firms_success = dataset_results["summary"]["successful_nasa_firms"]
-                complete_data = dataset_results["summary"]["cities_with_complete_data"]
+                openaq_success = dataset_results["summary"][
+                    "cities_with_openaq_required"
+                ]
+                openmeteo_success = dataset_results["summary"][
+                    "cities_with_openmeteo_required"
+                ]
+                nasa_firms_success = dataset_results["summary"][
+                    "cities_with_nasa_firms_optional"
+                ]
+                strict_compliant = dataset_results["summary"][
+                    "cities_meeting_strict_requirements"
+                ]
+                excluded_cities = dataset_results["summary"][
+                    "cities_excluded_insufficient_data"
+                ]
 
-                log.info(f"Progress: {i}/100 cities processed")
+                log.info(f"STRICT PROGRESS: {i}/100 cities processed")
                 log.info(
-                    f"  OpenAQ success: {openaq_success}/{i} ({openaq_success/i*100:.1f}%)"
+                    f"  OpenAQ ground truth: {openaq_success}/{i} ({openaq_success/i*100:.1f}%)"
                 )
                 log.info(
-                    f"  Open-Meteo success: {openmeteo_success}/{i} ({openmeteo_success/i*100:.1f}%)"
+                    f"  Open-Meteo 3 benchmarks: {openmeteo_success}/{i} ({openmeteo_success/i*100:.1f}%)"
                 )
                 log.info(
-                    f"  NASA FIRMS success: {nasa_firms_success}/{i} ({nasa_firms_success/i*100:.1f}%)"
+                    f"  NASA FIRMS fire data: {nasa_firms_success}/{i} ({nasa_firms_success/i*100:.1f}%)"
                 )
                 log.info(
-                    f"  Complete data: {complete_data}/{i} ({complete_data/i*100:.1f}%)"
+                    f"  APPROVED (strict compliance): {strict_compliant}/{i} ({strict_compliant/i*100:.1f}%)"
+                )
+                log.info(
+                    f"  EXCLUDED (insufficient data): {excluded_cities}/{i} ({excluded_cities/i*100:.1f}%)"
                 )
 
         return dataset_results
@@ -1395,12 +1550,18 @@ class Clean100CityDatasetGenerator:
         summary = dataset_results["summary"]
         summary_report = {
             "generation_timestamp": dataset_results["generation_timestamp"],
-            "dataset_type": "CLEAN_100_CITY_DATASET",
+            "dataset_type": "STRICT_CLEAN_100_CITY_DATASET",
             "data_authenticity": "External APIs + Internal System Features Only",
-            "excluded_synthetic": "All pattern-based modeling removed",
+            "strict_requirements_enforced": "MANDATORY OpenAQ ground truth + 3 Open-Meteo benchmarks",
+            "excluded_synthetic": "ALL pattern-based modeling, synthetic data generation, and mathematical simulation REMOVED",
+            "cities_meeting_requirements": summary[
+                "cities_meeting_strict_requirements"
+            ],
+            "cities_excluded": summary["cities_excluded_insufficient_data"],
+            "final_dataset_cities": len(dataset_results["cities_data"]),
             "summary_statistics": summary,
             "data_sources": dataset_results["data_sources"],
-            "excluded_sources": dataset_results["excluded_sources"],
+            "absolutely_excluded": dataset_results["absolutely_excluded"],
         }
 
         summary_file = self.output_dir / f"CLEAN_100_CITY_summary_{timestamp_str}.json"
@@ -1429,21 +1590,23 @@ def main():
     clean_file = generator.save_clean_dataset(dataset_results)
 
     summary = dataset_results["summary"]
-    print(f"\nCLEAN DATASET GENERATION COMPLETE!")
+    print(f"\nSTRICT CLEAN DATASET GENERATION COMPLETE!")
     print(f"Dataset saved: {clean_file}")
     print(f"Cities processed: {summary['total_cities']}")
     print(
-        f"OpenAQ success: {summary['successful_openaq']}/{summary['total_cities']} ({summary['successful_openaq']/summary['total_cities']*100:.1f}%)"
+        f"APPROVED CITIES: {summary['cities_meeting_strict_requirements']}/{summary['total_cities']} ({summary['cities_meeting_strict_requirements']/summary['total_cities']*100:.1f}%)"
     )
     print(
-        f"Open-Meteo success: {summary['successful_openmeteo']}/{summary['total_cities']} ({summary['successful_openmeteo']/summary['total_cities']*100:.1f}%)"
+        f"EXCLUDED CITIES: {summary['cities_excluded_insufficient_data']}/{summary['total_cities']} ({summary['cities_excluded_insufficient_data']/summary['total_cities']*100:.1f}%)"
     )
     print(
-        f"NASA FIRMS success: {summary['successful_nasa_firms']}/{summary['total_cities']} ({summary['successful_nasa_firms']/summary['total_cities']*100:.1f}%)"
+        f"Final dataset contains: {len(dataset_results['cities_data'])} cities with complete mandatory data"
     )
-    print(
-        f"Complete data: {summary['cities_with_complete_data']}/{summary['total_cities']} ({summary['cities_with_complete_data']/summary['total_cities']*100:.1f}%)"
-    )
+    print("\nSTRICT REQUIREMENTS ENFORCED:")
+    print("  - MANDATORY: OpenAQ ground truth pollutant data")
+    print("  - MANDATORY: 3 distinct Open-Meteo forecast benchmarks")
+    print("  - ZERO TOLERANCE: No synthetic/simulated/mathematical data generation")
+    print("  - AUTHENTIC DATA ONLY: External APIs + Internal system features")
 
 
 if __name__ == "__main__":
