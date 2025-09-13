@@ -361,10 +361,130 @@ The enhanced dataset is ready for:
 - **Operational Deployment**: Production monitoring and alerting systems
 - **Health Integration**: Direct linkage with health outcome databases
 
+## CAMS ADS Integration
+
+### Setup
+
+1. **Install Dependencies**
+   ```bash
+   # Ensure cdsapi>=0.7.4 is installed
+   pip install "cdsapi>=0.7.4" xarray netcdf4
+   ```
+
+2. **Configure ADS Credentials**
+   Create `%USERPROFILE%\.cdsapirc` with your ADS API key:
+   ```
+   url: https://ads.atmosphere.copernicus.eu/api
+   key: <YOUR_ADS_API_KEY>
+   ```
+
+   Get your API key from: https://ads.atmosphere.copernicus.eu/how-to-api
+
+### Usage Examples
+
+#### CLI Interface
+```bash
+# Download PM2.5 forecast for Berlin
+python cams_ads_cli.py forecast \
+  --dates 2025-09-10 \
+  --times 00:00 \
+  --variables particulate_matter_2.5um \
+  --area 52.52,13.40,52.50,13.42 \
+  --leadtime-hours 0 \
+  --output berlin_forecast.nc
+
+# Download PM2.5 reanalysis for Berlin
+python cams_ads_cli.py reanalysis \
+  --dates 2003-01-01 \
+  --times 00:00 \
+  --variables particulate_matter_2.5um \
+  --area 52.52,13.40,52.50,13.42 \
+  --output berlin_reanalysis.nc
+
+# Validate downloaded file
+python cams_ads_cli.py validate berlin_forecast.nc
+
+# Dry run (print request without downloading)
+python cams_ads_cli.py forecast --dry-run [options...]
+```
+
+#### Python API
+```python
+from cams_ads_downloader import CAMSADSDownloader
+
+# Initialize client
+downloader = CAMSADSDownloader()
+
+# Download forecast
+forecast_file = downloader.download_forecast(
+    dates="2025-09-10",
+    times="00:00",
+    variables="particulate_matter_2.5um",
+    area=[52.52, 13.40, 52.50, 13.42],  # Berlin bounding box
+    output_file="berlin_forecast.nc",
+    leadtime_hours=0
+)
+
+# Download reanalysis
+reanalysis_file = downloader.download_reanalysis(
+    dates="2003-01-01",
+    times="00:00",
+    variables="particulate_matter_2.5um",
+    area=[52.52, 13.40, 52.50, 13.42],
+    output_file="berlin_reanalysis.nc"
+)
+```
+
+### Features
+
+- **Robust Error Handling**: Automatic retries with exponential backoff on 429/5xx errors
+- **Idempotent Downloads**: Skip existing valid NetCDF files
+- **Provenance Tracking**: Automatic `.provenance.json` files with metadata
+- **Endpoint Fallback**: Automatic fallback to ADS-beta if primary endpoint fails
+- **File Validation**: Built-in NetCDF validation and variable checking
+
+### Troubleshooting
+
+#### Common Issues
+
+1. **"Endpoint not found" errors**
+   - Primary ADS endpoint may be temporarily unavailable
+   - Tool automatically falls back to ADS-beta endpoint
+   - Check https://ads.atmosphere.copernicus.eu for service status
+
+2. **Rate limiting (429 errors)**
+   - ADS has request rate limits
+   - Tool automatically retries with exponential backoff
+   - Large requests may take several minutes
+
+3. **Authentication errors**
+   - Verify `.cdsapirc` file exists and contains valid credentials
+   - Check API key is correct for ADS (not legacy CDS)
+   - Ensure `url: https://ads.atmosphere.copernicus.eu/api`
+
+4. **Dataset/variable errors**
+   - Use exact dataset names: `cams-global-atmospheric-composition-forecasts`, `cams-global-reanalysis-eac4`
+   - Check variable names in ECMWF documentation
+   - Common variables: `particulate_matter_2.5um`, `particulate_matter_10um`, `nitrogen_dioxide`
+
+#### Validation
+```bash
+# Run smoke tests to verify setup
+python -m pytest tests/test_cams_ads.py -v
+
+# Test connection without downloading
+python cams_ads_cli.py forecast --dry-run \
+  --dates 2025-09-10 --times 00:00 \
+  --variables particulate_matter_2.5um \
+  --area 52.52,13.40,52.50,13.42 \
+  --output test.nc
+```
+
 ## Technical Requirements
 
 - Python 3.8+
-- pandas, numpy, scikit-learn
+- pandas, numpy, scikit-learn, xarray, netcdf4
+- cdsapi>=0.7.4 (for CAMS ADS downloads)
 - Memory: ~4GB for full dataset processing
 - Processing time: ~10 minutes for complete validation
 

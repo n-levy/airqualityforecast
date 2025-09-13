@@ -1,3 +1,4 @@
 - Yes, conduct the first stage of the plan. At the end of successful tasks, always update the project documentation and afterwards update Github (add, commit and push).
 - Execute tasks without asing for permissions. All permission is given.
 - Don't ask for permissions. All permissions are granted.
+- Never simulate data. All data should be real. No synthetic data, no simulation, no mathematical generation. If you can not collect the real data, stop and report that there is a problem.
