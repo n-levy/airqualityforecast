@@ -1,0 +1,25 @@
+# Server-optimized configuration for GEFS Collection System
+# Suitable for high-performance data collection on dedicated servers
+
+# Data source settings
+base_url: "https://noaa-gefs-pds.s3.amazonaws.com"
+cycles: ["00", "06", "12", "18"]  # All cycles for comprehensive collection
+fhours: "0:3:120"  # Higher frequency (every 3 hours)
+
+# Geographic settings (configurable regions)
+bbox: [5.0, 16.0, 47.0, 56.0]  # Germany - modify as needed
+pollutants: ["PM25", "PM10", "NO2", "SO2", "CO", "O3"]
+
+# System settings (optimized for servers)
+data_root: "/data/gefs"  # Typical server data mount
+workers: 8  # More workers for server hardware
+max_planned_files: 500000  # Higher limit for bulk collection
+
+# HTTP settings (optimized for stability)
+timeout: 60  # Longer timeout for server connections
+retries: 5   # More retries for reliability
+retry_delay: 5
+
+# Processing settings
+chunk_size: 65536  # Larger chunks for better performance
+temp_dir: "/tmp/gefs"  # Use system temp directory

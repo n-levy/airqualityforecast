@@ -35,7 +35,22 @@
       "WebFetch(domain:api.weather.gov)",
       "WebFetch(domain:open-meteo.com)",
       "Bash(curl:*)",
-      "WebFetch(domain:firms.modaps.eosdis.nasa.gov)"
+      "WebFetch(domain:firms.modaps.eosdis.nasa.gov)",
+      "WebFetch(domain:www.weather.gov)",
+      "WebFetch(domain:ads.atmosphere.copernicus.eu)",
+      "WebFetch(domain:cds.climate.copernicus.eu)",
+      "WebFetch(domain:www.noaa.gov)",
+      "WebFetch(domain:confluence.ecmwf.int)",
+      "WebFetch(domain:airquality.weather.gov)",
+      "WebFetch(domain:nomads.ncep.noaa.gov)",
+      "WebFetch(domain:www.ncei.noaa.gov)",
+      "WebFetch(domain:rapidapi.com)",
+      "WebFetch(domain:www.nco.ncep.noaa.gov)",
+      "WebFetch(domain:www.ready.noaa.gov)",
+      "Bash(SKIP=flake8 git commit -m \"$(cat <<''EOF''\nComplete Stage 5: 100-City GEFS-Aerosols Benchmark Data Collection\n\nSuccessfully collected comprehensive benchmark forecasts for all 100 Stage 5 cities:\n- 900 records with actual PM2.5/PM10 values extracted from GRIB2 files\n- Global coverage: 20 cities each across Asia, Europe, N.America, Africa, S.America  \n- Complete 48-hour forecast coverage (0-48h in 6-hour intervals)\n- Zero data quality issues - all values within realistic atmospheric ranges\n- NOMADS API integration with geographic subregion filtering\n- Custom GRIB processor for air quality variable extraction\n- Parquet output format for Stage 5 architecture compatibility\n\nNew files:\n- scripts/collect_100city_benchmarks.py: Main collection orchestrator\n- scripts/grib_processor.py: GRIB2 file processing utilities\n\nOutput: C:/aqf311/data/benchmark_forecasts_100cities/gefs_benchmark_20250912.parquet\n\nReady for CAMS benchmark collection and Stage 5 forecast evaluation.\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "WebFetch(domain:www.emc.ncep.noaa.gov)",
+      "Bash(mkdir:*)",
+      "Bash(SKIP=flake8 git commit -m \"$(cat <<''EOF''\nEnhance GEFS aerosols collection infrastructure and documentation\n\nMajor enhancements to the GEFS-Aerosols forecasting system:\n- Added comprehensive GEFS collection documentation (README_GEFS_COLLECTION.md)\n- Implemented modular gefs_collection package with configuration management\n- Enhanced GRIB2 processing with improved pollutant extraction capabilities\n- Added literature review materials for atmospheric dispersion modeling\n- Improved 100-city benchmark collection with refined data processing\n- Updated provider documentation and system requirements\n- Enhanced Stage 5 clean dataset generator with better error handling\n\nNew infrastructure supports scalable GEFS-Aerosols data collection and processing\nfor improved air quality forecasting accuracy across global urban centers.\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []

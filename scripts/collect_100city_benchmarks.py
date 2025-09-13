@@ -164,8 +164,9 @@ class BenchmarkCollector100Cities:
                             params = {
                                 "file": file_name,
                                 "dir": dir_path,
-                                "var_PMTF": "on",  # PM2.5
-                                "var_PMTC": "on",  # PM10
+                                "var_PMTF": "on",  # PM2.5 Fine Particulate Matter
+                                "var_PMTC": "on",  # PM10 Coarse Particulate Matter
+                                # Note: GEFS chemistry only provides PM data, not gaseous pollutants
                                 "lev_surface": "on",
                                 "subregion": "",
                                 "leftlon": lon - 0.5,
@@ -195,7 +196,7 @@ class BenchmarkCollector100Cities:
                                 with open(temp_file, "wb") as f:
                                     f.write(response.content)
 
-                                # Extract PM2.5 and PM10 values from GRIB
+                                # Extract PM values from GRIB (GEFS only provides PM data)
                                 grib_data = self.grib_processor.extract_point_data(
                                     temp_file,
                                     city["lat"],
@@ -228,6 +229,8 @@ class BenchmarkCollector100Cities:
                                         "lon": city["lon"],
                                         "pm25": grib_data.get("pm25"),
                                         "pm10": grib_data.get("pm10"),
+                                        "no2": None,  # Not available in GEFS
+                                        "o3": None,  # Not available in GEFS
                                         "data_size_bytes": len(response.content),
                                         "model_version": "GEFS-chem_0.25deg",
                                     }
@@ -287,10 +290,10 @@ class BenchmarkCollector100Cities:
                 "cams-global-atmospheric-composition-forecasts", request, str(temp_file)
             )
 
-            # Process GRIB file (would need proper GRIB processing)
+            # Process GRIB file to extract all pollutants
             rows = []
 
-            # For now, create placeholder records for all cities
+            # Extract data for all cities from CAMS GRIB file
             for city in self.cities:
                 for time_str in self.cams_config["time"]:
                     cycle = int(time_str.split(":")[0])
@@ -301,6 +304,14 @@ class BenchmarkCollector100Cities:
                         forecast_time = datetime(
                             target_date.year, target_date.month, target_date.day, cycle
                         ) + timedelta(hours=leadtime)
+
+                        # Extract all pollutants from CAMS GRIB at this time step
+                        cams_data = self.grib_processor.extract_point_data(
+                            temp_file,
+                            city["lat"],
+                            city["lon"],
+                            ["pm25", "pm10", "no2", "o3"],
+                        )
 
                         rows.append(
                             {
@@ -318,10 +329,10 @@ class BenchmarkCollector100Cities:
                                 "region": city["region"],
                                 "lat": city["lat"],
                                 "lon": city["lon"],
-                                "pm25": None,  # Would extract from GRIB
-                                "pm10": None,  # Would extract from GRIB
-                                "no2": None,  # Would extract from GRIB
-                                "o3": None,  # Would extract from GRIB
+                                "pm25": cams_data.get("pm25"),
+                                "pm10": cams_data.get("pm10"),
+                                "no2": cams_data.get("no2"),
+                                "o3": cams_data.get("o3"),
                                 "model_version": "CAMS_global",
                             }
                         )

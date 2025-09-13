@@ -41,12 +41,18 @@ class GRIBProcessor:
         """Initialize processor."""
         self.available = XARRAY_AVAILABLE and CFGRIB_AVAILABLE
 
-        # Variable name mappings
+        # Variable name mappings for GEFS-Aerosols
         self.var_mappings = {
-            "pm25": ["PMTF", "pm2p5", "pm25", "particulate_matter_2.5um"],
-            "pm10": ["PMTC", "pm10", "particulate_matter_10um"],
-            "no2": ["NO2", "nitrogen_dioxide"],
-            "o3": ["O3", "ozone"],
+            "pm25": [
+                "PMTF",
+                "pm2p5",
+                "pm25",
+                "particulate_matter_2.5um",
+                "PMTF_surface",
+            ],
+            "pm10": ["PMTC", "pm10", "particulate_matter_10um", "PMTC_surface"],
+            "no2": ["NO2", "nitrogen_dioxide", "NO2_surface", "OZCON1"],
+            "o3": ["O3", "ozone", "OZCON", "OZCON_surface", "ozone_concentration"],
         }
 
     def extract_point_data(self, grib_file, lat, lon, variables=None):
@@ -56,7 +62,7 @@ class GRIBProcessor:
             return {}
 
         if variables is None:
-            variables = ["pm25", "pm10"]
+            variables = ["pm25", "pm10", "no2", "o3"]
 
         try:
             # Open GRIB file with xarray

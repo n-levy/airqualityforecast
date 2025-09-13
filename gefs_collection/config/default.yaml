@@ -1,0 +1,25 @@
+# Default configuration for GEFS Collection System
+# Copy and modify for server-specific settings
+
+# Data source settings
+base_url: "https://noaa-gefs-pds.s3.amazonaws.com"
+cycles: ["00", "12"]
+fhours: "0:6:120"
+
+# Geographic settings (Germany by default)
+bbox: [5.0, 16.0, 47.0, 56.0]  # [lon_min, lon_max, lat_min, lat_max]
+pollutants: ["PM25", "PM10", "NO2", "SO2", "CO", "O3"]
+
+# System settings
+data_root: ""  # Empty = use ~/gefs_data
+workers: 4
+max_planned_files: 50000
+
+# HTTP settings
+timeout: 30
+retries: 3
+retry_delay: 2
+
+# Processing settings
+chunk_size: 8192
+temp_dir: ""  # Empty = use data_root/temp

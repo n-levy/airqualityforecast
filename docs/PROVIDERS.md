@@ -9,7 +9,7 @@
 ## NOAA GEFS-Aerosol
 - Scope: Global
 - Frequency: 6-hourly
-- Variables: PM₂.₅, PM₁₀, O₃, NO₂
+- Variables: PM₂.₅, PM₁₀ (particulate matter only)
 
 
 ## Additional Metadata

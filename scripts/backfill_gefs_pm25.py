@@ -15,7 +15,6 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 import pandas as pd
-import xarray as xr
 
 warnings.filterwarnings("ignore")
 
@@ -231,7 +230,7 @@ class GEFSAerosolCollector:
         log.info(f"Saved {len(df)} records to {output_path}")
 
         # Log summary statistics
-        log.info(f"Data summary:")
+        log.info("Data summary:")
         log.info(
             f"  Date range: {df['forecast_time'].min()} to {df['forecast_time'].max()}"
         )

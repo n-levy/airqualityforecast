@@ -889,7 +889,7 @@ class Clean100CityDatasetGenerator:
         return pollutant_data
 
     def collect_openmeteo_forecasts(self, city: Dict) -> Dict:
-        """Collect THREE DISTINCT forecast models from Open-Meteo: Main Forecast, ECMWF, and GFS."""
+        """Collect THREE DISTINCT weather forecast models: ECMWF, GFS, and JMA."""
         try:
             forecast_results = {
                 "status": "success",
@@ -900,41 +900,8 @@ class Clean100CityDatasetGenerator:
                 },
             }
 
-            # Benchmark 1: Main Forecast API (Default model blend) - 24h forecast
-            log.info("    Collecting Benchmark 1: Main Forecast (Default Models)")
-            main_params = {
-                "latitude": city["lat"],
-                "longitude": city["lon"],
-                "hourly": [
-                    "temperature_2m",
-                    "relative_humidity_2m",
-                    "wind_speed_10m",
-                    "wind_direction_10m",
-                    "precipitation",
-                    "surface_pressure",
-                ],
-                "forecast_days": 1,  # 24-hour forecast period
-                "timezone": "auto",
-            }
-
-            main_response = requests.get(
-                "https://api.open-meteo.com/v1/forecast",
-                params=main_params,
-                timeout=30,
-            )
-
-            if main_response.status_code == 200:
-                main_data = main_response.json()
-                forecast_results["data"]["benchmark_forecasts"]["main_forecast"] = (
-                    self._process_openmeteo_weather_forecasts(main_data)
-                )
-                forecast_results["data"]["benchmark_descriptions"][
-                    "main_forecast"
-                ] = "Open-Meteo Main Forecast 24-hour weather prediction"
-                forecast_results["data"]["total_benchmarks"] += 1
-
-            # Benchmark 2: ECMWF (European Centre for Medium-Range Weather Forecasts) - 24h forecast
-            log.info("    Collecting Benchmark 2: ECMWF Weather Forecast")
+            # Benchmark 1: ECMWF Weather Forecast - 24h forecast
+            log.info("    Collecting Benchmark 1: ECMWF Weather Forecast")
             ecmwf_params = {
                 "latitude": city["lat"],
                 "longitude": city["lon"],
@@ -963,11 +930,11 @@ class Clean100CityDatasetGenerator:
                 )
                 forecast_results["data"]["benchmark_descriptions"][
                     "ecmwf_forecast"
-                ] = "ECMWF 24-hour weather forecast"
+                ] = "ECMWF IFS 24-hour weather forecast (0.25° resolution)"
                 forecast_results["data"]["total_benchmarks"] += 1
 
-            # Benchmark 3: GFS (Global Forecast System) - 24h forecast
-            log.info("    Collecting Benchmark 3: GFS Weather Forecast")
+            # Benchmark 2: GFS Weather Forecast - 24h forecast
+            log.info("    Collecting Benchmark 2: GFS Weather Forecast")
             gfs_params = {
                 "latitude": city["lat"],
                 "longitude": city["lon"],
@@ -996,13 +963,46 @@ class Clean100CityDatasetGenerator:
                 )
                 forecast_results["data"]["benchmark_descriptions"][
                     "gfs_forecast"
-                ] = "GFS (NOAA) 24-hour weather forecast"
+                ] = "GFS (NOAA) 24-hour weather forecast with HRRR high-resolution enhancement"
+                forecast_results["data"]["total_benchmarks"] += 1
+
+            # Benchmark 3: JMA Weather Forecast - 24h forecast
+            log.info("    Collecting Benchmark 3: JMA Weather Forecast")
+            jma_params = {
+                "latitude": city["lat"],
+                "longitude": city["lon"],
+                "hourly": [
+                    "temperature_2m",
+                    "relative_humidity_2m",
+                    "wind_speed_10m",
+                    "wind_direction_10m",
+                    "precipitation",
+                    "surface_pressure",
+                ],
+                "forecast_days": 1,  # 24-hour forecast period
+                "timezone": "auto",
+            }
+
+            jma_response = requests.get(
+                "https://api.open-meteo.com/v1/jma",
+                params=jma_params,
+                timeout=30,
+            )
+
+            if jma_response.status_code == 200:
+                jma_data = jma_response.json()
+                forecast_results["data"]["benchmark_forecasts"]["jma_forecast"] = (
+                    self._process_openmeteo_weather_forecasts(jma_data)
+                )
+                forecast_results["data"]["benchmark_descriptions"][
+                    "jma_forecast"
+                ] = "JMA (Japan Meteorological Agency) 24-hour weather forecast"
                 forecast_results["data"]["total_benchmarks"] += 1
 
             # Verify we have all three forecast models
             if forecast_results["data"]["total_benchmarks"] == 3:
                 log.info(
-                    "    SUCCESS: Successfully collected all 3 forecast models (Main, ECMWF, GFS)"
+                    "    SUCCESS: Successfully collected all 3 weather forecast models (ECMWF, GFS, JMA)"
                 )
                 return forecast_results
             else:
@@ -1019,6 +1019,71 @@ class Clean100CityDatasetGenerator:
                 f"Open-Meteo forecast models collection failed for {city['name']}: {e}"
             )
             return {"status": "error", "error": str(e), "data": None}
+
+    def _process_openmeteo_air_quality_forecasts(self, forecast_data: Dict) -> Dict:
+        """Process Open-Meteo air quality forecast data."""
+        hourly = forecast_data.get("hourly", {})
+
+        # Create forecast records
+        forecast_records = []
+        times = hourly.get("time", [])
+
+        for i, time_str in enumerate(times):
+            record = {
+                "datetime": time_str,
+                "pm10": (
+                    hourly.get("pm10", [])[i]
+                    if i < len(hourly.get("pm10", []))
+                    else None
+                ),
+                "pm2_5": (
+                    hourly.get("pm2_5", [])[i]
+                    if i < len(hourly.get("pm2_5", []))
+                    else None
+                ),
+                "carbon_monoxide": (
+                    hourly.get("carbon_monoxide", [])[i]
+                    if i < len(hourly.get("carbon_monoxide", []))
+                    else None
+                ),
+                "nitrogen_dioxide": (
+                    hourly.get("nitrogen_dioxide", [])[i]
+                    if i < len(hourly.get("nitrogen_dioxide", []))
+                    else None
+                ),
+                "sulphur_dioxide": (
+                    hourly.get("sulphur_dioxide", [])[i]
+                    if i < len(hourly.get("sulphur_dioxide", []))
+                    else None
+                ),
+                "ozone": (
+                    hourly.get("ozone", [])[i]
+                    if i < len(hourly.get("ozone", []))
+                    else None
+                ),
+                "european_aqi": (
+                    hourly.get("european_aqi", [])[i]
+                    if i < len(hourly.get("european_aqi", []))
+                    else None
+                ),
+                "us_aqi": (
+                    hourly.get("us_aqi", [])[i]
+                    if i < len(hourly.get("us_aqi", []))
+                    else None
+                ),
+            }
+            forecast_records.append(record)
+
+        return {
+            "forecast_records": forecast_records,
+            "total_records": len(forecast_records),
+            "date_range": {
+                "start": times[0] if times else None,
+                "end": times[-1] if times else None,
+            },
+            "air_quality_parameters": list(hourly.keys()),
+            "source": "CAMS European (11km) + CAMS Global (40km)",
+        }
 
     def _process_openmeteo_weather_forecasts(self, forecast_data: Dict) -> Dict:
         """Process Open-Meteo weather forecast data."""
