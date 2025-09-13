@@ -11,9 +11,9 @@ import json
 import logging
 import os
 import sys
+import time as time_module
 from datetime import datetime, timedelta
 from pathlib import Path
-import time as time_module
 
 import pandas as pd
 
@@ -40,7 +40,9 @@ def setup_logging():
 
 def load_cities_data():
     """Load the 100 cities from the comprehensive features table."""
-    cities_file = Path("stage_5/comprehensive_tables/comprehensive_features_table.csv")
+    cities_file = Path(
+        "../stage_5/comprehensive_tables/comprehensive_features_table.csv"
+    )
 
     if not cities_file.exists():
         raise FileNotFoundError(f"Cities data file not found: {cities_file}")
@@ -285,4 +287,3 @@ def main():
 if __name__ == "__main__":
     success = main()
     sys.exit(0 if success else 1)
-

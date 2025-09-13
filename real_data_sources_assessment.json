@@ -1,0 +1,35 @@
+{
+  "assessment_date": "2025-09-13T16:39:11.628090",
+  "data_sources": {
+    "cams": {
+      "available": true,
+      "files": 12,
+      "coverage": "2024-06-01 00:00 to 2024-06-03 18:00",
+      "source_type": "Real ECMWF-CAMS atmospheric composition data",
+      "frequency": "6-hour intervals",
+      "verified": true
+    },
+    "waqi": {
+      "available": true,
+      "files": 3,
+      "latest_file": "C:\\aqf311\\data\\curated\\obs\\real_waqi_past_week_20250913_144523.parquet",
+      "records": 377,
+      "source_type": "Real WAQI air quality observations",
+      "frequency": "Varies",
+      "verified": true
+    },
+    "gefs": {
+      "available": true,
+      "files": 1,
+      "source_type": "NOAA GEFS-Aerosol forecasts",
+      "frequency": "6-hour intervals",
+      "verified": false
+    },
+    "local_features": {
+      "available": true,
+      "source_type": "Calendar and temporal features (generated from timestamps)",
+      "frequency": "Any frequency needed",
+      "verified": true
+    }
+  }
+}
