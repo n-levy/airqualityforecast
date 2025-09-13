@@ -1,0 +1,674 @@
+2025-09-13 15:25:21,781 | INFO | __main__ | Starting Real Model Features Collection
+2025-09-13 15:25:21,781 | INFO | __main__ | === STARTING REAL MODEL FEATURES COLLECTION ===
+2025-09-13 15:25:21,798 | INFO | __main__ | Collecting real features for Delhi
+2025-09-13 15:25:21,798 | INFO | __main__ | Fetching real fire data for India (IND) from NASA FIRMS
+2025-09-13 15:25:23,217 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:23,217 | ERROR | __main__ | Failed to get real fire data for India: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:23,230 | INFO | __main__ | Fetching real holiday data for India (IN) from date.nager.at
+2025-09-13 15:25:23,926 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:24,927 | INFO | __main__ | Collecting real features for Lahore
+2025-09-13 15:25:24,927 | INFO | __main__ | Fetching real fire data for Pakistan (PAK) from NASA FIRMS
+2025-09-13 15:25:25,980 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv
+2025-09-13 15:25:25,980 | ERROR | __main__ | Failed to get real fire data for Pakistan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv
+2025-09-13 15:25:25,980 | INFO | __main__ | Fetching real holiday data for Pakistan (PK) from date.nager.at
+2025-09-13 15:25:26,128 | ERROR | __main__ | Failed to get real holiday data for Pakistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:27,143 | INFO | __main__ | Collecting real features for Dhaka
+2025-09-13 15:25:27,143 | INFO | __main__ | Fetching real fire data for Bangladesh (BGD) from NASA FIRMS
+2025-09-13 15:25:28,333 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGD_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGD_7d.csv
+2025-09-13 15:25:28,333 | ERROR | __main__ | Failed to get real fire data for Bangladesh: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGD_7d.csv
+2025-09-13 15:25:28,333 | INFO | __main__ | Fetching real holiday data for Bangladesh (BD) from date.nager.at
+2025-09-13 15:25:28,523 | ERROR | __main__ | Failed to get real holiday data for Bangladesh: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:29,534 | INFO | __main__ | Collecting real features for Kolkata
+2025-09-13 15:25:29,534 | INFO | __main__ | Fetching real fire data for India (IND) from NASA FIRMS
+2025-09-13 15:25:35,802 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:35,802 | ERROR | __main__ | Failed to get real fire data for India: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:35,802 | INFO | __main__ | Fetching real holiday data for India (IN) from date.nager.at
+2025-09-13 15:25:35,956 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:36,958 | INFO | __main__ | Collecting real features for Muzaffarpur
+2025-09-13 15:25:36,958 | INFO | __main__ | Fetching real fire data for India (IND) from NASA FIRMS
+2025-09-13 15:25:38,034 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:38,034 | ERROR | __main__ | Failed to get real fire data for India: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:38,034 | INFO | __main__ | Fetching real holiday data for India (IN) from date.nager.at
+2025-09-13 15:25:38,208 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:39,217 | INFO | __main__ | Collecting real features for Baghdad
+2025-09-13 15:25:39,217 | WARNING | __main__ | No country code mapping for Iraq
+2025-09-13 15:25:39,217 | WARNING | __main__ | No country code mapping for Iraq
+2025-09-13 15:25:40,218 | INFO | __main__ | Collecting real features for Ghaziabad
+2025-09-13 15:25:40,218 | INFO | __main__ | Fetching real fire data for India (IND) from NASA FIRMS
+2025-09-13 15:25:40,495 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:40,495 | ERROR | __main__ | Failed to get real fire data for India: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:40,495 | INFO | __main__ | Fetching real holiday data for India (IN) from date.nager.at
+2025-09-13 15:25:40,640 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:41,647 | INFO | __main__ | Collecting real features for Patna
+2025-09-13 15:25:41,647 | INFO | __main__ | Fetching real fire data for India (IND) from NASA FIRMS
+2025-09-13 15:25:42,898 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:42,898 | ERROR | __main__ | Failed to get real fire data for India: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:42,898 | INFO | __main__ | Fetching real holiday data for India (IN) from date.nager.at
+2025-09-13 15:25:43,072 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:44,074 | INFO | __main__ | Collecting real features for Hotan
+2025-09-13 15:25:44,074 | INFO | __main__ | Fetching real fire data for China (CHN) from NASA FIRMS
+2025-09-13 15:25:45,133 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CHN_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CHN_7d.csv
+2025-09-13 15:25:45,133 | ERROR | __main__ | Failed to get real fire data for China: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CHN_7d.csv
+2025-09-13 15:25:45,133 | INFO | __main__ | Fetching real holiday data for China (CN) from date.nager.at
+2025-09-13 15:25:45,289 | INFO | __main__ | Collected 6 real holidays for China
+2025-09-13 15:25:46,304 | INFO | __main__ | Collecting real features for Xinjiang
+2025-09-13 15:25:46,304 | INFO | __main__ | Fetching real fire data for China (CHN) from NASA FIRMS
+2025-09-13 15:25:47,500 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CHN_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CHN_7d.csv
+2025-09-13 15:25:47,500 | ERROR | __main__ | Failed to get real fire data for China: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CHN_7d.csv
+2025-09-13 15:25:47,500 | INFO | __main__ | Fetching real holiday data for China (CN) from date.nager.at
+2025-09-13 15:25:47,643 | INFO | __main__ | Collected 6 real holidays for China
+2025-09-13 15:25:48,648 | INFO | __main__ | Collecting real features for Faridabad
+2025-09-13 15:25:48,648 | INFO | __main__ | Fetching real fire data for India (IND) from NASA FIRMS
+2025-09-13 15:25:50,927 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:50,927 | ERROR | __main__ | Failed to get real fire data for India: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:50,927 | INFO | __main__ | Fetching real holiday data for India (IN) from date.nager.at
+2025-09-13 15:25:51,085 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:52,097 | INFO | __main__ | Collecting real features for Noida
+2025-09-13 15:25:52,097 | INFO | __main__ | Fetching real fire data for India (IND) from NASA FIRMS
+2025-09-13 15:25:53,143 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:53,143 | ERROR | __main__ | Failed to get real fire data for India: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:25:53,143 | INFO | __main__ | Fetching real holiday data for India (IN) from date.nager.at
+2025-09-13 15:25:53,308 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:54,308 | INFO | __main__ | Collecting real features for Bahawalpur
+2025-09-13 15:25:54,308 | INFO | __main__ | Fetching real fire data for Pakistan (PAK) from NASA FIRMS
+2025-09-13 15:25:55,588 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv
+2025-09-13 15:25:55,588 | ERROR | __main__ | Failed to get real fire data for Pakistan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv
+2025-09-13 15:25:55,588 | INFO | __main__ | Fetching real holiday data for Pakistan (PK) from date.nager.at
+2025-09-13 15:25:55,770 | ERROR | __main__ | Failed to get real holiday data for Pakistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:56,772 | INFO | __main__ | Collecting real features for Peshawar
+2025-09-13 15:25:56,772 | INFO | __main__ | Fetching real fire data for Pakistan (PAK) from NASA FIRMS
+2025-09-13 15:25:57,969 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv
+2025-09-13 15:25:57,969 | ERROR | __main__ | Failed to get real fire data for Pakistan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_PAK_7d.csv
+2025-09-13 15:25:57,969 | INFO | __main__ | Fetching real holiday data for Pakistan (PK) from date.nager.at
+2025-09-13 15:25:58,138 | ERROR | __main__ | Failed to get real holiday data for Pakistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:25:59,154 | INFO | __main__ | Collecting real features for Lucknow
+2025-09-13 15:25:59,154 | INFO | __main__ | Fetching real fire data for India (IND) from NASA FIRMS
+2025-09-13 15:26:00,335 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:26:00,335 | ERROR | __main__ | Failed to get real fire data for India: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_IND_7d.csv
+2025-09-13 15:26:00,335 | INFO | __main__ | Fetching real holiday data for India (IN) from date.nager.at
+2025-09-13 15:26:00,509 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:01,515 | INFO | __main__ | Collecting real features for Bamenda
+2025-09-13 15:26:01,515 | INFO | __main__ | Fetching real fire data for Cameroon (CMR) from NASA FIRMS
+2025-09-13 15:26:02,639 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv
+2025-09-13 15:26:02,639 | ERROR | __main__ | Failed to get real fire data for Cameroon: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv
+2025-09-13 15:26:02,639 | INFO | __main__ | Fetching real holiday data for Cameroon (CM) from date.nager.at
+2025-09-13 15:26:02,808 | ERROR | __main__ | Failed to get real holiday data for Cameroon: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:03,820 | INFO | __main__ | Collecting real features for Dushanbe
+2025-09-13 15:26:03,820 | INFO | __main__ | Fetching real fire data for Tajikistan (TJK) from NASA FIRMS
+2025-09-13 15:26:04,919 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_TJK_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_TJK_7d.csv
+2025-09-13 15:26:04,919 | ERROR | __main__ | Failed to get real fire data for Tajikistan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_TJK_7d.csv
+2025-09-13 15:26:04,919 | INFO | __main__ | Fetching real holiday data for Tajikistan (TJ) from date.nager.at
+2025-09-13 15:26:05,543 | ERROR | __main__ | Failed to get real holiday data for Tajikistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:06,544 | INFO | __main__ | Collecting real features for Almaty
+2025-09-13 15:26:06,544 | INFO | __main__ | Fetching real fire data for Kazakhstan (KAZ) from NASA FIRMS
+2025-09-13 15:26:07,154 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_KAZ_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_KAZ_7d.csv
+2025-09-13 15:26:07,154 | ERROR | __main__ | Failed to get real fire data for Kazakhstan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_KAZ_7d.csv
+2025-09-13 15:26:07,154 | INFO | __main__ | Fetching real holiday data for Kazakhstan (KZ) from date.nager.at
+2025-09-13 15:26:07,297 | INFO | __main__ | Collected 13 real holidays for Kazakhstan
+2025-09-13 15:26:08,308 | INFO | __main__ | Collecting real features for Kabul
+2025-09-13 15:26:08,308 | INFO | __main__ | Fetching real fire data for Afghanistan (AFG) from NASA FIRMS
+2025-09-13 15:26:09,583 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_AFG_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_AFG_7d.csv
+2025-09-13 15:26:09,583 | ERROR | __main__ | Failed to get real fire data for Afghanistan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_AFG_7d.csv
+2025-09-13 15:26:09,583 | INFO | __main__ | Fetching real holiday data for Afghanistan (AF) from date.nager.at
+2025-09-13 15:26:09,803 | ERROR | __main__ | Failed to get real holiday data for Afghanistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:10,815 | INFO | __main__ | Collecting real features for Ulaanbaatar
+2025-09-13 15:26:10,815 | INFO | __main__ | Fetching real fire data for Mongolia (MNG) from NASA FIRMS
+2025-09-13 15:26:12,126 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MNG_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MNG_7d.csv
+2025-09-13 15:26:12,126 | ERROR | __main__ | Failed to get real fire data for Mongolia: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MNG_7d.csv
+2025-09-13 15:26:12,126 | INFO | __main__ | Fetching real holiday data for Mongolia (MN) from date.nager.at
+2025-09-13 15:26:12,347 | INFO | __main__ | Collected 10 real holidays for Mongolia
+2025-09-13 15:26:13,350 | INFO | __main__ | Collecting real features for Cairo
+2025-09-13 15:26:13,350 | INFO | __main__ | Fetching real fire data for Egypt (EGY) from NASA FIRMS
+2025-09-13 15:26:14,355 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_EGY_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_EGY_7d.csv
+2025-09-13 15:26:14,355 | ERROR | __main__ | Failed to get real fire data for Egypt: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_EGY_7d.csv
+2025-09-13 15:26:14,355 | INFO | __main__ | Fetching real holiday data for Egypt (EG) from date.nager.at
+2025-09-13 15:26:14,520 | INFO | __main__ | Collected 7 real holidays for Egypt
+2025-09-13 15:26:15,523 | INFO | __main__ | Collecting real features for Khartoum
+2025-09-13 15:26:15,523 | INFO | __main__ | Fetching real fire data for Sudan (SDN) from NASA FIRMS
+2025-09-13 15:26:16,587 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv
+2025-09-13 15:26:16,587 | ERROR | __main__ | Failed to get real fire data for Sudan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv
+2025-09-13 15:26:16,587 | INFO | __main__ | Fetching real holiday data for Sudan (SD) from date.nager.at
+2025-09-13 15:26:16,734 | ERROR | __main__ | Failed to get real holiday data for Sudan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:17,747 | INFO | __main__ | Collecting real features for Giza
+2025-09-13 15:26:17,747 | INFO | __main__ | Fetching real fire data for Egypt (EGY) from NASA FIRMS
+2025-09-13 15:26:18,788 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_EGY_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_EGY_7d.csv
+2025-09-13 15:26:18,788 | ERROR | __main__ | Failed to get real fire data for Egypt: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_EGY_7d.csv
+2025-09-13 15:26:18,788 | INFO | __main__ | Fetching real holiday data for Egypt (EG) from date.nager.at
+2025-09-13 15:26:18,938 | INFO | __main__ | Collected 7 real holidays for Egypt
+2025-09-13 15:26:19,952 | INFO | __main__ | Collecting real features for N'Djamena
+2025-09-13 15:26:19,952 | INFO | __main__ | Fetching real fire data for Chad (TCD) from NASA FIRMS
+2025-09-13 15:26:21,089 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_TCD_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_TCD_7d.csv
+2025-09-13 15:26:21,089 | ERROR | __main__ | Failed to get real fire data for Chad: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_TCD_7d.csv
+2025-09-13 15:26:21,089 | INFO | __main__ | Fetching real holiday data for Chad (TD) from date.nager.at
+2025-09-13 15:26:21,255 | ERROR | __main__ | Failed to get real holiday data for Chad: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:22,262 | INFO | __main__ | Collecting real features for El Obeid
+2025-09-13 15:26:22,262 | INFO | __main__ | Fetching real fire data for Sudan (SDN) from NASA FIRMS
+2025-09-13 15:26:23,335 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv
+2025-09-13 15:26:23,335 | ERROR | __main__ | Failed to get real fire data for Sudan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv
+2025-09-13 15:26:23,335 | INFO | __main__ | Fetching real holiday data for Sudan (SD) from date.nager.at
+2025-09-13 15:26:23,518 | ERROR | __main__ | Failed to get real holiday data for Sudan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:24,520 | INFO | __main__ | Collecting real features for Omdurman
+2025-09-13 15:26:24,520 | INFO | __main__ | Fetching real fire data for Sudan (SDN) from NASA FIRMS
+2025-09-13 15:26:25,552 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv
+2025-09-13 15:26:25,552 | ERROR | __main__ | Failed to get real fire data for Sudan: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SDN_7d.csv
+2025-09-13 15:26:25,552 | INFO | __main__ | Fetching real holiday data for Sudan (SD) from date.nager.at
+2025-09-13 15:26:25,720 | ERROR | __main__ | Failed to get real holiday data for Sudan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:26,721 | INFO | __main__ | Collecting real features for Bamako
+2025-09-13 15:26:26,721 | INFO | __main__ | Fetching real fire data for Mali (MLI) from NASA FIRMS
+2025-09-13 15:26:28,286 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MLI_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MLI_7d.csv
+2025-09-13 15:26:28,286 | ERROR | __main__ | Failed to get real fire data for Mali: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MLI_7d.csv
+2025-09-13 15:26:28,286 | INFO | __main__ | Fetching real holiday data for Mali (ML) from date.nager.at
+2025-09-13 15:26:28,552 | ERROR | __main__ | Failed to get real holiday data for Mali: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:29,558 | INFO | __main__ | Collecting real features for Ouagadougou
+2025-09-13 15:26:29,558 | INFO | __main__ | Fetching real fire data for Burkina Faso (BFA) from NASA FIRMS
+2025-09-13 15:26:30,753 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BFA_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BFA_7d.csv
+2025-09-13 15:26:30,753 | ERROR | __main__ | Failed to get real fire data for Burkina Faso: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BFA_7d.csv
+2025-09-13 15:26:30,753 | INFO | __main__ | Fetching real holiday data for Burkina Faso (BF) from date.nager.at
+2025-09-13 15:26:31,205 | ERROR | __main__ | Failed to get real holiday data for Burkina Faso: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:32,206 | INFO | __main__ | Collecting real features for Kaduna
+2025-09-13 15:26:32,206 | INFO | __main__ | Fetching real fire data for Nigeria (NGA) from NASA FIRMS
+2025-09-13 15:26:33,050 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_NGA_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_NGA_7d.csv
+2025-09-13 15:26:33,050 | ERROR | __main__ | Failed to get real fire data for Nigeria: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_NGA_7d.csv
+2025-09-13 15:26:33,050 | INFO | __main__ | Fetching real holiday data for Nigeria (NG) from date.nager.at
+2025-09-13 15:26:33,316 | INFO | __main__ | Collected 10 real holidays for Nigeria
+2025-09-13 15:26:34,319 | INFO | __main__ | Collecting real features for Lagos
+2025-09-13 15:26:34,319 | INFO | __main__ | Fetching real fire data for Nigeria (NGA) from NASA FIRMS
+2025-09-13 15:26:35,300 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_NGA_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_NGA_7d.csv
+2025-09-13 15:26:35,300 | ERROR | __main__ | Failed to get real fire data for Nigeria: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_NGA_7d.csv
+2025-09-13 15:26:35,300 | INFO | __main__ | Fetching real holiday data for Nigeria (NG) from date.nager.at
+2025-09-13 15:26:35,485 | INFO | __main__ | Collected 10 real holidays for Nigeria
+2025-09-13 15:26:36,496 | INFO | __main__ | Collecting real features for Accra
+2025-09-13 15:26:36,496 | INFO | __main__ | Fetching real fire data for Ghana (GHA) from NASA FIRMS
+2025-09-13 15:26:42,616 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_GHA_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_GHA_7d.csv
+2025-09-13 15:26:42,617 | ERROR | __main__ | Failed to get real fire data for Ghana: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_GHA_7d.csv
+2025-09-13 15:26:42,617 | INFO | __main__ | Fetching real holiday data for Ghana (GH) from date.nager.at
+2025-09-13 15:26:42,784 | ERROR | __main__ | Failed to get real holiday data for Ghana: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:43,787 | INFO | __main__ | Collecting real features for Kampala
+2025-09-13 15:26:43,787 | INFO | __main__ | Fetching real fire data for Uganda (UGA) from NASA FIRMS
+2025-09-13 15:26:45,034 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_UGA_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_UGA_7d.csv
+2025-09-13 15:26:45,034 | ERROR | __main__ | Failed to get real fire data for Uganda: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_UGA_7d.csv
+2025-09-13 15:26:45,034 | INFO | __main__ | Fetching real holiday data for Uganda (UG) from date.nager.at
+2025-09-13 15:26:45,232 | ERROR | __main__ | Failed to get real holiday data for Uganda: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:46,238 | INFO | __main__ | Collecting real features for Dakar
+2025-09-13 15:26:46,238 | INFO | __main__ | Fetching real fire data for Senegal (SEN) from NASA FIRMS
+2025-09-13 15:26:47,283 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SEN_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SEN_7d.csv
+2025-09-13 15:26:47,283 | ERROR | __main__ | Failed to get real fire data for Senegal: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SEN_7d.csv
+2025-09-13 15:26:47,283 | INFO | __main__ | Fetching real holiday data for Senegal (SN) from date.nager.at
+2025-09-13 15:26:47,490 | ERROR | __main__ | Failed to get real holiday data for Senegal: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:48,491 | INFO | __main__ | Collecting real features for Abidjan
+2025-09-13 15:26:48,491 | INFO | __main__ | Fetching real fire data for Ivory Coast (CIV) from NASA FIRMS
+2025-09-13 15:26:49,499 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CIV_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CIV_7d.csv
+2025-09-13 15:26:49,499 | ERROR | __main__ | Failed to get real fire data for Ivory Coast: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CIV_7d.csv
+2025-09-13 15:26:49,499 | INFO | __main__ | Fetching real holiday data for Ivory Coast (CI) from date.nager.at
+2025-09-13 15:26:49,666 | ERROR | __main__ | Failed to get real holiday data for Ivory Coast: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:50,671 | INFO | __main__ | Collecting real features for Casablanca
+2025-09-13 15:26:50,671 | INFO | __main__ | Fetching real fire data for Morocco (MAR) from NASA FIRMS
+2025-09-13 15:26:51,699 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MAR_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MAR_7d.csv
+2025-09-13 15:26:51,699 | ERROR | __main__ | Failed to get real fire data for Morocco: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MAR_7d.csv
+2025-09-13 15:26:51,699 | INFO | __main__ | Fetching real holiday data for Morocco (MA) from date.nager.at
+2025-09-13 15:26:51,877 | INFO | __main__ | Collected 10 real holidays for Morocco
+2025-09-13 15:26:52,882 | INFO | __main__ | Collecting real features for Tripoli
+2025-09-13 15:26:52,882 | INFO | __main__ | Fetching real fire data for Libya (LBY) from NASA FIRMS
+2025-09-13 15:26:53,997 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_LBY_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_LBY_7d.csv
+2025-09-13 15:26:53,998 | ERROR | __main__ | Failed to get real fire data for Libya: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_LBY_7d.csv
+2025-09-13 15:26:53,998 | INFO | __main__ | Fetching real holiday data for Libya (LY) from date.nager.at
+2025-09-13 15:26:54,131 | ERROR | __main__ | Failed to get real holiday data for Libya: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:55,142 | INFO | __main__ | Collecting real features for Douala
+2025-09-13 15:26:55,142 | INFO | __main__ | Fetching real fire data for Cameroon (CMR) from NASA FIRMS
+2025-09-13 15:26:56,381 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv
+2025-09-13 15:26:56,381 | ERROR | __main__ | Failed to get real fire data for Cameroon: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv
+2025-09-13 15:26:56,381 | INFO | __main__ | Fetching real holiday data for Cameroon (CM) from date.nager.at
+2025-09-13 15:26:56,532 | ERROR | __main__ | Failed to get real holiday data for Cameroon: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:57,542 | INFO | __main__ | Collecting real features for Yaoundé
+2025-09-13 15:26:57,542 | INFO | __main__ | Fetching real fire data for Cameroon (CMR) from NASA FIRMS
+2025-09-13 15:26:58,603 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv
+2025-09-13 15:26:58,603 | ERROR | __main__ | Failed to get real fire data for Cameroon: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CMR_7d.csv
+2025-09-13 15:26:58,603 | INFO | __main__ | Fetching real holiday data for Cameroon (CM) from date.nager.at
+2025-09-13 15:26:58,733 | ERROR | __main__ | Failed to get real holiday data for Cameroon: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:26:59,735 | INFO | __main__ | Collecting real features for Brazzaville
+2025-09-13 15:26:59,735 | WARNING | __main__ | No country code mapping for Republic of Congo
+2025-09-13 15:26:59,735 | WARNING | __main__ | No country code mapping for Republic of Congo
+2025-09-13 15:27:00,737 | INFO | __main__ | Collecting real features for Kinshasa
+2025-09-13 15:27:00,737 | WARNING | __main__ | No country code mapping for Democratic Republic of Congo
+2025-09-13 15:27:00,737 | WARNING | __main__ | No country code mapping for Democratic Republic of Congo
+2025-09-13 15:27:01,738 | INFO | __main__ | Collecting real features for Skopje
+2025-09-13 15:27:01,738 | INFO | __main__ | Fetching real fire data for North Macedonia (MKD) from NASA FIRMS
+2025-09-13 15:27:01,997 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MKD_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MKD_7d.csv
+2025-09-13 15:27:01,997 | ERROR | __main__ | Failed to get real fire data for North Macedonia: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MKD_7d.csv
+2025-09-13 15:27:01,997 | INFO | __main__ | Fetching real holiday data for North Macedonia (MK) from date.nager.at
+2025-09-13 15:27:02,165 | INFO | __main__ | Collected 12 real holidays for North Macedonia
+2025-09-13 15:27:03,181 | INFO | __main__ | Collecting real features for Sarajevo
+2025-09-13 15:27:03,181 | INFO | __main__ | Fetching real fire data for Bosnia and Herzegovina (BIH) from NASA FIRMS
+2025-09-13 15:27:04,430 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv
+2025-09-13 15:27:04,430 | ERROR | __main__ | Failed to get real fire data for Bosnia and Herzegovina: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv
+2025-09-13 15:27:04,430 | INFO | __main__ | Fetching real holiday data for Bosnia and Herzegovina (BA) from date.nager.at
+2025-09-13 15:27:05,200 | INFO | __main__ | Collected 15 real holidays for Bosnia and Herzegovina
+2025-09-13 15:27:06,206 | INFO | __main__ | Collecting real features for Tuzla
+2025-09-13 15:27:06,206 | INFO | __main__ | Fetching real fire data for Bosnia and Herzegovina (BIH) from NASA FIRMS
+2025-09-13 15:27:06,662 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv
+2025-09-13 15:27:06,662 | ERROR | __main__ | Failed to get real fire data for Bosnia and Herzegovina: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv
+2025-09-13 15:27:06,662 | INFO | __main__ | Fetching real holiday data for Bosnia and Herzegovina (BA) from date.nager.at
+2025-09-13 15:27:06,963 | INFO | __main__ | Collected 15 real holidays for Bosnia and Herzegovina
+2025-09-13 15:27:07,973 | INFO | __main__ | Collecting real features for Zenica
+2025-09-13 15:27:07,973 | INFO | __main__ | Fetching real fire data for Bosnia and Herzegovina (BIH) from NASA FIRMS
+2025-09-13 15:27:08,978 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv
+2025-09-13 15:27:08,978 | ERROR | __main__ | Failed to get real fire data for Bosnia and Herzegovina: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv
+2025-09-13 15:27:08,978 | INFO | __main__ | Fetching real holiday data for Bosnia and Herzegovina (BA) from date.nager.at
+2025-09-13 15:27:09,146 | INFO | __main__ | Collected 15 real holidays for Bosnia and Herzegovina
+2025-09-13 15:27:10,158 | INFO | __main__ | Collecting real features for Tetovo
+2025-09-13 15:27:10,158 | INFO | __main__ | Fetching real fire data for North Macedonia (MKD) from NASA FIRMS
+2025-09-13 15:27:11,197 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MKD_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MKD_7d.csv
+2025-09-13 15:27:11,197 | ERROR | __main__ | Failed to get real fire data for North Macedonia: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MKD_7d.csv
+2025-09-13 15:27:11,197 | INFO | __main__ | Fetching real holiday data for North Macedonia (MK) from date.nager.at
+2025-09-13 15:27:11,352 | INFO | __main__ | Collected 12 real holidays for North Macedonia
+2025-09-13 15:27:12,357 | INFO | __main__ | Collecting real features for Plovdiv
+2025-09-13 15:27:12,357 | INFO | __main__ | Fetching real fire data for Bulgaria (BGR) from NASA FIRMS
+2025-09-13 15:27:13,446 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGR_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGR_7d.csv
+2025-09-13 15:27:13,447 | ERROR | __main__ | Failed to get real fire data for Bulgaria: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGR_7d.csv
+2025-09-13 15:27:13,447 | INFO | __main__ | Fetching real holiday data for Bulgaria (BG) from date.nager.at
+2025-09-13 15:27:13,595 | INFO | __main__ | Collected 14 real holidays for Bulgaria
+2025-09-13 15:27:14,605 | INFO | __main__ | Collecting real features for Sofia
+2025-09-13 15:27:14,605 | INFO | __main__ | Fetching real fire data for Bulgaria (BGR) from NASA FIRMS
+2025-09-13 15:27:16,422 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGR_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGR_7d.csv
+2025-09-13 15:27:16,422 | ERROR | __main__ | Failed to get real fire data for Bulgaria: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BGR_7d.csv
+2025-09-13 15:27:16,422 | INFO | __main__ | Fetching real holiday data for Bulgaria (BG) from date.nager.at
+2025-09-13 15:27:16,558 | INFO | __main__ | Collected 14 real holidays for Bulgaria
+2025-09-13 15:27:17,578 | INFO | __main__ | Collecting real features for Kraków
+2025-09-13 15:27:17,578 | INFO | __main__ | Fetching real fire data for Poland (POL) from NASA FIRMS
+2025-09-13 15:27:18,655 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv
+2025-09-13 15:27:18,655 | ERROR | __main__ | Failed to get real fire data for Poland: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv
+2025-09-13 15:27:18,656 | INFO | __main__ | Fetching real holiday data for Poland (PL) from date.nager.at
+2025-09-13 15:27:18,794 | INFO | __main__ | Collected 14 real holidays for Poland
+2025-09-13 15:27:19,810 | INFO | __main__ | Fetching real fire data for Poland (POL) from NASA FIRMS
+2025-09-13 15:27:21,043 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv
+2025-09-13 15:27:21,043 | ERROR | __main__ | Failed to get real fire data for Poland: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv
+2025-09-13 15:27:21,043 | INFO | __main__ | Fetching real holiday data for Poland (PL) from date.nager.at
+2025-09-13 15:27:21,229 | INFO | __main__ | Collected 14 real holidays for Poland
+2025-09-13 15:27:22,236 | INFO | __main__ | Collecting real features for Katowice
+2025-09-13 15:27:22,236 | INFO | __main__ | Fetching real fire data for Poland (POL) from NASA FIRMS
+2025-09-13 15:27:23,576 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv
+2025-09-13 15:27:23,591 | ERROR | __main__ | Failed to get real fire data for Poland: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_POL_7d.csv
+2025-09-13 15:27:23,591 | INFO | __main__ | Fetching real holiday data for Poland (PL) from date.nager.at
+2025-09-13 15:27:23,976 | INFO | __main__ | Collected 14 real holidays for Poland
+2025-09-13 15:27:24,981 | INFO | __main__ | Collecting real features for Ostrava
+2025-09-13 15:27:24,981 | INFO | __main__ | Fetching real fire data for Czech Republic (CZE) from NASA FIRMS
+2025-09-13 15:27:25,874 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CZE_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CZE_7d.csv
+2025-09-13 15:27:25,874 | ERROR | __main__ | Failed to get real fire data for Czech Republic: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_CZE_7d.csv
+2025-09-13 15:27:25,874 | INFO | __main__ | Fetching real holiday data for Czech Republic (CZ) from date.nager.at
+2025-09-13 15:27:26,063 | INFO | __main__ | Collected 13 real holidays for Czech Republic
+2025-09-13 15:27:27,068 | INFO | __main__ | Collecting real features for Bucharest
+2025-09-13 15:27:27,068 | INFO | __main__ | Fetching real fire data for Romania (ROU) from NASA FIRMS
+2025-09-13 15:27:28,109 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ROU_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ROU_7d.csv
+2025-09-13 15:27:28,109 | ERROR | __main__ | Failed to get real fire data for Romania: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ROU_7d.csv
+2025-09-13 15:27:28,109 | INFO | __main__ | Fetching real holiday data for Romania (RO) from date.nager.at
+2025-09-13 15:27:28,450 | INFO | __main__ | Collected 17 real holidays for Romania
+2025-09-13 15:27:29,456 | INFO | __main__ | Collecting real features for Belgrade
+2025-09-13 15:27:29,456 | INFO | __main__ | Fetching real fire data for Serbia (SRB) from NASA FIRMS
+2025-09-13 15:27:30,673 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SRB_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SRB_7d.csv
+2025-09-13 15:27:30,673 | ERROR | __main__ | Failed to get real fire data for Serbia: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SRB_7d.csv
+2025-09-13 15:27:30,674 | INFO | __main__ | Fetching real holiday data for Serbia (RS) from date.nager.at
+2025-09-13 15:27:30,825 | INFO | __main__ | Collected 11 real holidays for Serbia
+2025-09-13 15:27:31,831 | INFO | __main__ | Collecting real features for Novi Sad
+2025-09-13 15:27:31,831 | INFO | __main__ | Fetching real fire data for Serbia (SRB) from NASA FIRMS
+2025-09-13 15:27:33,025 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SRB_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SRB_7d.csv
+2025-09-13 15:27:33,025 | ERROR | __main__ | Failed to get real fire data for Serbia: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SRB_7d.csv
+2025-09-13 15:27:33,025 | INFO | __main__ | Fetching real holiday data for Serbia (RS) from date.nager.at
+2025-09-13 15:27:33,194 | INFO | __main__ | Collected 11 real holidays for Serbia
+2025-09-13 15:27:34,211 | INFO | __main__ | Collecting real features for Turin
+2025-09-13 15:27:34,211 | INFO | __main__ | Fetching real fire data for Italy (ITA) from NASA FIRMS
+2025-09-13 15:27:35,239 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ITA_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ITA_7d.csv
+2025-09-13 15:27:35,239 | ERROR | __main__ | Failed to get real fire data for Italy: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ITA_7d.csv
+2025-09-13 15:27:35,239 | INFO | __main__ | Fetching real holiday data for Italy (IT) from date.nager.at
+2025-09-13 15:27:35,441 | INFO | __main__ | Collected 13 real holidays for Italy
+2025-09-13 15:27:36,456 | INFO | __main__ | Collecting real features for Milan
+2025-09-13 15:27:36,456 | INFO | __main__ | Fetching real fire data for Italy (ITA) from NASA FIRMS
+2025-09-13 15:27:37,556 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ITA_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ITA_7d.csv
+2025-09-13 15:27:37,556 | ERROR | __main__ | Failed to get real fire data for Italy: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_ITA_7d.csv
+2025-09-13 15:27:37,556 | INFO | __main__ | Fetching real holiday data for Italy (IT) from date.nager.at
+2025-09-13 15:27:37,693 | INFO | __main__ | Collected 13 real holidays for Italy
+2025-09-13 15:27:38,702 | INFO | __main__ | Collecting real features for Miskolc
+2025-09-13 15:27:38,702 | INFO | __main__ | Fetching real fire data for Hungary (HUN) from NASA FIRMS
+2025-09-13 15:27:39,922 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_HUN_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_HUN_7d.csv
+2025-09-13 15:27:39,923 | ERROR | __main__ | Failed to get real fire data for Hungary: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_HUN_7d.csv
+2025-09-13 15:27:39,923 | INFO | __main__ | Fetching real holiday data for Hungary (HU) from date.nager.at
+2025-09-13 15:27:40,094 | INFO | __main__ | Collected 13 real holidays for Hungary
+2025-09-13 15:27:41,102 | INFO | __main__ | Collecting real features for Pécs
+2025-09-13 15:27:41,102 | INFO | __main__ | Fetching real fire data for Hungary (HUN) from NASA FIRMS
+2025-09-13 15:27:42,339 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_HUN_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_HUN_7d.csv
+2025-09-13 15:27:42,339 | ERROR | __main__ | Failed to get real fire data for Hungary: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_HUN_7d.csv
+2025-09-13 15:27:42,339 | INFO | __main__ | Fetching real holiday data for Hungary (HU) from date.nager.at
+2025-09-13 15:27:42,490 | INFO | __main__ | Collected 13 real holidays for Hungary
+2025-09-13 15:27:43,494 | INFO | __main__ | Collecting real features for Banja Luka
+2025-09-13 15:27:43,494 | INFO | __main__ | Fetching real fire data for Bosnia and Herzegovina (BIH) from NASA FIRMS
+2025-09-13 15:27:44,621 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv
+2025-09-13 15:27:44,621 | ERROR | __main__ | Failed to get real fire data for Bosnia and Herzegovina: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_BIH_7d.csv
+2025-09-13 15:27:44,621 | INFO | __main__ | Fetching real holiday data for Bosnia and Herzegovina (BA) from date.nager.at
+2025-09-13 15:27:44,858 | INFO | __main__ | Collected 15 real holidays for Bosnia and Herzegovina
+2025-09-13 15:27:45,867 | INFO | __main__ | Collecting real features for Košice
+2025-09-13 15:27:45,867 | INFO | __main__ | Fetching real fire data for Slovakia (SVK) from NASA FIRMS
+2025-09-13 15:27:52,141 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SVK_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SVK_7d.csv
+2025-09-13 15:27:52,141 | ERROR | __main__ | Failed to get real fire data for Slovakia: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_SVK_7d.csv
+2025-09-13 15:27:52,141 | INFO | __main__ | Fetching real holiday data for Slovakia (SK) from date.nager.at
+2025-09-13 15:27:52,287 | INFO | __main__ | Collected 15 real holidays for Slovakia
+2025-09-13 15:27:53,297 | INFO | __main__ | Collecting real features for Mexicali
+2025-09-13 15:27:53,297 | INFO | __main__ | Fetching real fire data for Mexico (MEX) from NASA FIRMS
+2025-09-13 15:27:57,321 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MEX_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MEX_7d.csv
+2025-09-13 15:27:57,321 | ERROR | __main__ | Failed to get real fire data for Mexico: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_MEX_7d.csv
+2025-09-13 15:27:57,321 | INFO | __main__ | Fetching real holiday data for Mexico (MX) from date.nager.at
+2025-09-13 15:27:57,487 | INFO | __main__ | Collected 9 real holidays for Mexico
+2025-09-13 15:27:58,491 | INFO | __main__ | Collecting real features for Phoenix
+2025-09-13 15:27:58,491 | INFO | __main__ | Fetching real fire data for USA (USA) from NASA FIRMS
+2025-09-13 15:27:59,538 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_USA_7d.csv: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_USA_7d.csv
+2025-09-13 15:27:59,538 | ERROR | __main__ | Failed to get real fire data for USA: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_USA_7d.csv
+2025-09-13 15:27:59,538 | INFO | __main__ | Fetching real holiday data for USA (US) from date.nager.at
+2025-09-13 15:27:59,703 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:27:59,704 | ERROR | __main__ | Real model features collection failed: '<' not supported between instances of 'dict' and 'dict'
+2025-09-13 15:30:11,063 | INFO | __main__ | Starting Real Model Features Collection
+2025-09-13 15:30:11,063 | INFO | __main__ | === STARTING REAL MODEL FEATURES COLLECTION ===
+2025-09-13 15:30:11,063 | INFO | __main__ | Fetching global fire data from NASA MODIS...
+2025-09-13 15:30:11,063 | INFO | __main__ | Fetching real global fire data from NASA MODIS
+2025-09-13 15:30:12,083 | WARNING | __main__ | Request failed for https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1/txt/MODIS_C6_1_Global_7d.txt: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1/txt/MODIS_C6_1_Global_7d.txt
+2025-09-13 15:30:12,083 | ERROR | __main__ | Failed to get real global fire data: 404 Client Error: NOT FOUND for url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1/txt/MODIS_C6_1_Global_7d.txt
+2025-09-13 15:30:12,083 | INFO | __main__ | Processing real features for Delhi
+2025-09-13 15:30:12,083 | INFO | __main__ | Fetching real holiday data for India (IN)
+2025-09-13 15:30:13,147 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:13,662 | INFO | __main__ | Processing real features for Lahore
+2025-09-13 15:30:13,662 | INFO | __main__ | Fetching real holiday data for Pakistan (PK)
+2025-09-13 15:30:14,297 | ERROR | __main__ | Failed to get real holiday data for Pakistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:14,801 | INFO | __main__ | Processing real features for Dhaka
+2025-09-13 15:30:14,801 | INFO | __main__ | Fetching real holiday data for Bangladesh (BD)
+2025-09-13 15:30:15,430 | ERROR | __main__ | Failed to get real holiday data for Bangladesh: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:15,943 | INFO | __main__ | Processing real features for Kolkata
+2025-09-13 15:30:15,943 | INFO | __main__ | Fetching real holiday data for India (IN)
+2025-09-13 15:30:16,580 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:17,081 | INFO | __main__ | Processing real features for Muzaffarpur
+2025-09-13 15:30:17,081 | INFO | __main__ | Fetching real holiday data for India (IN)
+2025-09-13 15:30:17,712 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:18,223 | INFO | __main__ | Processing real features for Baghdad
+2025-09-13 15:30:18,223 | WARNING | __main__ | No country code mapping for Iraq
+2025-09-13 15:30:18,724 | INFO | __main__ | Processing real features for Ghaziabad
+2025-09-13 15:30:18,724 | INFO | __main__ | Fetching real holiday data for India (IN)
+2025-09-13 15:30:18,864 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:19,377 | INFO | __main__ | Processing real features for Patna
+2025-09-13 15:30:19,377 | INFO | __main__ | Fetching real holiday data for India (IN)
+2025-09-13 15:30:20,014 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:20,520 | INFO | __main__ | Processing real features for Hotan
+2025-09-13 15:30:20,520 | INFO | __main__ | Fetching real holiday data for China (CN)
+2025-09-13 15:30:21,198 | INFO | __main__ | Collected 6 real holidays for China
+2025-09-13 15:30:21,708 | INFO | __main__ | Processing real features for Xinjiang
+2025-09-13 15:30:21,708 | INFO | __main__ | Fetching real holiday data for China (CN)
+2025-09-13 15:30:22,345 | INFO | __main__ | Collected 6 real holidays for China
+2025-09-13 15:30:22,852 | INFO | __main__ | Processing real features for Faridabad
+2025-09-13 15:30:22,852 | INFO | __main__ | Fetching real holiday data for India (IN)
+2025-09-13 15:30:23,512 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:24,022 | INFO | __main__ | Processing real features for Noida
+2025-09-13 15:30:24,022 | INFO | __main__ | Fetching real holiday data for India (IN)
+2025-09-13 15:30:24,661 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:25,173 | INFO | __main__ | Processing real features for Bahawalpur
+2025-09-13 15:30:25,173 | INFO | __main__ | Fetching real holiday data for Pakistan (PK)
+2025-09-13 15:30:25,812 | ERROR | __main__ | Failed to get real holiday data for Pakistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:26,315 | INFO | __main__ | Processing real features for Peshawar
+2025-09-13 15:30:26,315 | INFO | __main__ | Fetching real holiday data for Pakistan (PK)
+2025-09-13 15:30:26,958 | ERROR | __main__ | Failed to get real holiday data for Pakistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:27,470 | INFO | __main__ | Processing real features for Lucknow
+2025-09-13 15:30:27,470 | INFO | __main__ | Fetching real holiday data for India (IN)
+2025-09-13 15:30:28,494 | ERROR | __main__ | Failed to get real holiday data for India: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:29,003 | INFO | __main__ | Processing real features for Bamenda
+2025-09-13 15:30:29,003 | INFO | __main__ | Fetching real holiday data for Cameroon (CM)
+2025-09-13 15:30:29,661 | ERROR | __main__ | Failed to get real holiday data for Cameroon: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:30,163 | INFO | __main__ | Processing real features for Dushanbe
+2025-09-13 15:30:30,163 | INFO | __main__ | Fetching real holiday data for Tajikistan (TJ)
+2025-09-13 15:30:30,828 | ERROR | __main__ | Failed to get real holiday data for Tajikistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:31,338 | INFO | __main__ | Processing real features for Almaty
+2025-09-13 15:30:31,338 | INFO | __main__ | Fetching real holiday data for Kazakhstan (KZ)
+2025-09-13 15:30:32,611 | INFO | __main__ | Collected 13 real holidays for Kazakhstan
+2025-09-13 15:30:33,118 | INFO | __main__ | Processing real features for Kabul
+2025-09-13 15:30:33,118 | INFO | __main__ | Fetching real holiday data for Afghanistan (AF)
+2025-09-13 15:30:33,762 | ERROR | __main__ | Failed to get real holiday data for Afghanistan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:34,262 | INFO | __main__ | Processing real features for Ulaanbaatar
+2025-09-13 15:30:34,262 | INFO | __main__ | Fetching real holiday data for Mongolia (MN)
+2025-09-13 15:30:35,096 | INFO | __main__ | Collected 10 real holidays for Mongolia
+2025-09-13 15:30:35,601 | INFO | __main__ | Processing real features for Cairo
+2025-09-13 15:30:35,601 | INFO | __main__ | Fetching real holiday data for Egypt (EG)
+2025-09-13 15:30:36,266 | INFO | __main__ | Collected 7 real holidays for Egypt
+2025-09-13 15:30:36,772 | INFO | __main__ | Processing real features for Khartoum
+2025-09-13 15:30:36,772 | INFO | __main__ | Fetching real holiday data for Sudan (SD)
+2025-09-13 15:30:37,427 | ERROR | __main__ | Failed to get real holiday data for Sudan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:37,933 | INFO | __main__ | Processing real features for Giza
+2025-09-13 15:30:37,933 | INFO | __main__ | Fetching real holiday data for Egypt (EG)
+2025-09-13 15:30:38,573 | INFO | __main__ | Collected 7 real holidays for Egypt
+2025-09-13 15:30:39,080 | INFO | __main__ | Processing real features for N'Djamena
+2025-09-13 15:30:39,080 | INFO | __main__ | Fetching real holiday data for Chad (TD)
+2025-09-13 15:30:39,758 | ERROR | __main__ | Failed to get real holiday data for Chad: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:40,270 | INFO | __main__ | Processing real features for El Obeid
+2025-09-13 15:30:40,270 | INFO | __main__ | Fetching real holiday data for Sudan (SD)
+2025-09-13 15:30:40,906 | ERROR | __main__ | Failed to get real holiday data for Sudan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:41,417 | INFO | __main__ | Processing real features for Omdurman
+2025-09-13 15:30:41,417 | INFO | __main__ | Fetching real holiday data for Sudan (SD)
+2025-09-13 15:30:42,091 | ERROR | __main__ | Failed to get real holiday data for Sudan: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:42,597 | INFO | __main__ | Processing real features for Bamako
+2025-09-13 15:30:42,597 | INFO | __main__ | Fetching real holiday data for Mali (ML)
+2025-09-13 15:30:43,249 | ERROR | __main__ | Failed to get real holiday data for Mali: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:43,750 | INFO | __main__ | Processing real features for Ouagadougou
+2025-09-13 15:30:43,750 | INFO | __main__ | Fetching real holiday data for Burkina Faso (BF)
+2025-09-13 15:30:44,407 | ERROR | __main__ | Failed to get real holiday data for Burkina Faso: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:44,918 | INFO | __main__ | Processing real features for Kaduna
+2025-09-13 15:30:44,918 | INFO | __main__ | Fetching real holiday data for Nigeria (NG)
+2025-09-13 15:30:45,583 | INFO | __main__ | Collected 10 real holidays for Nigeria
+2025-09-13 15:30:46,087 | INFO | __main__ | Processing real features for Lagos
+2025-09-13 15:30:46,087 | INFO | __main__ | Fetching real holiday data for Nigeria (NG)
+2025-09-13 15:30:46,760 | INFO | __main__ | Collected 10 real holidays for Nigeria
+2025-09-13 15:30:47,265 | INFO | __main__ | Processing real features for Accra
+2025-09-13 15:30:47,265 | INFO | __main__ | Fetching real holiday data for Ghana (GH)
+2025-09-13 15:30:47,908 | ERROR | __main__ | Failed to get real holiday data for Ghana: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:48,410 | INFO | __main__ | Processing real features for Kampala
+2025-09-13 15:30:48,410 | INFO | __main__ | Fetching real holiday data for Uganda (UG)
+2025-09-13 15:30:49,041 | ERROR | __main__ | Failed to get real holiday data for Uganda: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:49,553 | INFO | __main__ | Processing real features for Dakar
+2025-09-13 15:30:49,553 | INFO | __main__ | Fetching real holiday data for Senegal (SN)
+2025-09-13 15:30:50,224 | ERROR | __main__ | Failed to get real holiday data for Senegal: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:50,732 | INFO | __main__ | Processing real features for Abidjan
+2025-09-13 15:30:50,732 | INFO | __main__ | Fetching real holiday data for Ivory Coast (CI)
+2025-09-13 15:30:51,405 | ERROR | __main__ | Failed to get real holiday data for Ivory Coast: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:51,906 | INFO | __main__ | Processing real features for Casablanca
+2025-09-13 15:30:51,906 | INFO | __main__ | Fetching real holiday data for Morocco (MA)
+2025-09-13 15:30:52,588 | INFO | __main__ | Collected 10 real holidays for Morocco
+2025-09-13 15:30:53,093 | INFO | __main__ | Processing real features for Tripoli
+2025-09-13 15:30:53,093 | INFO | __main__ | Fetching real holiday data for Libya (LY)
+2025-09-13 15:30:53,768 | ERROR | __main__ | Failed to get real holiday data for Libya: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:54,270 | INFO | __main__ | Processing real features for Douala
+2025-09-13 15:30:54,270 | INFO | __main__ | Fetching real holiday data for Cameroon (CM)
+2025-09-13 15:30:54,941 | ERROR | __main__ | Failed to get real holiday data for Cameroon: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:55,453 | INFO | __main__ | Processing real features for Yaoundé
+2025-09-13 15:30:55,454 | INFO | __main__ | Fetching real holiday data for Cameroon (CM)
+2025-09-13 15:30:56,158 | ERROR | __main__ | Failed to get real holiday data for Cameroon: Expecting value: line 1 column 1 (char 0)
+2025-09-13 15:30:56,667 | INFO | __main__ | Processing real features for Brazzaville
+2025-09-13 15:30:56,667 | WARNING | __main__ | No country code mapping for Republic of Congo
+2025-09-13 15:30:57,169 | INFO | __main__ | Processing real features for Kinshasa
+2025-09-13 15:30:57,169 | WARNING | __main__ | No country code mapping for Democratic Republic of Congo
+2025-09-13 15:30:57,671 | INFO | __main__ | Processing real features for Skopje
+2025-09-13 15:30:57,671 | INFO | __main__ | Fetching real holiday data for North Macedonia (MK)
+2025-09-13 15:30:58,052 | INFO | __main__ | Collected 12 real holidays for North Macedonia
+2025-09-13 15:30:58,556 | INFO | __main__ | Processing real features for Sarajevo
+2025-09-13 15:30:58,556 | INFO | __main__ | Fetching real holiday data for Bosnia and Herzegovina (BA)
+2025-09-13 15:30:59,241 | INFO | __main__ | Collected 15 real holidays for Bosnia and Herzegovina
+2025-09-13 15:30:59,748 | INFO | __main__ | Processing real features for Tuzla
+2025-09-13 15:30:59,748 | INFO | __main__ | Fetching real holiday data for Bosnia and Herzegovina (BA)
+2025-09-13 15:31:00,387 | INFO | __main__ | Collected 15 real holidays for Bosnia and Herzegovina
+2025-09-13 15:31:00,892 | INFO | __main__ | Processing real features for Zenica
+2025-09-13 15:31:00,892 | INFO | __main__ | Fetching real holiday data for Bosnia and Herzegovina (BA)
+2025-09-13 15:31:01,591 | INFO | __main__ | Collected 15 real holidays for Bosnia and Herzegovina
+2025-09-13 15:31:02,095 | INFO | __main__ | Processing real features for Tetovo
+2025-09-13 15:31:02,095 | INFO | __main__ | Fetching real holiday data for North Macedonia (MK)
+2025-09-13 15:31:02,824 | INFO | __main__ | Collected 12 real holidays for North Macedonia
+2025-09-13 15:31:03,329 | INFO | __main__ | Processing real features for Plovdiv
+2025-09-13 15:31:03,329 | INFO | __main__ | Fetching real holiday data for Bulgaria (BG)
+2025-09-13 15:31:04,171 | INFO | __main__ | Collected 14 real holidays for Bulgaria
+2025-09-13 15:31:04,674 | INFO | __main__ | Processing real features for Sofia
+2025-09-13 15:31:04,674 | INFO | __main__ | Fetching real holiday data for Bulgaria (BG)
+2025-09-13 15:31:05,354 | INFO | __main__ | Collected 14 real holidays for Bulgaria
+2025-09-13 15:31:05,861 | INFO | __main__ | Processing real features for Kraków
+2025-09-13 15:31:05,861 | INFO | __main__ | Fetching real holiday data for Poland (PL)
+2025-09-13 15:31:06,872 | INFO | __main__ | Collected 14 real holidays for Poland
+2025-09-13 15:31:07,389 | INFO | __main__ | Fetching real holiday data for Poland (PL)
+2025-09-13 15:31:08,018 | INFO | __main__ | Collected 14 real holidays for Poland
+2025-09-13 15:31:08,524 | INFO | __main__ | Processing real features for Katowice
+2025-09-13 15:31:08,524 | INFO | __main__ | Fetching real holiday data for Poland (PL)
+2025-09-13 15:31:09,180 | INFO | __main__ | Collected 14 real holidays for Poland
+2025-09-13 15:31:09,685 | INFO | __main__ | Processing real features for Ostrava
+2025-09-13 15:31:09,685 | INFO | __main__ | Fetching real holiday data for Czech Republic (CZ)
+2025-09-13 15:31:10,321 | INFO | __main__ | Collected 13 real holidays for Czech Republic
+2025-09-13 15:31:10,838 | INFO | __main__ | Processing real features for Bucharest
+2025-09-13 15:31:10,838 | INFO | __main__ | Fetching real holiday data for Romania (RO)
+2025-09-13 15:31:11,487 | INFO | __main__ | Collected 17 real holidays for Romania
+2025-09-13 15:31:11,994 | INFO | __main__ | Processing real features for Belgrade
+2025-09-13 15:31:11,994 | INFO | __main__ | Fetching real holiday data for Serbia (RS)
+2025-09-13 15:31:12,670 | INFO | __main__ | Collected 11 real holidays for Serbia
+2025-09-13 15:31:13,184 | INFO | __main__ | Processing real features for Novi Sad
+2025-09-13 15:31:13,184 | INFO | __main__ | Fetching real holiday data for Serbia (RS)
+2025-09-13 15:31:14,370 | INFO | __main__ | Collected 11 real holidays for Serbia
+2025-09-13 15:31:14,879 | INFO | __main__ | Processing real features for Turin
+2025-09-13 15:31:14,879 | INFO | __main__ | Fetching real holiday data for Italy (IT)
+2025-09-13 15:31:15,538 | INFO | __main__ | Collected 13 real holidays for Italy
+2025-09-13 15:31:16,057 | INFO | __main__ | Processing real features for Milan
+2025-09-13 15:31:16,057 | INFO | __main__ | Fetching real holiday data for Italy (IT)
+2025-09-13 15:31:16,735 | INFO | __main__ | Collected 13 real holidays for Italy
+2025-09-13 15:31:17,251 | INFO | __main__ | Processing real features for Miskolc
+2025-09-13 15:31:17,251 | INFO | __main__ | Fetching real holiday data for Hungary (HU)
+2025-09-13 15:31:17,885 | INFO | __main__ | Collected 13 real holidays for Hungary
+2025-09-13 15:31:18,391 | INFO | __main__ | Processing real features for Pécs
+2025-09-13 15:31:18,391 | INFO | __main__ | Fetching real holiday data for Hungary (HU)
+2025-09-13 15:31:19,035 | INFO | __main__ | Collected 13 real holidays for Hungary
+2025-09-13 15:31:19,538 | INFO | __main__ | Processing real features for Banja Luka
+2025-09-13 15:31:19,538 | INFO | __main__ | Fetching real holiday data for Bosnia and Herzegovina (BA)
+2025-09-13 15:31:20,219 | INFO | __main__ | Collected 15 real holidays for Bosnia and Herzegovina
+2025-09-13 15:31:20,730 | INFO | __main__ | Processing real features for Košice
+2025-09-13 15:31:20,730 | INFO | __main__ | Fetching real holiday data for Slovakia (SK)
+2025-09-13 15:31:21,373 | INFO | __main__ | Collected 15 real holidays for Slovakia
+2025-09-13 15:31:21,877 | INFO | __main__ | Processing real features for Mexicali
+2025-09-13 15:31:21,877 | INFO | __main__ | Fetching real holiday data for Mexico (MX)
+2025-09-13 15:31:22,548 | INFO | __main__ | Collected 9 real holidays for Mexico
+2025-09-13 15:31:23,053 | INFO | __main__ | Processing real features for Phoenix
+2025-09-13 15:31:23,053 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:23,699 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:24,203 | INFO | __main__ | Processing real features for Bakersfield
+2025-09-13 15:31:24,203 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:24,840 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:25,344 | INFO | __main__ | Processing real features for Fresno
+2025-09-13 15:31:25,344 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:26,002 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:26,506 | INFO | __main__ | Processing real features for Los Angeles
+2025-09-13 15:31:26,506 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:27,259 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:27,763 | INFO | __main__ | Processing real features for Visalia
+2025-09-13 15:31:27,763 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:28,441 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:28,947 | INFO | __main__ | Processing real features for Modesto
+2025-09-13 15:31:28,948 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:30,282 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:30,786 | INFO | __main__ | Processing real features for El Paso
+2025-09-13 15:31:30,786 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:31,460 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:31,964 | INFO | __main__ | Processing real features for Fairbanks
+2025-09-13 15:31:31,964 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:32,608 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:33,112 | INFO | __main__ | Processing real features for San Bernardino
+2025-09-13 15:31:33,112 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:33,940 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:34,445 | INFO | __main__ | Processing real features for Riverside
+2025-09-13 15:31:34,445 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:35,123 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:35,629 | INFO | __main__ | Processing real features for Stockton
+2025-09-13 15:31:35,629 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:36,283 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:36,789 | INFO | __main__ | Processing real features for Tijuana
+2025-09-13 15:31:36,789 | INFO | __main__ | Fetching real holiday data for Mexico (MX)
+2025-09-13 15:31:37,703 | INFO | __main__ | Collected 9 real holidays for Mexico
+2025-09-13 15:31:38,207 | INFO | __main__ | Processing real features for Ciudad Juárez
+2025-09-13 15:31:38,207 | INFO | __main__ | Fetching real holiday data for Mexico (MX)
+2025-09-13 15:31:38,908 | INFO | __main__ | Collected 9 real holidays for Mexico
+2025-09-13 15:31:39,411 | INFO | __main__ | Processing real features for Guadalajara
+2025-09-13 15:31:39,412 | INFO | __main__ | Fetching real holiday data for Mexico (MX)
+2025-09-13 15:31:40,056 | INFO | __main__ | Collected 9 real holidays for Mexico
+2025-09-13 15:31:40,559 | INFO | __main__ | Processing real features for Mexico City
+2025-09-13 15:31:40,559 | INFO | __main__ | Fetching real holiday data for Mexico (MX)
+2025-09-13 15:31:41,750 | INFO | __main__ | Collected 9 real holidays for Mexico
+2025-09-13 15:31:42,254 | INFO | __main__ | Processing real features for Monterrey
+2025-09-13 15:31:42,254 | INFO | __main__ | Fetching real holiday data for Mexico (MX)
+2025-09-13 15:31:42,917 | INFO | __main__ | Collected 9 real holidays for Mexico
+2025-09-13 15:31:43,422 | INFO | __main__ | Processing real features for Salt Lake City
+2025-09-13 15:31:43,422 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:44,096 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:44,599 | INFO | __main__ | Processing real features for Pittsburgh
+2025-09-13 15:31:44,604 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:45,242 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:45,747 | INFO | __main__ | Processing real features for Detroit
+2025-09-13 15:31:45,747 | INFO | __main__ | Fetching real holiday data for USA (US)
+2025-09-13 15:31:46,407 | INFO | __main__ | Collected 16 real holidays for USA
+2025-09-13 15:31:46,912 | INFO | __main__ | Processing real features for Lima
+2025-09-13 15:31:46,912 | INFO | __main__ | Fetching real holiday data for Peru (PE)
+2025-09-13 15:31:47,578 | INFO | __main__ | Collected 14 real holidays for Peru
+2025-09-13 15:31:48,082 | INFO | __main__ | Processing real features for La Paz
+2025-09-13 15:31:48,082 | INFO | __main__ | Fetching real holiday data for Bolivia (BO)
+2025-09-13 15:31:48,723 | INFO | __main__ | Collected 12 real holidays for Bolivia
+2025-09-13 15:31:49,226 | INFO | __main__ | Processing real features for Cochabamba
+2025-09-13 15:31:49,226 | INFO | __main__ | Fetching real holiday data for Bolivia (BO)
+2025-09-13 15:31:49,872 | INFO | __main__ | Collected 12 real holidays for Bolivia
+2025-09-13 15:31:50,377 | INFO | __main__ | Processing real features for Santa Cruz
+2025-09-13 15:31:50,378 | INFO | __main__ | Fetching real holiday data for Bolivia (BO)
+2025-09-13 15:31:51,018 | INFO | __main__ | Collected 12 real holidays for Bolivia
+2025-09-13 15:31:51,521 | INFO | __main__ | Processing real features for Santiago
+2025-09-13 15:31:51,521 | INFO | __main__ | Fetching real holiday data for Chile (CL)
+2025-09-13 15:31:52,167 | INFO | __main__ | Collected 17 real holidays for Chile
+2025-09-13 15:31:52,672 | INFO | __main__ | Processing real features for Arequipa
+2025-09-13 15:31:52,672 | INFO | __main__ | Fetching real holiday data for Peru (PE)
+2025-09-13 15:31:53,414 | INFO | __main__ | Collected 14 real holidays for Peru
+2025-09-13 15:31:53,920 | INFO | __main__ | Processing real features for São Paulo
+2025-09-13 15:31:53,920 | INFO | __main__ | Fetching real holiday data for Brazil (BR)
+2025-09-13 15:31:54,582 | INFO | __main__ | Collected 15 real holidays for Brazil
+2025-09-13 15:31:55,086 | INFO | __main__ | Processing real features for Medellín
+2025-09-13 15:31:55,086 | INFO | __main__ | Fetching real holiday data for Colombia (CO)
+2025-09-13 15:31:55,741 | INFO | __main__ | Collected 18 real holidays for Colombia
+2025-09-13 15:31:56,246 | INFO | __main__ | Processing real features for Bogotá
+2025-09-13 15:31:56,247 | INFO | __main__ | Fetching real holiday data for Colombia (CO)
+2025-09-13 15:31:57,486 | INFO | __main__ | Collected 18 real holidays for Colombia
+2025-09-13 15:31:57,992 | INFO | __main__ | Processing real features for Cali
+2025-09-13 15:31:57,992 | INFO | __main__ | Fetching real holiday data for Colombia (CO)
+2025-09-13 15:31:58,644 | INFO | __main__ | Collected 18 real holidays for Colombia
+2025-09-13 15:31:59,150 | INFO | __main__ | Processing real features for Quito
+2025-09-13 15:31:59,150 | INFO | __main__ | Fetching real holiday data for Ecuador (EC)
+2025-09-13 15:31:59,813 | INFO | __main__ | Collected 11 real holidays for Ecuador
+2025-09-13 15:32:00,317 | INFO | __main__ | Processing real features for Guayaquil
+2025-09-13 15:32:00,317 | INFO | __main__ | Fetching real holiday data for Ecuador (EC)
+2025-09-13 15:32:00,984 | INFO | __main__ | Collected 11 real holidays for Ecuador
+2025-09-13 15:32:01,487 | INFO | __main__ | Processing real features for Rio de Janeiro
+2025-09-13 15:32:01,487 | INFO | __main__ | Fetching real holiday data for Brazil (BR)
+2025-09-13 15:32:02,146 | INFO | __main__ | Collected 15 real holidays for Brazil
+2025-09-13 15:32:02,652 | INFO | __main__ | Processing real features for Belo Horizonte
+2025-09-13 15:32:02,652 | INFO | __main__ | Fetching real holiday data for Brazil (BR)
+2025-09-13 15:32:03,304 | INFO | __main__ | Collected 15 real holidays for Brazil
+2025-09-13 15:32:03,810 | INFO | __main__ | Processing real features for Porto Alegre
+2025-09-13 15:32:03,811 | INFO | __main__ | Fetching real holiday data for Brazil (BR)
+2025-09-13 15:32:04,470 | INFO | __main__ | Collected 15 real holidays for Brazil
+2025-09-13 15:32:04,975 | INFO | __main__ | Processing real features for Curitiba
+2025-09-13 15:32:04,975 | INFO | __main__ | Fetching real holiday data for Brazil (BR)
+2025-09-13 15:32:05,826 | INFO | __main__ | Collected 15 real holidays for Brazil
+2025-09-13 15:32:06,332 | INFO | __main__ | Processing real features for Buenos Aires
+2025-09-13 15:32:06,333 | INFO | __main__ | Fetching real holiday data for Argentina (AR)
+2025-09-13 15:32:07,469 | INFO | __main__ | Collected 16 real holidays for Argentina
+2025-09-13 15:32:07,975 | INFO | __main__ | Processing real features for Córdoba
+2025-09-13 15:32:07,975 | INFO | __main__ | Fetching real holiday data for Argentina (AR)
+2025-09-13 15:32:08,631 | INFO | __main__ | Collected 16 real holidays for Argentina
+2025-09-13 15:32:09,137 | INFO | __main__ | Processing real features for Rosario
+2025-09-13 15:32:09,137 | INFO | __main__ | Fetching real holiday data for Argentina (AR)
+2025-09-13 15:32:09,800 | INFO | __main__ | Collected 16 real holidays for Argentina
+2025-09-13 15:32:10,306 | INFO | __main__ | Processing real features for Montevideo
+2025-09-13 15:32:10,306 | INFO | __main__ | Fetching real holiday data for Uruguay (UY)
+2025-09-13 15:32:10,957 | INFO | __main__ | Collected 15 real holidays for Uruguay
+2025-09-13 15:32:11,776 | INFO | __main__ | Real model features saved to: stage_5\real_model_features\real_model_features_20250913_153211.json
+2025-09-13 15:32:11,776 | INFO | __main__ | === REAL MODEL FEATURES COLLECTION COMPLETED ===
+2025-09-13 15:32:11,776 | INFO | __main__ | Real Model Features Collection completed successfully
+2025-09-13 15:32:11,776 | INFO | __main__ | Processed 100 cities
+2025-09-13 15:32:11,776 | INFO | __main__ | Global fires downloaded: 0
+2025-09-13 15:32:11,776 | INFO | __main__ | Total fire detections near cities: 0
+2025-09-13 15:32:11,776 | INFO | __main__ | Total holidays collected: 925
