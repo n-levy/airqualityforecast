@@ -20,11 +20,47 @@ A comprehensive air quality forecasting system that combines multiple forecast m
 
 ### Dataset Overview
 
+#### Complete 100-City Air Quality Dataset (NEW ✅)
+**Collection Date**: 2025-09-13
+**Time Range**: 2023-09-13 to 2025-09-13 (2 years)
+**Cities**: 100 global cities across 5 continents
+**Data Sources**: NOAA GEFS-Aerosols, ECMWF CAMS, Ground Truth Observations
+**Pollutants**: PM₂.₅, PM₁₀, NO₂, SO₂, CO, O₃
+**Features**: Calendar features, lag features, metadata
+**Format**: Partitioned Parquet files
+**Storage**: ~50-100 GB total
+
+#### Quick Start
+```bash
+# Set data directory
+export DATA_ROOT="C:/aqf311/data"
+
+# Run complete collection (takes several hours)
+python scripts/orchestrate_full_100city_collection.py
+
+# Or run individual steps
+python scripts/collect_2year_gefs_data.py
+python scripts/collect_2year_cams_data.py --simulate
+python scripts/collect_ground_truth_observations.py --synthetic
+python scripts/merge_unified_100city_dataset.py
+
+# Using Makefile
+make collect-all
+make dry-run
+make verify-all
+```
+
+#### Data Location
+- Raw data: `$DATA_ROOT/raw/`
+- Curated data: `$DATA_ROOT/curated/`
+- Unified dataset: `$DATA_ROOT/curated/100_cities_dataset/`
+- Logs: `$DATA_ROOT/logs/`
+
 #### Legacy Datasets (Deprecated)
-- ~~German 3-City Dataset~~ - Removed in favor of comprehensive 100-city dataset
+- ~~German 3-City Dataset~~ - Replaced by comprehensive 100-city dataset
 - ~~Global 10-City Dataset~~ - Superseded by enhanced 100-city global dataset
 
-#### Stage 5: Enhanced Global Worst Air Quality Dataset (ALL PHASES COMPLETE ✅)
+#### Stage 5: Enhanced Global Worst Air Quality Dataset (LEGACY)
 - **Spatial Coverage**: 100 cities with worst air quality globally (20 per continent) ✅ COMPLETE
 - **Temporal Coverage**: 365 days daily data + 30 extreme scenarios + 365 historical per city
 - **Total Records**: 251,343 data points across all 100 cities (760 records per city)

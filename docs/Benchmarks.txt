@@ -1,0 +1,9 @@
+## Benchmarks
+
+- ECMWF-CAMS (Copernicus Atmosphere Monitoring Service)
+  • Produced by: European Centre for Medium-Range Weather Forecasts (ECMWF), funded by the European Union.
+  • How it works (basic): A numerical weather prediction system (IFS) coupled with an atmospheric chemistry module. It assimilates satellite and ground-based composition observations, then forecasts global gases and aerosols at ~40 km.
+
+- NOAA-GEFS-Aerosol (Global Ensemble Forecast System – Aerosols)
+  • Produced by: U.S. National Oceanic and Atmospheric Administration (NOAA), National Centers for Environmental Prediction (NCEP).
+  • How it works (basic): An ensemble NWP system coupling the FV3 global model with the GOCART aerosol model to simulate emissions, transport, chemistry, and removal of aerosols (dust, smoke, sea salt, pollutants). Updated 6-hourly with multiple members to quantify uncertainty.

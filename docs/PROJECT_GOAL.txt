@@ -1,0 +1,53 @@
+# Project Goal
+
+There is scientific literature showing that global weather forecasts can be improved by adding local information.
+Notable examples include:
+
+1. Koutenský, P., Pihrt, J., Cepek, A., Rybář, P., & Šimánek, M. (2024). Combining local and global weather data to improve forecast accuracy for agriculture. https://www.researchgate.net/publication/385760789_Combining_Local_and_Global_Weather_Data_to_Improve_Forecast_Accuracy_for_Agriculture
+
+2. Xu, P., Wang, L., Zhang, X., Zhang, C., & Sun, J. (2025). An artificial intelligence-based limited area model for weather forecasting with parallel global-local structure. Communications Earth & Environment, 6, Article 347. https://www.nature.com/articles/s43247-025-02347-5
+
+3. Lichiheb, N., et al. (2024). Improving the atmospheric dispersion forecasts over urban areas. Urban Climate, 54, 101069. https://www.sciencedirect.com/science/article/abs/pii/S2212095524001445
+
+---
+
+## Objective
+
+Test whether adding local information similarly improves air pollutant forecasts. We will build a simple, transparent implementation that combines global forecast data with local features and evaluate whether this improves forecast accuracy.
+
+---
+
+## Benchmarks
+
+- ECMWF-CAMS (Copernicus Atmosphere Monitoring Service)
+- NOAA-GEFS-Aerosol (Global Ensemble Forecast System – Aerosols)
+
+---
+
+## Model
+
+Use a Gradient Boosting model (e.g., XGBoost) that ingests:
+- Forecast data from CAMS and/or NOAA-GEFS-Aerosol
+- Local features (calendar variables, lagged observations, lagged forecasts)
+
+---
+
+## Evaluation Strategy
+
+1) Backtesting with historical data (last two years)
+   - Train on year 1
+   - Walk-forward on year 2 (train up to day t, predict t+1)
+
+2) Live forecasting and monitoring
+   - Publish daily forecasts on a public website
+   - Periodically compare against benchmarks
+
+---
+
+## Experimental Setups
+
+a) CAMS + local features → compared against raw CAMS
+b) NOAA-GEFS-Aerosol + local features → compared against raw NOAA
+c) CAMS + NOAA-GEFS-Aerosol + local features → compared against both
+
+This setup measures whether simple ML downscaling with local features can systematically outperform global forecasts for air pollutants.
