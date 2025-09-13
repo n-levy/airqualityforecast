@@ -16,25 +16,57 @@ python scripts/setup_environment.py
 ### 2. Smoke Test (1 day, single cycle)
 ```bash
 python scripts/orchestrate_gefs_https.py \
-  --start-date 2024-01-12 \
-  --end-date 2024-01-12 \
+  --start-date 2025-09-12 \
+  --end-date 2025-09-12 \
   --cycles 00 \
-  --fhours 24:24:24 \
-  --bbox 5,16,47,56
+  --fhours 0:6:6 \
+  --bbox="-180,-60,180,85"
 ```
+
+**Note**: Use `--bbox="coordinates"` format with equals sign for proper argument parsing with negative coordinates.
 
 ### 3. Full Collection (2 years)
 ```bash
 python scripts/orchestrate_gefs_https.py \
-  --start-date 2022-01-01 \
-  --end-date 2024-01-01 \
+  --start-date 2023-09-01 \
+  --end-date 2025-09-01 \
   --cycles 00,12 \
-  --fhours 0:6:120 \
-  --bbox 5,16,47,56 \
+  --fhours 0:6:48 \
+  --bbox="-180,-60,180,85" \
   --pollutants PM25,PM10,NO2,SO2,CO,O3 \
   --workers 4 \
   --force
 ```
+
+### 4. Using the 100-City Collection Script
+```bash
+python scripts/collect_2year_gefs_data.py \
+  --start-date 2023-09-01 \
+  --end-date 2025-09-01 \
+  --data-root /path/to/data \
+  --chunk-months 3
+```
+
+## Recent Updates (September 2025)
+
+### ✅ **Fixed NOAA GEFS Data Collection**
+The bbox argument parsing issue has been resolved. The system now successfully:
+- Downloads real GEFS-Aerosol GRIB2 files from NOAA's S3 bucket
+- Handles negative longitude coordinates properly using `--bbox="coordinates"` format
+- Supports global coverage with bbox `"-180,-60,180,85"`
+- Provides comprehensive error handling and retry logic
+
+### ✅ **Verified Real Data Access**
+- **NOAA GEFS-PDS S3 Bucket**: Confirmed accessible via HTTPS
+- **File Sizes**: 24+ MB GRIB2 files download successfully
+- **Data Content**: Contains real atmospheric pollutant forecasts (PMTF=PM2.5, PMTC=PM10)
+- **Global Coverage**: 721×1440 grid points at 0.25° resolution
+- **Temporal Range**: Current operational forecasts available
+
+### 🔧 **Known Issues**
+- GRIB extraction may encounter ECCODES decoding issues on some systems
+- Download functionality is fully operational and tested
+- Alternative GRIB processing approaches may be needed for some environments
 
 ## System Architecture
 
@@ -64,7 +96,9 @@ NOAA S3 Bucket → Raw GRIB2 → Extraction → Partitioned Parquet
 ## Parameters
 
 ### Geographic
-- `--bbox`: Longitude/latitude bounds (default: `5,16,47,56` for Germany)
+- `--bbox`: Longitude/latitude bounds in format `--bbox="lon_min,lat_min,lon_max,lat_max"`
+  - Use equals sign format for negative coordinates: `--bbox="-180,-60,180,85"`
+  - Default: `5,16,47,56` for Germany, Global: `-180,-60,180,85`
 - `--pollutants`: Comma-separated list (default: `PM25,PM10,NO2,SO2,CO,O3`)
 
 ### Temporal
