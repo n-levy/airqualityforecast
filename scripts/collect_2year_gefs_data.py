@@ -176,8 +176,7 @@ def run_gefs_orchestrator(start_date, end_date, data_root):
         "00,12",  # Two cycles per day for comprehensive coverage
         "--fhours",
         "0:6:48",  # 48-hour forecasts in 6-hour intervals
-        "--bbox",
-        GLOBAL_BBOX,
+        f"--bbox={GLOBAL_BBOX}",
         "--pollutants",
         "PM25,PM10,NO2,SO2,CO,O3",
         "--data-root",
