@@ -6,6 +6,11 @@ A comprehensive air quality forecasting system that combines multiple forecast m
 
 ### Current Implementation
 - **Production-ready ensemble forecasting pipeline**
+- **Stage 6: ETL Pipelines & Unified Dataset Creation** ✅ NEW
+  - Cross-platform ETL scripts for ground truth, NOAA-GEFS, ECMWF CAMS, and local features
+  - Unified dataset merger supporting wide and long formats
+  - Partitioned Parquet storage under `${DATA_ROOT}/curated/stage6/`
+  - Comprehensive documentation with API integration guides
 - **Stage 5: Enhanced Global Dataset Collection** ALL PHASES COMPLETE ✅
   - Phase 1: Infrastructure Setup ✅
   - Phase 2: Continental Collection ✅ (100/100 cities - worst air quality globally)
@@ -315,11 +320,29 @@ print(quality_scores)
 │   ├── logs/                   # Collection and processing logs
 │   ├── scripts/                # Enhanced collection and processing scripts
 │   └── README.md               # Stage 5 documentation
+├── stage_6/              # ETL Pipelines & Unified Dataset Creation (NEW!)
+│   ├── scripts/                # ETL pipeline scripts
+│   │   ├── etl_ground_truth.py        # Ground truth observations (WAQI, OpenAQ)
+│   │   ├── etl_noaa_gefs.py          # NOAA GEFS-Aerosol forecasts
+│   │   ├── etl_cams.py               # ECMWF CAMS atmospheric data
+│   │   ├── etl_local_features.py     # Local features generation
+│   │   └── merge_unified_dataset.py  # Dataset merger
+│   ├── config/                 # Configuration files
+│   ├── docs/                   # Documentation
+│   │   └── Stage6.md          # Comprehensive Stage 6 guide
+│   └── README.md               # Stage 6 documentation
 ├── docs/                       # Project documentation
 └── README.md                  # This file (Updated!)
 ```
 
 ## Key Scripts
+
+### Stage 6: ETL Pipelines & Data Processing (NEW)
+- `stage_6/scripts/etl_ground_truth.py`: Ground truth observations from WAQI and OpenAQ
+- `stage_6/scripts/etl_noaa_gefs.py`: NOAA GEFS-Aerosol forecasts from AWS S3
+- `stage_6/scripts/etl_cams.py`: ECMWF CAMS atmospheric composition via CDS/ADS API
+- `stage_6/scripts/etl_local_features.py`: Local features with weather and geographic data
+- `stage_6/scripts/merge_unified_dataset.py`: Unified dataset creation (wide/long formats)
 
 ### Enhanced Data Generation
 - ~~stage_3 scripts~~ - Legacy dataset generation (removed)
@@ -351,6 +374,24 @@ print(quality_scores)
 ## Usage
 
 ### Generate Enhanced Datasets
+
+#### Stage 6: Production ETL Pipelines (NEW)
+```bash
+# Set data root
+export DATA_ROOT=/path/to/your/data
+
+# Run individual ETL pipelines
+cd stage_6/scripts
+python etl_ground_truth.py --start-date 2024-09-01 --end-date 2024-09-07
+python etl_noaa_gefs.py --start-date 2024-09-01 --end-date 2024-09-07
+python etl_cams.py --start-date 2024-09-01 --end-date 2024-09-07
+python etl_local_features.py --start-date 2024-09-01 --end-date 2024-09-07
+
+# Merge into unified datasets
+python merge_unified_dataset.py --start-date 2024-09-01 --end-date 2024-09-07 --formats wide,long
+```
+
+#### Stage 5: Enhanced Global Dataset (Legacy)
 ```bash
 # Enhanced Global Worst Air Quality Dataset (100 cities) - PRIMARY DATASET
 cd stage_5/scripts
